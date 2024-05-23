@@ -27,6 +27,21 @@ class User < ApplicationRecord
 
     before_validation :ensure_session_token
 
+    def self.find_by_credentials(email, password)
+       
+       user = User.find_by(email: email)
+        if user&.authenticate(password)
+          return user
+        else
+          return nil
+        end  
+    end
+
+    def reset_session_token!
+        self.update!(session_token: generate_unique_session_token)
+        return self.session_token
+      end
+
     private
     def generate_unique_session_token
         while true
