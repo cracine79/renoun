@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import LoginForm from './components/session/LoginForm';
+import SignupForm from './components/session/SignupForm';
 import * as sessionActions from './store/session';
 
 function Layout() {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <LoginForm />
+      },
+      {
+        path: '/signup',
+        element: <SignupForm />
       }
     ]
   }

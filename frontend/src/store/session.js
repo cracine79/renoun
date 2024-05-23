@@ -17,9 +17,22 @@ const storeCSRFToken = response => {
     const csrfToken = response.headers.get("X-CSRF-Token");
     if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
   };
-  
+
 export const login = user => async dispatch => {
     let res = await csrfFetch('api/session', {
+        method: 'POST',
+        body: JSON.stringify(user)
+    })
+
+    let data = await res.json();
+
+    sessionStorage.setItem('currentUser', JSON.stringify(data.user))
+    dispatch(receiveUser(data.user));
+    return res;
+}
+
+export const signup = user => async dispatch => {
+    let res = await csrfFetch('api/users',{
         method: 'POST',
         body: JSON.stringify(user)
     })
