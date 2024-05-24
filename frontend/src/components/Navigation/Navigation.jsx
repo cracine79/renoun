@@ -7,7 +7,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { BsSearch } from "react-icons/bs";
 import { useCallback } from "react";
 import { PiUserCircleFill } from "react-icons/pi";
-import FormWrapper from "../HomeElements/FormWrapper";
+
 
 
 
@@ -19,6 +19,11 @@ function Navigation(){
 
     const dispatch = useDispatch();
     const modal= document.getElementById('wrapper-wrapper');
+    const loginNav = document.getElementById('log-in-nav');
+    const signupNav = document.getElementById('sign-up-nav')
+    const loginForm = document.getElementById('login-form-wrapper')
+    const signupForm = document.getElementById('signup-form-wrapper')
+    
 
     const handleClick = useCallback((e) => {
         e.preventDefault();
@@ -33,7 +38,24 @@ function Navigation(){
     const handleLogin =() =>{
         modal.style.display='flex'
         modal.className='login'
+        loginNav.className='active'
+        signupNav.className='inactive'
+        loginForm.style.display='flex'
+        signupForm.style.display='none'
     }
+
+    const handleSignup =() =>{
+        
+        modal.style.display='flex'
+        modal.className='signup'
+        loginNav.className='inactive'
+        signupNav.className='active'
+        loginForm.style.display='none'
+        signupForm.style.display='flex'
+      
+        
+    }
+
 
     const sessionLinks = sessionUser ? (
         <>
@@ -63,7 +85,7 @@ function Navigation(){
         </>
     ) : (
         <>
-                <Link className="userlink" to='/signup'>Sign Up</Link>
+                <Link className="userlink" onClick={handleSignup}>Sign Up</Link>
                 <p className="userlink" onClick={handleLogin}>Log In</p>
          
         

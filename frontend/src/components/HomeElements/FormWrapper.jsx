@@ -1,17 +1,14 @@
+import { useLayoutEffect } from "react";
 import LoginForm from "../session/LoginForm";
 import SignupForm from "../session/SignupForm";
 import './FormWrapper.css'
-
+import { useEffect } from "react";
 
 export default function FormWrapper(){
-    const loginForm = document.getElementById('login-form-wrapper')
-    const loginLink = document.getElementById('log-in-nav')
 
     const modal = document.getElementById('wrapper-wrapper')
-    if (modal.className==='login'){
-        loginForm.style.display='flex';
-        loginLink.className='active';
-    }
+  
+
     const handleClick =(e) => {
         if (e.target.id==='wrapper-wrapper'){
             modal.style.display='none'
@@ -31,8 +28,13 @@ export default function FormWrapper(){
             <div id='login-form-wrapper'>
                 <LoginForm />
             </div>
+            <div id='signup-form-wrapper'>
+                <SignupForm />
+            </div>
         </div>
     )
+
+      
 
 }
 
