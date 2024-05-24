@@ -68,3 +68,11 @@
     background-color: darkgray;
     border: darkgray;
 }
+
+#emailWarning{
+    display: none;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: -15px;
+    color: red;
+}

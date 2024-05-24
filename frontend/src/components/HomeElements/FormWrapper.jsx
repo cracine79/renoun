@@ -4,6 +4,7 @@ import SignupForm from "../session/SignupForm";
 import './FormWrapper.css'
 import { useEffect } from "react";
 
+
 export default function FormWrapper(){
 
     const modal = document.getElementById('wrapper-wrapper')

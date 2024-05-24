@@ -3,7 +3,8 @@ import { login } from "../../store/session";
 import { useState } from "react";
 import { Navigate } from 'react-router-dom'
 import './LoginForm.css';
-
+import { useEffect } from "react";
+import { RiAlertFill } from "react-icons/ri";
 
 function LoginForm(){
 
@@ -16,7 +17,22 @@ function LoginForm(){
     const modal = document.getElementById('wrapper-wrapper')
     if (currentUser) return <Navigate to="/" replace={true} />;
 
+    // var booking_email = email.val();
+    useEffect(()=>{
+        
+        const emailWarning = document.getElementById('emailWarning')
 
+        if (email){
+        if ((email.indexOf('@') == -1 || email.indexOf('.') == -1)) {
+            
+            emailWarning.style.display='flex'
+        } else{
+            emailWarning.style.display='none'
+        }
+        } else {
+        emailWarning.style.display='none'
+        }
+        },[email])
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -41,10 +57,10 @@ function LoginForm(){
             if (data?.errors) setErrors(data.errors);
             else if (data) setErrors([data]);
             else setErrors([res.statusText]);
-          });
-
-        
+          });        
     }
+
+    
 
     return(
         <>
@@ -52,12 +68,13 @@ function LoginForm(){
                 <p className='form-header'>Log in to Renoun</p>
                 <div id='form-body'>
                     <div className='form-inputs'>
-                        <label htmlFor="email" className="form-input-title">Email</label>
-                        <input className='form-input-box' id="email" value={email} onChange={e => setEmail(e.target.value)} />
+                        <label htmlFor="email-signup" className="form-input-title">Email</label>
+                        <input className='form-input-box' id="email-signup" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
+                    <p id='emailWarning'><RiAlertFill /> {'.Please enter a valid email address'}</p>
                     <div className='form-inputs'>
-                        <label htmlFor="password" className="form-input-title">Password</label>
-                        <input className='form-input-box' id="password" value={password} onChange={e => setPassword(e.target.value)} />
+                        <label htmlFor="password-signup" className="form-input-title">Password</label>
+                        <input type = 'password' className='form-input-box' id="password-signup" value={password} onChange={e => setPassword(e.target.value)} />
                     </div>
                     <input className='form-button' type="submit" value="Log In" />
                 </div>

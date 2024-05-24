@@ -4,7 +4,8 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Navigate } from 'react-router-dom'
 import './SignupForm.css'
-
+import { useEffect } from "react";
+import { RiAlertFill } from "react-icons/ri";
 
 function SignupForm(){
 
@@ -22,7 +23,21 @@ function SignupForm(){
     if (currentUser) return <Navigate to="/" replace={true} />;
 
 
+    useEffect(()=>{
+        
+        const emailWarning = document.getElementById('signupEmailWarning')
 
+        if (email){
+        if ((email.indexOf('@') == -1 || email.indexOf('.') == -1)) {
+            
+            emailWarning.style.display='flex'
+        } else{
+            emailWarning.style.display='none'
+        }
+        } else {
+        emailWarning.style.display='none'
+        }
+        },[email])
     const handleSubmit = e => {
         e.preventDefault();
         modal.style.display='none'
@@ -84,6 +99,7 @@ function SignupForm(){
                         <label htmlFor="email" className="form-input-title">Email</label>
                         <input className='form-input-box' id="email" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
+                    <p id='signupEmailWarning'><RiAlertFill /> {'.Please enter a valid email address'}</p>
 
                     <div className='form-inputs'>
                         <label htmlFor="password" className="form-input-title">Password</label>

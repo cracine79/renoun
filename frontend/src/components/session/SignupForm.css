@@ -86,3 +86,13 @@
     padding-bottom: 8px;
     padding-left: 5px;
 }
+
+
+
+#signupEmailWarning{
+    display: none;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: -15px;
+    color: red;
+}
