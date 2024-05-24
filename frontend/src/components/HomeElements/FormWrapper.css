@@ -1,21 +1,24 @@
 #login-form-wrap{
-    height:600px;
-  
+
     margin-top: 120px;
-    width: 370px;
-    height: 320px;
-    margin-left: 40px;
+    width: 540px;
+    height: 50px;
+
     background-color: lightgrey;
-    border: solid black 1px;
-    border-radius: 10px;
+
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 
 }
 
 #wrapper-wrapper{
 
-    align-items: top;
+    align-items: center;
     display: none;
-    justify-content: center;
+    justify-content: top;
     margin-top: -80px;
     bottom: 0;
     left: 0;
@@ -23,5 +26,19 @@
     z-index: 1;
     background-color: rgba(128, 128, 128, 0.7);
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#top-nav-wrapper{
+    display: flex;
+    background-color: blue;
+    height: 30px;
+}
+
+.active{
+    color: orange;
+    font-weight: 700;
 }
     

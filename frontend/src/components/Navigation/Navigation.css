@@ -51,6 +51,7 @@
 
 .userlink:hover{
     color: orange;
+    cursor: pointer;
 }
 
 .iconlink{

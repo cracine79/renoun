@@ -32,6 +32,7 @@ function Navigation(){
     }
     const handleLogin =() =>{
         modal.style.display='flex'
+        modal.className='login'
     }
 
     const sessionLinks = sessionUser ? (
