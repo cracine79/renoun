@@ -96,7 +96,7 @@ function SignupForm(){
                         <input className='form-input-box' type = "password" id="confirmPassword" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} />
                     </div>
 
-                    <input className='form-button' type="submit" value="Sign In" />
+                    <input className='form-button' type="submit" value="Sign Up" />
                 </div>
             </form>
 

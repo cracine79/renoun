@@ -23,6 +23,8 @@ function Navigation(){
     const signupNav = document.getElementById('sign-up-nav')
     const loginForm = document.getElementById('login-form-wrapper')
     const signupForm = document.getElementById('signup-form-wrapper')
+    const signupSquare = document.getElementById('signup-mnw')
+    const loginSquare = document.getElementById('login-mnw')
     
 
     const handleClick = useCallback((e) => {
@@ -42,6 +44,9 @@ function Navigation(){
         signupNav.className='inactive'
         loginForm.style.display='flex'
         signupForm.style.display='none'
+     
+        loginSquare.className='active-menu-nav-wrapper'
+        signupSquare.className='passive-menu-nav-wrapper'
     }
 
     const handleSignup =() =>{
@@ -52,6 +57,8 @@ function Navigation(){
         signupNav.className='active'
         loginForm.style.display='none'
         signupForm.style.display='flex'
+        loginSquare.className='passive-menu-nav-wrapper'
+        signupSquare.className='active-menu-nav-wrapper'
       
         
     }

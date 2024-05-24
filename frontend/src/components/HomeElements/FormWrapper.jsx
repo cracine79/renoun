@@ -18,12 +18,16 @@ export default function FormWrapper(){
     return(
         <div id='wrapper-wrapper' onClick={handleClick}>
             <div id='login-form-wrap' >
-                <p id="sign-up-nav">
-                    Sign Up
-                </p>
-                <p id="log-in-nav">
-                    Log In
-                </p>
+                <div id='signup-mnw' className='menu-nav-wrapper'>
+                    <p id="sign-up-nav">
+                        Sign Up
+                    </p>
+                </div>
+                <div id='login-mnw' className='menu-nav-wrapper'>
+                    <p id="log-in-nav">
+                        Log In
+                    </p>
+                </div>
             </div>
             <div id='login-form-wrapper'>
                 <LoginForm />

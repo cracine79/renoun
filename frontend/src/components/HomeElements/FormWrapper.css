@@ -10,7 +10,7 @@
     border-top-left-radius: 15px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 
 }
 
@@ -37,7 +37,7 @@
 }
 
 .active{
-    color: orange;
+    color: darkorange;
     font-weight: 700;
 }
 
@@ -45,4 +45,37 @@
     color: black;
     font-weight: 300;
 }
-    
+
+.menu-nav-wrapper{
+
+    width: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 45px;
+   
+}
+
+.active-menu-nav-wrapper{
+
+    width: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 45px;
+    border-bottom: darkorange solid 3px;
+
+}
+
+.passive-menu-nav-wrapper{
+
+    width: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 45px;
+   
+}
