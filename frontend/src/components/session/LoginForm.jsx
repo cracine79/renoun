@@ -13,14 +13,15 @@ function LoginForm(){
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [errors, setErrors] = useState("")
-
+    const modal = document.getElementById('wrapper-wrapper')
     if (currentUser) return <Navigate to="/" replace={true} />;
 
 
 
     const handleSubmit = e => {
         e.preventDefault();
-        setErrors([])
+        setErrors([]);
+        modal.style.display='none';
 
         const user = {
             email,
@@ -48,11 +49,18 @@ function LoginForm(){
     return(
         <>
             <form className="login-form" onSubmit={handleSubmit}>
-                <label htmlFor="email">Email</label>
-                <input id="email" value={email} onChange={e => setEmail(e.target.value)} />
-                <label htmlFor="password">Password</label>
-                <input id="password" value={password} onChange={e => setPassword(e.target.value)} />
-                <input type="submit" value="Sign In" />
+                <p className='form-header'>Log in to Renoun</p>
+                <div id='form-body'>
+                    <div className='form-inputs'>
+                        <label htmlFor="email" className="form-input-title">Email</label>
+                        <input className='form-input-box' id="email" value={email} onChange={e => setEmail(e.target.value)} />
+                    </div>
+                    <div className='form-inputs'>
+                        <label htmlFor="password" className="form-input-title">Password</label>
+                        <input className='form-input-box' id="password" value={password} onChange={e => setPassword(e.target.value)} />
+                    </div>
+                    <input className='form-button' type="submit" value="Log In" />
+                </div>
             </form>
 
         </>

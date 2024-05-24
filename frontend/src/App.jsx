@@ -6,6 +6,7 @@ import LoginForm from './components/session/LoginForm';
 import SignupForm from './components/session/SignupForm';
 import Navigation from './components/Navigation/Navigation';
 import * as sessionActions from './store/session';
+import FormWrapper from './components/HomeElements/FormWrapper';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -18,10 +19,12 @@ function Layout() {
   }, [dispatch]);
 
   return (
-    <>
+    <div id='app-wrapper'>
+
       <Navigation />
+      <FormWrapper />
       {isLoaded && <Outlet />}
-    </>
+    </ div>
   );
 }
 
@@ -35,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/login',
-        element: <LoginForm />
+        element: <FormWrapper />
       },
       {
         path: '/signup',

@@ -7,29 +7,33 @@ import { FiShoppingCart } from "react-icons/fi";
 import { BsSearch } from "react-icons/bs";
 import { useCallback } from "react";
 import { PiUserCircleFill } from "react-icons/pi";
+import FormWrapper from "../HomeElements/FormWrapper";
+
+
 
 
 
 function Navigation(){
     
     const currentUser = useSelector(state=>state.session.user)
-    
-
 
     const dispatch = useDispatch();
+    const modal= document.getElementById('wrapper-wrapper');
 
     const handleClick = useCallback((e) => {
         e.preventDefault();
         return dispatch(sessionActions.logout())
       });
 
-
     const sessionUser = useSelector(state=> state.session.user);
    
     function cap(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
-     
+    const handleLogin =() =>{
+        modal.style.display='flex'
+    }
+
     const sessionLinks = sessionUser ? (
         <>
 
@@ -59,7 +63,7 @@ function Navigation(){
     ) : (
         <>
                 <Link className="userlink" to='/signup'>Sign Up</Link>
-                <Link className="userlink" to='/login'>Log In</Link>
+                <p className="userlink" onClick={handleLogin}>Log In</p>
          
         
 

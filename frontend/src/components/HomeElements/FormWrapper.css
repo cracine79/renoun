@@ -1,0 +1,27 @@
+#login-form-wrap{
+    height:600px;
+  
+    margin-top: 120px;
+    width: 370px;
+    height: 320px;
+    margin-left: 40px;
+    background-color: lightgrey;
+    border: solid black 1px;
+    border-radius: 10px;
+
+}
+
+#wrapper-wrapper{
+
+    align-items: top;
+    display: none;
+    justify-content: center;
+    margin-top: -80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(128, 128, 128, 0.7);
+    height: 100vh;
+}
+    
