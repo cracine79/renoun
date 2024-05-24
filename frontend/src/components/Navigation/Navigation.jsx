@@ -40,13 +40,21 @@ function Navigation(){
                 </div>
                 Menu
                 <div className="dropdown-content">
-                    <div id="user-menu-name">
-                        {cap(currentUser.firstName)} {cap(currentUser.lastName)}
+                    <div id="dc-wrapper">
+                        <div id="user-menu-name">
+                            {cap(currentUser.firstName)} {cap(currentUser.lastName)}
+                        </div>
+                        <hr className='dropdown-line'></hr>
+                        <p className='dropdown-header'>MY ACCOUNT</p>
+                        <br></br>
+                        <p className='dropdown-link'>My Profile</p>
+                        <p className='dropdown-link' onClick={handleClick}>Logout</p>
+
                     </div>
                 </div>
             </div>
         </div>
-            {/* <button onClick={handleClick}>Log Out</button> */}
+      
         </>
     ) : (
         <>
