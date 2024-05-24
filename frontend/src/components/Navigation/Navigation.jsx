@@ -5,16 +5,17 @@ import './Navigation.css'
 import { LuHeart } from "react-icons/lu"
 import { FiShoppingCart } from "react-icons/fi";
 import { BsSearch } from "react-icons/bs";
+import { useCallback } from "react";
 
 
 
 function Navigation(){
-    const dispatch = useDispatch;
+    const dispatch = useDispatch();
 
-    const handleClick = (e) => {
+    const handleClick = useCallback((e) => {
         e.preventDefault();
         return dispatch(sessionActions.logout())
-      };
+      });
 
 
     const sessionUser = useSelector(state=> state.session.user);
