@@ -17,6 +17,7 @@ function SignupForm(){
     const [confirmPassword, setConfirmPassword] = useState("")
     const [email, setEmail] = useState("")
     const [errors, setErrors] = useState("")
+    const modal = document.getElementById('wrapper-wrapper')
 
     if (currentUser) return <Navigate to="/" replace={true} />;
 
@@ -24,6 +25,7 @@ function SignupForm(){
 
     const handleSubmit = e => {
         e.preventDefault();
+        modal.style.display='none'
 
         if (password === confirmPassword){
         setErrors([])
@@ -65,17 +67,37 @@ function SignupForm(){
     return(
         <>
             <form className="signup-form" onSubmit={handleSubmit}>
-                <label htmlFor="firstName">First Name</label>
-                <input id="firstName" value={firstName} onChange={e => setFirstName(e.target.value)} />
-                <label htmlFor="lastName">Last Name</label>
-                <input id="lastName" value={lastName} onChange={e => setLastName(e.target.value)} />
-                <label htmlFor="userName">Email</label>
-                <input id="email" value={email} onChange={e => setEmail(e.target.value)} />
-                <label htmlFor="password">Password</label>
-                <input type = "password" id="password" value={password} onChange={e => setPassword(e.target.value)} />
-                <label htmlFor="confirmPassword">Confirm Password</label>
-                <input type = "password" id="confirmPassword" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} />
-                <input type="submit" value="Sign In" />
+                <p className='form-header'>Create a Renoun Account</p>
+                <div id='form-body'>
+                    <div className='name-wrapper'>
+                       <div className='halfname-wrapper'>
+                            <label htmlFor="firstName" className="form-input-title">First Name</label>
+                            <input className='name-input-box' id="firstName" value={firstName} onChange={e => setFirstName(e.target.value)} />
+                        </div>
+                        <div className='halfname-wrapper'>
+                            <label htmlFor="lastName" className="form-input-title">Last Name</label>
+                            <input className='name-input-box' id="lastName" value={lastName} onChange={e => setLastName(e.target.value)} />
+                        </div>
+                    </div>
+
+                    <div className='form-inputs'>
+                        <label htmlFor="email" className="form-input-title">Email</label>
+                        <input className='form-input-box' id="email" value={email} onChange={e => setEmail(e.target.value)} />
+                    </div>
+
+                    <div className='form-inputs'>
+                        <label htmlFor="password" className="form-input-title">Password</label>
+                        <input className='form-input-box' type = "password" id="password" value={password} onChange={e => setPassword(e.target.value)} />
+                    </div>
+                    
+
+                    <div className='form-inputs'>
+                        <label htmlFor="confirmPassword" className="form-input-title">Confirm Password</label>
+                        <input className='form-input-box' type = "password" id="confirmPassword" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} />
+                    </div>
+
+                    <input className='form-button' type="submit" value="Sign In" />
+                </div>
             </form>
 
         </>
