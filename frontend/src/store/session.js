@@ -21,7 +21,10 @@ const storeCSRFToken = response => {
 export const login = user => async dispatch => {
     let res = await csrfFetch('api/session', {
         method: 'POST',
-        body: JSON.stringify(user)
+        body: JSON.stringify(user),
+        headers: {
+            'Content-Type' : 'application/json'
+        }
     })
 
     let data = await res.json();
@@ -32,9 +35,13 @@ export const login = user => async dispatch => {
 }
 
 export const signup = user => async dispatch => {
+    
     let res = await csrfFetch('api/users',{
         method: 'POST',
-        body: JSON.stringify(user)
+        body: JSON.stringify(user),
+        headers: {
+            'Content-Type' : 'application/json'
+        }
     })
 
     let data = await res.json();

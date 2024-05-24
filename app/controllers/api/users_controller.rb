@@ -1,10 +1,11 @@
 class Api::UsersController < ApplicationController
 
-  wrap_parameters include: User.attribute_names + ['password']
+  wrap_parameters include: User.attribute_names + [:password, :firstName, :lastName]
   
   def create
-    debugger;
+
     @user = User.new(user_params)
+    debugger;
 
     if @user.save!
       login!(@user)

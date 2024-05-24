@@ -35,7 +35,7 @@ function SignupForm(){
             email,
             password
         }
-        debugger;
+   
         setFirstName("")
         setLastName("")
         setEmail("")
