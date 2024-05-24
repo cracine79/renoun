@@ -5,7 +5,6 @@ import './Navigation.css'
 import { LuHeart } from "react-icons/lu"
 import { FiShoppingCart } from "react-icons/fi";
 import { BsSearch } from "react-icons/bs";
-import { useCallback } from "react";
 import { PiUserCircleFill } from "react-icons/pi";
 
 
@@ -27,7 +26,7 @@ function Navigation(){
     const loginSquare = document.getElementById('login-mnw')
     
 
-    const handleClick = useCallback((e) => {
+    const handleClick = ((e) => {
         e.preventDefault();
         return dispatch(sessionActions.logout())
       });

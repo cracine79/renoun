@@ -24,21 +24,21 @@ function LoginForm(){
     
 
     // var booking_email = email.val();
-    useEffect(()=>{
+    // useEffect(()=>{
         
-        const emailWarning = document.getElementById('emailWarning')
+    //     const emailWarning = document.getElementById('emailWarning')
 
-        if (email){
-        if ((email.indexOf('@') == -1 || email.indexOf('.') == -1)) {
+    //     if (email){
+    //     if ((email.indexOf('@') == -1 || email.indexOf('.') == -1)) {
             
-            emailWarning.style.display='flex'
-        } else{
-            emailWarning.style.display='none'
-        }
-        } else {
-        emailWarning.style.display='none'
-        }
-        },[email])
+    //         emailWarning.style.display='flex'
+    //     } else{
+    //         emailWarning.style.display='none'
+    //     }
+    //     } else {
+    //     emailWarning.style.display='none'
+    //     }
+    //     },[email])
 
     const handleSubmit = e => {
         e.preventDefault();
