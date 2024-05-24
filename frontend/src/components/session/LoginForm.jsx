@@ -5,6 +5,8 @@ import { Navigate } from 'react-router-dom'
 import './LoginForm.css';
 import { useEffect } from "react";
 import { RiAlertFill } from "react-icons/ri";
+import { FaRegEye } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa";
 
 function LoginForm(){
 
@@ -15,7 +17,11 @@ function LoginForm(){
     const [password, setPassword] = useState("")
     const [errors, setErrors] = useState("")
     const modal = document.getElementById('wrapper-wrapper')
+    const eye = document.getElementById('eye')
+    const eyeOff = document.getElementById('eyeOff')
+    const passwordBox = document.getElementById('password-signup')
     if (currentUser) return <Navigate to="/" replace={true} />;
+    
 
     // var booking_email = email.val();
     useEffect(()=>{
@@ -60,6 +66,17 @@ function LoginForm(){
           });        
     }
 
+    const passwordOn = ()=>{
+        eye.style.display='none'
+        eyeOff.style.display='flex'
+        passwordBox.setAttribute('type', 'text')
+    }
+
+    const passwordOff = () =>{
+        eye.style.display='flex'
+        eyeOff.style.display='none'
+        passwordBox.setAttribute('type', 'password')
+    }
     
 
     return(
@@ -75,6 +92,14 @@ function LoginForm(){
                     <div className='form-inputs'>
                         <label htmlFor="password-signup" className="form-input-title">Password</label>
                         <input type = 'password' className='form-input-box' id="password-signup" value={password} onChange={e => setPassword(e.target.value)} />
+                        <div className='eyesHolder'>
+                            <div id='eye' onClick={passwordOn}>
+                                <FaRegEye />
+                            </div>
+                            <div id='eyeOff' onClick={passwordOff}>
+                                 <FaRegEyeSlash />
+                            </div>
+                        </div>
                     </div>
                     <input className='form-button' type="submit" value="Log In" />
                 </div>
