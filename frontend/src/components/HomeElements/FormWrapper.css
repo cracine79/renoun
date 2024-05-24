@@ -79,3 +79,18 @@
     height: 45px;
    
 }
+
+.active-menu-nav-wrapper:hover{
+    cursor:pointer;
+}
+
+.passive-menu-nav-wrapper:hover >#sign-up-nav{
+    cursor: pointer;
+    color: orange;
+}
+
+
+.passive-menu-nav-wrapper:hover >#log-in-nav{
+    cursor: pointer;
+    color: orange;
+}
