@@ -7,7 +7,7 @@
 }
 
 #searchbar {
-    width: 1300px;
+    width: 800px;
     height: 48px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -17,7 +17,6 @@
     font-weight: 400;
     margin-right: 10px;
     margin-left: 25px;
-
 }
 
 #logo {
@@ -67,6 +66,18 @@
     cursor: pointer;
 }
 
+.menutext{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: gray;
+}
+
+.menutext:hover{
+    cursor: pointer;
+}
+
 #heart:hover{
     color:orange;
     cursor: pointer;
@@ -75,6 +86,12 @@
 #cart:hover{
     color:orange;
     cursor: pointer;
+}
+
+#userCircle{
+    font-size: 30px;
+    color: grey;
+    margin-bottom: -4px;
 }
 
 #heart{
@@ -87,6 +104,7 @@
     font-size: 25px; 
 }
 
+
 #buttonWrapper{
     display: flex;
     width: 420px;
@@ -98,6 +116,53 @@
 
 #searchButton{
     font-size: 20px;
-    transform: rotate(90deg)
-    
+    transform: rotate(90deg);
+    border: black 1px solid;
+    width: 51px;
+    margin-left: -11px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
+
+#searchButton:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+#searchWrapper{
+    display: flex;
+    margin-top: 5px;
+
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+.dropdown:hover .dropdown-content {
+    display: block
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown-content {
+    /* display: none; */
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+
+    z-index: 1;
+    margin-top: 50px;
+    margin-right: 130px;
+  }
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }

@@ -6,10 +6,16 @@ import { LuHeart } from "react-icons/lu"
 import { FiShoppingCart } from "react-icons/fi";
 import { BsSearch } from "react-icons/bs";
 import { useCallback } from "react";
+import { PiUserCircleFill } from "react-icons/pi";
 
 
 
 function Navigation(){
+    
+    const currentUser = useSelector(state=>state.session.user)
+    
+
+
     const dispatch = useDispatch();
 
     const handleClick = useCallback((e) => {
@@ -20,11 +26,27 @@ function Navigation(){
 
     const sessionUser = useSelector(state=> state.session.user);
    
-
+    function cap(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
      
     const sessionLinks = sessionUser ? (
         <>
-            <button onClick={handleClick}>Log Out</button>
+
+        <div className="dropdown">
+            <div className='menutext'>
+                <div id='userCircle'>
+                    <PiUserCircleFill />
+                </div>
+                Menu
+                <div className="dropdown-content">
+                    <div id="user-menu-name">
+                        {cap(currentUser.firstName)} {cap(currentUser.lastName)}
+                    </div>
+                </div>
+            </div>
+        </div>
+            {/* <button onClick={handleClick}>Log Out</button> */}
         </>
     ) : (
         <>
@@ -42,9 +64,11 @@ function Navigation(){
         <>
         <div className="header_main">
             <img id='logo' src='https://findlogovector.com/wp-content/uploads/2018/11/reverb-logo-vector.png'></img>
-            <input type='text' id='searchbar' value="Shop for used & new music gear" />
-            <div id='searchButton'>
-                <BsSearch />
+            <div id='searchWrapper'>
+                <input type='text' id='searchbar' value="Shop for used & new music gear" />
+                <div id='searchButton'>
+                    <BsSearch />
+                </div>
             </div>
         
             
