@@ -15,7 +15,7 @@ function SignupForm(){
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [password, setPassword] = useState("")
-    const [confirmPassword, setConfirmPassword] = useState("")
+    const [confirmEmail, setConfirmEmail] = useState("")
     const [email, setEmail] = useState("")
     const [errors, setErrors] = useState("")
     const modal = document.getElementById('wrapper-wrapper')
@@ -46,7 +46,7 @@ function SignupForm(){
         e.preventDefault();
         modal.style.display='none'
 
-        if (password === confirmPassword){
+        if (email === confirmEmail){
         setErrors([])
 
 
@@ -61,7 +61,7 @@ function SignupForm(){
         setLastName("")
         setEmail("")
         setPassword("")
-        setConfirmPassword("")
+        setConfirmEmail("")
 
         return dispatch(signup(user))
         .catch(async (res) => {
@@ -78,7 +78,7 @@ function SignupForm(){
           });
         }
 
-        return setErrors(['Passwords must match'])
+        return setErrors(['Emails must match'])
 
         
     }
@@ -106,14 +106,14 @@ function SignupForm(){
                     <p id='signupEmailWarning'><RiAlertFill /> {'.Please enter a valid email address'}</p>
 
                     <div className='form-inputs'>
-                        <label htmlFor="password" className="form-input-title">Password</label>
-                        <input className='form-input-box' type = "password" id="password" value={password} onChange={e => setPassword(e.target.value)} />
+                        <label htmlFor="confirmEmail" className="form-input-title">Confirm Email</label>
+                        <input className='form-input-box'  id="confirmEmail" value={confirmEmail} onChange={e => setConfirmEmail(e.target.value)} />
                     </div>
                     
 
                     <div className='form-inputs'>
-                        <label htmlFor="confirmPassword" className="form-input-title">Confirm Password</label>
-                        <input className='form-input-box' type = "password" id="confirmPassword" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} />
+                        <label htmlFor="password" className="form-input-title">Password</label>
+                        <input className='form-input-box' type = "password" id="password" value={password} onChange={e => setPassword(e.target.value)} />
                     </div>
 
                     <input className='form-button' type="submit" value="Sign Up" />
