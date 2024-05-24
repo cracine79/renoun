@@ -1,0 +1,49 @@
+.header_main{
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px black solid;
+}
+
+#searchbar {
+    width: 477px;
+    height: 48px;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    color: grey;
+
+}
+
+#logo {
+    height: 65px;
+    padding-left: 10px;
+}
+
+#sell-button {
+    background-color: white;
+    width: 166px;
+    height: 48px;
+    border-radius: 25px;
+    border: 4px black solid;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+
+}
+
+#sell-button:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.userlink{
+    color: grey;
+    size: 13px;
+    line-height: 18px;
+    text-decoration: none;
+}
+
+.userlink:hover{
+    color: orange;
+}
