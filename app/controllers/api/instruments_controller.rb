@@ -12,7 +12,7 @@ class Api::InstrumentsController < ApplicationController
 
     def index
         @instruments = Instrument.all
-        render json: @instruments
+        render  'api/instruments/index'
     end
 
     def destroy
