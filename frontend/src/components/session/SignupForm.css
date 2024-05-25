@@ -112,3 +112,19 @@
     margin-top: 155px;
     font-size: 20px;
 }
+
+#confirmEmailWarning{
+    display: none;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: -15px;
+    color: red;
+}
+
+#confirmEmailMatchWarning{
+    display: none;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: -15px;
+    color: red;
+}

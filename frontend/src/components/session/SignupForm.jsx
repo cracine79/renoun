@@ -33,7 +33,7 @@ function SignupForm(){
         const emailWarning = document.getElementById('signupEmailWarning')
 
         if (email){
-        if ((email.indexOf('@') == -1 || email.indexOf('.') == -1)) {
+        if ((email.indexOf('@') == -1 || email.indexOf('.') == -1 || email[email.length-1]==='.')) {
             
             emailWarning.style.display='flex'
         } else{
@@ -42,7 +42,23 @@ function SignupForm(){
         } else {
         emailWarning.style.display='none'
         }
-        },[email])
+
+
+        if (confirmEmail){
+            if (confirmEmail !== email){
+                confirmEmailMatchWarning.style.display='flex';
+                confirmEmailWarning.style.display='none'
+            } else if ((confirmEmail.indexOf('@') == -1 || confirmEmail.indexOf('.') == -1 || confirmEmail[email.length-1]==='.')) {
+            
+                    confirmEmailWarning.style.display='flex';
+                    confirmEmailMatchWarning.style.display='none'
+                } 
+            } else {
+                confirmEmailMatchWarning.style.display='none';
+                confirmEmailWarning.style.display='none'
+            } 
+        
+        },[email, confirmEmail])
 
 
 
@@ -119,12 +135,14 @@ function SignupForm(){
                         <label htmlFor="email" className="form-input-title">Email</label>
                         <input className='form-input-box' id="email" value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
-                    <p id='signupEmailWarning'><RiAlertFill /> {'.Please enter a valid email address'}</p>
+                    <p id='signupEmailWarning'><RiAlertFill /> .Please enter a valid email address</p>
 
                     <div className='form-inputs'>
                         <label htmlFor="confirmEmail" className="form-input-title">Confirm Email</label>
                         <input className='form-input-box'  id="confirmEmail" value={confirmEmail} onChange={e => setConfirmEmail(e.target.value)} />
                     </div>
+                    <p id='confirmEmailWarning'><RiAlertFill /> .Please enter a valid email address</p>
+                    <p id='confirmEmailMatchWarning'><RiAlertFill /> .Emails must match</p>
                     
 
                     <div className='form-inputs'>

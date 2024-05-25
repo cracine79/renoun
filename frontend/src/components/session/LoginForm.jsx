@@ -30,7 +30,8 @@ function LoginForm(){
         const emailWarning = document.getElementById('emailWarning')
 
         if (email){
-        if ((email.indexOf('@') == -1 || email.indexOf('.') == -1)) {
+       
+        if ((email.indexOf('@') == -1 || email.indexOf('.') == -1 || email[email.length-1]==='.')) {
             
             emailWarning.style.display='flex'
         } else{
