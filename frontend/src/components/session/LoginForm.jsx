@@ -26,7 +26,6 @@ function LoginForm(){
     
    
 
-    // var booking_email = email.val();
     useEffect(()=>{
         
         const emailWarning = document.getElementById('emailWarning')
@@ -67,7 +66,7 @@ function LoginForm(){
             if (data?.errors) setErrors(data.errors);
             else if (data) setErrors([data]);
             else setErrors([res.statusText]);
-            debugger;
+   
             return navigate('/whoops')
           });        
     }

@@ -1,17 +1,18 @@
-import { useDispatch } from "react-redux";
-import { signup } from "../../store/session";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { Navigate } from 'react-router-dom'
-import './SignupForm.css'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { RiAlertFill } from "react-icons/ri";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
+import { signup } from "../../store/session";
+import { useNavigate } from "react-router-dom";
+import './SignupForm.css'
+
 
 function SignupForm(){
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const currentUser = useSelector(state=>state.session.user)
 
     const [firstName, setFirstName] = useState("")
@@ -25,11 +26,12 @@ function SignupForm(){
     const eyeOff = document.getElementById('signEyeOff')
     const passwordBox = document.getElementById('sign-signup')
 
-    if (currentUser) return <Navigate to="/" replace={true} />;
+   
 
 
     useEffect(()=>{
-        
+        const confirmEmailMatchWarning = document.getElementById('confirmEmailMatchWarning')
+        const confirmEmailWarning = document.getElementById('confirmEmailWarning')
         const emailWarning = document.getElementById('signupEmailWarning')
 
         if (email){
@@ -40,7 +42,7 @@ function SignupForm(){
             emailWarning.style.display='none'
         }
         } else {
-        emailWarning.style.display='none'
+             emailWarning.style.display='none'
         }
 
 
@@ -61,10 +63,11 @@ function SignupForm(){
         },[email, confirmEmail])
 
 
-
+    if (currentUser) return <Navigate to="/" replace={true} />;
 
     const handleSubmit = e => {
         e.preventDefault();
+     
         modal.style.display='none'
 
         if (email === confirmEmail){
@@ -96,10 +99,13 @@ function SignupForm(){
             if (data?.errors) setErrors(data.errors);
             else if (data) setErrors([data]);
             else setErrors([res.statusText]);
+        
+            return navigate('/whoopsTwo', {state: {errors: errors}});
           });
         }
 
-        return setErrors(['Emails must match'])
+        setErrors(['Emails must match'])
+        return navigate('/whoopsTwo', {state: {errors: errors}});
 
     }
 
