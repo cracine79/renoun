@@ -96,3 +96,19 @@
     margin-top: -15px;
     color: red;
 }
+
+.eyesHolder:hover{
+    color:grey;
+    cursor: pointer;
+}
+
+#signEyeOff{
+    display: none;
+}
+
+.eyesHolder{
+    position: absolute;
+    margin-left: 484px;
+    margin-top: 155px;
+    font-size: 20px;
+}

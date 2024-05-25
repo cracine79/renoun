@@ -6,6 +6,8 @@ import { Navigate } from 'react-router-dom'
 import './SignupForm.css'
 // import { useEffect } from "react";
 import { RiAlertFill } from "react-icons/ri";
+import { FaRegEye } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa";
 
 function SignupForm(){
 
@@ -19,6 +21,9 @@ function SignupForm(){
     const [email, setEmail] = useState("")
     const [errors, setErrors] = useState("")
     const modal = document.getElementById('wrapper-wrapper')
+    const eye = document.getElementById('signEye')
+    const eyeOff = document.getElementById('signEyeOff')
+    const passwordBox = document.getElementById('sign-signup')
 
     if (currentUser) return <Navigate to="/" replace={true} />;
 
@@ -80,9 +85,20 @@ function SignupForm(){
 
         return setErrors(['Emails must match'])
 
-        
     }
 
+
+    const passwordOn = ()=>{
+        eye.style.display='none'
+        eyeOff.style.display='flex'
+        passwordBox.setAttribute('type', 'text')
+    }
+
+    const passwordOff = () =>{
+        eye.style.display='flex'
+        eyeOff.style.display='none'
+        passwordBox.setAttribute('type', 'password')
+    }
     return(
         <>
             <form className="signup-form" onSubmit={handleSubmit}>
@@ -113,8 +129,17 @@ function SignupForm(){
 
                     <div className='form-inputs'>
                         <label htmlFor="password" className="form-input-title">Password</label>
-                        <input className='form-input-box' type = "password" id="password" value={password} onChange={e => setPassword(e.target.value)} />
+                        <input className='form-input-box' type = "password" id="sign-signup" value={password} onChange={e => setPassword(e.target.value)} />
                     </div>
+
+                    <div className='eyesHolder'>
+                            <div id='signEye' onClick={passwordOn}>
+                                <FaRegEye />
+                            </div>
+                            <div id='signEyeOff' onClick={passwordOff}>
+                                 <FaRegEyeSlash />
+                            </div>
+                        </div>
 
                     <input className='form-button' type="submit" value="Sign Up" />
                 </div>
