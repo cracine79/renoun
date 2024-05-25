@@ -7,14 +7,14 @@ const Whoops = () =>{
     return(
         <>
             <img src={background} />
-            <div id='cover'></div>
-            <div id='bigwrap'>
+            <div id='login-cover'></div>
+            <div id='login-bigwrap'>
                
-                <div id='error-login-wrapper'>
+                <div id='login-error-login-wrapper'>
                     <LoginForm />
                 </div>
-                <div id='error-login-header'>
-                    <div id='error-orange-box'>
+                <div id='login-error-login-header'>
+                    <div id='login-error-orange-box'>
                         The password or email you entered is incorrect
                     </div>
                 </div>

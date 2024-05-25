@@ -1,5 +1,5 @@
 import background from './Whoops_Background.jpeg'
-import './Whoops.css'
+import './WhoopsTwo.css'
 
 import SignupForm from '../session/SignupForm'
 import { useLocation } from 'react-router-dom'
@@ -37,7 +37,7 @@ const WhoopsTwo = () =>{
     if (errors[0].length>0){
         message = errors
     } else {
-        message = errors[0].message;
+        message = errors[0].message.slice(48);
     }
     console.log(message)
    
@@ -48,17 +48,24 @@ const WhoopsTwo = () =>{
             <img src={background} />
             <div id='cover'></div>
             <div id='bigwrap'>
+              
          
                 <div id='error-login-wrapper'>
                     <SignupForm/>
                    
                 </div>
                 <div id='error-login-header'>
-                    <div id='error-orange-box'>
-                   
-                        {message}
-                    </div>
+                  
                 </div>
+                <div id='actual-errors'>
+                   
+                   {message}
+               </div>
+                <h1 className='join'><p id='dot'>.  </p>Join millions of music <br /> makers around the world</h1>
+               
+
+                <p className='sorry'> Sorry we couldn't create your account <br />Please fix these errors to proceed</p>
+            
             </div>
           
             
