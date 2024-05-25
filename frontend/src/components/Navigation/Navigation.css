@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: space-evenly;
     border-bottom: 2px black solid;
+    
 }
 
 #searchbar {
@@ -17,12 +18,13 @@
     font-weight: 400;
     margin-right: 40px;
     margin-left: 95px;
+    -webkit-box-flex: 1;
 }
 
 #logo {
     height: 40px;
     padding-left: 10px;
-    margin-right: -150px;
+    margin-right: -100px;
 }
 
 #sell-button {
@@ -113,7 +115,7 @@
     align-items: center;
     justify-content: space-between;
     margin-right: 30px;
-    margin-left: -50px;
+
 }
 
 #searchButton{
