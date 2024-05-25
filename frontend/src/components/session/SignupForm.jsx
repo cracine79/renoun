@@ -154,7 +154,7 @@ function SignupForm(){
                     <div className='form-inputs'>
                         <label htmlFor="password" className="form-input-title">Password</label>
                         <input className='form-input-box' type = "password" id="sign-signup" value={password} onChange={e => setPassword(e.target.value)} />
-                    </div>
+                    
 
                     <div id='signEyesHolder'>
                             <div id='signEye' onClick={passwordOn}>
@@ -163,6 +163,7 @@ function SignupForm(){
                             <div id='signEyeOff' onClick={passwordOff}>
                                  <FaRegEyeSlash />
                             </div>
+                        </div>
                         </div>
 
                     <input className='form-button' type="submit" value="Sign Up" />
