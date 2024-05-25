@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Navigate } from 'react-router-dom'
 import './SignupForm.css'
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import { RiAlertFill } from "react-icons/ri";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
@@ -28,21 +28,21 @@ function SignupForm(){
     if (currentUser) return <Navigate to="/" replace={true} />;
 
 
-    // useEffect(()=>{
+    useEffect(()=>{
         
-    //     const emailWarning = document.getElementById('signupEmailWarning')
+        const emailWarning = document.getElementById('signupEmailWarning')
 
-    //     if (email){
-    //     if ((email.indexOf('@') == -1 || email.indexOf('.') == -1)) {
+        if (email){
+        if ((email.indexOf('@') == -1 || email.indexOf('.') == -1)) {
             
-    //         emailWarning.style.display='flex'
-    //     } else{
-    //         emailWarning.style.display='none'
-    //     }
-    //     } else {
-    //     emailWarning.style.display='none'
-    //     }
-    //     },[email])
+            emailWarning.style.display='flex'
+        } else{
+            emailWarning.style.display='none'
+        }
+        } else {
+        emailWarning.style.display='none'
+        }
+        },[email])
 
 
 
@@ -132,7 +132,7 @@ function SignupForm(){
                         <input className='form-input-box' type = "password" id="sign-signup" value={password} onChange={e => setPassword(e.target.value)} />
                     </div>
 
-                    <div className='eyesHolder'>
+                    <div id='signEyesHolder'>
                             <div id='signEye' onClick={passwordOn}>
                                 <FaRegEye />
                             </div>

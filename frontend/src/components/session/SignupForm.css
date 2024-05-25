@@ -106,7 +106,7 @@
     display: none;
 }
 
-.eyesHolder{
+#signEyesHolder{
     position: absolute;
     margin-left: 484px;
     margin-top: 155px;

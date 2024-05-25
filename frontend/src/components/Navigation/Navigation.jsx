@@ -6,6 +6,7 @@ import { LuHeart } from "react-icons/lu"
 import { FiShoppingCart } from "react-icons/fi";
 import { BsSearch } from "react-icons/bs";
 import { PiUserCircleFill } from "react-icons/pi";
+import Renoun from './Renoun.png'
 
 
 
@@ -104,7 +105,7 @@ function Navigation(){
     return (
         <>
         <div className="header_main">
-            <img id='logo' src='https://findlogovector.com/wp-content/uploads/2018/11/reverb-logo-vector.png'></img>
+            <img id='logo' src={Renoun}></img>
             <div id='searchWrapper'>
                 <input type='text' id='searchbar' value="Shop for used & new music gear" />
                 <div id='searchButton'>

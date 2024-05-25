@@ -7,7 +7,7 @@
 }
 
 #searchbar {
-    width: 800px;
+    width: 1000px;
     height: 48px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -15,13 +15,14 @@
     color: grey;
     padding-left: 10px;
     font-weight: 400;
-    margin-right: 10px;
-    margin-left: 25px;
+    margin-right: 40px;
+    margin-left: 95px;
 }
 
 #logo {
-    height: 65px;
+    height: 40px;
     padding-left: 10px;
+    margin-right: -150px;
 }
 
 #sell-button {
@@ -112,7 +113,7 @@
     align-items: center;
     justify-content: space-between;
     margin-right: 30px;
-    margin-left: 10px;
+    margin-left: -50px;
 }
 
 #searchButton{
@@ -120,7 +121,7 @@
     transform: rotate(90deg);
     border: black 1px solid;
     width: 51px;
-    margin-left: -11px;
+    margin-left: -41px;
     justify-content: center;
     display: flex;
     align-items: center;

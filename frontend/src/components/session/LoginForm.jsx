@@ -22,23 +22,24 @@ function LoginForm(){
     const passwordBox = document.getElementById('password-signup')
     if (currentUser) return <Navigate to="/" replace={true} />;
     
+   
 
     // var booking_email = email.val();
-    // useEffect(()=>{
+    useEffect(()=>{
         
-    //     const emailWarning = document.getElementById('emailWarning')
+        const emailWarning = document.getElementById('emailWarning')
 
-    //     if (email){
-    //     if ((email.indexOf('@') == -1 || email.indexOf('.') == -1)) {
+        if (email){
+        if ((email.indexOf('@') == -1 || email.indexOf('.') == -1)) {
             
-    //         emailWarning.style.display='flex'
-    //     } else{
-    //         emailWarning.style.display='none'
-    //     }
-    //     } else {
-    //     emailWarning.style.display='none'
-    //     }
-    //     },[email])
+            emailWarning.style.display='flex'
+        } else{
+            emailWarning.style.display='none'
+        }
+        } else {
+        emailWarning.style.display='none'
+        }
+        },[email])
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -77,7 +78,21 @@ function LoginForm(){
         eyeOff.style.display='none'
         passwordBox.setAttribute('type', 'password')
     }
+
+    // function handleEmail(e){
+    //      let emailCopy= setEmail(e.target.value)
     
+    //     if (email.length>0){
+    //             if ((email.length===1 || email.indexOf('@') == -1 || email.indexOf('.') == -1)) {
+                    
+    //                 emailWarning.style.display='flex'
+    //             } else{
+    //                 emailWarning.style.display='none'
+    //             }
+    //             } else {
+    //             emailWarning.style.display='none'
+    //             }
+    // }    
 
     return(
         <>
@@ -86,7 +101,7 @@ function LoginForm(){
                 <div id='form-body'>
                     <div className='form-inputs'>
                         <label htmlFor="email-signup" className="form-input-title">Email</label>
-                        <input className='form-input-box' id="email-signup" value={email} onChange={e => setEmail(e.target.value)} />
+                        <input className='form-input-box' id="email-signup" value={email} onChange={e=> setEmail(e.target.value)} />
                     </div>
                     <p id='emailWarning'><RiAlertFill /> {'.Please enter a valid email address'}</p>
                     <div className='form-inputs'>
