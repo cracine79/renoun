@@ -7,6 +7,8 @@ import SignupForm from './components/session/SignupForm';
 import Navigation from './components/Navigation/Navigation';
 import * as sessionActions from './store/session';
 import FormWrapper from './components/HomeElements/FormWrapper';
+import Whoops from './components/Whoops/Whoops';
+
 
 function Layout() {
   const dispatch = useDispatch();
@@ -36,8 +38,8 @@ const router = createBrowserRouter([
         element: <h1>Welcome!</h1>
       },
       {
-        path: '/login',
-        element: <FormWrapper />
+        path: '/whoops',
+        element: <Whoops />
       },
       {
         path: '/signup',

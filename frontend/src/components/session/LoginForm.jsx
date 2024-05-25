@@ -7,11 +7,13 @@ import { useEffect } from "react";
 import { RiAlertFill } from "react-icons/ri";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm(){
 
     const dispatch = useDispatch();
     const currentUser = useSelector(state=>state.session.user)
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -65,6 +67,8 @@ function LoginForm(){
             if (data?.errors) setErrors(data.errors);
             else if (data) setErrors([data]);
             else setErrors([res.statusText]);
+            debugger;
+            return navigate('/whoops')
           });        
     }
 

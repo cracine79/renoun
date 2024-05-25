@@ -6,6 +6,8 @@ import './index.css';
 import configureStore from './store';
 import csrfFetch, { restoreCSRF } from './store/csrf';
 import * as sessionActions from './store/session';
+import { redirect } from 'react-router-dom';
+
 
 const store = configureStore();
 
@@ -14,6 +16,8 @@ if (import.meta.env.MODE !== "production") {
   window.store = store;
   window.csrfFetch = csrfFetch;
   window.sessionActions = sessionActions;
+  window.redirect = redirect;
+
 }
 
 
