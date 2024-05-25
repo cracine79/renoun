@@ -22,7 +22,7 @@ function LoginForm(){
     const eye = document.getElementById('eye')
     const eyeOff = document.getElementById('eyeOff')
     const passwordBox = document.getElementById('password-signup')
-    if (currentUser) return <Navigate to="/" replace={true} />;
+
     
    
 
@@ -42,7 +42,7 @@ function LoginForm(){
         emailWarning.style.display='none'
         }
         },[email])
-
+    if (currentUser) return <Navigate to="/" replace={true} />;
     const handleSubmit = e => {
         e.preventDefault();
         setErrors([]);

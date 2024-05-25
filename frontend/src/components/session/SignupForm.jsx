@@ -35,18 +35,18 @@ function SignupForm(){
         const emailWarning = document.getElementById('signupEmailWarning')
 
         if (email){
-        if ((email.indexOf('@') == -1 || email.indexOf('.') == -1 || email[email.length-1]==='.')) {
-            
-            emailWarning.style.display='flex'
-        } else{
-            emailWarning.style.display='none'
-        }
+            if ((email.indexOf('@') == -1 || email.indexOf('.') == -1 || email[email.length-1]==='.')) {
+                emailWarning.style.display='flex'
+            } else{
+                emailWarning.style.display='none'
+            }
         } else {
-             emailWarning.style.display='none'
+            emailWarning.style.display='none'
         }
 
 
         if (confirmEmail){
+       
             if (confirmEmail !== email){
                 confirmEmailMatchWarning.style.display='flex';
                 confirmEmailWarning.style.display='none'
@@ -54,13 +54,14 @@ function SignupForm(){
             
                     confirmEmailWarning.style.display='flex';
                     confirmEmailMatchWarning.style.display='none'
-                } 
             } else {
-                confirmEmailMatchWarning.style.display='none';
-                confirmEmailWarning.style.display='none'
+                    confirmEmailMatchWarning.style.display='none';
+                    confirmEmailWarning.style.display='none'
             } 
         
-        },[email, confirmEmail])
+        }
+        },[email, confirmEmail]
+    )
 
 
     if (currentUser) return <Navigate to="/" replace={true} />;
