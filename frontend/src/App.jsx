@@ -23,9 +23,11 @@ function Layout() {
 
   return (
     <div id='app-wrapper'>
+     
       <Navigation />
-      <FormWrapper />
+     
       {isLoaded && <Outlet />}
+      <FormWrapper />
     </ div>
   );
 }
