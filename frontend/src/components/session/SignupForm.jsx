@@ -66,7 +66,7 @@ function SignupForm(){
 
     if (currentUser) return <Navigate to="/" replace={true} />;
 
-    const handleSubmit = e => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
      
         modal.style.display='none'
@@ -88,27 +88,59 @@ function SignupForm(){
         setPassword("")
         setConfirmEmail("")
 
-        return dispatch(signup(user))
-        .catch(async (res) => {
+
+        try {
+            await dispatch(signup(user));
+            // Assuming successful signup redirects to another page
+            navigate('/someSuccessPage');
+        } catch (res) {
             let data;
             try {
-              // .clone() essentially allows you to read the response body twice
-              data = await res.clone().json();
+                data = await res.clone().json();
             } catch {
-              data = await res.text(); // Will hit this case if the server is down
+                data = await res.text();
             }
-            if (data?.errors) setErrors(data.errors);
-            else if (data) setErrors([data]);
-            else setErrors([res.statusText]);
-        
-            return navigate('/whoopsTwo', {state: {errors: errors}});
-          });
+
+            if (data?.errors) {
+                setErrors(data.errors);
+            } else if (data) {
+                setErrors([data]);
+            } else {
+                setErrors([res.statusText]);
+            }
+
+            navigate('/whoopsTwo', { state: { errors: data?.errors || [data] || [res.statusText] } });
         }
-
-        setErrors(['Emails must match'])
-        return navigate('/whoopsTwo', {state: {errors: errors}});
-
+    } else {
+        setErrors(['Emails must match']);
+        navigate('/whoopsTwo', { state: { errors: ['Emails must match'] } });
     }
+};
+
+    //     return dispatch(signup(user))
+    //     .catch(async (res) => {
+    //         let data;
+    //         try {
+    //           // .clone() essentially allows you to read the response body twice
+    //           data = await res.clone().json();
+    //         } catch {
+    //           data = await res.text(); // Will hit this case if the server is down
+    //         }
+
+       
+         
+    //         if (data?.errors) setErrors(data.errors);
+    //         else if (data) setErrors([data]);
+    //         else setErrors([res.statusText]);
+        
+    //          navigate('/whoopsTwo', {state: {errors: errors}});
+    //       });
+    //     }
+
+    //     setErrors(['Emails must match'])
+    //      navigate('/whoopsTwo', {state: {errors: errors}});
+
+    // }
 
 
     const passwordOn = ()=>{
