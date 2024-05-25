@@ -1,7 +1,7 @@
 import background from './Whoops_Background.jpeg'
 import './Whoops.css'
 import LoginForm from '../session/LoginForm'
-import SignupForm from '../session/SignupForm'
+
 
 const Whoops = () =>{
     return(
