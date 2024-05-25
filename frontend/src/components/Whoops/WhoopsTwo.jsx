@@ -8,6 +8,7 @@ const WhoopsTwo = () =>{
     const location=useLocation();
     const  {errors} = location.state || {errors:[]}
     console.log(errors)
+    let message = ""
     // const errors = location.state
     // let m = 'oops';
     // if(errors){
@@ -33,6 +34,12 @@ const WhoopsTwo = () =>{
 //     } else {
 //         errors = location.state
 //     }
+    if (errors[0].length>0){
+        message = errors
+    } else {
+        message = errors[0].message;
+    }
+    console.log(message)
    
     return(
        
@@ -49,7 +56,7 @@ const WhoopsTwo = () =>{
                 <div id='error-login-header'>
                     <div id='error-orange-box'>
                    
-                        {errors.length > 0 && errors[0].message}
+                        {message}
                     </div>
                 </div>
             </div>

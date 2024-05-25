@@ -92,7 +92,7 @@ function SignupForm(){
         try {
             await dispatch(signup(user));
             // Assuming successful signup redirects to another page
-            navigate('/someSuccessPage');
+            navigate('/');
         } catch (res) {
             let data;
             try {
