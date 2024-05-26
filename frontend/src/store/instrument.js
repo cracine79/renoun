@@ -20,18 +20,19 @@ export const fetchAllInstruments = () => async dispatch => {
     dispatch(receiveInstruments(data))
 }
 
-const instrumentReducer = (state = {}, action) => {
+const instrumentsReducer = (state = {}, action) => {
     Object.freeze(state);
 
     const nextState = {...state};
 
-    switch(action.type){
-        case RECEIVE_INSTRUMENTS: 
-            return {...nextState, ...action.instruments}
+    switch (action.type){
+        case RECEIVE_INSTRUMENTS:
+            return {...nextState, ...action.instruments};
         default:
-            return {state}
-
+            return state;
     }
+
+
 }
 
-export default instrumentReducer;
+export default instrumentsReducer;
