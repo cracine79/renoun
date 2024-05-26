@@ -39,6 +39,14 @@
 
 }
 
+#favs:hover div{
+    color: orange;
+}
+
+#cart-word:hover div{
+    color: orange;
+}
+
 #sell-button:hover{
     background-color: lightgray;
     cursor: pointer;
@@ -101,11 +109,13 @@
 #heart{
     color: black;
     font-size: 25px;   
+    margin-left: 13px;
 }
 
 #cart{
     color: black;
     font-size: 25px; 
+    margin-left: -3px;
 }
 
 
