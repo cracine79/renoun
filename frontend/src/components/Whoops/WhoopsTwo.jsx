@@ -1,4 +1,4 @@
-import background from './Whoops_Background.jpeg'
+import background from '../../../assets/images/Whoops_Background.jpeg'
 import './WhoopsTwo.css'
 
 import SignupForm from '../session/SignupForm'

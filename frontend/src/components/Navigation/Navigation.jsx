@@ -6,7 +6,7 @@ import { LuHeart } from "react-icons/lu"
 import { FiShoppingCart } from "react-icons/fi";
 import { BsSearch } from "react-icons/bs";
 import { PiUserCircleFill } from "react-icons/pi";
-import Renoun from './Renoun.png'
+import Renoun from '../../../assets/images/Renoun.png'
 
 
 

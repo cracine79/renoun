@@ -1,12 +1,11 @@
-import background from './TopBanner.jsx'
 import './TopBanner.css'
-import guitars from './electric-guitars.jpeg'
-import keys from './keyboards.jpeg'
-import pedals from './pedals.jpeg'
+import guitars from '../../../assets/images/electric-guitars.jpeg'
+import keys from '../../../assets/images/keyboards.jpeg'
+import pedals from '../../../assets/images/pedals.jpeg'
 
 export default function TopBanner (){
     return(
-        <div src={background}id= 'top-banner'>
+        <div id= 'top-banner'>
             <div id = 'banner-left'>
                 <h1 id='banner-top' className='banner-words'>Get the sound you love for less</h1>
                 <h3 id='banner-bottom' className='banner-words'>Save an average of 30% when you buy used music gear</h3>
