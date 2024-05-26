@@ -8,6 +8,7 @@ import FormWrapper from './components/HomeElements/FormWrapper';
 import Whoops from './components/Whoops/Whoops';
 import WhoopsTwo from './components/Whoops/WhoopsTwo';
 import Home from './components/HomeElements/Home';
+import Footer from './components/Footer/footer';
 
 
 function Layout() {
@@ -27,6 +28,9 @@ function Layout() {
      
       {isLoaded && <Outlet />}
       <FormWrapper />
+      <div id='footerWrap'>
+        <Footer />
+      </div>
     </ div>
   );
 }
