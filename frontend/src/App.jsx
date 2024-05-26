@@ -9,7 +9,7 @@ import Whoops from './components/Whoops/Whoops';
 import WhoopsTwo from './components/Whoops/WhoopsTwo';
 import Home from './components/HomeElements/Home';
 import Footer from './components/Footer/footer';
-
+import { fetchAllInstruments } from './store/instrument';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -20,6 +20,9 @@ function Layout() {
       setIsLoaded(true)
     });
   }, [dispatch]);
+
+  dispatch(fetchAllInstruments());
+
 
   return (
     <div id='app-wrapper'>

@@ -1,0 +1,11 @@
+.guitar-carousel-item{
+    height: 420px;
+    width: 255px;
+    border: solid 1px black;
+}
+
+.carousel-list{
+    display: flex;
+    justify-content: space-between;
+    width: 99.99%
+}
