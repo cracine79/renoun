@@ -27,6 +27,8 @@ class Instrument < ApplicationRecord
                                             "Used - Excellent", 
                                             "Used - Good", 
                                             "Used - Poor"]}
-    
+
+
+    has_one_attached :photo
     
 end

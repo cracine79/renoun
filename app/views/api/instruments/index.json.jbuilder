@@ -11,5 +11,6 @@
         json.updated_at instrument.updated_at
         json.model instrument.model
         json.dude instrument.model
+        json.photo Url instrument.photo.attached? ? instrument.photo.url : nil
     end
 end

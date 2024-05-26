@@ -1,5 +1,5 @@
 
-
+import csrfFetch from "./csrf"
 const RECEIVE_INSTRUMENT = 'instrument/RECEIVE_INSTRUMENT'
 const RECEIVE_INSTRUMENTS = 'instrument/RECEIVE_INSTRUMENTS'
 
