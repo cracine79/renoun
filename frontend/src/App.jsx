@@ -7,6 +7,7 @@ import * as sessionActions from './store/session';
 import FormWrapper from './components/HomeElements/FormWrapper';
 import Whoops from './components/Whoops/Whoops';
 import WhoopsTwo from './components/Whoops/WhoopsTwo';
+import Home from './components/HomeElements/Home';
 
 
 function Layout() {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <h1>Welcome!</h1>
+        element: <Home />
       },
       {
         path: '/whoops',

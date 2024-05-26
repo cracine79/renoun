@@ -19,14 +19,14 @@
     align-items: center;
     display: none;
     justify-content: top;
-    margin-top: -100px;
+    margin-top: -520px;
     margin-bottom: -100px;
     left: 0;
     right: 0;
     width: 100vw;
     padding: 20px;
     z-index: 1;
-    background-color: rgba(128, 128, 128, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     height: 100vh;
     flex-direction: column;
 
