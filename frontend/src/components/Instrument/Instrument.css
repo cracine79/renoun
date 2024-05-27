@@ -90,11 +90,34 @@
     justify-content: center;
 }
 
+#condition-box:hover{
+    cursor:default;
+}
+
+
+
 #condition{
     font-size: 12px;
     color: gray;
     border-bottom: 1px dashed gray;
 }
+
+#condition-explanation{
+    width: 300px;
+    height: 35px;
+    box-shadow: 0px 0px 5px;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: absolute;
+    background-color: white;
+    margin-top: -50px;
+    margin-left: -100px;
+    display: none;
+}
+
+
 
 
 

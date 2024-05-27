@@ -92,8 +92,8 @@ function Navigation(){
         </>
     ) : (
         <>
-                <Link className="userlink" onClick={handleSignup}>Sign Up</Link>
-                <Link className="userlink" onClick={handleLogin}>Log In</Link>
+                <div className="userlink" onClick={handleSignup}>Sign Up</div>
+                <div className="userlink" onClick={handleLogin}>Log In</div>
          
         
 
