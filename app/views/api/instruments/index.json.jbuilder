@@ -10,7 +10,8 @@
         json.created_at instrument.created_at
         json.updated_at instrument.updated_at
         json.model instrument.model
-        json.dude instrument.model
+        json.shipping instrument.shipping
+        json.seller_id instrument.seller_id
         json.photoUrl instrument.photo.attached? ? instrument.photo.url : nil
     end
 end
