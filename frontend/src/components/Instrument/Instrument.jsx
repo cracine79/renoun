@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 const Instrument = () => {
     const instrumentId = 2;
     const instrument = useSelector(state=>(state.instruments[1]))
-    
+    // const seller = useSelector(state=>state.users[instrument.seller_id])
 
     let conditionExplanation = ''
 
@@ -58,7 +58,15 @@ const Instrument = () => {
       const date2 = new Date(instrument.createdAt);
       const diffTime = date2.getTime() - date1.getTime(); 
       const diffDays = Math.floor(Math.abs(diffTime / (1000 * 3600 * 24)));
-     
+      const diffHours = Math.floor(Math.abs(diffTime / (1000 * 3600)))
+      let listedExpl = ''
+
+      if (diffDays<1){
+        listedExpl = `Listed within the past ${diffHours} hours`
+      } else {
+        listedExpl = 'Listed within the past 7 days'
+      }  
+      
       
 
     console.log (instrument.createdAt)
@@ -108,7 +116,7 @@ const Instrument = () => {
                     <div id='recent-wrapper'>
                         <img src='../../assets/images/sparkles.svg'  id='sparkle'/>
                         <span id='recently-listed'>  Recently Listed
-                        <div id='listed-explanation'>Listed within the past 7 days</div>
+                        <div id='listed-explanation'>{listedExpl}</div>
                         </span>
                     </div>
 
@@ -123,6 +131,33 @@ const Instrument = () => {
                             Make an Offer
                         </div>
                     </div>
+                    <div id = 'watch-button'>
+                        <LuHeart /> Watch
+                    </div>
+
+                    <p id='product-background-info'>
+                        <div>
+                            <span className='key'>
+                                Listed: 
+                            </span>
+                            <span className='value'>
+                                 {diffDays} days ago
+                            </span>
+                        </div>
+
+                        <div>
+                            <span className='key'>
+                                Watchers: 
+                            </span>
+                            <span className='value'>
+                                0 
+                            </span>
+                        </div>
+                    </p>
+
+                    <hr id = 'button-bottom' />
+
+
                     
 
 

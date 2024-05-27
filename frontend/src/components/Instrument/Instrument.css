@@ -234,3 +234,61 @@
     font-size: 15px;
     font-weight: 600;
 }
+
+#button-holder{
+    display: flex;
+   align-items: center;
+    justify-content: space-between;
+    width: 530px;
+    margin-top: 12px;
+}
+
+.otherButton{
+    height: 45px;
+    width: 260px;
+    background-color: rgb(215, 215, 215);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+
+}
+
+#watch-button{
+    width: 530px;
+    height: 45px;
+    background-color: rgb(215, 215, 215);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+#product-background-info{
+    font-size: 14px;
+    color: gray;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 530px;
+}
+
+.key{
+    font-weight: 800;
+}
+
+#button-bottom{
+    width: 530px;
+    margin-top: 25px;
+    margin-left: -1px;
+    border-color: rgb(233, 233, 233);
+    border-top: 1px solid #ccc;
+    
+}
+
+
