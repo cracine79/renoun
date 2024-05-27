@@ -2,6 +2,7 @@ class Api::InstrumentsController < ApplicationController
 
     def show
         @instrument = Instrument.find(params[:id])
+    
   
         if @instrument
             render 'api/instruments/show'
@@ -11,7 +12,9 @@ class Api::InstrumentsController < ApplicationController
     end
 
     def index
+  
         @instruments = Instrument.all
+        
         render  'api/instruments/index'
     end
 

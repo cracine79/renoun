@@ -30,6 +30,14 @@
     margin-left: 230px;
 }
 
+.noShadow{
+    box-shadow: none
+}
+
+.withShadow{
+    box-shadow: 0px 0px 9px rgb(213, 213, 213)
+}
+
 #photo{
     width: 760px;
     height: 800px;
@@ -71,11 +79,13 @@
 
 #instrumentInfoBox{
     height: 600px;
-    width: 100%;
+    width: 70%;
 
     padding-left: 25px;
     padding-top: 1px;
     border-radius: 20px;
+    position: sticky;
+    top: 20px;
 
 }
 

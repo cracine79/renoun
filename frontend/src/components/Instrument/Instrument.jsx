@@ -2,15 +2,24 @@
 import { useSelector } from 'react-redux';
 import './Instrument.css'
 import { LuHeart } from "react-icons/lu"
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 
+
 const Instrument = () => {
+    const location = useLocation();
+    const guitarId = location.guitarId;
+   
     const instrumentId = 2;
-    const instrument = useSelector(state=>(state.instruments[1]))
-    // const seller = useSelector(state=>state.users[instrument.seller_id])
+    const instrument = useSelector(state=>(state.instruments[6]))
+    const sellerId = instrument.sellerId
 
     let conditionExplanation = ''
+    const date1 = new Date();
+      const date2 = new Date(instrument.createdAt);
+      const diffTime = date2.getTime() - date1.getTime(); 
+      const diffDays = Math.floor(Math.abs(diffTime / (1000 * 3600 * 24)));
+      const diffHours = Math.floor(Math.abs(diffTime / (1000 * 3600)))
 
     useEffect(()=>{
         const recently = document.getElementById('recent-wrapper');
@@ -19,7 +28,7 @@ const Instrument = () => {
         } else {
           recently.style.display='none';
         };
-    },[])
+    },[diffDays])
 
     if(instrument.condition==='Brand New'){
 
@@ -54,11 +63,7 @@ const Instrument = () => {
 
       const low = Math.floor(instrument.price/11);
     
-      const date1 = new Date();
-      const date2 = new Date(instrument.createdAt);
-      const diffTime = date2.getTime() - date1.getTime(); 
-      const diffDays = Math.floor(Math.abs(diffTime / (1000 * 3600 * 24)));
-      const diffHours = Math.floor(Math.abs(diffTime / (1000 * 3600)))
+  
       let listedExpl = ''
 
       if (diffDays<1){
@@ -66,10 +71,18 @@ const Instrument = () => {
       } else {
         listedExpl = 'Listed within the past 7 days'
       }  
-      
+    
+    window.onscroll = function(){
+        const rightBox = document.getElementById('instrumentInfoBox');
+        if (window.pageYOffset > 100){
+            rightBox.className='withShadow'
+        } else {
+            rightBox.className='noShadow'
+        }
+    }
       
 
-    console.log (instrument.createdAt)
+   
 
     return(
         <>
@@ -100,7 +113,7 @@ const Instrument = () => {
                     <h1 id='title'>{instrument.itemName}</h1>
                     
                     <div id='condition-box'>
-                        <p id='condition'>{instrument.condition}</p>
+                        <div id='condition'>{instrument.condition}</div>
                         <div id='condition-explanation-box'>
                             <p id='condition-explanation'>
                                 {conditionExplanation}
@@ -157,6 +170,8 @@ const Instrument = () => {
 
                     <hr id = 'button-bottom' />
 
+                    <div>{instrument.sellerId}</div>
+
 
                     
 
@@ -165,6 +180,7 @@ const Instrument = () => {
                 </div>
 
             </div>
+      
         </div>
         </>
     )

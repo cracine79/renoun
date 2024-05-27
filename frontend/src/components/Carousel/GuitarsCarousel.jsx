@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
 import './GuitarsCarousel.css'
+import { Link } from "react-router-dom"
 import { LuHeart } from "react-icons/lu"
 
 function GuitarsCarousel(){
@@ -20,7 +21,10 @@ function GuitarsCarousel(){
     <div className='instrumentWrapperWrapper'>
     {guitars.map((guitar)=>{ return(
         <div className='instrumentWrapper'>
-            <ul>
+            <Link to={{
+                pathname: '/instrument',
+                state: 'yay'
+            }}>
                 <div className='like'>
                     <LuHeart /> 
                 </div>
@@ -29,7 +33,7 @@ function GuitarsCarousel(){
                 <li className='condition'>{guitar.condition}</li>
                 <li className='price'>{formatter.format(guitar.price)}</li>
                 
-            </ul>
+            </Link>
         </div>)
     })}
     </div>

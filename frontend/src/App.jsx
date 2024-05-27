@@ -12,6 +12,13 @@ import Footer from './components/Footer/footer';
 import { fetchAllInstruments } from './store/instrument';
 import Instrument from './components/Instrument/Instrument';
 
+function Hello  (){
+  return(
+    <>
+    Hello from hello
+    </>
+  )
+}
 function Layout() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -29,8 +36,10 @@ function Layout() {
     })
   }, [dispatch])
 
-
-
+  // if (!isLoaded || !instrumentsIsLoaded) {
+  //   return <div>Loading...</div>;
+  // }
+ 
   return (
     <div id='app-wrapper'>
      
@@ -45,14 +54,11 @@ function Layout() {
   );
 }
 
-const Dude = ()=> {
-  return(<>
-    <h1>Hello?</h1>
-  </>)
-}
+
 
 const router = createBrowserRouter([
   {
+ 
     element: <Layout />,
     children: [
       {
@@ -60,7 +66,7 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: 'item_page',
+        path: '/instrument',
         element: <Instrument />
       },
       {
@@ -68,13 +74,14 @@ const router = createBrowserRouter([
         element: <Whoops />
       },
       {
-        path: '/instrument',
+        path: '/instruments/:id',
         element: <Instrument />
       },
       {
         path: '/whoopsTwo',
         element: <WhoopsTwo />
-      }
+      } 
+   
     ]
   }
 ]);
