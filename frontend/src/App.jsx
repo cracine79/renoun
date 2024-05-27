@@ -14,6 +14,7 @@ import { fetchAllInstruments } from './store/instrument';
 function Layout() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [instrumentsIsLoaded, setInstrumentsIsLoaded] = useState(false);
 
   useEffect(() => {
     dispatch(sessionActions.restoreSession()).then(() => {
@@ -21,7 +22,12 @@ function Layout() {
     });
   }, [dispatch]);
 
-  dispatch(fetchAllInstruments());
+  useEffect(()=>{
+    dispatch(fetchAllInstruments()).then (()=>{
+      setInstrumentsIsLoaded(true)
+    })
+  }, [dispatch])
+
 
 
   return (
@@ -29,7 +35,7 @@ function Layout() {
      
       <Navigation />
      
-      {isLoaded && <Outlet />}
+      {isLoaded && instrumentsIsLoaded && <Outlet />}
       <FormWrapper />
       <div id='footerWrap'>
         <Footer />

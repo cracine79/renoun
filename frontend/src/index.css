@@ -32,6 +32,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	font-family: inter system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	background-color: rgb(255, 255, 255)
 
 
 }
@@ -61,7 +62,7 @@ table {
 .carousel{
 	width: 1650px;
 	height: 400px;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 	margin-top: 60px;
 }
 
@@ -78,4 +79,25 @@ table {
 	bottom: 0;
 	left: 0;
 	margin-top: 50px;
+}
+
+.like{
+	position: absolute;
+	height: 40px;
+	width: 40px;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 30px;
+	margin-left: 200px;
+	margin-top: 10px;
+	font-size: 20px;
+}
+
+.like:hover{
+	color: red;
+	cursor: pointer;
+	font-size: 21px;
+
 }
