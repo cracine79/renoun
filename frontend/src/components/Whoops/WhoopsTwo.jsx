@@ -34,13 +34,13 @@ const WhoopsTwo = () =>{
 //     } else {
 //         errors = location.state
 //     }
+
     if (errors[0].length>0){
         message = errors
     } else {
         message = errors[0].message.slice(48);
     }
-    console.log(message)
-   
+
     return(
        
         <>

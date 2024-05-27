@@ -10,6 +10,7 @@ import WhoopsTwo from './components/Whoops/WhoopsTwo';
 import Home from './components/HomeElements/Home';
 import Footer from './components/Footer/footer';
 import { fetchAllInstruments } from './store/instrument';
+import Instrument from './components/Instrument/Instrument';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -44,6 +45,12 @@ function Layout() {
   );
 }
 
+const Dude = ()=> {
+  return(<>
+    <h1>Hello?</h1>
+  </>)
+}
+
 const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -53,8 +60,16 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
+        path: 'item_page',
+        element: <Instrument />
+      },
+      {
         path: '/whoops',
         element: <Whoops />
+      },
+      {
+        path: '/instrument',
+        element: <Instrument />
       },
       {
         path: '/whoopsTwo',
