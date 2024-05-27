@@ -22,6 +22,9 @@
 .instrumentImage{
     width: 100%;
     border-radius: 15px;
+    height: 250px;
+    object-fit: cover;
+
 }
 
 .instrumentName{
@@ -70,5 +73,5 @@
 }
 
 .carousel{
-    display: block;
+    display: block
 }

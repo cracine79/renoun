@@ -5,7 +5,7 @@ import { LuHeart } from "react-icons/lu"
 function GuitarsCarousel(){
 
     const guitars = useSelector(state=>Object.values(state.instruments))
-    const firstSix = guitars.slice(0,5)
+
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -18,7 +18,7 @@ function GuitarsCarousel(){
 
     <h2 className='carousel-header'>Recently Viewed</h2>
     <div className='instrumentWrapperWrapper'>
-    {firstSix.map((guitar)=>{ return(
+    {guitars.map((guitar)=>{ return(
         <div className='instrumentWrapper'>
             <ul>
                 <div className='like'>

@@ -106,7 +106,7 @@ require "open-uri"
 
       gibsonSg.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/sg1.webp'), filename: 'sg1.webp')
 
-      Instrument.create!({
+      fenderStrat = Instrument.create!({
         item_name: 'Fender Eric Johnson Stratocaster * Sexy Blonde Bombshell!',
         condition: 'Used - Excellent',
         price: 2500,
@@ -116,9 +116,22 @@ require "open-uri"
         model: 'Eric Johnson Stratocaster'
 
     })
+      fenderStrat.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Fender+Eric+Johnson.webp'), filename: 'fenderStrat.webp')
+
+    gretschStreamliner = Instrument.create!({
+        item_name: 'Gretsch G3166 Historic Streamliner with Gretsch Bucker Pickups',
+        condition: 'Used - Mint',
+        price: 745,
+        description: 'Here’s an axe that will really make you stand out…sonically and visually…rockabilly meets glam! Superior construction (made in the Peerless factory) and hot humbuckers give this thinline hollowbody some major snarl. Pristine condition…I should keep it but debt forces one to make tough choices.',
+        category: 'Guitar',
+        brand: 'Gretsch',
+        model: 'Streamliner'
+    })
+
+    gretschStreamliner.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Gretsch.webp'), filename: 'gretsch.webp')
 
 
-    Instrument.create!({
+    fenderTele = Instrument.create!({
       item_name: 'Fender Player Telecaster',
       condition: 'Used - Excellent',
       price: 538.99,
@@ -128,9 +141,9 @@ require "open-uri"
       model: 'Player Telecaster with Maple Fretboard'
 
   })
+  fenderTele.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Fender+Player+Telecaster.webp'), filename: 'deanZ.webp')
 
-
-  Instrument.create!({
+  deanZ = Instrument.create!({
     item_name: 'Dean Z Select 24 Kahler',
     condition: 'Brand New',
     price: 1229,
@@ -140,9 +153,10 @@ require "open-uri"
     model: 'Z Select 24 Kahler'
 
 })
+deanZ.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Dean+Z.webp'), filename: 'deanZ.webp')
 
 
-Instrument.create!({
+squierStrat = Instrument.create!({
   item_name: 'Fender Squier Stratocaster - Sunburst',
   condition: 'Used - Good',
   price: 159,
@@ -151,6 +165,8 @@ Instrument.create!({
   brand: 'Squier',
 
 })
+
+squierStrat.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Squier+Stratocaster.webp'), filename: 'squierStrat.webp')
 
   
 
