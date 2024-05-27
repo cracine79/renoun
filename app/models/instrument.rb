@@ -30,5 +30,6 @@ class Instrument < ApplicationRecord
 
 
     has_one_attached :photo
+    belongs_to :seller, class_name: :User
     
 end

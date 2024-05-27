@@ -100,7 +100,9 @@ require "open-uri"
           description: 'Solid mahogany body. Mahogany neck. Ebony fretboard. Walnut Finish. Gibson square hardshell case w/purple lining',
           category: 'Guitar',
           brand: 'Gibson',
-          model: 'SG Standard'
+          model: 'SG Standard',
+          shipping: 40,
+          seller_id: 2
 
       })
 
@@ -113,7 +115,9 @@ require "open-uri"
         description: 'I’ve been a full-time music teacher for many decades. This spectacular Eric Johnson Stratocaster comes from my personal collection. I used her throughout my last album, ”Love Hurricane,” on virtually every track. Check out the attached clip to hear this beauty in all her glory! $2,500. No disappointments. She is truly exceptional. Thanks for looking! ',
         category: 'Guitar',
         brand: 'Fender',
-        model: 'Eric Johnson Stratocaster'
+        model: 'Eric Johnson Stratocaster',
+        shipping: 0,
+        seller_id: 3
 
     })
       fenderStrat.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Fender+Eric+Johnson.webp'), filename: 'fenderStrat.webp')
@@ -125,7 +129,9 @@ require "open-uri"
         description: 'Here’s an axe that will really make you stand out…sonically and visually…rockabilly meets glam! Superior construction (made in the Peerless factory) and hot humbuckers give this thinline hollowbody some major snarl. Pristine condition…I should keep it but debt forces one to make tough choices.',
         category: 'Guitar',
         brand: 'Gretsch',
-        model: 'Streamliner'
+        model: 'Streamliner',
+        shipping: 0,
+        seller_id: 3
     })
 
     gretschStreamliner.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Gretsch.webp'), filename: 'gretsch.webp')
@@ -138,7 +144,9 @@ require "open-uri"
       description: '**** USED -EXCELLENT CONDITION CHEAPEST ON REVERB IN THIS CONDITION!!! GET THIS BEFORE ITS GONE ****',
       category: 'Guitar',
       brand: 'Fender',
-      model: 'Player Telecaster with Maple Fretboard'
+      model: 'Player Telecaster with Maple Fretboard',
+      shipping: 20,
+      seller_id: 4
 
   })
   fenderTele.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Fender+Player+Telecaster.webp'), filename: 'deanZ.webp')
@@ -150,7 +158,9 @@ require "open-uri"
     description: 'NEW Dean Z Select 24 Kahler electric guitar in Classic White. This is a NEW A-stock instrument, NOT a "B" or factory second. This instrument is discounted for the blemishing on the back (but nobody will see it except you!)',
     category: 'Guitar',
     brand: 'Dean',
-    model: 'Z Select 24 Kahler'
+    model: 'Z Select 24 Kahler',
+    shipping: 0,
+    seller_id: 5
 
 })
 deanZ.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Dean+Z.webp'), filename: 'deanZ.webp')
@@ -163,6 +173,8 @@ squierStrat = Instrument.create!({
   description: 'Slightly used Sunburst Fender Strat. I only found two slight defects, shown by the photos. One is a small bubble in the gloss finish on the side and the other is a couple indent marks in the back of the neck. Other than those two things, this is in excellent condition. Please message us if you would like any other photos or have questions.',
   category: 'Guitar',
   brand: 'Squier',
+  shipping: 0,
+  seller_id: 5
 
 })
 
