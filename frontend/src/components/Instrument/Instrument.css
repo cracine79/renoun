@@ -362,6 +362,7 @@ color: gray;
     height: 80px;
     background-color: rgb(236, 237, 254);
     border-radius: 15px;
+    margin-bottom: 40px;
 }
 
 #blue-info-box{
@@ -386,4 +387,35 @@ color: gray;
     font-size: 12px;
     margin-top: 5px;
     color: gray;
+}
+
+#buyerProtectionBox{
+    margin-top: 50px;
+    width: 800px;
+    height: 88px;
+    background-color: rgb(236, 237, 254);
+    border-radius: 8px;
+    display: flex;
+}
+
+#blueSkinny{
+    width: 10px;
+    height: 88px;
+    background-color: blue;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+}
+
+#bpText{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.gotYourBack{
+    font-size: 16px;
+    margin-top: 8px;
+    font-weight: 200;
+    line-height: 20px;
+  
 }

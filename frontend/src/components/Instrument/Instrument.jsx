@@ -119,6 +119,18 @@ const Instrument = () => {
 
                 <p className='description'>{instrument.description}</p>
 
+                <div id = 'buyerProtectionBox'>
+                    <div id = 'blueSkinny'>
+                        
+                    </div>
+                    <div id= 'bpText'>
+                        <p className='specKey'>Reverb Buyer Protection</p>
+                        <p className='gotYourBack'>Reverb has your back if your item is lost, damaged, or does not match its description. Simply report any issues within 7 days and we will help you get a full refund.</p>
+                    </div>
+                </div>
+
+
+
                 <h2 className='specs'>Product Specs</h2>
 
                 <div id='listed-wrapper' className='spec-wrapper'>
