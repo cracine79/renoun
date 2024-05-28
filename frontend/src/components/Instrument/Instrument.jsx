@@ -4,6 +4,7 @@ import './Instrument.css'
 import { LuHeart } from "react-icons/lu"
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import Seller from '../Seller/seller';
 
 
 const Instrument = () => {
@@ -11,7 +12,7 @@ const Instrument = () => {
     const guitarId = location.guitarId;
    
     const instrumentId = 2;
-    const instrument = useSelector(state=>(state.instruments[3]))
+    const instrument = useSelector(state=>(state.instruments[4]))
     const sellerId = instrument.sellerId
 
     let conditionExplanation = ''
@@ -38,14 +39,14 @@ const Instrument = () => {
         conditionExplanation = 'Mint items are in essentially new original condition but have been opened or played.';
         conditionSpec = 'Mint (Used)'
     }else if (instrument.condition === 'Used - Excellent'){
-        conditionExplanation = 'Mint items are in essentially new original condition but have been opened or played.';
+        conditionExplanation = 'Excellent items are almost entirely free from blemishes and other visual defects and have been played or used with the utmost care.';
         conditionSpec = 'Excellent (Used)'
     }else if (instrument.condition === 'Used - Good'){
         conditionExplanation = 'Good condition items function properly but may exhibit some wear and tear.'
         conditionSpec = 'Good (Used)'
     }else if (instrument.condition === 'Used - Poor'){
-        conditionExplanation = 'Mint items are in essentially new original condition but have been opened or played.'
-        conditionSpec = 'Mint (Poor)'
+        conditionExplanation = 'Poor condition gear may not work properly but can still perform most functions.'
+        conditionSpec = 'Poor (Used)'
     }else{
         conditionExplanation = 'Oops!  The condition for this instrument is unavailable!'
     }
@@ -172,6 +173,10 @@ const Instrument = () => {
 
                     </div>
                 </div>
+
+                <div id='seller-box'>
+                    <Seller instrument = {instrument} />
+                </div>
          
             </div>
 
@@ -200,9 +205,9 @@ const Instrument = () => {
                         </span>
                     </div>
 
-                    <div id='buyItNow'>
+                    <button id='buyItNow'>
                         Buy It Now
-                    </div>
+                    </button>
                     <div id='button-holder'>
                         <div className='otherButton'>
                             Add to Cart

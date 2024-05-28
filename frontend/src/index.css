@@ -54,8 +54,11 @@ table {
 
 #app-wrapper{
 	/* height: 100vh; */
-	display: flex;
+	display: block;
 	flex-direction: column;
+	position: relative;
+	height: auto;
+	
 }
 
 
@@ -78,6 +81,22 @@ table {
 	background-color: black;
 	bottom: 0;
 	left: 0;
-	margin-top: 350px;
+	margin-top: 150px;
 }
+
+body{
+	position: relative;
+}
+
+#main{
+	margin-bottom: 200px;
+}
+
+#root{
+	display: fle
+}
+
+
+
+
 

@@ -1,0 +1,40 @@
+#seller-wrapper{
+
+
+    height: 800px;
+    width: 800px;
+ 
+}
+
+#shop{
+
+    height: 60px;
+}
+
+#shop-wrap{
+    height: 80px;
+    width: 80px;
+    background-color: rgb(229, 229, 229);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    border: rgb(243, 192, 147) solid 1px;
+}
+
+#seller-dets{
+    display: flex;
+    align-items: center;
+    margin-top: 45px;
+}
+
+#seller-info{
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+.sellerLine{
+    margin-top: 15px;
+    border-color: rgb(233, 233, 233);
+    border-top: 1px solid #ccc;
+}
