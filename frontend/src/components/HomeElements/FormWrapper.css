@@ -20,7 +20,7 @@
     display: none;
     justify-content: top;
 
-    margin-bottom: -100px;
+    top: 0;
     left: 0;
     right: 0;
     width: 100vw;
