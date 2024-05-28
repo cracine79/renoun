@@ -12,6 +12,7 @@ import Home from './components/HomeElements/Home';
 import Footer from './components/Footer/footer';
 import { fetchAllInstruments } from './store/instrument';
 import Instrument from './components/Instrument/Instrument';
+import Cart from './components/Cart/Cart';
 
 
 function Layout() {
@@ -77,7 +78,11 @@ const router = createBrowserRouter([
       {
         path: '/whoopsTwo',
         element: <WhoopsTwo />
-      } 
+      }, 
+      {
+        path: '/cart',
+        element: <Cart />
+      }
    
     ]
   }

@@ -130,7 +130,9 @@ function Navigation(){
                 <div className='iconlink'>
                   <div id='cart-word'>
                     <div id='cart'>
-                    <FiShoppingCart />
+                    <Link to='/cart'>
+                        <FiShoppingCart />
+                    </Link>
                     </div>
                     Cart
                 </div>               
