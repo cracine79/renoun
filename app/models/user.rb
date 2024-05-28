@@ -16,7 +16,7 @@ class User < ApplicationRecord
     has_secure_password 
     
     has_many :instruments_for_sale, foreign_key: :seller_id, class_name: :Instrument
-    has_one :cart, foreign_key: :buyer_id
+    has_many :carts, foreign_key: :buyer_id
     has_many :items_in_cart, through: :cart, source: :instrument
    
 

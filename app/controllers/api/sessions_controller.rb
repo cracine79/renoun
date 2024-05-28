@@ -1,8 +1,8 @@
 class Api::SessionsController < ApplicationController
   def show
 
-
-    @user = current_user
+    @user = current_user;
+    @cart = @user.carts
 
     if @user
       render 'api/users/show'
@@ -17,10 +17,13 @@ class Api::SessionsController < ApplicationController
     email = params[:email]
     password = params[:password]
 
-
-    @user = User.find_by_credentials(email, password)
     
+    @user = User.find_by_credentials(email, password)
+
+
     if @user
+      id = @user.id
+      @cart_items = Cart.where({buyer_id: id})
       login!(@user)
       render 'api/users/show'
     else

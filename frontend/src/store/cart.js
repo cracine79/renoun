@@ -12,9 +12,9 @@ export const receiveCartItem = cart => ({
     cart
 })
 
-export const receiveCartItems = carts => ({
+export const receiveCartItems = cart => ({
     type: RECEIVE_CART_ITEMS,
-    carts
+    cart
 })
 
  export const deleteCartItem = cartId =>{
@@ -63,7 +63,7 @@ export const cartsReducer = (state = {}, action) => {
             nextState[action.cart.id] = action.cart
             return nextState;
         case RECEIVE_CART_ITEMS:
-            return {...nextState, ...action.carts};
+            return {...nextState, ...action.cart};
         case REMOVE_CART_ITEM:
             delete nextState[action.cartId];
             return nextState;

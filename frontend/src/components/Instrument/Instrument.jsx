@@ -8,6 +8,7 @@ import Seller from '../Seller/seller';
 import InstrumentReviews from '../InstrumentReviews/InstrumentReviews';
 import { useDispatch } from "react-redux";
 import { createCartItem } from "../../store/cart";
+import { useState } from "react";
 
 
 const Instrument = () => {
@@ -25,6 +26,7 @@ const Instrument = () => {
     const signupForm = document.getElementById('signup-form-wrapper')
     const signupSquare = document.getElementById('signup-mnw')
     const loginSquare = document.getElementById('login-mnw')
+    const [errors, setErrors] = useState();
     
 
     let conditionExplanation = ''
@@ -108,6 +110,8 @@ const Instrument = () => {
                 } else {
                     setErrors([res.statusText]);
                 }
+                console.log(errors)
+
             }
         
         } else {
