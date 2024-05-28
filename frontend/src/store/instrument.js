@@ -15,8 +15,11 @@ export const receiveInstruments = instruments => ({
 })
 
 export const fetchAllInstruments = () => async dispatch => {
-    const res = await csrfFetch('api/instruments');
+
+    const res = await csrfFetch('/api/instruments');
+  
     const data = await res.json();
+
     dispatch(receiveInstruments(data))
 }
 

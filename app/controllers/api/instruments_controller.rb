@@ -12,9 +12,9 @@ class Api::InstrumentsController < ApplicationController
     end
 
     def index
-  
+
         @instruments = Instrument.all
-        
+
         render  'api/instruments/index'
     end
 

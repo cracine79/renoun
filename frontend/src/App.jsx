@@ -12,17 +12,17 @@ import Footer from './components/Footer/footer';
 import { fetchAllInstruments } from './store/instrument';
 import Instrument from './components/Instrument/Instrument';
 
-function Hello  (){
-  return(
-    <>
-    Hello from hello
-    </>
-  )
-}
+
 function Layout() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   const [instrumentsIsLoaded, setInstrumentsIsLoaded] = useState(false);
+
+  useEffect(()=>{
+    dispatch(fetchAllInstruments()).then (()=>{
+      setInstrumentsIsLoaded(true)
+    })
+  }, [dispatch])
 
   useEffect(() => {
     dispatch(sessionActions.restoreSession()).then(() => {
@@ -30,11 +30,7 @@ function Layout() {
     });
   }, [dispatch]);
 
-  useEffect(()=>{
-    dispatch(fetchAllInstruments()).then (()=>{
-      setInstrumentsIsLoaded(true)
-    })
-  }, [dispatch])
+
 
   // if (!isLoaded || !instrumentsIsLoaded) {
   //   return <div>Loading...</div>;

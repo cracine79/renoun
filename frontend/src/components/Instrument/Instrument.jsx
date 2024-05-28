@@ -1,18 +1,18 @@
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import './Instrument.css'
 import { LuHeart } from "react-icons/lu"
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import Seller from '../Seller/seller';
+import InstrumentReviews from '../InstrumentReviews/InstrumentReviews';
 
 
 const Instrument = () => {
-    const location = useLocation();
-    const guitarId = location.guitarId;
+
    
-    const instrumentId = 2;
-    const instrument = useSelector(state=>(state.instruments[4]))
+    const { id } = useParams();
+    const instrument = useSelector(state=>(state.instruments[id]))
     const sellerId = instrument.sellerId
 
     let conditionExplanation = ''
@@ -29,7 +29,7 @@ const Instrument = () => {
           recently.style.display='flex';
         } else {
           recently.style.display='none';
-        };
+        }
     },[diffDays])
 
     if(instrument.condition==='Brand New'){
@@ -177,6 +177,11 @@ const Instrument = () => {
                 <div id='seller-box'>
                     <Seller instrument = {instrument} />
                 </div>
+
+                <div id='instrument-reviews-box'>
+                    <InstrumentReviews />
+                 
+                </div>
          
             </div>
 
@@ -242,7 +247,7 @@ const Instrument = () => {
 
                     <hr id = 'button-bottom' />
 
-                    <div>Seller ID: {instrument.sellerId}</div>
+                    <div>Seller ID: {sellerId}</div>
 
 
                     

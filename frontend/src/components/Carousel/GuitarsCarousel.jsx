@@ -21,7 +21,7 @@ function GuitarsCarousel(){
     <div className='instrumentWrapperWrapper'>
     {guitars.map((guitar)=>{ return(
         <div className='thumb-instrumentWrapper'>
-            <Link className='thumb-link' to='/instrument'>
+            <Link className='thumb-link' to={`/instruments/${guitar.id}`}>
                 <div className='like'>
                     <LuHeart /> 
                 </div>

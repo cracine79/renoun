@@ -456,7 +456,7 @@ color: gray;
 
 #sell-yours-text{
     width: 603px;
-    height: 400px;
+    height: auto;
 
     background-color: rgb(255, 239, 229);
     position: float;
@@ -485,3 +485,6 @@ color: gray;
     padding-right: 40px;
 }
 
+#instrument-reviews-box{
+    margin-top: 100px;
+}
