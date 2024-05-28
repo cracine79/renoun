@@ -23,9 +23,7 @@
 
 #logo {
     height: 40px;
-    padding-left: 10px;
-    margin-right: -100px;
-}
+    }
 
 #sell-button {
     background-color: white;
@@ -210,4 +208,14 @@
 
   .dropdown-link:hover{
     color:orange;
+  }
+
+  #logo-link{
+    margin-right: -100px;
+    height: 40px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 100px;
   }

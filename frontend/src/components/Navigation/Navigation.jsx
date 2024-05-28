@@ -6,6 +6,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { BsSearch } from "react-icons/bs";
 import { PiUserCircleFill } from "react-icons/pi";
 import Renoun from '../../../assets/images/Renoun.png'
+import { Link } from "react-router-dom";
 
 
 
@@ -104,7 +105,7 @@ function Navigation(){
     return (
         <>
         <div className="header_main">
-            <img id='logo' src={Renoun}></img>
+            <Link id='logo-link' to='/'><img id='logo' src={Renoun}/></Link>
             <div id='searchWrapper'>
                 <input type='text' id='searchbar' value="Shop for used & new music gear" />
                 <div id='searchButton'>
