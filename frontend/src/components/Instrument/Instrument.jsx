@@ -6,14 +6,26 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import Seller from '../Seller/seller';
 import InstrumentReviews from '../InstrumentReviews/InstrumentReviews';
+import { useDispatch } from "react-redux";
+import { createCartItem } from "../../store/cart";
 
 
 const Instrument = () => {
 
-   
+    
     const { id } = useParams();
     const instrument = useSelector(state=>(state.instruments[id]))
     const sellerId = instrument.sellerId
+    const currentUser = useSelector(state=>(state.session.user))
+    const dispatch = useDispatch();
+    const modal= document.getElementById('wrapper-wrapper');
+    const loginNav = document.getElementById('log-in-nav');
+    const signupNav = document.getElementById('sign-up-nav')
+    const loginForm = document.getElementById('login-form-wrapper')
+    const signupForm = document.getElementById('signup-form-wrapper')
+    const signupSquare = document.getElementById('signup-mnw')
+    const loginSquare = document.getElementById('login-mnw')
+    
 
     let conditionExplanation = ''
     let conditionSpec = ''
@@ -52,35 +64,77 @@ const Instrument = () => {
     }
 
 
+
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
         //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
         maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
-      });
+    });
 
-      let shipping = ''
-      if (instrument.shipping === 0){
-        shipping = "+ FREE Shipping"
+    let shipping = ''
+    if (instrument.shipping === 0){
+    shipping = "+ FREE Shipping"
+    } else {
+    shipping = `+ $${instrument.shipping} Shipping`
+    }
 
-      } else {
-        shipping = `+ $${instrument.shipping} Shipping`
- 
-      }
-
-      const low = Math.floor(instrument.price/11);
+    const low = Math.floor(instrument.price/11);
     
-  
-      let listedExpl = ''
-      let specListedExpl = ''
+    const handleAddToCart = async (e) => {
+        e.preventDefault();
 
-      if (diffDays<1){
-        listedExpl = `Listed within the past ${diffHours} hours`;
-        specListedExpl = `${diffHours} hours ago`
-      } else {
-        listedExpl = 'Listed within the past 7 days'
-        specListedExpl = `${diffDays} days ago`
-      }  
+        if (currentUser){
+            const cart = {
+                instrument_id: id,
+                buyer_id: currentUser.id
+            }
+            
+            try { 
+                await dispatch(createCartItem(cart));
+                // Navigate('/cart')
+            } catch (res){
+                let data;
+                try {
+                    data = await res.clone().json();
+                } catch {
+                    data = await res.text();
+                }
+    
+                if (data?.errors) {
+                    setErrors(data.errors);
+                } else if (data) {
+                    setErrors([data]);
+                } else {
+                    setErrors([res.statusText]);
+                }
+            }
+        
+        } else {
+            modal.style.display='flex'
+            modal.className='login'
+            loginNav.className='active'
+            signupNav.className='inactive'
+            loginForm.style.display='flex'
+            signupForm.style.display='none'
+         
+            loginSquare.className='active-menu-nav-wrapper'
+            signupSquare.className='passive-menu-nav-wrapper'
+        }
+
+
+    }
+
+    let listedExpl = ''
+    let specListedExpl = ''
+
+    if (diffDays<1){
+    listedExpl = `Listed within the past ${diffHours} hours`;
+    specListedExpl = `${diffHours} hours ago`
+    } else {
+    listedExpl = 'Listed within the past 7 days'
+    specListedExpl = `${diffDays} days ago`
+    }  
     
     window.onscroll = function(){
         const rightBox = document.getElementById('instrumentInfoBox');
@@ -91,6 +145,7 @@ const Instrument = () => {
         }
     }
       
+
 
    
 
@@ -214,9 +269,9 @@ const Instrument = () => {
                         Buy It Now
                     </button>
                     <div id='button-holder'>
-                        <div className='otherButton'>
+                        <button className='otherButton' id='add-to-cart' onClick={handleAddToCart}>
                             Add to Cart
-                        </div>
+                        </button>
                         <div className='otherButton'>
                             Make an Offer
                         </div>
