@@ -3,9 +3,13 @@ import csrfFetch from './csrf'
 
 const RECEIVE_CART_ITEMS = 'cart/RECEIVE_CART_ITEMS'
 const RECEIVE_CART_ITEM = 'cart/RECEIVE_CART_ITEM'
-const REMOVE_CART_ITEM = 'cart/REMVE_CART_ITEM'
+const REMOVE_CART_ITEM = 'cart/REMOVE_CART_ITEM'
+const CLEAR_CART = 'cart/CLEAR_CART'
 
 
+export const clearCart = cart => ({
+    type: CLEAR_CART,
+})
 
 export const receiveCartItem = cart => ({
     type: RECEIVE_CART_ITEM,
@@ -67,8 +71,10 @@ export const cartsReducer = (state = {}, action) => {
         case REMOVE_CART_ITEM:
             delete nextState[action.cartId];
             return nextState;
+        case CLEAR_CART:
+            return {};
         default:
-            return state;s
+            return state;
     }
 }
 

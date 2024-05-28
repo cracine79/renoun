@@ -2,9 +2,10 @@ class Api::SessionsController < ApplicationController
   def show
 
     @user = current_user;
-    @cart = @user.carts
+
 
     if @user
+      @cart = @user.carts
       render 'api/users/show'
     else
 
@@ -22,8 +23,8 @@ class Api::SessionsController < ApplicationController
 
 
     if @user
+      @cart = @user.carts
       id = @user.id
-      @cart_items = Cart.where({buyer_id: id})
       login!(@user)
       render 'api/users/show'
     else

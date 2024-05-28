@@ -7,7 +7,7 @@ import { BsSearch } from "react-icons/bs";
 import { PiUserCircleFill } from "react-icons/pi";
 import Renoun from '../../../assets/images/Renoun.png'
 import { Link } from "react-router-dom";
-
+import { clearCart } from "../../store/cart";
 
 
 
@@ -29,6 +29,7 @@ function Navigation(){
 
     const handleClick = ((e) => {
         e.preventDefault();
+        dispatch(clearCart())
         return dispatch(sessionActions.logout())
       });
 
