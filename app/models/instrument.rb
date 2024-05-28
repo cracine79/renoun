@@ -12,6 +12,8 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  model       :string
+#  shipping    :float
+#  seller_id   :bigint
 #
 class Instrument < ApplicationRecord
     validates :item_name, presence: true
@@ -31,5 +33,5 @@ class Instrument < ApplicationRecord
 
     has_one_attached :photo
     belongs_to :seller, class_name: :User
-    
+    has_many :carts
 end
