@@ -302,3 +302,52 @@
 }
 
 
+.aboutThisListing{
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+.description{
+    margin-top: 50px;
+}
+
+.specs{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 40px;
+}
+
+.spec-wrapper{
+    display: flex;
+}
+
+#listed-wrapper{
+    margin-top: 30px;
+}
+
+.specKey{
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.spekValue{
+    position: absolute;
+    margin-left: 200px;
+}
+
+.spec-wrapper{
+    margin-top: 18px;
+    
+}
+
+#condition-expl-wrapper{
+    margin-left: -74px;
+}
+
+#condition-spec-expl{
+margin-top: 30px;
+margin-left: 200px;
+font-size: 14px;
+color: gray;
+}

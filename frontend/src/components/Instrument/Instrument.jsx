@@ -11,10 +11,11 @@ const Instrument = () => {
     const guitarId = location.guitarId;
    
     const instrumentId = 2;
-    const instrument = useSelector(state=>(state.instruments[6]))
+    const instrument = useSelector(state=>(state.instruments[3]))
     const sellerId = instrument.sellerId
 
     let conditionExplanation = ''
+    let conditionSpec = ''
     const date1 = new Date();
       const date2 = new Date(instrument.createdAt);
       const diffTime = date2.getTime() - date1.getTime(); 
@@ -31,15 +32,20 @@ const Instrument = () => {
     },[diffDays])
 
     if(instrument.condition==='Brand New'){
-
+        conditionExplanation = 'Brand New items are sold by an authorized dealer or original builder and include all original packaging.',
+        conditionSpec = 'Brand New'
     } else if (instrument.condition==='Used - Mint'){
-        conditionExplanation = 'Mint items are in essentially new original condition but have been opened or played.'
+        conditionExplanation = 'Mint items are in essentially new original condition but have been opened or played.';
+        conditionSpec = 'Mint (Used)'
     }else if (instrument.condition === 'Used - Excellent'){
-        conditionExplanation = 'Mint items are in essentially new original condition but have been opened or played.'
+        conditionExplanation = 'Mint items are in essentially new original condition but have been opened or played.';
+        conditionSpec = 'Excellent (Used)'
     }else if (instrument.condition === 'Used - Good'){
         conditionExplanation = 'Good condition items function properly but may exhibit some wear and tear.'
+        conditionSpec = 'Good (Used)'
     }else if (instrument.condition === 'Used - Poor'){
         conditionExplanation = 'Mint items are in essentially new original condition but have been opened or played.'
+        conditionSpec = 'Mint (Poor)'
     }else{
         conditionExplanation = 'Oops!  The condition for this instrument is unavailable!'
     }
@@ -65,11 +71,14 @@ const Instrument = () => {
     
   
       let listedExpl = ''
+      let specListedExpl = ''
 
       if (diffDays<1){
-        listedExpl = `Listed within the past ${diffHours} hours`
+        listedExpl = `Listed within the past ${diffHours} hours`;
+        specListedExpl = `${diffHours} hours ago`
       } else {
         listedExpl = 'Listed within the past 7 days'
+        specListedExpl = `${diffDays} days ago`
       }  
     
     window.onscroll = function(){
@@ -105,6 +114,34 @@ const Instrument = () => {
                              <LuHeart /> 
                      </div>
                 </div>
+
+                <h1 className='aboutThisListing'> About This Listing</h1>
+
+                <p className='description'>{instrument.description}</p>
+
+                <h2 className='specs'>Product Specs</h2>
+
+                <div id='listed-wrapper' className='spec-wrapper'>
+                    <p className = 'specKey'> Listed</p>
+                    <p className = 'spekValue'> {specListedExpl}</p>
+                </div>
+                <div id='condition-wrapper' className='spec-wrapper'>
+                    <p className = 'specKey'>Condition</p>
+                    <div id='condition-expl-wrapper'>    
+                        <p className = 'spekValue'>{conditionSpec}</p>
+                        <p id='condition-spec-expl'>{conditionExplanation}</p>
+                    </div>
+
+                </div>
+                <div id='brand-wrapper' className='spec-wrapper'>
+                    <p className = 'specKey'>Brand</p>
+                    <p className = 'spekValue'>{instrument.brand}</p>
+                </div>
+                <div id='model-wrapper' className='spec-wrapper'>
+                 <p className = 'specKey'>Model</p>
+                    <p className = 'spekValue'>{instrument.model}</p>
+                </div>
+                
          
             </div>
 
@@ -154,7 +191,7 @@ const Instrument = () => {
                                 Listed: 
                             </span>
                             <span className='value'>
-                                 {diffDays} days ago
+                                 {specListedExpl}
                             </span>
                         </div>
 
@@ -170,7 +207,7 @@ const Instrument = () => {
 
                     <hr id = 'button-bottom' />
 
-                    <div>{instrument.sellerId}</div>
+                    <div>Seller ID: {instrument.sellerId}</div>
 
 
                     
