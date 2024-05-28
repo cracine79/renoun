@@ -24,7 +24,7 @@ const WhoopsTwo = () =>{
    
    
 //    if(location.state){
-//     debugger;
+
    
 //         errors = data.message
 //     } else if (location.state.errors.message){

@@ -12,4 +12,7 @@ Rails.application.routes.draw do
     resources :instruments, only: [:show, :create, :destroy, :update, :index]
     resources :carts, only: [:index, :create, :destroy]
   end
+
+  get '*path', to: "static_pages#frontend_index"
+
 end

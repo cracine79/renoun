@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: renoun_production
-  username: renoun
-  password: <%= ENV["RENOUN_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
