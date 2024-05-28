@@ -12,10 +12,10 @@ export const receiveCartItem = cart => ({
     cart
 })
 
-export const receiveCartItems = carts => {
-    type: RECIEVE_CART_ITEMS,
+export const receiveCartItems = carts => ({
+    type: RECEIVE_CART_ITEMS,
     carts
-}
+})
 
  export const deleteCartItem = cartId =>{
     type: REMOVE_CART_ITEM
