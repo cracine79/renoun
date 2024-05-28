@@ -142,6 +142,24 @@ const Instrument = () => {
                     <p className = 'spekValue'>{instrument.model}</p>
                 </div>
                 
+                <div id='blue-info-box'>
+                    <div className='blue-sub-box'>
+                        <img className='blueIcon' src='../../assets/images/trust_shield_icon.svg' />
+                        <div className='subSubBox'>
+                            <p className='specKey'>Reverb Protection</p>
+                            <p className='reverb-reassure'>Simple Returns, Secure Transactions, Human Support</p>
+                        </div>
+
+                    </div>
+                    <div className='blue-sub-box'>
+                        <img className='blueIcon' src='../../assets/images/padlock-icon.svg' />
+                        <div className='subSubBox'>
+                            <p className='specKey'>Secure Checkout</p>
+                            <p className='reverb-reassure'>Simple Returns, Secure Transactions, Human Support</p>
+                        </div>
+
+                    </div>
+                </div>
          
             </div>
 

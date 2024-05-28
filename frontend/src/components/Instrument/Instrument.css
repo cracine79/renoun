@@ -310,6 +310,9 @@
 
 .description{
     margin-top: 50px;
+    line-height: 24px;
+
+  
 }
 
 .specs{
@@ -334,6 +337,7 @@
 .spekValue{
     position: absolute;
     margin-left: 200px;
+
 }
 
 .spec-wrapper{
@@ -350,4 +354,36 @@ margin-top: 30px;
 margin-left: 200px;
 font-size: 14px;
 color: gray;
+}
+
+#blue-info-box{
+    margin-top: 50px;
+    width: 800px;
+    height: 80px;
+    background-color: rgb(236, 237, 254);
+    border-radius: 15px;
+}
+
+#blue-info-box{
+    display: flex;
+}
+
+.blue-sub-box{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.blueIcon{
+    height: 30px;
+}
+
+.subSubBox{
+    padding: 20px;
+}
+
+.reverb-reassure{
+    font-size: 12px;
+    margin-top: 5px;
+    color: gray;
 }
