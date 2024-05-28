@@ -6,6 +6,7 @@ import './index.css';
 import configureStore from './store';
 import csrfFetch, { restoreCSRF } from './store/csrf';
 import * as sessionActions from './store/session';
+import * as cartActions from './store/cart';
 import { redirect } from 'react-router-dom';
 import * as instrumentActions from './store/instrument'
 
@@ -19,6 +20,7 @@ if (import.meta.env.MODE !== "production") {
   window.sessionActions = sessionActions;
   window.redirect = redirect;
   window.instrumentActions = instrumentActions;
+  window.cartActions = cartActions;
 
 }
 
