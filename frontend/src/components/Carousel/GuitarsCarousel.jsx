@@ -20,18 +20,17 @@ function GuitarsCarousel(){
     <h2 className='carousel-header'>Recently Viewed</h2>
     <div className='instrumentWrapperWrapper'>
     {guitars.map((guitar)=>{ return(
-        <div className='instrumentWrapper'>
-            <Link to={{
-                pathname: '/instrument',
-                state: 'yay'
-            }}>
+        <div className='thumb-instrumentWrapper'>
+            <Link className='thumb-link' to='/instrument'>
                 <div className='like'>
                     <LuHeart /> 
                 </div>
-                <img className='instrumentImage' src={guitar.photoUrl} />
-                <li className='instrumentName'>{guitar.itemName}</li>
-                <li className='condition'>{guitar.condition}</li>
-                <li className='price'>{formatter.format(guitar.price)}</li>
+                <ul id='thumb-dets'>
+                    <img className='thumb-instrumentImage' src={guitar.photoUrl} />
+                    <div className='thumb-instrumentName'>{guitar.itemName}</div>
+                    <li className='thumb-condition'>{guitar.condition}</li>
+                    <li className='thumb-price'>{formatter.format(guitar.price)}</li>
+                </ul>
                 
             </Link>
         </div>)
