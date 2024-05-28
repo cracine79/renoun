@@ -1,14 +1,16 @@
 
 
 .thumb-instrumentWrapper{
-    width: 250px;
+    width: 270px;
     height: 373px;
     border-radius: 15px;
+  
 }
 
 #thumb-dets li{
     list-style: none;
     color: black;
+    
 }
 
 .thumb-instrumentWrapper:hover{
@@ -27,13 +29,21 @@
 .thumb-link{
     text-decoration: none;
     color: black;
+    margin-top: 10px;
+ 
 }
 .thumb-instrumentImage{
-    width: 100%;
+    width: 250px;;
     border-radius: 15px;
     height: 250px;
     object-fit: cover;
+    margin-left: 12px;
+    margin-top: 12px;
 
+}
+
+.words-wrap{
+    margin-left: 12px;
 }
 
 .thumb-instrumentName{

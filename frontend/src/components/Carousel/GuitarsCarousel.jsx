@@ -27,9 +27,11 @@ function GuitarsCarousel(){
                 </div>
                 <ul id='thumb-dets'>
                     <img className='thumb-instrumentImage' src={guitar.photoUrl} />
-                    <div className='thumb-instrumentName'>{guitar.itemName}</div>
-                    <li className='thumb-condition'>{guitar.condition}</li>
-                    <li className='thumb-price'>{formatter.format(guitar.price)}</li>
+                    <div className='words-wrap'>
+                        <div className='thumb-instrumentName'>{guitar.itemName}</div>
+                        <li className='thumb-condition'>{guitar.condition}</li>
+                        <li className='thumb-price'>{formatter.format(guitar.price)}</li>
+                    </div>
                 </ul>
                 
             </Link>
