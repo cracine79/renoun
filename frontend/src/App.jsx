@@ -46,10 +46,10 @@ function Layout() {
       <Navigation />
      
       {isLoaded && instrumentsIsLoaded && <Outlet />}
-      <FormWrapper />
-      <div id='footerWrap'>
-        <Footer />
-      </div>
+       <FormWrapper />
+        <div id='footerWrap'>
+          <Footer />
+        </div>
     </ div>
   );
 }

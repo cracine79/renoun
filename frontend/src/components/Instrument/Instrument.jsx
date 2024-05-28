@@ -251,6 +251,17 @@ const Instrument = () => {
 
                 </div>
 
+               
+            </div>
+            <div id='sell-yours-top'></div>
+            <div id='sell-yours-text'> 
+                <div id='sell-text-wrapper'>
+                    <h1 id ='sell-title' >Want to Sell Yours?</h1>
+                    <p className = 'sellBody' >Anyone can sell on Reverb. List your Fender Player Telecaster today to get in front of thousands of eyse, quickly and easily.</p>
+                </div>
+            </div>
+            <div id='sell-yours'>
+               
             </div>
       
         </div>
