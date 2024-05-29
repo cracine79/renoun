@@ -238,21 +238,18 @@
 }
 
 #item-count{
-    position: fixed;
+    position: absolute;
     width: 15px;
     height: 15px;
     background-color: orangered;
     margin-left: 13px;
-   margin-top: -35px;
+   margin-top: -37px;
    display: flex;
    border-radius: 2px;
- 
-}
-
-#item-count{
-    color: white;
+   color: white;
     font-size: 14px;
     display: none;
     align-items: center;
     justify-content: center;
 }
+
