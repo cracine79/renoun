@@ -1,12 +1,13 @@
 .item-wrapper{
 
     height: 200px;
-    width: 96%;
+    width: 1200px;
 
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
+    margin-left: 20px;
     
 }
 
@@ -91,12 +92,14 @@ width: 150px;
 display: block;
 flex-direction: column;
 text-align: right;
+margin-right: -60px;
 }
 
 .cart-item-price{
     font-size: 18px;
     font-weight: 400;
     line-height: 22px;
+    margin-top: 15px;
 }
 
 .cart-item-shipping{
@@ -140,7 +143,7 @@ text-align: right;
 }
 
 #cart-items-only-wrapper{
-    width: auto;
+    width: 1210px;
 
     
     flex-direction: column;
@@ -149,12 +152,93 @@ text-align: right;
 
 
 
-#help{
+#middle-wrapper{
     height: auto;
-    width: auto;
+    width: 2110px;;
   
     width: 1000px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+#price-box-wrapper{
+    height: 210px;
+    width: 100%;
+    background-color: rgb(241, 241, 241);
+    position: float;
+    
+    margin-bottom: -15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 1px solid rgb(218, 218, 218);
+    margin-top: 10px;
+    position: relative;
+}
+
+#total{
+    color: gray;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 24px;
+    margin-right: 35px;
+    margin-top: 7px;
+}
+
+.dollars{
+    font-weight: 700;
+    color: black;
+
+ 
+}
+
+#price-box-wrapper{
+    text-align: right;
+    padding-top: 15px;
+    
+    
+}
+
+#affirm-total{
+    margin-right: 35px;
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: 100;
+}
+
+#monthly-price{
+    font-weight: 700;
+}
+
+#affirm-name{
+    font-weight: 700;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+
+#proceed-to-checkout{
+    width: 275px;
+    height: 50px;
+    margin-right: 25px;
+    background-color: black;
+    color:white;
+    border-radius: 25px;
+    margin-top: 30px;
+    font-size: 17px;
+    font-weight: 800;
+    display: inline;
+    flex-direction: row;
+    
+}
+
+#arrow-wrapper{
+    
+    position: absolute;
+    margin-top: -19px;
+    margin-left: 220px;
+}
+
+#proceed-words{
+    margin-right: 15px;
+    font-size: 18px;
 }

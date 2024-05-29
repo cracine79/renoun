@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { IoMdHeart } from "react-icons/io";
 import { RiCloseLine } from "react-icons/ri";
 import { formatter } from '../Carousel/GuitarsCarousel';
+import { FaArrowRight } from "react-icons/fa";
 
 
 function CartItem(){
@@ -15,13 +16,20 @@ function CartItem(){
             const instrument = useSelector(state=>state.instruments[identifier])
             instruments.push(instrument)
         })
+
+        let itemsTotal = 0;
+
+        instruments.forEach((instrument)=>{
+            itemsTotal += instrument.price;
+            itemsTotal += instrument.shipping;
+        })
         
      
             return ( 
                 <>
                 <div id='cart-items-only-wrapper'>
                 {instruments.map((instrument)=> { return (
-                    <div id='help'>
+                    <div id='middle-wrapper'>
                             <div className='item-wrapper'>
                               
                                 <img className = 'cart-pic' src={instrument.photoUrl} />
@@ -51,6 +59,7 @@ function CartItem(){
                                     <div className='tax-explanation'>
                                         <p id='tax-words'>Tax may be applied during checkout</p>
                                     </div> </p>
+                                  
                                     
                                 </div>
                          
@@ -60,6 +69,12 @@ function CartItem(){
            
             
             }
+
+            <div id='price-box-wrapper'>
+             <p id='total'>Item + Shipping Subtotal <span className='dollars'>{formatter.format(itemsTotal)}</span></p>
+             <p id='affirm-total'> As low as <span id='monthly-price'>{formatter.format(itemsTotal/24)}/month</span> with<span id='affirm-name'> affirm</span></p>
+             <button id='proceed-to-checkout'> <span id='proceed-words'>Proceed to Checkout </span>   <div id='arrow-wrapper'> <FaArrowRight /></div></button>
+            </div>
             </div>
                  </>)
         
