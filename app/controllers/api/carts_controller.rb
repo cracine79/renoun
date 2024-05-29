@@ -6,7 +6,7 @@ class Api::CartsController < ApplicationController
     end
 
     def destroy
-        debugger;
+
         @cart = Cart.find(params[:id]);
        
         if @cart.destroy

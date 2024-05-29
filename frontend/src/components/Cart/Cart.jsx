@@ -13,9 +13,11 @@ function Cart(){
    
     
     const cart = useSelector(state=>Object.values(state.carts))
+   
     let length = cart.length;
 
     useEffect(()=>{
+        debugger;
         const emptyCart = document.getElementById('empty-cart-wrapper')
         const fullCart =document.getElementById('full-cart-wrapper')
         if(length===0){
