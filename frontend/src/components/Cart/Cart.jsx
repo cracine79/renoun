@@ -18,10 +18,12 @@ function Cart(){
     const cart = useSelector(state => Object.values(state.carts));
     const currentUserId = useSelector(state => state.session.user.id)
     const instrumentsState = useSelector(state => state.instruments);
-    const [isCartEmpty, setIsCartEmpty] = useState(false);
     const [totalAmount, setTotalAmount] = useState(0);
     const [itemNumbers, setItemNumbers] = useState(0)
     const dispatch = useDispatch();
+
+   
+    
 
     
     useEffect(()=>{
@@ -41,6 +43,27 @@ function Cart(){
         setItemNumbers(cart.length)
   
         dispatch(fetchUserCart(currentUserId))
+
+  
+        const instrumentsArray = [];
+
+        cart.forEach((item)=>{
+            instrumentsArray.push(instrumentsState[item.instrumentId])
+        })
+    
+        let total = 0;
+    
+        instrumentsArray.forEach((item)=>{
+            debugger;
+            if (item){
+            total += item.price;
+            
+            
+            total += item.shipping
+            }
+        })
+        setTotalAmount(total)
+    
       
 
     
@@ -114,7 +137,7 @@ function Cart(){
                           <div id='price-box-wrapper'>
                                 <p id='total'>Item + Shipping Subtotal <span className='dollars'>{formatter.format(totalAmount)}</span></p>
                                 <p id='affirm-total'> As low as <span id='monthly-price'>{`${formatter.format(totalAmount / 24)}/month`}</span> with<span id='affirm-name'> affirm</span></p>
-                                <button id='proceed-to-checkout'> <span id='proceed-words'>Proceed to Checkout </span>   <div id='arrow-wrapper'> <FaArrowRight /></div></button>
+                           <Link to='/checkout' id='proceed-to-checkout'> <span id='proceed-words'>Proceed to Checkout </span>   <div id='arrow-wrapper'> <FaArrowRight /></div></Link>
                          </div>
                     </div>
 

@@ -199,12 +199,7 @@ margin-right: -60px;
     
 }
 
-#affirm-total{
-    margin-right: 35px;
-    font-size: 15px;
-    margin-top: 20px;
-    font-weight: 100;
-}
+
 
 #monthly-price{
     font-weight: 700;
@@ -216,29 +211,6 @@ margin-right: -60px;
     font-size: 15px;
 }
 
-#proceed-to-checkout{
-    width: 275px;
-    height: 50px;
-    margin-right: 25px;
-    background-color: black;
-    color:white;
-    border-radius: 25px;
-    margin-top: 30px;
-    font-size: 17px;
-    font-weight: 800;
-    display: inline;
-    flex-direction: row;
-    
-}
 
-#arrow-wrapper{
-    
-    position: absolute;
-    margin-top: -19px;
-    margin-left: 220px;
-}
 
-#proceed-words{
-    margin-right: 15px;
-    font-size: 18px;
-}
+

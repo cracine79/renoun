@@ -55,6 +55,15 @@
     
 }
 
+
+#proceed-words{
+    margin-right: 15px;
+    font-size: 18px;
+    margin-left: -25px;
+}
+
+
+
 #cart-head-count{
     margin-left: 24px;
     font-size: 32px;
@@ -111,6 +120,13 @@
 
 }
 
+#affirm-total{
+    margin-right: 35px;
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: 100;
+}
+
 #cart-items-wrapper{
     width: 1100px;
     height: auto;
@@ -127,4 +143,25 @@
 #cart-items-wrapper{
     display: flex;
     flex-direction: column;
+}
+
+#proceed-to-checkout{
+    width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    background-color: black;
+    color: white;
+    height: 50px;
+    text-decoration: none;
+    margin-left: 800px;
+    border-radius: 25px;
+}
+
+#arrow-wrapper{
+    
+    position: absolute;
+
+    margin-left: 180px;
 }

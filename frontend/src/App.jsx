@@ -13,6 +13,7 @@ import Footer from './components/Footer/footer';
 import { fetchAllInstruments } from './store/instrument';
 import Instrument from './components/Instrument/Instrument';
 import Cart from './components/Cart/Cart';
+import Checkout from './components/Checkout/Checkout';
 
 
 function Layout() {
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart />
+      },
+      {
+        path: '/checkout',
+        element: <Checkout />
       }
    
     ]
