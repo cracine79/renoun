@@ -7,6 +7,8 @@ import { FaArrowRight } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
 import { removeCartItem } from '../../store/cart';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+
 
 
 function CartItem(){
@@ -16,9 +18,14 @@ function CartItem(){
     const instrumentState = useSelector(state => state.instruments)
     // const [instruments, setInstruments] = useState([])
     // const [itemsTotal, setItemsTotal] = useState([])
+    const [itemCount, setItemCount] = useState(0);
    const instruments = [];
    let itemsTotal=0;
-    
+   const length = cart.length
+
+
+  
+
         cart.forEach((cartItem)=>{
             debugger;
             if(cartItem){
@@ -42,9 +49,9 @@ function CartItem(){
 
         const handleDelete= async (id) => {
             debugger;
-            await dispatch(removeCartItem(id));
+            dispatch(removeCartItem(id));
+            navigate('/cart', {replace:true})
 
-            navigate('/cart')
         }
         
      

@@ -40,7 +40,7 @@ function Navigation(){
         } else {
             countSquare.display='none'
         }}}
-    },[length])
+    },[cart])
 
     const handleClick = ((e) => {
         dispatch(clearCart())

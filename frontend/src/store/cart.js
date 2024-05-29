@@ -56,10 +56,8 @@ export const removeCartItem = cartId => async dispatch => {
             'Accept': 'application/json'
         }
     })
-    debugger;
-    const data = await res.json();
-    debugger;
 
+    const data = await res.json();
     dispatch(deleteCartItem(data))
 }
 

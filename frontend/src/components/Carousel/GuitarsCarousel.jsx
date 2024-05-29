@@ -22,17 +22,17 @@ function GuitarsCarousel(){
     <h2 className='carousel-header'>Recently Viewed</h2>
     <div className='instrumentWrapperWrapper'>
     {guitars.map((guitar)=>{ return(
-        <div className='thumb-instrumentWrapper'>
+        <div key ={`listing_${guitar.id}`} className='thumb-instrumentWrapper'>
             <Link className='thumb-link' to={`/instruments/${guitar.id}`}>
                 <div className='like'>
                     <LuHeart /> 
                 </div>
                 <ul id='thumb-dets'>
-                    <img className='thumb-instrumentImage' src={guitar.photoUrl} />
-                    <div className='words-wrap'>
-                        <div className='thumb-instrumentName'>{guitar.itemName}</div>
-                        <li className='thumb-condition'>{guitar.condition}</li>
-                        <li className='thumb-price'>{formatter.format(guitar.price)}</li>
+                    <img key ={`img${guitar.id}`}className='thumb-instrumentImage' src={guitar.photoUrl} />
+                    <div key ={`wrap${guitar.id}`}className='words-wrap'>
+                        <div key ={`instName${guitar.id}`}className='thumb-instrumentName'>{guitar.itemName}</div>
+                        <li key ={`condition${guitar.id}`} className='thumb-condition'>{guitar.condition}</li>
+                        <li key ={`price${guitar.id}`}className='thumb-price'>{formatter.format(guitar.price)}</li>
                     </div>
                 </ul>
                 
