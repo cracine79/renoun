@@ -33,6 +33,6 @@ class Instrument < ApplicationRecord
 
     has_one_attached :photo
     belongs_to :seller, class_name: :User
-    has_many :carts
+    has_many :carts, dependent: :destroy
     has_many :prospective_buyers, through: :carts, source: :buyer
 end

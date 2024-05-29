@@ -19,8 +19,10 @@ class Api::InstrumentsController < ApplicationController
     end
 
     def destroy
-        @instrument = Instrument.find(params[:id])
-    
+        @instrument = Instrument.find(params[:id]);
+        id = @intstrument.id
+        @instrument.destroy
+        render json: { instrumentId: id}
     end
 
 end

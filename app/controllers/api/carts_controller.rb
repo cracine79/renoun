@@ -6,7 +6,9 @@ class Api::CartsController < ApplicationController
     end
 
     def destroy
-        @cart = Cart.find(params[:id])
+        debugger;
+        @cart = Cart.find(params[:id]);
+       
         if @cart.destroy
             render json: @cart.id
         else

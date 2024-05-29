@@ -2,6 +2,7 @@
 import csrfFetch from "./csrf"
 const RECEIVE_INSTRUMENT = 'instrument/RECEIVE_INSTRUMENT'
 const RECEIVE_INSTRUMENTS = 'instrument/RECEIVE_INSTRUMENTS'
+const REMOVE_INSTRUMENT = 'instrument/REMOVE_INSTRUMENT'
 
 export const receiveInstrument = instrument => ({
     type: RECEIVE_INSTRUMENT,
@@ -14,6 +15,11 @@ export const receiveInstruments = instruments => ({
     instruments
 })
 
+export const deleteInstrument = instrumentId => ({
+    type: REMOVE_INSTRUMENT,
+    instrumentId
+})
+
 export const fetchAllInstruments = () => async dispatch => {
 
     const res = await csrfFetch('/api/instruments');
@@ -21,6 +27,19 @@ export const fetchAllInstruments = () => async dispatch => {
     const data = await res.json();
 
     dispatch(receiveInstruments(data))
+}
+
+export const removeInstrument = () => async dispatch => {
+        const res = await csrfFetch('/api/instruments',{
+            method: 'DELETE'
+        });
+        const data = await res.json();
+        if (data.ok){
+            dispatch(deleteInstrument)
+        } else {
+            console.log.res.error
+        }
+
 }
 
 const instrumentsReducer = (state = {}, action) => {
@@ -33,7 +52,11 @@ const instrumentsReducer = (state = {}, action) => {
             return {...nextState, ...action.instruments};
         default:
             return state;
+        
+        case REMOVE_INSTRUMENT:
+            return {...nextState, [action.instrumentId]: undefined}
     }
+
 
 
 }

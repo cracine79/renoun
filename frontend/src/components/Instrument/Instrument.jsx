@@ -9,11 +9,12 @@ import InstrumentReviews from '../InstrumentReviews/InstrumentReviews';
 import { useDispatch } from "react-redux";
 import { createCartItem } from "../../store/cart";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const Instrument = () => {
 
-    
+    const navigate = useNavigate();
     const { id } = useParams();
     const instrument = useSelector(state=>(state.instruments[id]))
     const sellerId = instrument.sellerId
@@ -94,7 +95,7 @@ const Instrument = () => {
             
             try { 
                 await dispatch(createCartItem(cart));
-                // Navigate('/cart')
+                navigate('/cart')
             } catch (res){
                 let data;
                 try {
