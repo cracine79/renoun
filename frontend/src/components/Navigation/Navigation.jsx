@@ -8,6 +8,7 @@ import { PiUserCircleFill } from "react-icons/pi";
 import Renoun from '../../../assets/images/Renoun.png'
 import { Link } from "react-router-dom";
 import { clearCart } from "../../store/cart";
+import { useEffect } from "react";
 
 
 
@@ -25,16 +26,33 @@ function Navigation(){
     const signupForm = document.getElementById('signup-form-wrapper')
     const signupSquare = document.getElementById('signup-mnw')
     const loginSquare = document.getElementById('login-mnw')
-    
+    const countSquare = document.getElementById('item-count')
+    const cart = useSelector(state=>Object.values(state.carts))
+    let length = cart.length;
+
+    useEffect(()=>{
+        if (cart){
+            if(countSquare){
+        if (cart.length > 0){
+            countSquare.style.display='flex'
+            countSquare.innerHTML= cart.length;
+        } else {
+            countSquare.display='none'
+        }}}
+    },[length])
 
     const handleClick = ((e) => {
         e.preventDefault();
         dispatch(clearCart())
+        countSquare.style.display='none'
         return dispatch(sessionActions.logout())
       });
 
     const sessionUser = useSelector(state=> state.session.user);
-   
+ 
+    
+  
+
     function cap(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
@@ -130,9 +148,13 @@ function Navigation(){
                 <div className='iconlink'>
                   <div id='cart-word'>
                     <div id='cart'>
-                    <Link to='/cart'>
-                        <FiShoppingCart />
-                    </Link>
+                     
+                        <Link id='cart-link' to='/cart'>
+                            <FiShoppingCart />
+                        </Link>
+                        <div id='item-count'>
+
+                        </div>
                     </div>
                     Cart
                 </div>               
