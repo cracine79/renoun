@@ -47,7 +47,7 @@ export const createCartItem = cart => async dispatch => {
 }
 
 export const removeCartItem = cartId => async dispatch => {
-    debugger;
+  
     const res = await csrfFetch(`/api/carts/${cartId}`,{
         method: 'DELETE',
         body: JSON.stringify(cartId),
@@ -72,7 +72,8 @@ export const cartsReducer = (state = {}, action) => {
         case RECEIVE_CART_ITEMS:
             return {...nextState, ...action.cart};
         case REMOVE_CART_ITEM:
-            return {...nextState, [action.cartId]:undefined}
+            delete nextState[action.cartId]
+            return {...nextState}
             return nextState;
         case CLEAR_CART:
             return {};

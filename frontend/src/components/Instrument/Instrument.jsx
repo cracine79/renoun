@@ -95,7 +95,7 @@ const Instrument = () => {
             
             try { 
                 await dispatch(createCartItem(cart));
-                navigate('/cart')
+                navigate('/cart', {replace:true})
             } catch (res){
                 let data;
                 try {
@@ -142,12 +142,14 @@ const Instrument = () => {
     }  
     
     window.onscroll = function(){
+        if(rightBox0){
         const rightBox = document.getElementById('instrumentInfoBox');
         if (window.pageYOffset > 100){
             rightBox.className='withShadow'
         } else {
             rightBox.className='noShadow'
         }
+    }
     }
       
 

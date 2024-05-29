@@ -11,57 +11,51 @@ import { useState } from 'react';
 
 
 
-function CartItem(){
+function CartItem({cartItem}){
     const navigate = useNavigate();
     const dispatch=useDispatch();
     const cart = useSelector(state => Object.values(state.carts))
     const instrumentState = useSelector(state => state.instruments)
     // const [instruments, setInstruments] = useState([])
     // const [itemsTotal, setItemsTotal] = useState([])
-    const [itemCount, setItemCount] = useState(0);
-   const instruments = [];
-   let itemsTotal=0;
-   const length = cart.length
+    // const [itemCount, setItemCount] = useState(0);
+//    const instruments = [];
+//    let itemsTotal=0;
+//    const length = cart.length
 
+    const instrument = useSelector(state => state.instruments[cartItem.instrumentId])
 
-  
+    
 
-        cart.forEach((cartItem)=>{
-            debugger;
-            if(cartItem){
-                const identifier = cartItem.instrumentId;
-                const instrument = instrumentState[identifier]
-                if (instrument){
-                    instruments.push(instrument)
-                    instruments[instruments.length-1].cartItemId = cartItem.id
-                }
-            }
-        });
-
-   
+ 
+ 
 
   
 
-        instruments.forEach((instrument)=>{
-            itemsTotal += instrument.price;
-            itemsTotal += instrument.shipping;
-        })
-
-        const handleDelete= async (id) => {
-            debugger;
+        // instruments.forEach((instrument)=>{
+        //     itemsTotal += instrument.price;
+        //     itemsTotal += instrument.shipping;
+        // })
+        const id = cartItem.id;
+       
+        
+        const handleDelete= async () => {
+           
             dispatch(removeCartItem(id));
             navigate('/cart', {replace:true})
 
+
         }
-        
-     
+        if (!instrument) return null;
             return ( 
-                <>
-                <div id='cart-items-only-wrapper'>
-                {instruments.map((instrument)=> { return (
+             
+                // <div id='cart-items-only-wrapper'>
+                //     {instruments.map((instrument)=> { return (
+                        
+
                     <div id='middle-wrapper'>
                             <div className='item-wrapper'>
-                              
+                            
                                 <img className = 'cart-pic' src={instrument.photoUrl} />
                                 <div className='cart-item-details'>
                                     <p className='cart-item-name'>{instrument.itemName}</p>
@@ -70,14 +64,13 @@ function CartItem(){
                                     <div className='cart-links'>
                                         <div className='move-to-watchlist'>
                                             <IoMdHeart />
-                                        <p className='move-words'> Move to Watch List </p>
+                                            <p className='move-words'> Move to Watch List </p>
                                         </div>
                                         <div className='remove'>
                                             <div id='x-wrapper'>
                                                 <RiCloseLine />
                                             </div>
-                                            <p className='remove-words' onClick={()=>handleDelete(instrument.cartItemId)} id={`instrument_${instrument.id}`}>Remove</p>
-                                    
+                                            <p className='remove-words' onClick={()=>handleDelete(instrument.cartItemId)} id={`instrument_${instrument.id}`}>Remove</p>                                  
                                         </div>
                                     </div>        
                                 </div>
@@ -86,27 +79,20 @@ function CartItem(){
                                     <p className='cart-item-price'>{formatter.format(instrument.price)}</p>
                                     <p className='cart-item-shipping'>+ {formatter.format(instrument.shipping)} Shipping</p>
                                     <div className='cart-item-tax'> + applicable tax
-                                    <div className='tax-explanation'>
-                                        <p id='tax-words'>Tax may be applied during checkout</p>
-                                    </div> </div>
-                                  
-                                    
+                                        <div className='tax-explanation'>
+                                            <p id='tax-words'>Tax may be applied during checkout</p>
+                                        </div> 
+                                    </div>
                                 </div>
-                         
-               </div>
-               
-            )})
-           
-            
-            }
+                        
+                    </div>          
+                   
+                //    )})};   
 
-            <div id='price-box-wrapper'>
-             <p id='total'>Item + Shipping Subtotal <span className='dollars'>{formatter.format(itemsTotal)}</span></p>
-             <p id='affirm-total'> As low as <span id='monthly-price'>{formatter.format(itemsTotal/24)}/month</span> with<span id='affirm-name'> affirm</span></p>
-             <button id='proceed-to-checkout'> <span id='proceed-words'>Proceed to Checkout </span>   <div id='arrow-wrapper'> <FaArrowRight /></div></button>
-            </div>
-            </div>
-                 </>)
+                  
+            // </div>
+           
+            )
         
 }
 
