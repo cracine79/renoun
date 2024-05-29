@@ -14,6 +14,7 @@ import { useEffect } from "react";
 
 
 
+
 function Navigation(){
     
     const currentUser = useSelector(state=>state.session.user)
@@ -42,10 +43,10 @@ function Navigation(){
     },[length])
 
     const handleClick = ((e) => {
-        e.preventDefault();
         dispatch(clearCart())
         countSquare.style.display='none'
-        return dispatch(sessionActions.logout())
+        dispatch(sessionActions.logout())
+
       });
 
     const sessionUser = useSelector(state=> state.session.user);
@@ -101,7 +102,7 @@ function Navigation(){
                         <p className='dropdown-header'>MY ACCOUNT</p>
                         <br></br>
                         <p className='dropdown-link'>My Profile</p>
-                        <p className='dropdown-link' onClick={handleClick}>Logout</p>
+                        <Link to='/' className='dropdown-link' onClick={handleClick}>Logout</Link>
 
                     </div>
                 </div>
