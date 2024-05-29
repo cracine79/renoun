@@ -1,4 +1,4 @@
-#item-wrapper{
+.item-wrapper{
 
     height: 200px;
     width: 96%;
@@ -6,12 +6,15 @@
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
- 
+    flex-direction: row;
+    
 }
 
 .cart-pic{
     height: 200px;
     border-radius: 15px;
+    width: 200px;
+    object-fit: cover;
 }
 
 .cart-item-details{
@@ -85,8 +88,6 @@
 .pricing-wrapper{
 height: 200px;
 width: 150px;
-position: fixed;
-margin-left: 900px;
 display: block;
 flex-direction: column;
 text-align: right;
@@ -138,3 +139,22 @@ text-align: right;
     cursor: default;
 }
 
+#cart-items-only-wrapper{
+    width: auto;
+
+    
+    flex-direction: column;
+   
+}
+
+
+
+#help{
+    height: auto;
+    width: auto;
+  
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
