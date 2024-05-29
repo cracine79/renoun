@@ -17,10 +17,109 @@
     font-size: 24px;
     font-weight: 300;
     margin-top: 30px;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+
 }
 
 #guitars-wrapper{
-    width: 1650px;
-    height: 300px;
-    margin-left: 100px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    
+    
 }
+
+#empty-basket{
+    background-image : url('../../assets/images/empty-basket@2x-c13a691ddec1300ef6b06de9bd02471a99fae3ecaeaa181076b11ef2ceea078d.png');
+    height: 200px;
+    width: 200px;
+    background-size: 200px;
+}
+
+#cart-wrapper-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#how-many{
+    display: flex;
+    font-size: 26px;
+    margin-top: 30px;
+    
+    
+}
+
+#cart-head-count{
+    margin-left: 24px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+#top-line{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1100px;
+    margin-top: 20px;
+}
+
+
+#keep-shopping{
+    margin-top: 36px;
+    text-decoration: none;
+    color: rgb(81, 81, 255);
+    font-size: 18px;
+    font-weight: 700; 
+    display: flex;
+}
+
+#ks-words{
+    margin-right: 10px; 
+}
+
+#keep-shopping:hover{
+    color: orangered;
+}
+
+#first-divider{
+  color: blue
+  
+}
+
+#full-cart-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+#line{
+    height: 1px;
+    width: 1100px;
+    background-color: rgb(220, 220, 220);
+    margin-top: 35px;
+}
+
+#dollars{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 50px;
+
+}
+
+#cart-items-wrapper{
+    width: 1100px;
+    height: auto;
+    border: solid gray 1px;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
