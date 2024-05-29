@@ -8,26 +8,44 @@ import { FaArrowRight } from "react-icons/fa";
 import CartItem from './CartItem';
 import { formatter } from '../Carousel/GuitarsCarousel';
 import { useState } from 'react';
+import { fetchUserCart } from '../../store/cart';
+import { useDispatch } from 'react-redux';
 
 
 
 function Cart(){
    
     const cart = useSelector(state => Object.values(state.carts));
+    const currentUserId = useSelector(state => state.session.user.id)
     const instrumentsState = useSelector(state => state.instruments);
     const [isCartEmpty, setIsCartEmpty] = useState(false);
     const [totalAmount, setTotalAmount] = useState(0);
     const [itemNumbers, setItemNumbers] = useState(0)
+    const dispatch = useDispatch();
 
-
+    
     useEffect(()=>{
-        debugger;
+      
+        const emptyCartWrapper = document.getElementById('empty-cart-wrapper')
+        const fullCartWrapper = document.getElementById('full-cart-wrapper')
+        const insideItems = document.getElementById('cart-items-wrapper')
+    
     if (cart.length === 0){
-        setIsCartEmpty(true)
+        emptyCartWrapper.style.display='flex'
+        fullCartWrapper.style.display='none'
+        setItemNumbers(0);
+    
     } else {
-        setIsCartEmpty(false)
+        emptyCartWrapper.style.display='none'
+        fullCartWrapper.style.display='flex'
+        setItemNumbers(cart.length)
+  
+        dispatch(fetchUserCart(currentUserId))
+      
+
+    
     }
-    debugger;
+    
     },[cart.length]
     )
 
@@ -57,14 +75,16 @@ function Cart(){
     //     setTotalAmount(newTotalAmount);
     // }, [cart, instrumentsState, CartItem]);
 
+ 
+
     return(
         <>
             <div id='cart-wrapper-wrapper'>
-                <div id='empty-cart-wrapper' style={{ display: isCartEmpty ? 'flex' : 'none' }}>
+                <div id='empty-cart-wrapper' >
                     <div id='empty-basket'></div>
                     <p id='empty-text'> Your cart is empty.  Start browsing! </p>    
                 </div>
-                <div id='full-cart-wrapper' style={{ display: isCartEmpty ? 'none' : 'flex' }}>
+                <div id='full-cart-wrapper' >
                     <div id='top-line'>
                         <div id='how-many'>
                             <div id='cart-wrap'>
@@ -84,8 +104,8 @@ function Cart(){
                     <p id='dollars'>Items listed in $ USD </p>
                     <div id='cart-items-wrapper'>
                         {cart.map(cartItem => ( cartItem ? 
-                            <CartItem key={cartItem.id} cartItem={cartItem} /> :
-                            <></>
+                            <CartItem key={cartItem.id} cartItem={cartItem} /> : null
+                            
                         ))}
                           <div id='price-box-wrapper'>
                                 <p id='total'>Item + Shipping Subtotal <span className='dollars'>{formatter.format(totalAmount)}</span></p>

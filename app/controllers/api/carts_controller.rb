@@ -1,7 +1,11 @@
 class Api::CartsController < ApplicationController
 
     def index
-        @carts = Cart.all
+        user_id = params[:user_id]
+  
+        @user = User.find_by_id(user_id)
+        @carts = @user.carts
+      
         render 'api/carts/index'
     end
 

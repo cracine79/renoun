@@ -16,26 +16,11 @@ function CartItem({cartItem}){
     const dispatch=useDispatch();
     const cart = useSelector(state => Object.values(state.carts))
     const instrumentState = useSelector(state => state.instruments)
-    // const [instruments, setInstruments] = useState([])
-    // const [itemsTotal, setItemsTotal] = useState([])
-    // const [itemCount, setItemCount] = useState(0);
-//    const instruments = [];
-//    let itemsTotal=0;
-//    const length = cart.length
+
 
     const instrument = useSelector(state => state.instruments[cartItem.instrumentId])
 
     
-
- 
- 
-
-  
-
-        // instruments.forEach((instrument)=>{
-        //     itemsTotal += instrument.price;
-        //     itemsTotal += instrument.shipping;
-        // })
         const id = cartItem.id;
        
         
@@ -49,8 +34,6 @@ function CartItem({cartItem}){
         if (!instrument) return null;
             return ( 
              
-                // <div id='cart-items-only-wrapper'>
-                //     {instruments.map((instrument)=> { return (
                         
 
                     <div id='middle-wrapper'>
@@ -87,10 +70,7 @@ function CartItem({cartItem}){
                         
                     </div>          
                    
-                //    )})};   
-
-                  
-            // </div>
+                
            
             )
         

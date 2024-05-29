@@ -61,6 +61,12 @@ export const removeCartItem = cartId => async dispatch => {
     dispatch(deleteCartItem(data))
 }
 
+export const fetchUserCart = userId => async dispatch => {
+    const res = await csrfFetch (`/api/users/${userId}/carts`);
+    const data = await res.json();
+    dispatch (receiveCartItems(data))
+}
+
 export const cartsReducer = (state = {}, action) => {
     Object.freeze(state);
     const nextState = {...state};
