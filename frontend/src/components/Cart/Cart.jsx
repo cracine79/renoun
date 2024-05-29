@@ -74,8 +74,12 @@ function Cart(){
 
     //     setTotalAmount(newTotalAmount);
     // }, [cart, instrumentsState, CartItem]);
-
- 
+    let message = '';
+    if (itemNumbers === 1) {
+        message = '1 Item in Your Cart'
+    } else {
+        message = `${itemNumbers} Items in Your Cart`
+    }
 
     return(
         <>
@@ -90,7 +94,7 @@ function Cart(){
                             <div id='cart-wrap'>
                                  <ImCart />
                             </div>
-                            <p id='cart-head-count'>{`${itemNumbers} Items in Your Cart`}</p>
+                            <p id='cart-head-count'>{message}</p>
                         </div>
                         <Link id='keep-shopping' to='/'>
                             <p id='ks-words'>Keep Shopping</p>  
