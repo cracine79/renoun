@@ -25,7 +25,7 @@ class Api::CartsController < ApplicationController
         if @cart.save!
             render json: @cart
         else
-            render json: {errors: @cart.errors.full_messages }, status: :unprocessable_entity
+            render json: ('already in cart')
         end
     end
 

@@ -111,7 +111,7 @@ const Instrument = () => {
                 } else {
                     setErrors([res.statusText]);
                 }
-                console.log(errors)
+                navigate('/cart', {replace:true})
 
             }
         
