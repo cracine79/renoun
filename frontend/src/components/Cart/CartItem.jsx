@@ -2,6 +2,7 @@ import './CartItem.css'
 import { useSelector } from 'react-redux'
 import { IoMdHeart } from "react-icons/io";
 import { RiCloseLine } from "react-icons/ri";
+import { formatter } from '../Carousel/GuitarsCarousel';
 
 
 function CartItem(){
@@ -28,14 +29,20 @@ function CartItem(){
                                 <RiCloseLine />
                              </div>
                              <p className='remove-words'>Remove</p>
+                    
                         </div>
                     </div>
 
-                    <div className = 'pricing-wrapper'>
-                        height: 200px;
-                        width: 150px;
-                        background-color: black;
-                    </div>
+                   
+                </div>
+                <div className = 'pricing-wrapper'>
+                      <p className='cart-item-price'>{formatter.format(instrument.price)}</p>
+                      <p className='cart-item-shipping'>+ {formatter.format(instrument.shipping)} Shipping</p>
+                      <p className='cart-item-tax'> + applicable tax
+                      <div className='tax-explanation'>
+                        <p id='tax-words'>Tax may be applied during checkout</p>
+                      </div> </p>
+                      
                 </div>
             </div>
 

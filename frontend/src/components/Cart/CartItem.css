@@ -82,4 +82,59 @@
     cursor: pointer;
 }
 
+.pricing-wrapper{
+height: 200px;
+width: 150px;
+position: fixed;
+margin-left: 900px;
+display: block;
+flex-direction: column;
+text-align: right;
+}
+
+.cart-item-price{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.cart-item-shipping{
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 400px;
+    color: gray;
+}
+
+.cart-item-tax{
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 400px;
+    color: gray;
+    border-bottom: gray dashed 1px;
+    width: 100px;
+    margin-left: 50px;
+}
+
+.tax-explanation{
+    width: 280px;
+    height: 40px; 
+    background-color: white;
+    border: gray 1px solid;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-top:-70px;
+    margin-left: -60px;
+    display: none;
+}
+
+.cart-item-tax:hover .tax-explanation{
+    display: flex;
+    cursor: default;
+}
+
+.pricing-wrapper:hover{
+    cursor: default;
+}
 
