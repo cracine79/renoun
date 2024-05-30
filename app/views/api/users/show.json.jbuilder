@@ -25,6 +25,7 @@ json.orders do
       json.seller_last_name order.seller.last_name
       json.created_at order.created_at
       json.photoUrl order.photo.attached? ? order.photo.url : nil
+      json.shipping order.shipping
     end
   end
 end

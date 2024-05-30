@@ -101,7 +101,7 @@ function Navigation(){
                         <hr className='dropdown-line'></hr>
                         <p className='dropdown-header'>MY ACCOUNT</p>
                         <br></br>
-                        <p className='dropdown-link'>My Profile</p>
+                        <Link to='/OrderConfirmation' className='dropdown-link'>My Profile</Link>
                         <Link to='/' className='dropdown-link' onClick={handleClick}>Logout</Link>
 
                     </div>

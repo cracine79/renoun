@@ -5,6 +5,7 @@
             json.id  instrument[:order_item_id]
             json.item_name instrument[:item_name]
             json.price instrument[:price]
+            json.shipping instrument[:shipping]
             json.seller_first_name instrument[:seller_first_name]
             json.seller_last_name instrument[:seller_last_name]
             json.photoUrl instrument[:photo_url]

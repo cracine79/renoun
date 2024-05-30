@@ -75,7 +75,7 @@ export const restoreSession = () => async dispatch => {
     let data = await res.json();
    
     dispatch(receiveUser(data.user));
-    debugger;
+  
     dispatch(receiveCartItems(data.cart));
     dispatch(receiveOrders(data.orders))
     return res;
