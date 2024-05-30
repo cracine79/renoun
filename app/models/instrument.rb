@@ -35,4 +35,5 @@ class Instrument < ApplicationRecord
     belongs_to :seller, class_name: :User
     has_many :carts, dependent: :destroy
     has_many :prospective_buyers, through: :carts, source: :buyer
+    has_one :order
 end

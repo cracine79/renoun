@@ -17,7 +17,10 @@ class User < ApplicationRecord
     
     has_many :instruments_for_sale, foreign_key: :seller_id, class_name: :Instrument, dependent: :destroy
     has_many :carts, foreign_key: :buyer_id, dependent: :destroy
-    has_many :items_in_cart, through: :cart, source: :instrument
+    has_many :items_in_cart, through: :carts, source: :instrument
+    has_many :orders, foreign_key: :buyer_id
+    has_many :items_ordered, through: :orders, source: :instrument
+   
    
 
     validates :email, 
