@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { ImMusic } from "react-icons/im";
 import { RiTreeLine } from "react-icons/ri";
 import { createOrder } from '../../store/order';
+import {useNavigate} from 'react-router-dom';
+import { clearCart } from '../../store/cart';
 
 
 
@@ -14,6 +16,7 @@ function Checkout (){
     const userLastName = useSelector(state => (state.session.user.lastName));
     const userId = useSelector(state=> (state.session.user.id))
     const cart = useSelector(state=>Object.values(state.carts));
+    const navigate = useNavigate();
 
      const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -22,9 +25,10 @@ function Checkout (){
         // maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
       });
 
-      const handleOrder = () => {
-        debugger;
-            dispatch(createOrder(userId))
+      const handleOrder = async () => {
+            await dispatch(createOrder(userId))
+            dispatch(clearCart())
+            return navigate('/OrderConfirmation')
       }
 
 

@@ -16,6 +16,10 @@ class Api::OrdersController < ApplicationController
            
             instrument = Instrument.find(cart_item.instrument_id)
             instrument.available = false
+            instrument.save
+
+
+
         
             @order_extended_info_item[:order_item_id] = @order_item.id
             @order_extended_info_item[:item_name] = instrument.item_name
@@ -27,11 +31,11 @@ class Api::OrdersController < ApplicationController
             @order_extended_info_item[:photoUrl] = instrument.photo.attached? ? instrument.photo.url : nil
             @orders.push(@order_extended_info_item)
             
-          
+            carts = @user.carts
+            carts.each {|cart| cart.destroy}
         
         end
 
-        debugger;
         render 'api/orders/show'
     end
 

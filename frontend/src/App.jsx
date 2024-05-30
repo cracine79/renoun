@@ -14,6 +14,7 @@ import { fetchAllInstruments } from './store/instrument';
 import Instrument from './components/Instrument/Instrument';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
+import OrderConfirmation from './components/Checkout/OrderConfirmation';
 
 
 function Layout() {
@@ -87,6 +88,10 @@ const router = createBrowserRouter([
       {
         path: '/checkout',
         element: <Checkout />
+      },
+      {
+        path: 'orderConfirmation',
+        element: <OrderConfirmation />
       }
    
     ]
