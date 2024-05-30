@@ -1,14 +1,18 @@
 import './Checkout.css'
-import { formatter } from '../Carousel/GuitarsCarousel';
-import { useSelector } from 'react-redux'
+
+import { useSelector, useDispatch } from 'react-redux'
 import { ImMusic } from "react-icons/im";
 import { RiTreeLine } from "react-icons/ri";
+import { createOrder } from '../../store/order';
+
+
 
 
 function Checkout (){
-    
+    const dispatch = useDispatch();
     const userFirstName = useSelector(state => (state.session.user.firstName));
     const userLastName = useSelector(state => (state.session.user.lastName));
+    const userId = useSelector(state=> (state.session.user.id))
     const cart = useSelector(state=>Object.values(state.carts));
 
      const formatter = new Intl.NumberFormat('en-US', {
@@ -17,6 +21,11 @@ function Checkout (){
         minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
         // maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
       });
+
+      const handleOrder = () => {
+        debugger;
+            dispatch(createOrder(userId))
+      }
 
 
     const instrumentsArray = cart.map((item)=>{
@@ -93,20 +102,20 @@ function Checkout (){
                             <p className='credit-card-title'>
                                 Card Number
                             </p>
-                            < input id='number-text' type='text'  value='867 5309'/>
+                            < input id='number-text' type='text'  defaultValue='867 5309'/>
                         </div>
                         <div id='validations-wrapper'>
                             <div id='expiration-wrapper'>
                             <p className='credit-card-title'>
                                     Expiration
                                 </p>
-                                <input id='expiration-text' type='text' value='MM/YY'/>
+                                <input id='expiration-text' type='text' defaultValue='MM/YY'/>
                             </div>
                             <div id='security-code-wrapper'>
                                 <p className='credit-card-title'>
                                 Security Code
                                 </p>
-                                <input id='security-code-text' type='text' value='3 digits'/>
+                                <input id='security-code-text' type='text' defaultValue='3 digits'/>
                             </div>
 
                         </div>
@@ -178,7 +187,7 @@ function Checkout (){
                 </div>
 
                 
-                <div id='place-order'>Place Order</div>
+                <button id='place-order' onClick = {handleOrder} >Place Order</button>
                 <p id='haha' >By continuing, you agree to Renoun's pretend Terms and Privacy Policy</p>
 
                 <div className='checkout-csr-wrapper'>

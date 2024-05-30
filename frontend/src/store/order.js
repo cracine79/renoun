@@ -12,9 +12,8 @@ export const receiveOrders = orders => ({
 
 export const createOrder = userId => async dispatch =>{
 
-    let res = await csrfFetch('/api/users/${userId}/orders', {
+    let res = await csrfFetch(`/api/users/${userId}/orders`, {
         method: 'POST',
-        body: JSON.stringify(user),
         headers: {
             'Content-Type' : 'application/json'
         }
