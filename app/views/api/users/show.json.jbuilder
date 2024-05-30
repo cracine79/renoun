@@ -14,5 +14,18 @@ json.cart do
     end
   end
 end
-    
+
+json.orders do
+  @orders.each do |order|
+    json.set! order.id do
+      json.id  order.id
+      json.item_name  order.item_name
+      json.price  order.price
+      json.seller_first_name order.seller.first_name
+      json.seller_last_name order.seller.last_name
+    end
+  end
+end
+
+
 

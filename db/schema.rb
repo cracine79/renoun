@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_30_142219) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_30_152808) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -64,6 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_30_142219) do
     t.string "model"
     t.float "shipping"
     t.bigint "seller_id"
+    t.boolean "available", default: true
   end
 
   create_table "orders", force: :cascade do |t|

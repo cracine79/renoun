@@ -14,6 +14,7 @@
 #  model       :string
 #  shipping    :float
 #  seller_id   :bigint
+#  available   :boolean          default(TRUE)
 #
 class Instrument < ApplicationRecord
     validates :item_name, presence: true
