@@ -39,8 +39,8 @@ require "open-uri"
       User.create!({
         email: 'taylor@foo.com', 
         password: 'password',
-        first_name: 'rip',
-        last_name: 'taylor'
+        first_name: 'taylor',
+        last_name: 'hawkins'
     })
 
       User.create!({
@@ -180,6 +180,39 @@ squierStrat = Instrument.create!({
 
 squierStrat.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Squier+Stratocaster.webp'), filename: 'squierStrat.webp')
 
+
+prsCe = Instrument.create!({
+  item_name: 'PRS SE CE 24 - Blood Orange',
+  condition: 'Brand New',
+  price: 716.21,
+  description: 'The SE CE 24 pairs the traditional PRS Custom 24 combination of a maple top, mahogany back, and rosewood fretboard with a bolt-on maple neck. The added snap and response of bolt-on construction has been an essential part of guitar history from the beginning, and the CEs voice and appointments carry that tradition forward with PRSs unique spin on a classic. The 85/15 "S" pickups provide extended high and low end with clarity and balance, while the push/pull tone control adds the versatility of coil splits.',
+  category: 'Guitar',
+  brand: 'PRS',
+  model: 'PRS SE CE 24',
+  shipping: 45,
+  seller_id: 8
+
+})
+
+prsCe.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/PRS.jpeg'), filename: 'PRS.jpeg')
+
+
+rickenbacker = Instrument.create!({
+  item_name: 'Rickenbacker 1993 Plus 12-String Semi-Hollow Guitar, Fire Glo, 3 Toaster Pickups, Stereo, OHSC 2024',
+  condition: 'Brand New',
+  price: 3799,
+  description: 'Rickenbacker 1993 Plus 12-String Semi-Hollow Electric Guitar, Fire Glo, 3 Vintage-Style Toaster Pickups, Double Binding, Stereo, w/Hardshell Case.  At the request of The Whos Pete Townshend, The 1993 Plus takes Rickenbackers iconic 330 body style and adds an "F"-Hole, Double Body Binding, a Wide Neck, Pearloid Triangle Inlays, 3 Vintage-Style Toaster Pickups, Ric-O-Sound Stereo outs, and a vintage-style trapeze tailpiece. Pete Townshend asked Rickenbacker to upgrade his cherished Model 1993 guitar. The result is the 1993Plus, enhanced with an 1/8-inch wider neck, rosewood fingerboard, and more stable 2-piece neck design with a round heel for increased comfort and upper-fret access. This classic semi-hollowbody 12-string electric guitar is fitted with three vintage reissue Toaster Top single-coil pickups, stereo output, a trapeze tailpiece, vintage knobs, and a proper F-hole. Double body binding and pearlescent inlays add a touch of refinement. X-bracing in the body helps to bring out the rich, full jangle our favorite Rickenbacker 12-strings are famous for.',
+  category: 'Guitar',
+  brand: 'Rickenbaker',
+  model: '1993 Plus',
+  shipping: 0,
+  seller_id: 7
+
+})
+
+rickenbacker.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Rickenbacker.webp'), filename: 'Rickenbacker.webp')
+
+  
   
 
   

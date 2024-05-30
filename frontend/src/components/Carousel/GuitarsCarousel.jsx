@@ -13,6 +13,7 @@ export const formatter = new Intl.NumberFormat('en-US', {
 function GuitarsCarousel(){
 
     const guitars = useSelector(state=>Object.values(state.instruments))
+    const shortGuitars = guitars.slice(2,8);
 
 
  
@@ -21,7 +22,7 @@ function GuitarsCarousel(){
 
     <h2 className='carousel-header'>Recently Viewed</h2>
     <div className='instrumentWrapperWrapper'>
-    {guitars.map((guitar)=>{ return(
+    {shortGuitars.map((guitar)=>{ return(
         <div key ={`listing_${guitar.id}`} className='thumb-instrumentWrapper'>
             <Link className='thumb-link' to={`/instruments/${guitar.id}`}>
                 <div className='like'>
