@@ -5,8 +5,11 @@ import {useSelector} from 'react-redux'
 function OrderConfirmation(){
 
     const userFirstName = useSelector(state => (state.session.user.firstName))
+    const userLastName = useSelector(state=> (state.session.user.lastName))
+    const email = useSelector(state=>(state.session.user.email))
     const orders = useSelector(state=>Object.values(state.orders))
     const capFirstName = userFirstName.slice(0,1).toUpperCase()+userFirstName.slice(1)
+    const capLastName = userLastName.slice(0,1).toUpperCase()+userLastName.slice(1)
     const now = new Date();
     const date = now.toDateString();
     const sellerFullName = (instrument) => {
@@ -51,7 +54,38 @@ function OrderConfirmation(){
                         <p id='next-steps'>When the seller ships your order, we'll send you another email with tracking information</p>
                     </div>
                 </div>
-                <button id='orders-button'>See All Past Orders</button>
+                <div id='billing-box-outer'>
+                    <div id='billing-box'>
+                        <p id='billing-address'>Billing Address</p>
+                        <div className='billing-address-wrap'>
+                            <p className = 'billing-title'>Name</p>
+                            <p className = 'billing-value'>{capFirstName} {capLastName}</p>
+                        </div>
+                        <div className='billing-address-wrap'>
+                            <p className = 'billing-title'>Address</p>
+                            <div id='billing-address-wrap-wrap'>
+                                <p className = 'billing-value'>3218 1/2 Glendale Blvd</p>
+                                <p className = 'billing-value'>Brooklyn, NY 11234</p>
+                            </div>
+                        </div>
+                        <div className='billing-address-wrap'>
+                            <p className = 'billing-title'>Phone</p>
+                            <p className = 'billing-value'>+1 (347) 489 4608</p>
+                        </div>
+                        <div className='billing-address-wrap'>
+                            <p className = 'billing-title'>Email</p>
+                            <p className = 'billing-value'>{email}</p>
+                        </div>
+                    </div>
+
+
+                </div>
+               
+
+                    <button id='orders-button'>See All Past Orders</button>
+
+                
+              
             </div>
 
             <div id='confirmation-right-wrapper' className='confirmation-div-wrapper'>
@@ -128,7 +162,7 @@ function OrderConfirmation(){
                         <hr className='next-line'></hr>
                         <div className='total-subwrapper'>
                             <p className='subtotal-title' >Order Total</p>
-                            <p className = 'subtotal-info-data'>{formatter.format(totalTotal)}</p>
+                            <p className = 'subtotal-info-data'>{formatter.format(totalTotal + subTotal * .085)}</p>
                         </div>
                         
                     </div>
