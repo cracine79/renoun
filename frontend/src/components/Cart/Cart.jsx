@@ -54,7 +54,7 @@ function Cart(){
         let total = 0;
     
         instrumentsArray.forEach((item)=>{
-            debugger;
+      
             if (item){
             total += item.price;
             

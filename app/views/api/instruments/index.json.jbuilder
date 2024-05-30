@@ -13,5 +13,7 @@
         json.shipping instrument.shipping
         json.seller_id instrument.seller_id
         json.photoUrl instrument.photo.attached? ? instrument.photo.url : nil
+        json.seller_first_name instrument.seller.first_name
+        json.seller_last_name instrument.seller.last_name
     end
 end
