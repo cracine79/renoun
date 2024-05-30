@@ -74,7 +74,62 @@ function Checkout (){
                    </div>
 
                 </div>
+                <div id='payment-box'>
+                <p id='shipping-address-head' className='checkout-head'>Payment Method</p>
+                <hr className='shipping-line'></hr>
+                <div id='credit-header'>
+                   <div id='checkout-button-holder'>
+                   <input id='radio' type='radio' checked='true'/>
+                    <label id='checkout-card'>Card</label>
+
+                   </div>
+                   <img id='cards' src='../../assets/images/footer-accolade-payment-cards.avif' />
+        
+                        
+                </div>
+                <div id='credit-card-box'>
+                   <div id='credit-card-form'>
+                        <div id='card-number-wrapper'>
+                            <p className='credit-card-title'>
+                                Card Number
+                            </p>
+                            < input id='number-text' type='text'  value='867 5309'/>
+                        </div>
+                        <div id='validations-wrapper'>
+                            <div id='expiration-wrapper'>
+                            <p className='credit-card-title'>
+                                    Expiration
+                                </p>
+                                <input id='expiration-text' type='text' value='MM/YY'/>
+                            </div>
+                            <div id='security-code-wrapper'>
+                                <p className='credit-card-title'>
+                                Security Code
+                                </p>
+                                <input id='security-code-text' type='text' value='3 digits'/>
+                            </div>
+
+                        </div>
+                       
+                      <div id='checkbox-wrapper'>
+                      <input type='checkbox' checked='true'/><span>Billing address is the same as shipping address</span>
+                      
+                      <hr id='credit-card-line' ></hr>   
+                      <div id='bottom-address-wrapper'>
+                                {userFirstName.slice(0, 1).toUpperCase()}{userFirstName.slice(1)} {userLastName.slice(0,1).toUpperCase()}{userLastName.slice(1)}
+                                <p>3218 1/2 Glendale Boulevard</p> 
+                                <p>Brooklyn, NY 11234</p>
+                                <p>UNITED STATES</p>
+                                 </div>
+
+                      </div>
+                       </div>
+
+                </div>
+                </div>
             </div>
+
+
             <div id='checkout-right'>
                 <div id='checkout-items-box'>
                         <p id='order-summary-head' className='checkout-head'> Order Summary </p>

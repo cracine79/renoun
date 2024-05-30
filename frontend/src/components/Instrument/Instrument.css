@@ -249,7 +249,7 @@
     cursor: pointer;
 }
 
-#button-holder{
+#other-button-holder{
     display: flex;
    align-items: center;
     justify-content: space-between;
@@ -257,7 +257,7 @@
     margin-top: 12px;
 }
 
-.otherButton{
+.otherotherButton{
     height: 45px;
     width: 260px;
     background-color: rgb(215, 215, 215);

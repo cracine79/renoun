@@ -275,11 +275,11 @@ const Instrument = () => {
                     <button id='buyItNow'>
                         Buy It Now
                     </button>
-                    <div id='button-holder'>
-                        <button className='otherButton' id='add-to-cart' onClick={handleAddToCart}>
+                    <div id='other-button-holder'>
+                        <button className='otherotherButton' id='add-to-cart' onClick={handleAddToCart}>
                             Add to Cart
                         </button>
-                        <div className='otherButton'>
+                        <div className='otherotherButton'>
                             Make an Offer
                         </div>
                     </div>
