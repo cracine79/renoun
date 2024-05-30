@@ -17,7 +17,7 @@ class Api::OrdersController < ApplicationController
             instrument = Instrument.find(cart_item.instrument_id)
             instrument.available = false
         
-            @order_extended_info_item[:id] = @order_item.id
+            @order_extended_info_item[:order_item_id] = @order_item.id
             @order_extended_info_item[:item_name] = instrument.item_name
             @order_extended_info_item[:instrument_id] = @order_item.instrument_id
             @order_extended_info_item[:buyer_id] = @order_item.buyer_id
@@ -30,6 +30,8 @@ class Api::OrdersController < ApplicationController
           
         
         end
+
+        debugger;
         render 'api/orders/show'
     end
 

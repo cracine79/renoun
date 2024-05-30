@@ -21,6 +21,7 @@ export const createOrder = userId => async dispatch =>{
     
     if (res.ok){
         let data = await res.json();
+        debugger;
         dispatch(receiveOrders(data))
     } else {
         console.log.res.errors.full_messages

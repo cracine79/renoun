@@ -1,8 +1,8 @@
 
-json.orders do
+
     @orders.each do |instrument|
-        json.set! @order_item.id do
-            json.id  @order_item.id
+        json.set! instrument[:order_item_id] do
+            json.id  instrument[:order_item_id]
             json.item_name instrument[:item_name]
             json.price instrument[:price]
             json.seller_first_name instrument[:seller_first_name]
@@ -11,4 +11,4 @@ json.orders do
             json.created_at @order_item.created_at
         end
     end
-end
+
