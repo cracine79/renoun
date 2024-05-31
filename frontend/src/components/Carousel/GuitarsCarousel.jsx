@@ -13,7 +13,26 @@ export const formatter = new Intl.NumberFormat('en-US', {
 function GuitarsCarousel(){
 
     const guitars = useSelector(state=>Object.values(state.instruments))
-    const shortGuitars = guitars.slice(2,8);
+    const shortGuitars = [];
+
+    guitars.forEach((guitar)=>{
+        if (shortGuitars.length < 6){
+            if (guitar.available){
+                shortGuitars.push(guitar)
+            }
+        }
+    })
+
+    
+    // let i = 0
+    // while(shortGuitars.length<6 && i < guitars.length){
+    //     shortGuitars.forEach((guitar)=>{
+    //         if(guitar.available){
+    //             debugger;
+    //             shortGuitars.push(guitar)
+    //         }
+    //     })
+    // }
 
 
  

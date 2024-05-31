@@ -102,7 +102,8 @@ require "open-uri"
           brand: 'Gibson',
           model: 'SG Standard',
           shipping: 40,
-          seller_id: 2
+          seller_id: 2,
+          available: true
 
       })
 
@@ -117,7 +118,8 @@ require "open-uri"
         brand: 'Fender',
         model: 'Eric Johnson Stratocaster',
         shipping: 0,
-        seller_id: 3
+        seller_id: 3,
+        available: true
 
     })
       fenderStrat.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Fender+Eric+Johnson.webp'), filename: 'fenderStrat.webp')
@@ -131,7 +133,8 @@ require "open-uri"
         brand: 'Gretsch',
         model: 'Streamliner',
         shipping: 0,
-        seller_id: 3
+        seller_id: 3,
+        available: true
     })
 
     gretschStreamliner.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Gretsch.webp'), filename: 'gretsch.webp')
@@ -146,7 +149,8 @@ require "open-uri"
       brand: 'Fender',
       model: 'Player Telecaster with Maple Fretboard',
       shipping: 20,
-      seller_id: 4
+      seller_id: 4,
+      available: true
 
   })
   fenderTele.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Fender+Player+Telecaster.webp'), filename: 'deanZ.webp')
@@ -160,7 +164,8 @@ require "open-uri"
     brand: 'Dean',
     model: 'Z Select 24 Kahler',
     shipping: 0,
-    seller_id: 5
+    seller_id: 5,
+    available: true
 
 })
 deanZ.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Dean+Z.webp'), filename: 'deanZ.webp')
@@ -174,7 +179,8 @@ squierStrat = Instrument.create!({
   category: 'Guitar',
   brand: 'Squier',
   shipping: 0,
-  seller_id: 5
+  seller_id: 5,
+  available: true
 
 })
 
@@ -190,7 +196,8 @@ prsCe = Instrument.create!({
   brand: 'PRS',
   model: 'PRS SE CE 24',
   shipping: 45,
-  seller_id: 8
+  seller_id: 8,
+  available: true
 
 })
 
@@ -206,7 +213,8 @@ rickenbacker = Instrument.create!({
   brand: 'Rickenbaker',
   model: '1993 Plus',
   shipping: 0,
-  seller_id: 7
+  seller_id: 7,
+  available: true
 
 })
 
