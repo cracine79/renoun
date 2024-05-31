@@ -7,6 +7,7 @@ class Api::SessionsController < ApplicationController
     if @user
       @cart = @user.carts
       @orders = @user.items_ordered
+
       render 'api/users/show'
     else
 
@@ -24,6 +25,7 @@ class Api::SessionsController < ApplicationController
 
 
     if @user
+      @orders = @user.items_ordered
       @cart = @user.carts
       id = @user.id
       login!(@user)
