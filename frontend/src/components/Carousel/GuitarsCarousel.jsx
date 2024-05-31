@@ -27,9 +27,11 @@ function GuitarsCarousel(){
     const favoritesObj = useSelector(state=>(state.favorites))
     const favorites = Object.values(favoritesObj)
     const favoriteInstrumentIds = favorites.map((favorite)=>{
-        return favorite.instrumentId
+        return favorite.instrument_id
     })
+
    
+
 
 
         guitars.forEach((guitar)=>{
@@ -40,8 +42,73 @@ function GuitarsCarousel(){
             }
         })
 
- 
-  
+   
+useEffect(()=>{
+
+    const ioMdHeartOne = document.getElementById('ioMdHeart1')
+    const ioMdHeartTwo = document.getElementById('ioMdHeart2')
+    const ioMdHeartThree = document.getElementById('ioMdHeart3')
+    const ioMdHeartFour = document.getElementById('ioMdHeart4')
+    const ioMdHeartFive = document.getElementById('ioMdHeart5')
+    const ioMdHeartSix = document.getElementById('ioMdHeart6')
+
+    const luHeartOne = document.getElementById('luHeart1')
+    const luHeartTwo = document.getElementById('luHeart2')
+    const luHeartThree = document.getElementById('luHeart3')
+    const luHeartFour = document.getElementById('luHeart4')
+    const luHeartFive = document.getElementById('luHeart5')
+    const luHeartSix = document.getElementById('luHeart6')
+    debugger;
+    if (favoriteInstrumentIds.includes(shortGuitars[0].id)){
+        ioMdHeartOne.style.display='none'
+        luHeartOne.style.display='flex'
+    } else {
+        ioMdHeartOne.style.display='flex'
+        luHeartOne.style.display='none'
+    }
+
+    if (favoriteInstrumentIds.includes(shortGuitars[1].id)){
+        ioMdHeartTwo.style.display='none'
+        luHeartTwo.style.display='flex'
+    } else {
+        ioMdHeartTwo.style.display='flex'
+        luHeartTwo.style.display='none'
+    }
+
+    if (favoriteInstrumentIds.includes(shortGuitars[2].id)){
+        ioMdHeartThree.style.display='none'
+        luHeartThree.style.display='flex'
+    } else {
+        ioMdHeartThree.style.display='flex'
+        luHeartThree.style.display='none'
+    }
+
+    if (favoriteInstrumentIds.includes(shortGuitars[3].id)){
+        ioMdHeartFour.style.display='none'
+        luHeartFour.style.display='flex'
+    } else {
+        ioMdHeartFour.style.display='flex'
+        luHeartFour.style.display='none'
+    }
+
+    if (favoriteInstrumentIds.includes(shortGuitars[4].id)){
+        ioMdHeartFive.style.display='none'
+        luHeartFive.style.display='flex'
+    } else {
+        ioMdHeartFive.style.display='flex'
+        luHeartFive.style.display='none'
+    }
+
+    if (favoriteInstrumentIds.includes(shortGuitars[5].id)){
+        ioMdHeartSix.style.display='none'
+        luHeartSix.style.display='flex'
+    } else {
+        ioMdHeartSix.style.display='flex'
+        luHeartSix.style.display='none'
+    }
+   
+
+},[favoriteInstrumentIds])
     
  
   
@@ -66,9 +133,9 @@ function GuitarsCarousel(){
         
         const unFavorite = (guitarId, buttonId, e) => {
             let favoriteId
-            debugger;
+         
             favorites.forEach((favorite)=>{
-                debugger;
+         
                 if(favorite.instrument_id === guitarId){
                     favoriteId = favorite.id
                 }
