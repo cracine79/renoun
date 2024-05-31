@@ -13,13 +13,12 @@ export const formatter = new Intl.NumberFormat('en-US', {
 
 function GuitarsCarousel(){
 
-    const guitars = useSelector(state=>Object.values(state.instruments))
-    const orders = useSelector(state=>Object.values(state.orders))
-    
+    const guitarsObj = useSelector(state=>(state.instruments))
+    const guitars = Object.values(guitarsObj)
     const shortGuitars = [];
-
-   
-  
+    
+    useSelector(()=>{
+      
         guitars.forEach((guitar)=>{
             if (shortGuitars.length < 6){
                 if (guitar.available){
@@ -27,19 +26,17 @@ function GuitarsCarousel(){
                 }
             }
         })
- 
-            
+    }, [guitars])
+   
+    
 
+  
 
-
+        
+  
        
 
- 
-    
-
-   
-
-    
+            
     // let i = 0
     // while(shortGuitars.length<6 && i < guitars.length){
     //     shortGuitars.forEach((guitar)=>{
@@ -49,7 +46,7 @@ function GuitarsCarousel(){
     //         }
     //     })
     // }
-
+    console.log(shortGuitars)
 
  
     return<>
