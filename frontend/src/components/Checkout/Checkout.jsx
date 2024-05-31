@@ -26,10 +26,12 @@ function Checkout (){
         return instrument;
     })
 
-    const instrumentIds = instrumentsArray.map((instrument)=>{
-        return instrument.id
+
+    const instrumentIds = cart.map((cart)=>{
+        return cart.instrumentId
     })
 
+    debugger;
 
      const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',

@@ -1,32 +1,48 @@
 import './OrderConfirmation.css'
 import {useSelector} from 'react-redux'
 import { useLocation } from 'react-router-dom'
+import { useState } from 'react';
 
 
 function OrderConfirmation(){
+   
     const location = useLocation();
-    debugger;
     const orderState = location.state.instrumentIds;
+    const instrumentState = useSelector(state => Object.values(state.instruments))
     debugger;
+    const thisOrder = instrumentState.filter((instrument)=>{
+       return( orderState.includes(instrument.id))
+    })
+    debugger;
+
     console.log(orderState);
     const userFirstName = useSelector(state => (state.session.user.firstName))
     const userLastName = useSelector(state=> (state.session.user.lastName))
     const email = useSelector(state=>(state.session.user.email))
-    const orders = useSelector(state=>Object.values(state.orders))
+    // const allOrders = useSelector(state=>Object.values(state.orders))
+    // debugger;
+    // let orders = []
+    // useState(()=>{
+    //     orders = allOrders.filter((order)=>{
+    //         orderState.includes(order.instrumentId)
+    //    })
+    // },[allOrders])
+    
+
     const capFirstName = userFirstName.slice(0,1).toUpperCase()+userFirstName.slice(1)
     const capLastName = userLastName.slice(0,1).toUpperCase()+userLastName.slice(1)
     const now = new Date();
     const date = now.toDateString();
     const sellerFullName = (instrument) => {
-        debugger;
+
         const sellerCapFirstName = instrument.sellerFirstName.slice(0,1).toUpperCase()+instrument.sellerFirstName.slice(1)
         const sellerCapLastName = instrument.sellerLastName.slice(0,1).toUpperCase()+instrument.sellerLastName.slice(1)
         return (`${sellerCapFirstName} ${sellerCapLastName}`)
     }
     let extension = 0
-    if (orders.length>0){
+    if (thisOrder.length>0){
         debugger;
-        extension = orders[0].id
+        extension = thisOrder[0].id
     } else {
         extension = 79
     }
@@ -43,7 +59,7 @@ function OrderConfirmation(){
         // maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
       });
 
-    orders.forEach((order)=>{
+    thisOrder.forEach((order)=>{
         subTotal += order.price
         debugger;
         if(order.shipping!=='FREE'){
@@ -133,7 +149,7 @@ function OrderConfirmation(){
                     </div>
                     <div id='receipt-dotted-line'></div>
 
-                    {orders.map((instrument)=>{
+                    {thisOrder.map((instrument)=>{
                         return(
                             <>
                                 <div className='receipt-summary-item-wrapper' id='instrument.id'>
