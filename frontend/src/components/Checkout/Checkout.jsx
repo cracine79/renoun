@@ -6,6 +6,7 @@ import { RiTreeLine } from "react-icons/ri";
 import { createOrder } from '../../store/order';
 import {useNavigate} from 'react-router-dom';
 import { clearCart } from '../../store/cart';
+import { Link } from 'react-router-dom';
 
 
 
@@ -18,11 +19,17 @@ function Checkout (){
     const cart = useSelector(state=>Object.values(state.carts));
     const navigate = useNavigate();
 
+    
 
     const instrumentsArray = cart.map((item)=>{
         const instrument = useSelector(state=>(state.instruments[item.instrumentId]))
         return instrument;
     })
+
+    const instrumentIds = instrumentsArray.map((instrument)=>{
+        return instrument.id
+    })
+
 
      const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -36,7 +43,6 @@ function Checkout (){
       const handleOrder = async () => {
             await dispatch(createOrder(userId))
             dispatch(clearCart())
-            return navigate('/OrderConfirmation')
       }
 
 
@@ -73,7 +79,7 @@ function Checkout (){
     // const thing = useSelector(state=>(state.instruments[1]))
     // console.log(thing)
     // console.log(cart[].id)
-    console.log(instrumentsArray)
+
 
     return (
     <div id='c-wrapper-wrapper'>
@@ -194,7 +200,7 @@ function Checkout (){
                 </div>
 
                 
-                <button id='place-order' onClick = {handleOrder} >Place Order</button>
+                <Link to='/OrderConfirmation' state={{instrumentIds : instrumentIds }}id='place-order' onClick = {handleOrder} >Place Order</Link>
                 <p id='haha' >By continuing, you agree to Renoun's pretend Terms and Privacy Policy</p>
 
                 <div className='checkout-csr-wrapper'>

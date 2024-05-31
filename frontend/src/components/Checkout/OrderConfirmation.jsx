@@ -1,9 +1,14 @@
 import './OrderConfirmation.css'
 import {useSelector} from 'react-redux'
+import { useLocation } from 'react-router-dom'
 
 
 function OrderConfirmation(){
-
+    const location = useLocation();
+    debugger;
+    const orderState = location.state.instrumentIds;
+    debugger;
+    console.log(orderState);
     const userFirstName = useSelector(state => (state.session.user.firstName))
     const userLastName = useSelector(state=> (state.session.user.lastName))
     const email = useSelector(state=>(state.session.user.email))
@@ -17,6 +22,13 @@ function OrderConfirmation(){
         const sellerCapFirstName = instrument.sellerFirstName.slice(0,1).toUpperCase()+instrument.sellerFirstName.slice(1)
         const sellerCapLastName = instrument.sellerLastName.slice(0,1).toUpperCase()+instrument.sellerLastName.slice(1)
         return (`${sellerCapFirstName} ${sellerCapLastName}`)
+    }
+    let extension = 0
+    if (orders.length>0){
+        debugger;
+        extension = orders[0].id
+    } else {
+        extension = 79
     }
 
     let subTotal=0;
@@ -105,7 +117,7 @@ function OrderConfirmation(){
                             <p className='order-summary-text'>
                                 Order Number
                             </p>
-                            <p className='order-info-text'>2024420-90210-{orders[0].id}</p>
+                            <p className='order-info-text'>2024420-90210-{extension}</p>
                         </div>
                         <div className = 'vert-line'>
                         </div>
