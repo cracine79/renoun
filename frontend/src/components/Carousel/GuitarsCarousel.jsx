@@ -25,8 +25,7 @@ function GuitarsCarousel(){
     const userId = useSelector(state=>(state.session.user.id))
     const dispatch = useDispatch()
     const favoritedObj = useSelector(state=>(state.favorites))
-    const favorited = Object.values(favoritedObj)
-    useSelector(()=>{
+
       
         guitars.forEach((guitar)=>{
             if (shortGuitars.length < 6){
@@ -35,16 +34,25 @@ function GuitarsCarousel(){
                 }
             }
         })
-    }, [guitars])
+
    
   
 
-        
+ 
   
     const addFavorite = (guitarId, e) => {
+        const favorite=({
+            favoriterId: userId,
+            instrumentId: guitarId
+        }
+
+        )
+
+        dispatch(createFavorite(favorite))
         if (e.target.style.fill==='red'){
             e.target.style.fill='none'
             e.target.style.stroke='black'
+         
         }    else {
             e.target.style.fill='red'
             e.target.style.stroke='none'

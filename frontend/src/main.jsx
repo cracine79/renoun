@@ -9,6 +9,7 @@ import * as sessionActions from './store/session';
 import * as cartActions from './store/cart';
 import { redirect } from 'react-router-dom';
 import * as instrumentActions from './store/instrument'
+import * as favoriteActions from './store/favorite'
 
 
 const store = configureStore();
@@ -21,6 +22,7 @@ if (import.meta.env.MODE !== "production") {
   window.redirect = redirect;
   window.instrumentActions = instrumentActions;
   window.cartActions = cartActions;
+  window.favoriteActions = favoriteActions;
 
 }
 

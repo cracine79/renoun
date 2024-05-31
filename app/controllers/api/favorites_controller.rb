@@ -1,11 +1,13 @@
 class Api::FavoritesController < ApplicationController
-
+wrap_parameters include: Favorite.attribute_names + [:favoriterId, :instrumentId]
 
 
     def create
-        debugger;
+  
         @favorite = Favorite.new(favorite_params)
+
             if @favorite.save!
+      
                 render json: @favorite
             else
                 render json: ('already favorited')

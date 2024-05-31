@@ -34,6 +34,7 @@ export const fetchAllCarts = () => async dispatch => {
 }
 
 export const createCartItem = cart => async dispatch => {
+    debugger;
     const res = await csrfFetch('/api/carts',{
         method: 'POST',
         body: JSON.stringify(cart),

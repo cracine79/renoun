@@ -23,7 +23,8 @@ export const removeFavorite = favoriterId => ({
 })
 
 export const createFavorite = favorite => async dispatch => {
-    const res = await csrfFetch('/api/favorites/',{
+    debugger;
+    const res = await csrfFetch('/api/favorites',{
         method: 'POST',
         body: JSON.stringify(favorite),
         headers: {
@@ -45,8 +46,8 @@ export const favoritesReducer = (state = {}, action) => {
         case RECEIVE_FAVORITES:
             return {...nextState, ...action.favorites};
         case RECEIVE_FAVORITE:
-            nextState(action.favorite.id) = action.favorite
-            return  nextState;
+            nextState[action.favorite.id] = action.favorite
+            return  {...nextState};
         case REMOVE_FAVORITE:
             delete nextState[action.favoriteId]
         default:
