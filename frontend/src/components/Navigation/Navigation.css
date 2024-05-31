@@ -210,12 +210,18 @@
     color: black;
     font-size: 16px;
     font-weight: 400;
-    margin-top: 5px;
+    margin-left: -15px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+
   }
 
   .dropdown-link:hover{
     color:orange;
+ 
   }
+
+
 
   #logo-link{
     margin-right: -100px;
@@ -243,10 +249,10 @@
     height: 15px;
     background-color: orangered;
     margin-left: 13px;
-   margin-top: -37px;
-   display: flex;
-   border-radius: 2px;
-   color: white;
+    margin-top: -37px;
+    display: flex;
+    border-radius: 2px;
+    color: white;
     font-size: 14px;
     display: none;
     align-items: center;

@@ -1,0 +1,88 @@
+#orders-wrapper{
+    margin-top: 100px;
+    margin-left: 120px;
+    width: 90%;
+    height: auto;
+
+}
+
+#purchase-count{
+    font-size: 32px;
+    font-weight: 800;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.divider-liner{
+    width: 100%;
+    border-top: 1px solid gray;   
+    margin-left: -60px;
+
+}
+
+#purchase-history-box{
+    height: 500px;
+    width: 1400px;
+
+    margin-top: 40px;
+    border: solid gray 1px;
+}
+
+#no-purchases{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px; 
+}
+
+#no-purchases-text{
+    font-size: 24px;
+    font-weight: 600;
+    color: gray;
+    margin-top: 20px;
+}
+
+#empty-basko{
+    margin-top: 50px;
+    width: 240px;
+}
+
+#some-purchases{
+    margin-left: 40px;
+    margin-top: 40px; 
+    font-size: 22px; 
+    font-weight: 600
+
+}
+
+.inner-divider-liner{
+    width: 95%;
+    margin-top: 20px;
+    border-top: 1px solid gray;   
+
+}
+
+
+#purchase-headers-box{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-left: -50px;
+    margin-top: 25px; 
+}
+
+.order-history-item-info-wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    font-weight: 400;
+}
+
+#date-of-purchase{
+    margin-left: -120px;
+}
+
+#order-status-header{
+    margin-right: 30px; 
+}

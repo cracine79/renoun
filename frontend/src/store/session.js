@@ -21,7 +21,7 @@ const storeCSRFToken = response => {
   };
 
 export const login = user => async dispatch => {
-    let res = await csrfFetch('api/session', {
+    let res = await csrfFetch('/api/session', {
         method: 'POST',
         body: JSON.stringify(user),
         headers: {

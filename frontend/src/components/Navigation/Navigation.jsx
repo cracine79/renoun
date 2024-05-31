@@ -32,15 +32,16 @@ function Navigation(){
     let length = cart.length;
 
     useEffect(()=>{
+    
         if (cart){
             if(countSquare){
         if (cart.length > 0){
             countSquare.style.display='flex'
             countSquare.innerHTML= cart.length;
         } else {
-            countSquare.display='none'
+            countSquare.style.display='none'
         }}}
-    },[cart])
+    },[cart.length])
 
     const handleClick = ((e) => {
         dispatch(clearCart())
@@ -101,7 +102,7 @@ function Navigation(){
                         <hr className='dropdown-line'></hr>
                         <p className='dropdown-header'>MY ACCOUNT</p>
                         <br></br>
-                        <Link to='/OrderConfirmation' className='dropdown-link'>My Profile</Link>
+                        <Link to='/Orders' id='link-to-orders' className='dropdown-link'>Orders</Link>
                         <Link to='/' className='dropdown-link' onClick={handleClick}>Logout</Link>
 
                     </div>

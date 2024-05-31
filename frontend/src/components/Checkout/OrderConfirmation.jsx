@@ -2,6 +2,7 @@ import './OrderConfirmation.css'
 import {useSelector} from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 function OrderConfirmation(){
@@ -9,18 +10,18 @@ function OrderConfirmation(){
     const location = useLocation();
     const orderState = location.state.instrumentIds;
     const instrumentState = useSelector(state => Object.values(state.instruments))
-    debugger;
+
     const thisOrder = instrumentState.filter((instrument)=>{
        return( orderState.includes(instrument.id))
     })
-    debugger;
+
 
     console.log(orderState);
     const userFirstName = useSelector(state => (state.session.user.firstName))
     const userLastName = useSelector(state=> (state.session.user.lastName))
     const email = useSelector(state=>(state.session.user.email))
     // const allOrders = useSelector(state=>Object.values(state.orders))
-    // debugger;
+    //
     // let orders = []
     // useState(()=>{
     //     orders = allOrders.filter((order)=>{
@@ -41,7 +42,7 @@ function OrderConfirmation(){
     }
     let extension = 0
     if (thisOrder.length>0){
-        debugger;
+    
         extension = thisOrder[0].id
     } else {
         extension = 79
@@ -61,7 +62,7 @@ function OrderConfirmation(){
 
     thisOrder.forEach((order)=>{
         subTotal += order.price
-        debugger;
+   
         if(order.shipping!=='FREE'){
         shippingTotal += order.shipping
         }
@@ -110,7 +111,7 @@ function OrderConfirmation(){
                 </div>
                
 
-                    <button id='orders-button'>See All Past Orders</button>
+                    <Link to='/Orders' id='orders-button'>See All Past Orders</Link>
 
                 
               

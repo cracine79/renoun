@@ -21,9 +21,20 @@ function Cart(){
     const [totalAmount, setTotalAmount] = useState(0);
     const [itemNumbers, setItemNumbers] = useState(0)
     const dispatch = useDispatch();
-
+      let total = 0
    
-    
+
+        // cart.forEach((item)=>{
+        //     debugger;
+        //     if(item){
+         
+        //         total += (instrumentsState[item.instrumentId].price)
+     
+        //         total += (instrumentsState[item.instrumentId].shipping)
+
+        //     }
+           
+        // })
 
     
     useEffect(()=>{
@@ -46,16 +57,10 @@ function Cart(){
 
   
         const instrumentsArray = [];
-        let total = 0
-        cart.forEach((item)=>{
-            if(item){
-                total += (instrumentsState[item.instrumentId].price)
-                debugger;
-                total += (instrumentsState[item.instrumentId].shipping)
-
-            }
-           
-        })
+      
+        
+       
+      
     
        
         setTotalAmount(total)

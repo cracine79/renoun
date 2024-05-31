@@ -75,7 +75,16 @@
     border-radius: 25px;
     margin-top: 50px;
     border: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800
+}
 
+#orders-button:hover{
+    background-color:lightcoral;
+    cursor: pointer;
 }
 
 

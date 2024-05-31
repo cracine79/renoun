@@ -142,8 +142,9 @@ const Instrument = () => {
     }  
     
     window.onscroll = function(){
-        if(rightBox){
         const rightBox = document.getElementById('instrumentInfoBox');
+        if(rightBox){
+       
         if (window.pageYOffset > 100){
             rightBox.className='withShadow'
         } else {

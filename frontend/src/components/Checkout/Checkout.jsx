@@ -31,7 +31,7 @@ function Checkout (){
         return cart.instrumentId
     })
 
-    debugger;
+
 
      const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',

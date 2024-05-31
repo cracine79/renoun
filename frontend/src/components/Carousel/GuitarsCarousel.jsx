@@ -14,16 +14,21 @@ export const formatter = new Intl.NumberFormat('en-US', {
 function GuitarsCarousel(){
 
     const guitars = useSelector(state=>Object.values(state.instruments))
+    const orders = useSelector(state=>Object.values(state.orders))
+    
     const shortGuitars = [];
 
-    
-            guitars.forEach((guitar)=>{
-                if (shortGuitars.length < 6){
-                    if (guitar.available){
-                        shortGuitars.push(guitar)
-                    }
+   
+  
+        guitars.forEach((guitar)=>{
+            if (shortGuitars.length < 6){
+                if (guitar.available){
+                    shortGuitars.push(guitar)
                 }
-            })
+            }
+        })
+ 
+            
 
 
 

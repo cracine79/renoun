@@ -15,7 +15,7 @@ import Instrument from './components/Instrument/Instrument';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
 import OrderConfirmation from './components/Checkout/OrderConfirmation';
-
+import Orders from './components/Orders/Orders';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -90,9 +90,14 @@ const router = createBrowserRouter([
         element: <Checkout />
       },
       {
-        path: 'orderConfirmation',
+        path: '/orderConfirmation',
         element: <OrderConfirmation />
+      }, 
+      {
+        path: '/orders',
+        element: <Orders />
       }
+
    
     ]
   }
