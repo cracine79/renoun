@@ -46,22 +46,18 @@ function Cart(){
 
   
         const instrumentsArray = [];
-
+        let total = 0
         cart.forEach((item)=>{
-            instrumentsArray.push(instrumentsState[item.instrumentId])
-        })
-    
-        let total = 0;
-    
-        instrumentsArray.forEach((item)=>{
-      
-            if (item){
-            total += item.price;
-            
-            
-            total += item.shipping
+            if(item){
+                total += (instrumentsState[item.instrumentId].price)
+                debugger;
+                total += (instrumentsState[item.instrumentId].shipping)
+
             }
+           
         })
+    
+       
         setTotalAmount(total)
     
       

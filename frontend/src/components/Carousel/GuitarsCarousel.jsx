@@ -2,6 +2,7 @@ import { useSelector } from "react-redux"
 import './GuitarsCarousel.css'
 import { Link } from "react-router-dom"
 import { LuHeart } from "react-icons/lu"
+import { useEffect } from "react"
 
 export const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -15,13 +16,23 @@ function GuitarsCarousel(){
     const guitars = useSelector(state=>Object.values(state.instruments))
     const shortGuitars = [];
 
-    guitars.forEach((guitar)=>{
-        if (shortGuitars.length < 6){
-            if (guitar.available){
-                shortGuitars.push(guitar)
-            }
-        }
-    })
+    
+            guitars.forEach((guitar)=>{
+                if (shortGuitars.length < 6){
+                    if (guitar.available){
+                        shortGuitars.push(guitar)
+                    }
+                }
+            })
+
+
+
+       
+
+ 
+    
+
+   
 
     
     // let i = 0
