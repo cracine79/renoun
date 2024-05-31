@@ -20,6 +20,7 @@ class User < ApplicationRecord
     has_many :items_in_cart, through: :carts, source: :instrument
     has_many :orders, foreign_key: :buyer_id
     has_many :items_ordered, through: :orders, source: :instrument
+    has_many :favorites, foreign_key: :favoriter_id
    
    
 

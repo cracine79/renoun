@@ -28,7 +28,8 @@ function Navigation(){
     const signupSquare = document.getElementById('signup-mnw')
     const loginSquare = document.getElementById('login-mnw')
     const countSquare = document.getElementById('item-count')
-    const cart = useSelector(state=>Object.values(state.carts))
+    const objCart = useSelector(state=>(state.carts))
+    const cart = Object.values(objCart)
     let length = cart.length;
 
     useEffect(()=>{

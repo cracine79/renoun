@@ -37,4 +37,5 @@ class Instrument < ApplicationRecord
     has_many :carts, dependent: :destroy
     has_many :prospective_buyers, through: :carts, source: :buyer
     has_one :order
+    has_many :favorites, dependent: :destroy
 end

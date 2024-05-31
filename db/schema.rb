@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_30_152808) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_31_140557) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_30_152808) do
     t.index ["buyer_id"], name: "index_carts_on_buyer_id"
     t.index ["instrument_id", "buyer_id"], name: "index_carts_on_instrument_id_and_buyer_id", unique: true
     t.index ["instrument_id"], name: "index_carts_on_instrument_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "instrument_id", null: false
+    t.bigint "favoriter_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["favoriter_id"], name: "index_favorites_on_favoriter_id"
+    t.index ["instrument_id", "favoriter_id"], name: "index_favorites_on_instrument_id_and_favoriter_id", unique: true
+    t.index ["instrument_id"], name: "index_favorites_on_instrument_id"
   end
 
   create_table "instruments", force: :cascade do |t|
@@ -94,6 +104,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_30_152808) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "carts", "instruments"
   add_foreign_key "carts", "users", column: "buyer_id"
+  add_foreign_key "favorites", "instruments"
+  add_foreign_key "favorites", "users", column: "favoriter_id"
   add_foreign_key "instruments", "users", column: "seller_id"
   add_foreign_key "orders", "instruments"
   add_foreign_key "orders", "instruments", column: "buyer_id"
