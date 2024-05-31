@@ -16,6 +16,7 @@ wrap_parameters include: Favorite.attribute_names + [:favoriterId, :instrumentId
 
     def destroy
         @favorite = Favorite.find(params[:id])
+ 
 
         if @favorite.destroy
             render json: @favorite.id

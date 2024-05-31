@@ -5,7 +5,7 @@ import { LuHeart } from "react-icons/lu"
 import { useEffect } from "react"
 import { IoMdHeart } from "react-icons/io";
 import { useDispatch } from "react-redux"
-import { createFavorite } from "../../store/favorite"
+import { createFavorite, deleteFavorite } from "../../store/favorite"
 
 
 export const formatter = new Intl.NumberFormat('en-US', {
@@ -24,9 +24,14 @@ function GuitarsCarousel(){
     const filledHeart = document.getElementById('IoMdHeart')
     const userId = useSelector(state=>(state.session.user.id))
     const dispatch = useDispatch()
-    const favoritedObj = useSelector(state=>(state.favorites))
+    const favoritesObj = useSelector(state=>(state.favorites))
+    const favorites = Object.values(favoritesObj)
+    const favoriteInstrumentIds = favorites.map((favorite)=>{
+        return favorite.instrumentId
+    })
+   
 
-      
+
         guitars.forEach((guitar)=>{
             if (shortGuitars.length < 6){
                 if (guitar.available){
@@ -35,34 +40,68 @@ function GuitarsCarousel(){
             }
         })
 
-   
-  
-
  
   
-    const addFavorite = (guitarId, e) => {
-        const favorite=({
-            favoriterId: userId,
-            instrumentId: guitarId
+    
+ 
+  
+    const addFavorite = (guitarId, buttonId, e) => {
+            
+        const emptyHeart = document.getElementById(`luHeart${buttonId}`)
+            e.target.style.display='none'
+            emptyHeart.style.display='flex'
+
+           
+ 
+            const favorite = {
+                instrumentId: guitarId,
+                favoriterId: userId
+            }
+        
+            dispatch(createFavorite(favorite))
+    
         }
 
-        )
-
-        dispatch(createFavorite(favorite))
-        if (e.target.style.fill==='red'){
-            e.target.style.fill='none'
-            e.target.style.stroke='black'
+        
+        
+        const unFavorite = (guitarId, buttonId, e) => {
+            let favoriteId
+            debugger;
+            favorites.forEach((favorite)=>{
+                debugger;
+                if(favorite.instrument_id === guitarId){
+                    favoriteId = favorite.id
+                }
          
-        }    else {
-            e.target.style.fill='red'
-            e.target.style.stroke='none'
-        }    
+            })
+            dispatch (deleteFavorite(favoriteId))
+
+            const filledHeart = document.getElementById(`ioMdHeart${buttonId}`)
+            e.target.style.display='none'
+            filledHeart.style.display='flex'
+           
+          
+        }
+
+        // console.log(favoriteInstrumentIds)
+  
+
+        // )
+
+       
+        // if (e.target.style.fill==='red'){
+        //     e.target.style.fill='none'
+        //     e.target.style.stroke='black'
+         
+        // }    else {
+          
+        // }    
      
                 
                 
     
     
-            console.log('gogo')
+        //     console.log('gogo')
             // e.preventDefault();
             // const favorite = {
             //     instrumentId: guitarId,
@@ -71,7 +110,7 @@ function GuitarsCarousel(){
             // debugger;
             // dispatch(createFavorite(favorite))
            
-    }
+    // }
 
             
  
@@ -85,12 +124,8 @@ function GuitarsCarousel(){
 
     <div className='thumb-instrumentWrapper'>
              <div className='carousel-fav-button'>
-                   <button onClick={(e)=> addFavorite(shortGuitars[0].id, e)} className = 'like' id='luHeart1'>
-                        <LuHeart /> 
-                    </button>
-                    <div className = 'like' id='IoMdHeart'>
-                         <IoMdHeart />
-                    </div> 
+                    <img src='../../assets/images/emptyHaert.webp' className = 'likeOn' id='ioMdHeart1' onClick={(e)=> addFavorite(shortGuitars[0].id, 1, e)} />  
+                    <img src="../../assets/images/fullHeart.jpeg"   className = 'likeOff' id='luHeart1'onClick={(e)=> unFavorite(shortGuitars[0].id, 1, e)} /> 
                 </div>
             
             
@@ -111,12 +146,8 @@ function GuitarsCarousel(){
 
         <div className='thumb-instrumentWrapper'>
              <div className='carousel-fav-button'>
-                   <button onClick={(e)=> addFavorite(shortGuitars[1].id, e)} className = 'like' id='luHeart2'>
-                        <LuHeart /> 
-                    </button>
-                    <div className = 'like' id='IoMdHeart'>
-                         <IoMdHeart />
-                    </div> 
+                    <img src='../../assets/images/emptyHaert.webp' className = 'likeOn' id='ioMdHeart2' onClick={(e)=> addFavorite(shortGuitars[1].id, 2, e)}/>  
+                    <img src="../../assets/images/fullHeart.jpeg"   className = 'likeOff' id='luHeart2'onClick={(e)=> unFavorite(shortGuitars[1].id, 2, e)}/> 
                 </div>
             
             
@@ -138,12 +169,8 @@ function GuitarsCarousel(){
 
         <div className='thumb-instrumentWrapper'>
              <div className='carousel-fav-button'>
-                   <button onClick={(e)=> addFavorite(shortGuitars[2].id, e)} className = 'like' id='luHeart3'>
-                        <LuHeart /> 
-                    </button>
-                    <div className = 'like' id='IoMdHeart'>
-                         <IoMdHeart />
-                    </div> 
+                    <img src='../../assets/images/emptyHaert.webp' className = 'likeOn' id='ioMdHeart3' onClick={(e)=> addFavorite(shortGuitars[2].id, 3, e)}/>  
+                    <img src="../../assets/images/fullHeart.jpeg"   className = 'likeOff' id='luHeart3'onClick={(e)=> unFavorite(shortGuitars[2].id, 3, e)}/> 
                 </div>
             
             
@@ -165,13 +192,9 @@ function GuitarsCarousel(){
 
         <div className='thumb-instrumentWrapper'>
              <div className='carousel-fav-button'>
-                   <button onClick={(e)=> addFavorite(shortGuitars[3].id, e)} className = 'like' id='luHeart4'>
-                        <LuHeart /> 
-                    </button>
-                    <div className = 'like' id='IoMdHeart'>
-                         <IoMdHeart />
-                    </div> 
-                </div>
+                    <img src='../../assets/images/emptyHaert.webp' className = 'likeOn' id='ioMdHeart4' onClick={(e)=> addFavorite(shortGuitars[3].id, 4, e)}/>  
+                    <img src="../../assets/images/fullHeart.jpeg"   className = 'likeOff' id='luHeart4'onClick={(e)=> unFavorite(shortGuitars[3].id, 4, e)}/> 
+            </div>
             
             
             <Link className='thumb-link' to={`/instruments/${shortGuitars[3].id}`}>
@@ -191,13 +214,9 @@ function GuitarsCarousel(){
 
         <div className='thumb-instrumentWrapper'>
              <div className='carousel-fav-button'>
-                   <button onClick={(e)=> addFavorite(shortGuitars[4].id, e)} className = 'like' id='luHeart5'>
-                        <LuHeart /> 
-                    </button>
-                    <div className = 'like' id='IoMdHeart'>
-                         <IoMdHeart />
-                    </div> 
-                </div>
+                    <img src='../../assets/images/emptyHaert.webp' className = 'likeOn' id='ioMdHeart5' onClick={(e)=> addFavorite(shortGuitars[4].id, 5, e)}/>  
+                    <img src="../../assets/images/fullHeart.jpeg"   className = 'likeOff' id='luHeart5'onClick={(e)=> unFavorite(shortGuitars[4].id, 5, e)}/> 
+            </div>
             
             
             <Link className='thumb-link' to={`/instruments/${shortGuitars[4].id}`}>
@@ -217,13 +236,9 @@ function GuitarsCarousel(){
 
         <div className='thumb-instrumentWrapper'>
              <div className='carousel-fav-button'>
-                   <button onClick={(e)=> addFavorite(shortGuitars[5].id, e)} className = 'like' id='luHeart6'>
-                        <LuHeart /> 
-                    </button>
-                    <div className = 'like' id='IoMdHeart'>
-                         <IoMdHeart />
-                    </div> 
-                </div>
+                    <img src='../../assets/images/emptyHaert.webp' className = 'likeOn' id='ioMdHeart6' onClick={(e)=> addFavorite(shortGuitars[5].id, 6, e)}/>  
+                    <img src="../../assets/images/fullHeart.jpeg"   className = 'likeOff' id='luHeart6'onClick={(e)=> unFavorite(shortGuitars[5].id, 6, e)}/> 
+            </div>
             
             
             <Link className='thumb-link' to={`/instruments/${shortGuitars[5].id}`}>
