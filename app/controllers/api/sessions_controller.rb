@@ -7,6 +7,8 @@ class Api::SessionsController < ApplicationController
     if @user
       @cart = @user.carts
       @orders = @user.items_ordered
+      @favorites = @user.favorites
+ 
 
       render 'api/users/show'
     else

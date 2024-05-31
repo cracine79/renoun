@@ -31,4 +31,13 @@ json.orders do
 end
 
 
+json.favorites do
+  @favorites.each do |favorite|
+    json.set! favorite.id do
+      json.id favorite.id
+      json.instrument_id favorite.instrument_id
+      json.created_at favorite.created_at
+    end
+  end
+end
 

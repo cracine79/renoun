@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :users do
      resources :orders, only: [:index, :create]
     end
+    resources :favorites, only: [:create, :destroy]
     
   end
 

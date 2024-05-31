@@ -4,6 +4,7 @@ import sessionReducer from './session';
 import instrumentsReducer from './instrument';
 import cartsReducer from './cart';
 import ordersReducer from './order';
+import { favoritesReducer } from './favorite';
 
 
 
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   session: sessionReducer,
   instruments: instrumentsReducer,
   carts: cartsReducer,
-  orders: ordersReducer
+  orders: ordersReducer,
+  favorites: favoritesReducer
 });
 
 let enhancer;

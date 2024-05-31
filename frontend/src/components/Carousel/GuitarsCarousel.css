@@ -87,13 +87,25 @@
 	font-size: 20px;
 }
 
+
 .like:hover{
 	color: red;
 	cursor: pointer;
 	font-size: 21px;
 }
 
+#IoMdHeart > * {
+    fill: red;
+}
+
 .carousel{
     display: block
 }
 
+#IoMdHeart{
+        display: none;
+}
+
+#luHeart{
+    display: flex;
+}

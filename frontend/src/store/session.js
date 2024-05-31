@@ -1,6 +1,7 @@
 import csrfFetch from "./csrf"
 import { receiveCartItems } from "./cart"
 import { receiveOrders } from "./order"
+import { receiveFavorites } from "./favorite"
 
 const RECEIVE_USER = 'session/RECEIVE_USER'
 const REMOVE_USER = 'session/REMOVE_USER'
@@ -36,6 +37,7 @@ export const login = user => async dispatch => {
     dispatch(receiveUser(data.user));
     dispatch(receiveCartItems(data.cart))
     dispatch(receiveOrders(data.orders))
+    dispatch(receiveFavorites(data.favorites))
   
     return res;
 }
@@ -78,6 +80,7 @@ export const restoreSession = () => async dispatch => {
   
     dispatch(receiveCartItems(data.cart));
     dispatch(receiveOrders(data.orders))
+    dispatch(receiveFavorites(data.favorites))
     return res;
 }
 
