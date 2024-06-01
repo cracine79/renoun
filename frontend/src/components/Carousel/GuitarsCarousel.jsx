@@ -6,6 +6,7 @@ import { useEffect } from "react"
 import { IoMdHeart } from "react-icons/io";
 import { useDispatch } from "react-redux"
 import { createFavorite, deleteFavorite } from "../../store/favorite"
+// import emptyHeart from '../../assets/images/emptyHeart.png'
 
 
 export const formatter = new Intl.NumberFormat('en-US', {
@@ -191,8 +192,8 @@ useEffect(()=>{
 
     <div className='thumb-instrumentWrapper'>
              <div className='carousel-fav-button'>
-                    <img src='../../assets/images/emptyHaert.webp' className = 'likeOn' id='ioMdHeart1' onClick={(e)=> addFavorite(shortGuitars[0].id, 1, e)} />  
-                    <img src="../../assets/images/fullHeart.jpeg"   className = 'likeOff' id='luHeart1'onClick={(e)=> unFavorite(shortGuitars[0].id, 1, e)} /> 
+                    <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='ioMdHeart1' onClick={(e)=> addFavorite(shortGuitars[0].id, 1, e)} />  
+                    <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='luHeart1'onClick={(e)=> unFavorite(shortGuitars[0].id, 1, e)} /> 
                 </div>
             
             
@@ -213,8 +214,8 @@ useEffect(()=>{
 
         <div className='thumb-instrumentWrapper'>
              <div className='carousel-fav-button'>
-                    <img src='../../assets/images/emptyHaert.webp' className = 'likeOn' id='ioMdHeart2' onClick={(e)=> addFavorite(shortGuitars[1].id, 2, e)}/>  
-                    <img src="../../assets/images/fullHeart.jpeg"   className = 'likeOff' id='luHeart2'onClick={(e)=> unFavorite(shortGuitars[1].id, 2, e)}/> 
+                    <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='ioMdHeart2' onClick={(e)=> addFavorite(shortGuitars[1].id, 2, e)}/>  
+                    <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='luHeart2'onClick={(e)=> unFavorite(shortGuitars[1].id, 2, e)}/> 
                 </div>
             
             
@@ -236,8 +237,8 @@ useEffect(()=>{
 
         <div className='thumb-instrumentWrapper'>
              <div className='carousel-fav-button'>
-                    <img src='../../assets/images/emptyHaert.webp' className = 'likeOn' id='ioMdHeart3' onClick={(e)=> addFavorite(shortGuitars[2].id, 3, e)}/>  
-                    <img src="../../assets/images/fullHeart.jpeg"   className = 'likeOff' id='luHeart3'onClick={(e)=> unFavorite(shortGuitars[2].id, 3, e)}/> 
+                    <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='ioMdHeart3' onClick={(e)=> addFavorite(shortGuitars[2].id, 3, e)}/>  
+                    <img src="../../assets/images/filledHeart.png"  className = 'likeOff' id='luHeart3'onClick={(e)=> unFavorite(shortGuitars[2].id, 3, e)}/> 
                 </div>
             
             
@@ -259,8 +260,8 @@ useEffect(()=>{
 
         <div className='thumb-instrumentWrapper'>
              <div className='carousel-fav-button'>
-                    <img src='../../assets/images/emptyHaert.webp' className = 'likeOn' id='ioMdHeart4' onClick={(e)=> addFavorite(shortGuitars[3].id, 4, e)}/>  
-                    <img src="../../assets/images/fullHeart.jpeg"   className = 'likeOff' id='luHeart4'onClick={(e)=> unFavorite(shortGuitars[3].id, 4, e)}/> 
+                    <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='ioMdHeart4' onClick={(e)=> addFavorite(shortGuitars[3].id, 4, e)}/>  
+                    <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='luHeart4'onClick={(e)=> unFavorite(shortGuitars[3].id, 4, e)}/> 
             </div>
             
             
@@ -281,8 +282,8 @@ useEffect(()=>{
 
         <div className='thumb-instrumentWrapper'>
              <div className='carousel-fav-button'>
-                    <img src='../../assets/images/emptyHaert.webp' className = 'likeOn' id='ioMdHeart5' onClick={(e)=> addFavorite(shortGuitars[4].id, 5, e)}/>  
-                    <img src="../../assets/images/fullHeart.jpeg"   className = 'likeOff' id='luHeart5'onClick={(e)=> unFavorite(shortGuitars[4].id, 5, e)}/> 
+                    <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='ioMdHeart5' onClick={(e)=> addFavorite(shortGuitars[4].id, 5, e)}/>  
+                    <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='luHeart5'onClick={(e)=> unFavorite(shortGuitars[4].id, 5, e)}/> 
             </div>
             
             
@@ -303,8 +304,8 @@ useEffect(()=>{
 
         <div className='thumb-instrumentWrapper'>
              <div className='carousel-fav-button'>
-                    <img src='../../assets/images/emptyHaert.webp' className = 'likeOn' id='ioMdHeart6' onClick={(e)=> addFavorite(shortGuitars[5].id, 6, e)}/>  
-                    <img src="../../assets/images/fullHeart.jpeg"   className = 'likeOff' id='luHeart6'onClick={(e)=> unFavorite(shortGuitars[5].id, 6, e)}/> 
+                    <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='ioMdHeart6' onClick={(e)=> addFavorite(shortGuitars[5].id, 6, e)}/>  
+                    <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='luHeart6'onClick={(e)=> unFavorite(shortGuitars[5].id, 6, e)}/> 
             </div>
             
             
