@@ -34,14 +34,14 @@ const Instrument = () => {
   
     const favorites = Object.values(favoritesObj);
     const favoriteInstrumentIds = favorites.map((favorite)=>{
-        return favorite.instrument_id
+        return favorite.instrumentId
     })
     debugger;
     let favoriteId
 
     favorites.forEach((favorite)=>{
         debugger;
-        if(favorite.instrument_id===instrument.id){
+        if(favorite.instrumentId===instrument.id){
             favoriteId = favorite.id
         }
     }

@@ -8,14 +8,17 @@ wrap_parameters include: Favorite.attribute_names + [:favoriterId, :instrumentId
 
             if @favorite.save!
       
-                render json: @favorite
+                render 'api/favorites/show'
             else
                 render json: ('already favorited')
             end
     end
 
     def destroy
+
         @favorite = Favorite.find(params[:id])
+      
+        
  
 
         if @favorite.destroy
