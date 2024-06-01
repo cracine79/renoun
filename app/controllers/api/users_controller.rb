@@ -8,6 +8,9 @@ class Api::UsersController < ApplicationController
 
 
     if @user.save!
+      @orders = {}
+      @cart = {}
+      @favorites = {}
       login!(@user)
       render :show
     else
