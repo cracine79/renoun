@@ -25,6 +25,8 @@ function GenericCarousel(){
         const userId = currentUser.id
     }
     const dispatch = useDispatch()
+
+    
     
     
 
@@ -43,6 +45,93 @@ function GenericCarousel(){
 
     
     const shortInstruments = favoriteInstruments.slice(0,6)
+
+    useEffect(()=>{
+
+        const ioMdHeartOne = document.getElementById('genIoMdHeart1')
+        const ioMdHeartTwo = document.getElementById('genIoMdHeart2')
+        const ioMdHeartThree = document.getElementById('genIoMdHeart3')
+        const ioMdHeartFour = document.getElementById('genIoMdHeart4')
+        const ioMdHeartFive = document.getElementById('genIoMdHeart5')
+        const ioMdHeartSix = document.getElementById('genIoMdHeart6')
+    
+        const luHeartOne = document.getElementById('genLuHeart1')
+        const luHeartTwo = document.getElementById('genLuHeart2')
+        const luHeartThree = document.getElementById('genLuHeart3')
+        const luHeartFour = document.getElementById('genLuHeart4')
+        const luHeartFive = document.getElementById('genLuHeart5')
+        const luHeartSix = document.getElementById('genLuHeart6')
+    
+        if(shortInstruments[0]){
+            if (favoriteInstrumentIds.includes(shortInstruments[0].id)){
+                ioMdHeartOne.style.display='none'
+                luHeartOne.style.display='flex'
+            } else {
+                ioMdHeartOne.style.display='flex'
+                luHeartOne.style.display='none'
+            }
+    
+
+        }
+     
+        if(shortInstruments[1]){
+            if (favoriteInstrumentIds.includes(shortInstruments[1].id)){
+                ioMdHeartTwo.style.display='none'
+                luHeartTwo.style.display='flex'
+            } else {
+                ioMdHeartTwo.style.display='flex'
+                luHeartTwo.style.display='none'
+            }
+        }
+      
+        if(shortInstruments[2]){
+            if (favoriteInstrumentIds.includes(shortInstruments[2].id)){
+                ioMdHeartThree.style.display='none'
+                luHeartThree.style.display='flex'
+            } else {
+                ioMdHeartThree.style.display='flex'
+                luHeartThree.style.display='none'
+            }
+        }
+    
+        if(shortInstruments[3]){
+            if (favoriteInstrumentIds.includes(shortInstruments[3].id)){
+                ioMdHeartFour.style.display='none'
+                luHeartFour.style.display='flex'
+            } else {
+                ioMdHeartFour.style.display='flex'
+                luHeartFour.style.display='none'
+            }
+        }
+       
+        if(shortInstruments[4]){
+            if (favoriteInstrumentIds.includes(shortInstruments[4].id)){
+                ioMdHeartFive.style.display='none'
+                luHeartFive.style.display='flex'
+            } else {
+                ioMdHeartFive.style.display='flex'
+                luHeartFive.style.display='none'
+            }
+    
+        }
+       
+        if(shortInstruments[5]){
+            if (favoriteInstrumentIds.includes(shortInstruments[5].id)){
+                ioMdHeartSix.style.display='none'
+                luHeartSix.style.display='flex'
+            } else {
+                ioMdHeartSix.style.display='flex'
+                luHeartSix.style.display='none'
+            }
+    
+        }
+       
+       
+    
+    },[favoritesObj])
+
+
+
     const addFavorite = (instrumentId, buttonId, e) => {
             
         const emptyHeart = document.getElementById(`luHeart${buttonId}`)
@@ -56,6 +145,28 @@ function GenericCarousel(){
             dispatch(createFavorite(favorite))
     
         }
+
+        const unFavorite = async (instrumentId, buttonId, e) => {
+            // const filledHeart = document.getElementById(`ioMdHeart${buttonId}`)
+            // e.target.style.display='none'
+            // filledHeart.style.display='flex'
+            let favoriteId
+         
+            favorites.forEach((favorite)=>{
+                    debugger;
+                if(favorite.instrumentId === instrumentId){
+                    favoriteId = favorite.id
+                }
+                debugger;
+         
+            })
+            await dispatch (deleteFavorite(favoriteId))
+
+       
+           
+           
+          
+        }
         
         const InstrumentOne = () => {
             if (shortInstruments[0]){
@@ -63,8 +174,8 @@ function GenericCarousel(){
                     <>
                         <div className='thumb-instrumentWrapper'>
                             <div className='carousel-fav-button'>
-                                    <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='IoMdHeart1' onClick={(e)=> addFavorite(shortInstruments[0].id, 1, e)} />  
-                                    <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='LuHeart1'onClick={(e)=> unFavorite(shortInstruments[0].id, 1, e)} /> 
+                                    <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart1' onClick={(e)=> addFavorite(shortInstruments[0].id, 1, e)} />  
+                                    <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='genLuHeart1'onClick={(e)=> unFavorite(shortInstruments[0].id, 1, e)} /> 
                             </div>      
                 
                 
@@ -94,8 +205,8 @@ function GenericCarousel(){
                     <>
                          <div className='thumb-instrumentWrapper'>
                  <div className='carousel-fav-button'>
-                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='ioMdHeart2' onClick={(e)=> addFavorite(shortInstruments[1].id, 2, e)}/>  
-                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='luHeart2'onClick={(e)=> unFavorite(shortInstruments[1].id, 2, e)}/> 
+                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart2' onClick={(e)=> addFavorite(shortInstruments[1].id, 2, e)}/>  
+                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='genLuHeart2'onClick={(e)=> unFavorite(shortInstruments[1].id, 2, e)}/> 
                     </div>
                 
                 
@@ -124,8 +235,8 @@ function GenericCarousel(){
                     <>
                         <div className='thumb-instrumentWrapper'>
                  <div className='carousel-fav-button'>
-                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='ioMdHeart3' onClick={(e)=> addFavorite(shortInstruments[2].id, 3, e)}/>  
-                        <img src="../../assets/images/filledHeart.png"  className = 'likeOff' id='luHeart3'onClick={(e)=> unFavorite(shortInstruments[2].id, 3, e)}/> 
+                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart3' onClick={(e)=> addFavorite(shortInstruments[2].id, 3, e)}/>  
+                        <img src="../../assets/images/filledHeart.png"  className = 'likeOff' id='genLuHeart3'onClick={(e)=> unFavorite(shortInstruments[2].id, 3, e)}/> 
                     </div>
                 
                 
@@ -159,8 +270,8 @@ function GenericCarousel(){
                     <>
                          <div className='thumb-instrumentWrapper'>
                  <div className='carousel-fav-button'>
-                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='ioMdHeart4' onClick={(e)=> addFavorite(shortInstruments[3].id, 4, e)}/>  
-                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='luHeart4'onClick={(e)=> unFavorite(shortInstruments[3].id, 4, e)}/> 
+                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart4' onClick={(e)=> addFavorite(shortInstruments[3].id, 4, e)}/>  
+                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='genLuHeart4'onClick={(e)=> unFavorite(shortInstruments[3].id, 4, e)}/> 
                 </div>
                 
                 
@@ -191,8 +302,8 @@ function GenericCarousel(){
                     <>
                          <div className='thumb-instrumentWrapper'>
                  <div className='carousel-fav-button'>
-                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='ioMdHeart5' onClick={(e)=> addFavorite(shortInstruments[4].id, 5, e)}/>  
-                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='luHeart5'onClick={(e)=> unFavorite(shortInstruments[4].id, 5, e)}/> 
+                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart5' onClick={(e)=> addFavorite(shortInstruments[4].id, 5, e)}/>  
+                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='genLuHeart5'onClick={(e)=> unFavorite(shortInstruments[4].id, 5, e)}/> 
                 </div>
                 
                 
@@ -223,8 +334,8 @@ function GenericCarousel(){
                     <>
                          <div className='thumb-instrumentWrapper'>
                  <div className='carousel-fav-button'>
-                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='ioMdHeart6' onClick={(e)=> addFavorite(shortInstruments[5].id, 6, e)}/>  
-                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='luHeart6'onClick={(e)=> unFavorite(shortInstruments[5].id, 6, e)}/> 
+                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart6' onClick={(e)=> addFavorite(shortInstruments[5].id, 6, e)}/>  
+                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='genLuHeart6'onClick={(e)=> unFavorite(shortInstruments[5].id, 6, e)}/> 
                 </div>
                 
                 
