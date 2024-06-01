@@ -37,6 +37,7 @@ export const createFavorite = favorite => async dispatch => {
 }
 
 export const deleteFavorite = favoriteId => async dispatch => {
+    debugger;
     const res = await csrfFetch(`/api/favorites/${favoriteId}`, {
         method: 'DELETE',
         body :JSON.stringify(favoriteId),
@@ -45,7 +46,9 @@ export const deleteFavorite = favoriteId => async dispatch => {
             'Accept': 'application/json'
         }
     })
+
     const data = await res.json();
+    debugger;
     dispatch(removeFavorite(data))
 }
 

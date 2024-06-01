@@ -22,6 +22,7 @@ function GuitarsCarousel(){
     const guitars = Object.values(guitarsObj)
     
     const currentUser = useSelector(state=>(state.session.user))
+ 
     if (currentUser){
         const userId = currentUser.id
     }
@@ -36,7 +37,7 @@ function GuitarsCarousel(){
     const availableInstruments = guitars.filter((guitar)=>guitar.available===true)
     const shortGuitars = availableInstruments.slice(0,6)
 
-    debugger;
+  
 
 
    
@@ -55,6 +56,7 @@ useEffect(()=>{
     const luHeartFour = document.getElementById('luHeart4')
     const luHeartFive = document.getElementById('luHeart5')
     const luHeartSix = document.getElementById('luHeart6')
+
 
     if (favoriteInstrumentIds.includes(shortGuitars[0].id)){
         ioMdHeartOne.style.display='none'
@@ -123,15 +125,15 @@ useEffect(()=>{
   
     const addFavorite = (guitarId, buttonId, e) => {
             
-        const emptyHeart = document.getElementById(`luHeart${buttonId}`)
-            e.target.style.display='none'
-            emptyHeart.style.display='flex'
+        // const emptyHeart = document.getElementById(`luHeart${buttonId}`)
+        //     e.target.style.display='none'
+        //     emptyHeart.style.display='flex'
 
            
  
             const favorite = {
                 instrumentId: guitarId,
-                favoriterId: userId
+                favoriterId: currentUser.id
             }
         
             dispatch(createFavorite(favorite))
@@ -140,21 +142,24 @@ useEffect(()=>{
 
         
         
-        const unFavorite = (guitarId, buttonId, e) => {
+        const unFavorite = async (guitarId, buttonId, e) => {
+            // const filledHeart = document.getElementById(`ioMdHeart${buttonId}`)
+            // e.target.style.display='none'
+            // filledHeart.style.display='flex'
             let favoriteId
          
             favorites.forEach((favorite)=>{
-         
-                if(favorite.instrumentId = guitarId){
+                    debugger;
+                if(favorite.instrumentId === guitarId){
                     favoriteId = favorite.id
                 }
+                debugger;
          
             })
-            dispatch (deleteFavorite(favoriteId))
+            await dispatch (deleteFavorite(favoriteId))
 
-            const filledHeart = document.getElementById(`ioMdHeart${buttonId}`)
-            e.target.style.display='none'
-            filledHeart.style.display='flex'
+       
+           
            
           
         }
@@ -187,7 +192,7 @@ useEffect(()=>{
             // dispatch(createFavorite(favorite))
            
     // }
-        debugger;
+  
     const InstrumentOne = () => {
         if (shortGuitars[0]){
             return(

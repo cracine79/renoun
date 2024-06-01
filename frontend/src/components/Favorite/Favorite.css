@@ -1,0 +1,83 @@
+#fav-wrapper-wrapper{
+    margin-top: 40px;
+    width: 100%;
+    height: auto;
+   display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+#introducing-wrapper{
+    width: 99.5%;
+    height: 130px;
+    background-color: rgb(255, 239, 229);
+    border-radius: 15px;
+}
+
+#behind-wrapper{
+    width: 90%;
+    height: 130px;
+    background-color: rgb(252, 105, 0);
+    border-radius: 15px;
+    align-items: right;
+    justify-content: right;
+    display: flex;
+}
+
+#fav-inner-wrapper{
+    display: flex;
+   height: 100%;
+    align-items: center;
+    margin-left: 10px;
+}
+
+#introducing-favorites{
+    font-size: 20px;
+    font-weight: 200;
+}
+
+#favs-banner-words{
+    margin-left: 20px; 
+}
+
+#Favs-description{
+    font-size: 16px;
+    font-weight: 200;
+    margin-top: 10px; 
+}
+
+#favorite-one-word{
+    font-size: 36px;
+
+    font-weight: 600;
+}
+
+.fav-head-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    width: 90%;
+    margin-top: 40px;
+}
+
+#watch-list{
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.fav-line{
+    margin-top: 20px;
+    height: 1px;
+    width: 90%;
+    border-top: rgb(177, 177, 177) 1px solid;
+}
+
+#generic-carousel-wrapper{
+    width: 95%;
+    display: flex;
+}
+
