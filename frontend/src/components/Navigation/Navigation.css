@@ -37,6 +37,11 @@
 
 }
 
+#favs{
+    display: flex;
+    flex-direction: column;
+}
+
 #favs:hover div{
     color: orange;
 }
@@ -54,6 +59,10 @@
 #sell-button:hover{
     background-color: lightgray;
     cursor: pointer;
+}
+
+#favs-word-nav:hover #heart{
+    color: orange;
 }
 
 .userlink{

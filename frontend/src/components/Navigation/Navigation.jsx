@@ -141,11 +141,13 @@ function Navigation(){
                 <button id='sell-button'>Sell Your Gear</button>
             
                 <div className='iconlink'>
-                <div id='favs'>
-                    <div id='heart'>
-                    <LuHeart /> 
-                    </div>
-                    Favorites</div>            
+                <div id='favs-word-nav'>
+                    <div id='favs'>
+                        <Link to='/favorites' id='heart'>
+                        <LuHeart /> 
+                        </Link>
+                        Favorites </div>
+                    </div>            
                 </div>
 
                 <div className='iconlink'>

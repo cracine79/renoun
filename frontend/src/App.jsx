@@ -16,6 +16,7 @@ import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
 import OrderConfirmation from './components/Checkout/OrderConfirmation';
 import Orders from './components/Orders/Orders';
+import Favorite from './components/Favorite/Favorite';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
       {
         path: '/orders',
         element: <Orders />
+      }, 
+      {
+        path: '/favorites',
+        element: <Favorite />
       }
 
    
