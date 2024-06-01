@@ -9,6 +9,7 @@ import Renoun from '../../../assets/images/Renoun.png'
 import { Link } from "react-router-dom";
 import { clearCart } from "../../store/cart";
 import { useEffect } from "react";
+import { clearOrders } from "../../store/order";
 
 
 
@@ -46,6 +47,7 @@ function Navigation(){
 
     const handleClick = ((e) => {
         dispatch(clearCart())
+        dispatch(clearOrders())
         countSquare.style.display='none'
         dispatch(sessionActions.logout())
 

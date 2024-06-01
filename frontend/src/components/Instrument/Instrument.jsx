@@ -72,7 +72,6 @@ const Instrument = () => {
         const bigFilledHeart = document.getElementById('bigFilledHeart')
         const bigHollowHeart = document.getElementById('bigHollowHeart')
     
-
         if (favoriteInstrumentIds.includes(instrument.id)){
             bigFilledHeart.style.display='flex'
             bigHollowHeart.style.display='none'

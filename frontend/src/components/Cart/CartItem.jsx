@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { removeCartItem } from '../../store/cart';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { createFavorite } from '../../store/favorite';
 
 
 
@@ -16,6 +17,7 @@ function CartItem({cartItem}){
     const dispatch=useDispatch();
     const cart = useSelector(state => Object.values(state.carts))
     const instrumentState = useSelector(state => state.instruments)
+    const currentUser = useSelector(state=>state.session.user)
 
 
     const instrument = useSelector(state => state.instruments[cartItem.instrumentId])
@@ -25,10 +27,18 @@ function CartItem({cartItem}){
        
         
         const handleDelete= async () => {
-           
             dispatch(removeCartItem(id));
             navigate('/cart', {replace:true})
+        }
 
+
+        const handleMoveToWatchlist = () => {
+            dispatch(removeCartItem(id));
+            const favorite = {
+                instrumentId: instrument.id,
+                favoriterId: currentUser.id
+            }
+             dispatch(createFavorite(favorite))
 
         }
         if (!instrument) return null;
@@ -47,13 +57,13 @@ function CartItem({cartItem}){
                                     <div className='cart-links'>
                                         <div className='move-to-watchlist'>
                                             <IoMdHeart />
-                                            <p className='move-words'> Move to Watch List </p>
+                                            <p className='move-words' onClick={()=>handleMoveToWatchlist()}> Move to Watch List </p>
                                         </div>
                                         <div className='remove'>
                                             <div id='x-wrapper'>
                                                 <RiCloseLine />
                                             </div>
-                                            <p className='remove-words' onClick={()=>handleDelete(instrument.cartItemId)} id={`instrument_${instrument.id}`}>Remove</p>                                  
+                                            <p className='remove-words' onClick={()=>handleDelete()} id={`instrument_${instrument.id}`}>Remove</p>                                  
                                         </div>
                                     </div>        
                                 </div>

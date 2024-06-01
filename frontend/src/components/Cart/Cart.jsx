@@ -52,22 +52,9 @@ function Cart(){
         emptyCartWrapper.style.display='none'
         fullCartWrapper.style.display='flex'
         setItemNumbers(cart.length)
-  
         dispatch(fetchUserCart(currentUserId))
-
-  
         const instrumentsArray = [];
-      
-        
-       
-      
-    
-       
         setTotalAmount(total)
-    
-      
-
-    
     }
     
     },[cart.length]
