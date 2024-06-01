@@ -261,9 +261,15 @@
     align-items: center;
     font-size: 15px;
     font-weight: 600;
+    border: none;
 }
 
 .otherButton:hover{
+    background-color:rgb(187, 187, 187);
+    cursor: pointer;
+}
+
+.otherotherButton:hover{
     background-color:rgb(187, 187, 187);
     cursor: pointer;
 }

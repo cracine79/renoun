@@ -11,16 +11,17 @@ export const receiveOrders = orders => ({
 })
 
 export const createOrder = userId => async dispatch =>{
-
+        debugger;
     let res = await csrfFetch(`/api/users/${userId}/orders`, {
         method: 'POST',
         headers: {
             'Content-Type' : 'application/json'
         }
     })
-    
+    debugger;
     if (res.ok){
         let data = await res.json();
+       
         dispatch(receiveOrders(data))
     } else {
         console.log.res.errors.full_messages

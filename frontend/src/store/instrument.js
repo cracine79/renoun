@@ -26,6 +26,8 @@ export const fetchAllInstruments = () => async dispatch => {
   
     const data = await res.json();
 
+
+
     dispatch(receiveInstruments(data))
 }
 
@@ -49,7 +51,7 @@ const instrumentsReducer = (state = {}, action) => {
 
     switch (action.type){
         case RECEIVE_INSTRUMENTS:
-            return {...nextState, ...action.instruments};
+            return {...action.instruments};
         default:
             return state;
         

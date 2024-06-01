@@ -36,11 +36,11 @@ const Instrument = () => {
     const favoriteInstrumentIds = favorites.map((favorite)=>{
         return favorite.instrumentId
     })
-    debugger;
+  
     let favoriteId
 
     favorites.forEach((favorite)=>{
-        debugger;
+    
         if(favorite.instrumentId===instrument.id){
             favoriteId = favorite.id
         }
@@ -48,7 +48,7 @@ const Instrument = () => {
 
 
     )
-    debugger;
+
     let conditionExplanation = ''
     let conditionSpec = ''
     const date1 = new Date();
@@ -71,7 +71,7 @@ const Instrument = () => {
         const watchButton = document.getElementById('watch-button')
         const bigFilledHeart = document.getElementById('bigFilledHeart')
         const bigHollowHeart = document.getElementById('bigHollowHeart')
-        debugger;
+    
 
         if (favoriteInstrumentIds.includes(instrument.id)){
             bigFilledHeart.style.display='flex'
@@ -328,12 +328,12 @@ const Instrument = () => {
                         Buy It Now
                     </button>
                     <div id='other-button-holder'>
-                        <button className='otherotherButton' id='add-to-cart' onClick={handleAddToCart}>
+                        <button className='otherotherButton' id='add-to-cart-instrument' onClick={handleAddToCart}>
                             Add to Cart
                         </button>
-                        <div className='otherotherButton'>
+                        <button className='otherotherButton'>
                             Make an Offer
-                        </div>
+                        </button>
                     </div>
                     <div id = 'watch-button' onClick={favoriteInstrument}>
                         <LuHeart  /> Watch

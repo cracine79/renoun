@@ -29,6 +29,7 @@ class Api::SessionsController < ApplicationController
     if @user
       @orders = @user.items_ordered
       @cart = @user.carts
+      @favorites = @user.favorites
       id = @user.id
       login!(@user)
       render 'api/users/show'

@@ -21,7 +21,7 @@ class Api::CartsController < ApplicationController
     end
 
     def create
-        debugger;
+ 
         @cart = Cart.new(cart_params)
         if @cart.save!
             render json: @cart
