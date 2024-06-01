@@ -19,6 +19,11 @@ const Instrument = () => {
     const { id } = useParams();
     const instrument = useSelector(state=>(state.instruments[id]))
     const sellerId = instrument.sellerId
+    const sellerFirstName = instrument.sellerFirstName
+    const sellerLastName = instrument.sellerLastName
+    const capFirstName = sellerFirstName.slice(0,1).toUpperCase()+sellerFirstName.slice(1)
+    const capLastName = sellerLastName.slice(0,1).toUpperCase()+sellerLastName.slice(1)
+    const fullName = capFirstName + " " + capLastName;
     const currentUser = useSelector(state=>(state.session.user))
     const favoritesObj = useSelector(state=>state.favorites);
     const dispatch = useDispatch();
@@ -363,7 +368,7 @@ const Instrument = () => {
 
                     <hr id = 'button-bottom' />
 
-                    <div>Seller ID: {sellerId}</div>
+                    <div>Sold By: {fullName}</div>
 
 
                     

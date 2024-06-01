@@ -8,6 +8,7 @@
             json.shipping instrument[:shipping]
             json.seller_first_name instrument[:seller_first_name]
             json.seller_last_name instrument[:seller_last_name]
+            json.seller_id instrument[:seller_id]
             json.photoUrl instrument[:photo_url]
             json.created_at @order_item.created_at
             json.instrument_id instrument[:instrument_id]

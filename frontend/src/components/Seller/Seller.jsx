@@ -1,6 +1,12 @@
 import './Seller.css'
 
 function Seller({instrument}){
+
+    const sellerFirstName = instrument.sellerFirstName
+    const sellerLastName = instrument.sellerLastName
+    const capFirstName = sellerFirstName.slice(0,1).toUpperCase()+sellerFirstName.slice(1)
+    const capLastName = sellerLastName.slice(0,1).toUpperCase()+sellerLastName.slice(1)
+    const fullName = capFirstName + " " + capLastName;
     return(
         <>
         <div id='seller-wrapper'>
@@ -10,7 +16,7 @@ function Seller({instrument}){
                         <img id='shop' src='../../assets/images/my-shop-orange-892ef04585ac0da6.svg' />
                     </div>
                     <h2 id='seller-info'>
-                        Seller ID: {`${instrument.sellerId}`}
+                        For Sale By: {`${fullName}`}
                     </h2>
             
                 </div>
