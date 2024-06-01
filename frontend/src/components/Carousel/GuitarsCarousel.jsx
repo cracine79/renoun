@@ -45,7 +45,7 @@ function GuitarsCarousel(){
 
    
 useEffect(()=>{
-
+    debugger;
     const ioMdHeartOne = document.getElementById('ioMdHeart1')
     const ioMdHeartTwo = document.getElementById('ioMdHeart2')
     const ioMdHeartThree = document.getElementById('ioMdHeart3')
@@ -109,7 +109,7 @@ useEffect(()=>{
     }
    
 
-},[favoriteInstrumentIds])
+},[favoritesObj])
     
  
   
