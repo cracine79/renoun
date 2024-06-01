@@ -24,7 +24,7 @@ class Api::CartsController < ApplicationController
  
         @cart = Cart.new(cart_params)
         if @cart.save!
-            render json: @cart
+            render 'api/carts/show'
         else
             render json: ('already in cart')
         end

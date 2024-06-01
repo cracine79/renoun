@@ -18,23 +18,27 @@ function Cart(){
     const cart = useSelector(state => Object.values(state.carts));
     const currentUserId = useSelector(state => state.session.user.id)
     const instrumentsState = useSelector(state => state.instruments);
+
     const [totalAmount, setTotalAmount] = useState(0);
     const [itemNumbers, setItemNumbers] = useState(0)
     const dispatch = useDispatch();
       let total = 0
    
-
-        // cart.forEach((item)=>{
-        //     debugger;
-        //     if(item){
+    useEffect(()=>{
+        const music = instrumentsState;
+        cart.forEach((item)=>{
+            debugger;
+            if(item){
          
-        //         total += (instrumentsState[item.instrumentId].price)
+                total += (music[item.instrumentId].price)
      
-        //         total += (instrumentsState[item.instrumentId].shipping)
+                total += (music[item.instrumentId].shipping)
 
-        //     }
+            }
            
-        // })
+        })
+    },[cart])
+       
 
     
     useEffect(()=>{
