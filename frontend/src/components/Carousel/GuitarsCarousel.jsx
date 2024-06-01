@@ -20,7 +20,7 @@ function GuitarsCarousel(){
 
     const guitarsObj = useSelector(state=>(state.instruments))
     const guitars = Object.values(guitarsObj)
-    const shortGuitars = [];
+ 
     const clearHeart = document.getElementById('luHeart')
     const filledHeart = document.getElementById('IoMdHeart')
     const userId = useSelector(state=>(state.session.user.id))
@@ -31,17 +31,20 @@ function GuitarsCarousel(){
         return favorite.instrument_id
     })
 
-   
+    const availableInstruments = guitars.filter((guitar)=>guitar.available=true)
+    const shortGuitars = availableInstruments.slice(0,6)
+//     let shortGuitars
+// useEffect(()=>{
+//     shortGuitars.push(availableInstruments[1])
+//     shortGuitars.push(availableInstruments[2])
+//     shortGuitars.push(availableInstruments[3])
+//     shortGuitars.push(availableInstruments[4])
+//     shortGuitars.push(availableInstruments[5])
+//     shortGuitars.push(availableInstruments[])
+
+// }, [availableInstruments])
 
 
-
-        guitars.forEach((guitar)=>{
-            if (shortGuitars.length < 6){
-                if (guitar.available){
-                    shortGuitars.push(guitar)
-                }
-            }
-        })
 
    
 useEffect(()=>{

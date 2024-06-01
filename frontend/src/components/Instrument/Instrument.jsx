@@ -34,13 +34,14 @@ const Instrument = () => {
   
     const favorites = Object.values(favoritesObj);
     const favoriteInstrumentIds = favorites.map((favorite)=>{
-        return favorite.instrumentId
+        return favorite.instrument_id
     })
     debugger;
     let favoriteId
 
     favorites.forEach((favorite)=>{
-        if(favorite.instrumentId===instrument.id){
+        debugger;
+        if(favorite.instrument_id===instrument.id){
             favoriteId = favorite.id
         }
     }
@@ -70,6 +71,7 @@ const Instrument = () => {
         const watchButton = document.getElementById('watch-button')
         const bigFilledHeart = document.getElementById('bigFilledHeart')
         const bigHollowHeart = document.getElementById('bigHollowHeart')
+        debugger;
 
         if (favoriteInstrumentIds.includes(instrument.id)){
             bigFilledHeart.style.display='flex'
@@ -82,7 +84,7 @@ const Instrument = () => {
             watchingButton.style.display='none'
             watchButton.style.display='flex'
         }
-    }, [favoriteInstrumentIds])
+    }, [favoritesObj])
 
     if(instrument.condition==='Brand New'){
         conditionExplanation = 'Brand New items are sold by an authorized dealer or original builder and include all original packaging.',
@@ -333,11 +335,11 @@ const Instrument = () => {
                             Make an Offer
                         </div>
                     </div>
-                    <div id = 'watch-button'>
+                    <div id = 'watch-button' onClick={favoriteInstrument}>
                         <LuHeart  /> Watch
                     </div>
                     <div id='watching-button'>
-                      <LuHeart id='orange-heart' />  Watching
+                      <LuHeart id='orange-heart' onClick={unfavoriteInstrument}/>  Watching
                     </div>
 
                     <div id='product-background-info'>
