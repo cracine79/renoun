@@ -45,12 +45,6 @@
 }
 
 #biglike{
-    position: absolute;
-    margin-top: -760px;
-    margin-left: 710px;
-    height: 55px;
-    width: 55px;
-    font-size: 34px;
 
 }
 
@@ -292,6 +286,32 @@
     cursor: pointer;
 }
 
+
+#watching-button{
+    width: 530px;
+    height: 45px;
+    background-color: rgb(215, 215, 215);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+#orange-heart >* {
+    fill: orangered;
+    stroke: orangered;
+}
+
+#watching-button:hover{
+    background-color:rgb(187, 187, 187);
+    cursor: pointer;
+}
+
+
+
 #product-background-info{
     font-size: 14px;
     color: gray;
@@ -492,4 +512,39 @@ color: gray;
 
 #add-to-cart{
     border: none;
+}
+
+#bigHollowHeart{
+    margin-top: -770px;
+    margin-left: 700px;
+    position: absolute;
+ 
+    height: 55px;
+    width: 55px;
+    display: flex;
+   
+}
+
+#bigFilledHeart{
+    margin-top: -770px;
+    margin-left: 700px;
+    position: absolute;
+ 
+    height: 55px;
+    width: 55px;
+    display: none;
+   
+}
+
+
+#bigFilledHeart:hover{
+cursor: pointer;
+height: 60px;
+width: 60px;
+}
+
+#bigHollowHeart:hover{
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
 }

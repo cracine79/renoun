@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { createCartItem } from "../../store/cart";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { createFavorite, deleteFavorite } from "../../store/favorite";
 
 
 const Instrument = () => {
@@ -19,17 +20,34 @@ const Instrument = () => {
     const instrument = useSelector(state=>(state.instruments[id]))
     const sellerId = instrument.sellerId
     const currentUser = useSelector(state=>(state.session.user))
+    const favoritesObj = useSelector(state=>state.favorites);
     const dispatch = useDispatch();
     const modal= document.getElementById('wrapper-wrapper');
     const loginNav = document.getElementById('log-in-nav');
-    const signupNav = document.getElementById('sign-up-nav')
-    const loginForm = document.getElementById('login-form-wrapper')
-    const signupForm = document.getElementById('signup-form-wrapper')
-    const signupSquare = document.getElementById('signup-mnw')
-    const loginSquare = document.getElementById('login-mnw')
-    const [errors, setErrors] = useState();
-    
+    const signupNav = document.getElementById('sign-up-nav');
+    const loginForm = document.getElementById('login-form-wrapper');
+    const signupForm = document.getElementById('signup-form-wrapper');
+    const signupSquare = document.getElementById('signup-mnw');
+    const loginSquare = document.getElementById('login-mnw');
 
+    const [errors, setErrors] = useState();
+  
+    const favorites = Object.values(favoritesObj);
+    const favoriteInstrumentIds = favorites.map((favorite)=>{
+        return favorite.instrumentId
+    })
+    debugger;
+    let favoriteId
+
+    favorites.forEach((favorite)=>{
+        if(favorite.instrumentId===instrument.id){
+            favoriteId = favorite.id
+        }
+    }
+
+
+    )
+    debugger;
     let conditionExplanation = ''
     let conditionSpec = ''
     const date1 = new Date();
@@ -46,6 +64,25 @@ const Instrument = () => {
           recently.style.display='none';
         }
     },[diffDays])
+
+    useEffect(()=>{
+        const watchingButton = document.getElementById('watching-button');
+        const watchButton = document.getElementById('watch-button')
+        const bigFilledHeart = document.getElementById('bigFilledHeart')
+        const bigHollowHeart = document.getElementById('bigHollowHeart')
+
+        if (favoriteInstrumentIds.includes(instrument.id)){
+            bigFilledHeart.style.display='flex'
+            bigHollowHeart.style.display='none'
+            watchingButton.style.display='flex'
+            watchButton.style.display='none'
+        } else {       
+            bigFilledHeart.style.display='none'
+            bigHollowHeart.style.display='flex'
+            watchingButton.style.display='none'
+            watchButton.style.display='flex'
+        }
+    }, [favoriteInstrumentIds])
 
     if(instrument.condition==='Brand New'){
         conditionExplanation = 'Brand New items are sold by an authorized dealer or original builder and include all original packaging.',
@@ -152,6 +189,18 @@ const Instrument = () => {
         }
     }
     }
+
+    const favoriteInstrument = ()=>{
+        const favorite = {
+            favoriterId: currentUser.id,
+            instrumentId: instrument.id
+        }
+        dispatch(createFavorite(favorite))
+    }
+
+    const unfavoriteInstrument = ()=>{
+        dispatch(deleteFavorite(favoriteId))
+    }
       
 
 
@@ -174,9 +223,9 @@ const Instrument = () => {
 
                 <div id='photobox'>
                     <img id= 'photo' src={instrument.photoUrl} />
-                    <div className='like' id='biglike'>
-                             <LuHeart /> 
-                     </div>
+          
+                        <img src='../../assets/images/emptyHeart.png' id='bigHollowHeart' onClick={favoriteInstrument} />  
+                        <img src='../../assets/images/FILLEDHeart.png' id='bigFilledHeart' onClick={unfavoriteInstrument}/>  
                 </div>
 
                 <h1 className='aboutThisListing'> About This Listing</h1>
@@ -214,7 +263,7 @@ const Instrument = () => {
                     <p className = 'spekValue'>{instrument.brand}</p>
                 </div>
                 <div id='model-wrapper' className='spec-wrapper'>
-                 <p className = 'specKey'>Model</p>
+                    <p className = 'specKey'>Model</p>
                     <p className = 'spekValue'>{instrument.model}</p>
                 </div>
                 
@@ -285,10 +334,13 @@ const Instrument = () => {
                         </div>
                     </div>
                     <div id = 'watch-button'>
-                        <LuHeart /> Watch
+                        <LuHeart  /> Watch
+                    </div>
+                    <div id='watching-button'>
+                      <LuHeart id='orange-heart' />  Watching
                     </div>
 
-                    <p id='product-background-info'>
+                    <div id='product-background-info'>
                         <div>
                             <span className='key'>
                                 Listed: 
@@ -306,7 +358,7 @@ const Instrument = () => {
                                 0 
                             </span>
                         </div>
-                    </p>
+                    </div>
 
                     <hr id = 'button-bottom' />
 

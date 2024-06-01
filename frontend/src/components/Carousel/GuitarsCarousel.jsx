@@ -59,7 +59,7 @@ useEffect(()=>{
     const luHeartFour = document.getElementById('luHeart4')
     const luHeartFive = document.getElementById('luHeart5')
     const luHeartSix = document.getElementById('luHeart6')
-    debugger;
+
     if (favoriteInstrumentIds.includes(shortGuitars[0].id)){
         ioMdHeartOne.style.display='none'
         luHeartOne.style.display='flex'

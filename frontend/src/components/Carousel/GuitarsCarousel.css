@@ -77,7 +77,6 @@
 	position: absolute;
 	height: 40px;
 	width: 40px;
-	background-color: white;
     display: block;
 	align-items: center;
 	justify-content: center;
@@ -120,10 +119,11 @@
 }
 
 .likeOff:hover{
-	color: red;
+	background-color: orangered;
 	cursor: pointer;
 	font-size: 21px;
 }
+
 
 .likeOn > * {
     fill: red;
