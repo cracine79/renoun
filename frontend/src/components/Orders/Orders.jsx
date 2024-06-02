@@ -5,8 +5,37 @@ import { useEffect } from 'react'
 
 
 function Orders(){
+
     const orders = useSelector(state => Object.values(state.orders))
-   
+    const buyerSellerReviews = useSelector(state => Object.values(state.buyerSellerReviews)) 
+    const reviewWrapperWrapper = document.getElementById('review-wrapper-wrapper')
+    
+    const orderButton = (order)=>{
+        let reviewed = false
+        buyerSellerReviews.forEach((review)=>{
+            if(review.title.slice(0,20)===order.itemName.slice(0,20)){
+                reviewed = true
+            }
+        })
+            if (reviewed===true){
+                return(
+                    <button className='review-button' id='update-review-button' >Update Seller Review</button>
+                )
+            } else {
+                return(
+                    <button className='review-button' id='create-review-button' onClick={openReviewForm}>Create Seller Review</button>
+                )
+            }
+    }
+
+    const openReviewForm = () => {
+        debugger;
+        reviewWrapperWrapper.style.display='flex'
+        console.log('hi')
+    }
+
+  
+
     const wordifyDate = (order) => {
       
        return new Date(order.createdAt).toDateString()
@@ -42,6 +71,10 @@ function Orders(){
             }
         }
     }, [orders])
+
+    const clickAway=()=>{
+        reviewWrapperWrapper.style.display='none';
+    }
  
 
 
@@ -62,7 +95,9 @@ function Orders(){
     }
    
     return(
-       <div id='orders-outer-wrapper'>
+
+        <>
+        <div id='orders-outer-wrapper'>
             <div id='orders-wrapper'>
                 <div className='divider-liner'>
                 </div>
@@ -97,20 +132,27 @@ function Orders(){
                                     <p className='order-history-item-name'>2024420-90210-{order.id}</p>
                                     <p className='order-history-item-name'>{wordifyDate(order)}</p>
                                     <p className='order-history-item-name'>{orderStatus(order)}</p>
-                                
-                                </div>
-                                
-                            )
-
-                            
+                                    <div>{orderButton(order)}</div>
+                                </div>   
+                            )      
                         })}
                     </div>
                 </div>
-
-                
-            
             </div>
        </div>
+       <div id='review-wrapper-wrapper' onClick={clickAway}>
+              <div id='create-review-wrapper' className='review-wrapper'>
+                    <form id='create-review-form' className='review-form'>
+                            <h1>Create a Review For </h1>
+                    </form>
+              </div>
+              <div id='update-review-wrapper' className='review-wrapper'>
+
+              </div>
+       </div>
+
+        </>
+       
     )
 }
 

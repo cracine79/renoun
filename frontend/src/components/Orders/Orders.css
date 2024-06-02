@@ -22,7 +22,7 @@
 
 #purchase-history-box{
     height: 500px;
-    width: 1400px;
+    width: 1800px;
 
     margin-top: 40px;
     border: solid gray 1px;
@@ -66,7 +66,7 @@
 
 #purchase-headers-box{
     display: flex;
-    width: 100%;
+    width: 81%;
     justify-content: space-around;
     margin-left: -50px;
     margin-top: 25px; 
@@ -86,3 +86,51 @@
 #order-status-header{
     margin-right: 30px; 
 }
+
+.review-button{
+    background-color: white;
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    border: solid black 3px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: -10px;
+    margin-right: 35px;
+}
+
+.review-button:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+
+#review-wrapper-wrapper{
+
+    align-items: center;
+    display: none;
+    justify-content: top;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    padding: 20px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    flex-direction: column;
+    position: absolute;
+}
+
+.review-form{
+    width: 900px;
+    height: 800px; 
+    background-color: white;
+    border-radius: 15px; 
+}
+
+.review-wrapper{
+    margin-top: 80px;
+}
+
