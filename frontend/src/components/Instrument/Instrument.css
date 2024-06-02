@@ -46,7 +46,7 @@
     width: 900px;
     height: auto;
     margin-right: 30px;
-    margin-left: 150px;
+    margin-left: 30px;
 }
 
 .noShadow{
@@ -573,4 +573,36 @@ width: 60px;
     cursor: pointer;
     height: 60px;
     width: 60px;
+}
+
+.review-divider{
+    border-top: darkgray;
+}
+
+.review-title{
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.author-date{
+    display: flex;
+    color: gray;
+    font-size: 14px; 
+    margin-bottom: 15px;
+}
+
+.review-body{
+    margin-bottom: 15px;
+}
+
+.reviews-header{
+    font-size: 26px;
+    font-weight: 600;
+}
+
+
+.avg-stars-img{
+    width: 300px;
 }

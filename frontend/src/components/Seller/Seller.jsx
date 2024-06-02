@@ -15,7 +15,9 @@ function Seller({instrument, sellerStoreName}){
     const fullName = capFirstName + " " + capLastName;
     const reviewsObj = useSelector(state => state.reviews)
     const reviews = Object.values(reviewsObj)
+    reviews.reverse()
     const reviewsOne = reviews.slice(0,5)
+    
 
 
     useEffect(()=>{
@@ -25,6 +27,43 @@ function Seller({instrument, sellerStoreName}){
     const abbrevName = (review)=>{
         
         return review.firstName.slice(0,1).toUpperCase()+review.firstName.slice(1)+ ' ' + review.lastInit 
+    }
+
+    let sum = 0
+    reviews.forEach((review)=>{
+   
+        sum += review.stars
+    })
+    let average = sum/reviews.length
+    debugger
+
+    const avgStars = (num)=>{
+        debugger;
+        if(num<0.5){
+            return (
+                <img className='stars' src='../../assets/images/noStars.png' />
+            )
+        }else if(0.5<=num && num <1.5){
+            return(
+                <img className='stars' src='../../assets/images/oneStar.png' />
+            )
+        } else if(1.5<=num && num <2.5){
+            return(
+                <img className='stars' src='../../assets/images/twoStars.png' />
+            )
+        }else if(2.5<=num && num<3.5){
+            return(
+                <img className='stars' src='../../assets/images/threeStars.png' />
+            )
+        }else if(3.5<=num && num<4.5){
+            return(
+                <img className='stars' src='../../assets/images/fourStars.png' />
+            )
+        }else if(num>=4.5){
+            return(
+                <img className='stars' src='../../assets/images/fiveStars.png' />
+            )
+    }
     }
 
     const stars = (num) =>{
@@ -55,7 +94,12 @@ function Seller({instrument, sellerStoreName}){
         }
         
     }
-  
+
+    const wordifyDate = (review) => {
+      
+        return new Date(review.createdAt).toDateString()
+     }
+    
     return(
         <>
         <div id='seller-wrapper'>
@@ -70,22 +114,28 @@ function Seller({instrument, sellerStoreName}){
             
                 </div>
                 <hr className='sellerLine' />
-
+                <h1 className='reviews-header'>
+                    Seller Reviews {avgStars(average)} ({reviews.length})
+                </h1>
                 {reviewsOne.map((review)=>{
                     return(
                         <>
-                            <h1> {stars(review.stars)}</h1>
-                            <h1>
+                            <hr className='review-divider'></hr>
+                            <div class-name='avg-stars-img'> {stars(review.stars)}</div>
+                            <h1 className='review-title'>
                             {review.title}
                             
                             </h1>
-                            <p>
-                            {abbrevName(review)}
-                            </p>
-                            <p>
-                                {review.createdAt}
-                            </p>
-                            <p>
+                            <div className='author-date'>
+                                <p className='review-author'>
+                                {abbrevName(review)}
+                                </p>
+                                <p className='review-date-created'>
+                                   -  {wordifyDate(review)}
+                                </p>
+                            </div>
+                        
+                            <p className='review-body'>
                                 {review.body}
                             </p>
                              
