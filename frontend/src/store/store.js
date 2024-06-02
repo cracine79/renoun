@@ -6,6 +6,7 @@ import cartsReducer from './cart';
 import ordersReducer from './order';
 import { favoritesReducer } from './favorite';
 import { reviewsReducer } from './sellerReview';
+import { buyerSellerReviewsReducer } from './buyerSellerReviews.js';
 
 
 
@@ -16,7 +17,10 @@ const rootReducer = combineReducers({
   carts: cartsReducer,
   orders: ordersReducer,
   favorites: favoritesReducer,
-  reviews: reviewsReducer
+  reviews: reviewsReducer,
+  buyerSellerReviews: buyerSellerReviewsReducer
+  
+
 });
 
 let enhancer;

@@ -88,7 +88,7 @@ function Navigation(){
     const handleCartClick = (e) =>{
         if (!currentUser){
             e.preventDefault;
-            debugger;
+     
             modal.style.display='flex'
             modal.className='login'
             loginNav.className='active'

@@ -1,6 +1,7 @@
 import csrfFetch from "./csrf"
 import { receiveCartItems } from "./cart"
 import { receiveOrders } from "./order"
+import { receiveBuyerReviews } from "./buyerSellerReviews"
 import { receiveFavorites } from "./favorite"
 
 const RECEIVE_USER = 'session/RECEIVE_USER'
@@ -33,11 +34,12 @@ export const login = user => async dispatch => {
     let data = await res.json();
 
     sessionStorage.setItem('currentUser', JSON.stringify(data.user))
-   debugger;
+
     dispatch(receiveUser(data.user));
     dispatch(receiveCartItems(data.cart))
     dispatch(receiveOrders(data.orders))
     dispatch(receiveFavorites(data.favorites))
+    dispatch(receiveBuyerReviews(data.buyerSellerReviews))
   
     return res;
 }
@@ -70,10 +72,10 @@ export const signup = user => async dispatch => {
 }
 
 export const restoreSession = () => async dispatch => {
-    debugger;
+
     let res = await csrfFetch('/api/session');
     storeCSRFToken(res);
-    debugger;
+
 
     let data = await res.json();
    
@@ -82,6 +84,7 @@ export const restoreSession = () => async dispatch => {
     dispatch(receiveCartItems(data.cart));
     dispatch(receiveOrders(data.orders))
     dispatch(receiveFavorites(data.favorites))
+    dispatch(receiveBuyerReviews(data.buyerSellerReviews))
     return res;
 }
 

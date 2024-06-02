@@ -211,7 +211,7 @@ const Instrument = () => {
         dispatch(deleteFavorite(favoriteId))
     }
       
-    debugger;
+
 
    
 

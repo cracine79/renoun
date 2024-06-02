@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 function Seller({instrument, sellerStoreName}){
     const dispatch = useDispatch();
-    debugger;
+
     const id = instrument.sellerId;
    
     const sellerFirstName = instrument.sellerFirstName
@@ -22,25 +22,33 @@ function Seller({instrument, sellerStoreName}){
 
 
     useEffect(()=>{
-        debugger;
+   
         dispatch(fetchAllReviews(id))
     }, [instrument])
     
-    const abbrevName = (review)=>{
-        
-        return review.firstName.slice(0,1).toUpperCase()+review.firstName.slice(1)+ ' ' + review.lastInit 
-    }
+ 
+        const abbrevName = (review)=>{
+            if(review.firstName){
+                return review.firstName.slice(0,1).toUpperCase()+review.firstName.slice(1)+ ' ' + review.lastInit 
+            } else {
+                return ""
+            }
+           
+        }
+    
 
+
+  
     let sum = 0
     reviews.forEach((review)=>{
    
         sum += review.stars
     })
     let average = sum/reviews.length
-    debugger
+
 
     const avgStars = (num)=>{
-        debugger;
+
         if(num<0.5){
             return (
                 <img className='stars' src='../../assets/images/noStars.png' />

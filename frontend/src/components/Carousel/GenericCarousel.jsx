@@ -35,7 +35,7 @@ function GenericCarousel(){
         const favoriteInstrumentIds = favorites.map((favorite)=>{
             return favorite.instrumentId
         })
-        debugger;
+     
         const favoriteInstruments = []
         favoriteInstrumentIds.forEach((id)=>{
             favoriteInstruments.push(instruments[id-1])
@@ -153,11 +153,11 @@ function GenericCarousel(){
             let favoriteId
          
             favorites.forEach((favorite)=>{
-                    debugger;
+               
                 if(favorite.instrumentId === instrumentId){
                     favoriteId = favorite.id
                 }
-                debugger;
+     
          
             })
             await dispatch (deleteFavorite(favoriteId))

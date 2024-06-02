@@ -38,7 +38,7 @@ function GuitarsCarousel(){
 
 
     useEffect(()=>{
-        debugger;
+
         const availInstruments = guitars.filter((guitar)=>guitar.available===true)
         shortGuitars = availInstruments.slice(0,6)
         
@@ -159,11 +159,11 @@ useEffect(()=>{
             let favoriteId
          
             favorites.forEach((favorite)=>{
-                    debugger;
+    
                 if(favorite.instrumentId === guitarId){
                     favoriteId = favorite.id
                 }
-                debugger;
+
          
             })
             await dispatch (deleteFavorite(favoriteId))
@@ -198,7 +198,7 @@ useEffect(()=>{
             //     instrumentId: guitarId,
             //     favoriterId: userId
             // }
-            // debugger;
+            
             // dispatch(createFavorite(favorite))
            
     // }

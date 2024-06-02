@@ -42,3 +42,16 @@ json.favorites do
   end
 end
 
+json.buyer_seller_reviews do
+  @buyer_seller_reviews.each do |review|
+    json.set! review.id do
+      json.id review.id
+      json.seller_id review.seller_id
+      json.title review.title
+      json.stars  review.stars
+      json.body review.body
+    end
+  end
+end
+
+

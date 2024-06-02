@@ -18,17 +18,17 @@ export const clearOrders = () => ({
 })
 
 export const createOrder = userId => async dispatch =>{
-        debugger;
+
     let res = await csrfFetch(`/api/users/${userId}/orders`, {
         method: 'POST',
         headers: {
             'Content-Type' : 'application/json'
         }
     })
-    debugger;
+
     if (res.ok){
         let data = await res.json();
-       debugger;
+   
         dispatch(receiveOrders(data.orders))
         dispatch(updateInstrument(data.instrument))
     } else {

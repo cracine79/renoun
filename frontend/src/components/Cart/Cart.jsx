@@ -31,7 +31,7 @@ function Cart(){
     useEffect(()=>{
         const music = instrumentsState;
         cart.forEach((item)=>{
-            debugger;
+
             if(item){
          
                 total += (music[item.instrumentId].price)
