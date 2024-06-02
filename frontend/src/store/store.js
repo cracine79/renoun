@@ -5,6 +5,7 @@ import instrumentsReducer from './instrument';
 import cartsReducer from './cart';
 import ordersReducer from './order';
 import { favoritesReducer } from './favorite';
+import { reviewsReducer } from './sellerReview';
 
 
 
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   instruments: instrumentsReducer,
   carts: cartsReducer,
   orders: ordersReducer,
-  favorites: favoritesReducer
+  favorites: favoritesReducer,
+  reviews: reviewsReducer
 });
 
 let enhancer;

@@ -18,6 +18,12 @@ Rails.application.routes.draw do
      resources :orders, only: [:index, :create]
     end
     resources :favorites, only: [:create, :destroy]
+
+    resources :seller_reviews, only: [:create, :destroy, :show]
+
+    resources :users do
+      resource :seller_reviews, only: [:index]
+    end
     
   end
 

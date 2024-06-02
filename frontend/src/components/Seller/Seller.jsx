@@ -1,12 +1,24 @@
 import './Seller.css'
+import { fetchAllReviews } from '../../store/sellerReview';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 function Seller({instrument, sellerStoreName}){
-    debugger;
+    const dispatch = useDispatch();
+    const id = instrument.sellerId;
+   
     const sellerFirstName = instrument.sellerFirstName
     const sellerLastName = instrument.sellerLastName
     const capFirstName = sellerFirstName.slice(0,1).toUpperCase()+sellerFirstName.slice(1)
     const capLastName = sellerLastName.slice(0,1).toUpperCase()+sellerLastName.slice(1)
     const fullName = capFirstName + " " + capLastName;
+
+
+    useEffect(()=>{
+        dispatch(fetchAllReviews(id))
+    }, [instrument.sellerId])
+        
+  
     return(
         <>
         <div id='seller-wrapper'>

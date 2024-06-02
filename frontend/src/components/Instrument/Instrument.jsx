@@ -317,9 +317,9 @@ const Instrument = () => {
                     <div id='condition-box'>
                         <div id='condition'>{instrument.condition}</div>
                         <div id='condition-explanation-box'>
-                            <p id='condition-explanation'>
+                            <div id='condition-explanation'>
                                 {conditionExplanation}
-                            </p>      
+                            </div>      
                         </div>
                     </div>
                     <p id='inst-page-price'>{formatter.format(instrument.price)}</p>
