@@ -34,6 +34,9 @@ const Instrument = () => {
     const signupForm = document.getElementById('signup-form-wrapper');
     const signupSquare = document.getElementById('signup-mnw');
     const loginSquare = document.getElementById('login-mnw');
+    const storeNames = ['Outlet', 'Depot', 'Habedashery', 'Gallery', 'Center']
+
+    const sellerStoreName = capFirstName + "'s Gear " + storeNames[Math.floor(Math.random()*5)]
 
     const [errors, setErrors] = useState();
   
@@ -208,7 +211,7 @@ const Instrument = () => {
         dispatch(deleteFavorite(favoriteId))
     }
       
-
+    debugger;
 
    
 
@@ -293,7 +296,7 @@ const Instrument = () => {
                 </div>
 
                 <div id='seller-box'>
-                    <Seller instrument = {instrument} />
+                    <Seller instrument = {instrument} sellerStoreName = {sellerStoreName}/>
                 </div>
 
                 <div id='instrument-reviews-box'>
@@ -367,8 +370,12 @@ const Instrument = () => {
                     </div>
 
                     <hr id = 'button-bottom' />
+                    <div id='instrument-show-store-info'>
+                        <img id = 'right-store-img' src = '../../assets/images/my-shop-orange-892ef04585ac0da6.svg'/>
+                        <div id='right-store-name'>{sellerStoreName}</div>
 
-                    <div>Sold By: {fullName}</div>
+                    </div>
+                   
 
 
                     

@@ -1,7 +1,7 @@
 import './Seller.css'
 
-function Seller({instrument}){
-
+function Seller({instrument, sellerStoreName}){
+    debugger;
     const sellerFirstName = instrument.sellerFirstName
     const sellerLastName = instrument.sellerLastName
     const capFirstName = sellerFirstName.slice(0,1).toUpperCase()+sellerFirstName.slice(1)
@@ -16,7 +16,7 @@ function Seller({instrument}){
                         <img id='shop' src='../../assets/images/my-shop-orange-892ef04585ac0da6.svg' />
                     </div>
                     <h2 id='seller-info'>
-                        For Sale By: {`${fullName}`}
+                        {sellerStoreName}
                     </h2>
             
                 </div>

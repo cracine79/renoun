@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { clearCart } from "../../store/cart";
 import { useEffect } from "react";
 import { clearOrders } from "../../store/order";
-
+import { Navigate } from "react-router-dom";
 
 
 
@@ -82,9 +82,23 @@ function Navigation(){
         loginForm.style.display='none'
         signupForm.style.display='flex'
         loginSquare.className='passive-menu-nav-wrapper'
-        signupSquare.className='active-menu-nav-wrapper'
-      
-        
+        signupSquare.className='active-menu-nav-wrapper' 
+    }
+
+    const handleCartClick = (e) =>{
+        if (!currentUser){
+            e.preventDefault;
+            debugger;
+            modal.style.display='flex'
+            modal.className='login'
+            loginNav.className='active'
+            signupNav.className='inactive'
+            loginForm.style.display='flex'
+            signupForm.style.display='none'
+         
+            loginSquare.className='active-menu-nav-wrapper'
+            signupSquare.className='passive-menu-nav-wrapper'
+        }
     }
 
 
@@ -156,7 +170,7 @@ function Navigation(){
                   <div id='cart-word'>
                     <div id='cart'>
                      
-                        <Link id='cart-link' to='/cart'>
+                        <Link id='cart-link' onClick={handleCartClick} to='/cart'>
                             <FiShoppingCart />
                         </Link>
                         <div id='item-count'>

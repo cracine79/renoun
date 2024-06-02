@@ -16,7 +16,11 @@ import { useDispatch } from 'react-redux';
 function Cart(){
    
     const cart = useSelector(state => Object.values(state.carts));
-    const currentUserId = useSelector(state => state.session.user.id)
+    const currentUser = useSelector(state=>state.session.user)
+    if (currentUser){
+        const currentUserId = currentUser.id
+    }
+
     const instrumentsState = useSelector(state => state.instruments);
 
     const [totalAmount, setTotalAmount] = useState(0);
@@ -56,7 +60,7 @@ function Cart(){
         emptyCartWrapper.style.display='none'
         fullCartWrapper.style.display='flex'
         setItemNumbers(cart.length)
-        dispatch(fetchUserCart(currentUserId))
+        dispatch(fetchUserCart(currentUser.id))
         const instrumentsArray = [];
         setTotalAmount(total)
     }

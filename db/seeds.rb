@@ -100,7 +100,7 @@ require "open-uri"
           description: 'Solid mahogany body. Mahogany neck. Ebony fretboard. Walnut Finish. Gibson square hardshell case w/purple lining',
           category: 'Guitar',
           brand: 'Gibson',
-          model: 'SG Standard',
+          model: 'SG',
           shipping: 40,
           seller_id: 2,
           available: true
@@ -116,7 +116,7 @@ require "open-uri"
         description: 'I’ve been a full-time music teacher for many decades. This spectacular Eric Johnson Stratocaster comes from my personal collection. I used her throughout my last album, ”Love Hurricane,” on virtually every track. Check out the attached clip to hear this beauty in all her glory! $2,500. No disappointments. She is truly exceptional. Thanks for looking! ',
         category: 'Guitar',
         brand: 'Fender',
-        model: 'Eric Johnson Stratocaster',
+        model: 'Stratocaster',
         shipping: 0,
         seller_id: 3,
         available: true
@@ -147,7 +147,7 @@ require "open-uri"
       description: '**** USED -EXCELLENT CONDITION CHEAPEST ON REVERB IN THIS CONDITION!!! GET THIS BEFORE ITS GONE ****',
       category: 'Guitar',
       brand: 'Fender',
-      model: 'Player Telecaster with Maple Fretboard',
+      model: 'Telecaster',
       shipping: 20,
       seller_id: 4,
       available: true
@@ -164,7 +164,7 @@ require "open-uri"
     brand: 'Dean',
     model: 'Z Select 24 Kahler',
     shipping: 0,
-    seller_id: 5,
+    seller_id: 4,
     available: true
 
 })
@@ -178,8 +178,9 @@ squierStrat = Instrument.create!({
   description: 'Slightly used Sunburst Fender Strat. I only found two slight defects, shown by the photos. One is a small bubble in the gloss finish on the side and the other is a couple indent marks in the back of the neck. Other than those two things, this is in excellent condition. Please message us if you would like any other photos or have questions.',
   category: 'Guitar',
   brand: 'Squier',
+  model: 'Stratocaster',
   shipping: 0,
-  seller_id: 5,
+  seller_id: 6,
   available: true
 
 })
@@ -196,7 +197,7 @@ prsCe = Instrument.create!({
   brand: 'PRS',
   model: 'PRS SE CE 24',
   shipping: 45,
-  seller_id: 8,
+  seller_id: 6,
   available: true
 
 })
@@ -213,7 +214,7 @@ rickenbacker = Instrument.create!({
   brand: 'Rickenbaker',
   model: '1993 Plus',
   shipping: 0,
-  seller_id: 7,
+  seller_id: 6,
   available: true
 
 })
@@ -222,7 +223,116 @@ rickenbacker.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazon
 
   
   
+fender_jazzmaster = Instrument.create!({
+  item_name: 'Fender American Pro Jazzmaster - 8.48 lbs',
+  condition: 'Used - Good',
+  price: 1299,
+  description: 'Originally intended for sophisticated jazz guitarists, the Jazzmaster was quickly embraced by musicians attracted to its left-of-center looks and fat sound. A direct descendent of the guitar that powered underground music from the late-60s to today, the American Professional Jazzmaster is ready to lend its unique sound to your playing.  An elegant model with flexible electronics and a rich voice, the Jazzmasters introduction in 1958 marked the first time a rosewood fingerboard was used on a Fender instrument. Thanks to its effortless playing feel and ergonomic offset-waist body, the Jazzmaster has powered infinite musical genres, including surf rock, gospel, new wave and indie rock, among others.',
+  category: 'Guitar',
+  brand: 'Fender',
+  model: 'Jazzmaster',
+  shipping: 129,
+  seller_id: 7,
+  available: true
+})
 
+fender_jazzmaster.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Fender+American+Pro+Jazzsmaster.webp'), filename: 'fender_jazzmaster.webp')
+
+
+fender_customshop_telecaster = Instrument.create!({
+  item_name: 'Fender Custom 60 Telecaster NOS - 7.71 lbs',
+  condition: 'Used - Good',
+  price: 2871,
+  description: 'Body:  Small scratch bass side of pickguard at neck. Small finish crack on lower horn - front. A couple of tiny dings and finish blemishes throughout.  Pickup and saddles are non-original. Original saddles are included in case.Disclaimer: You are not buying a setup, you are buying an instrument. This means that the setups we perform on instruments for sale are intended to inspect and ensure proper function of various aspects of the instruments. Customer-based setups are personal and no two players will require the same setups measurements.',
+  category: 'Guitar',
+  brand: 'Fender',
+  model: 'Telecaster',
+  shipping: 129,
+  seller_id: 7,
+  available: true
+})
+
+fender_customshop_telecaster.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Fender_custom_telecastser.webp'), filename: 'fender_custom_telecaster.webp')
+
+epiphone_sg  = Instrument.create!({
+  item_name: 'Epiphone SG Pro Electric Guitar Plays and Sounds Great!',
+  condition: 'Used - Good',
+  price: 365,
+  description: 'Ephiphone SG Pro!  Plays and Sounds Great!  New Strings!  Fresh setup!  Very nice used condition!',
+  category: 'Guitar',
+  brand: 'Epiphone',
+  model: 'SG',
+  shipping: 60,
+  seller_id: 7,
+  available: true
+})
+
+epiphone_sg.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Epiphone_SG.jpeg'), filename: 'epiphone_sg.webp')
+
+
+squier_jazzmaster  = Instrument.create!({
+  item_name: 'Squier J Mascis Jazzmaster with Rosewood Fretboard 2012 - 2017 - Vintage White',
+  condition: 'Used - Excellent',
+  price: 525,
+  description: 'If it were not for the crease in the finish by the guitar strap and some marks on the pickguard this guitar would be listed as mint.  Includes padded gig bag and tremolo arm.  Mad ein June of 216 with a Rosewood fretboard.',
+  category: 'Guitar',
+  brand: 'Squier',
+  model: 'Jazzmaster',
+  shipping: 30,
+  seller_id: 8,
+  available: true
+})
+
+squier_jazzmaster.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Squier_jazzmaster.webp'), filename: 'squier_jazzmaster.webp')
+
+
+
+epiphone_les_paul  = Instrument.create!({
+  item_name: 'Epiphone Les Paul 1960 Tribute Plus - Wine Red Flame Top',
+  condition: 'Used - Excellent',
+  price: 560,
+  description: 'An Ephiphone 1950 Tribute Plus in excellnet condition, comes with hardshell case.  Setup with nice low action. CTS pots.  Gibson USA 57 Classic Pickups.  Coil tapped with push/pull.  Grover locking tuners',
+  category: 'Guitar',
+  brand: 'Epiphone',
+  model: 'Les Paul',
+  shipping: 35,
+  seller_id: 8,
+  available: true
+})
+
+epiphone_les_paul.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Epiphone_les_paul_tribute.webp'), filename: 'epiphone_les_paul.webp')
+
+
+gibson_les_paul  = Instrument.create!({
+  item_name: '2012 Gibson Les Paul Studio 60s Tribute with P90s 2010 - 2015 - Worn Cherry Burst',
+  condition: 'Used - Good',
+  price: 1100,
+  description: 'American made. The finest sounding and playing guitar Ive ever owned. The chambered mahogany body lightens up the Les Paul to about 7 1/2 lbs without sacrificing tone. The american factory Gibson P90s are probably the most versatile pickups ever made, getting beautiful warm lush cleans in the neck with the volume and tone adjusted down, dirty biting blues and rock tones in the bridge, fuzzy alt, gnarly drone metal, everything. All electronics function properly. Hard to find Cherryburst. Tons of beautiful, honest players wear that has no effect on playability. No case. Bills must be paid :(',
+  category: 'Guitar',
+  brand: 'Gibson',
+  model: 'Les Paul',
+  shipping: 100,
+  seller_id: 8,
+  available: true
+})
+
+gibson_les_paul.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Gibson_les_paul_studio.jpeg'), filename: 'gibson_les_paul.webp')
+
+
+jackson_king  = Instrument.create!({
+  item_name: 'Jackson Custom Shop King V 2023 - Platinum Pink Metallic',
+  condition: 'Used - Mint',
+  price: 3400,
+  description: 'Jackson Custom Shop King V in Platinum Pink Metallic. Obviously I play in an 80s band. This guitar is a custom shop from last year, flamed maple fingerboard, ebony shark fins, schaeller locking tuners, Dimarzio Evo neck pickup, Bill Lawerence L500XL bridge, all the Floyd upgrades, claw, block, springs, tremstop, sounds and plays amazing. Great guitar, just listing to finish one of my cars for summer. Listing this full on custom for the price of a new basic black USA model. Cant find any issues but listing as excellent in the event someone finds a scratch I cant see. Pictures in the direct sun to show you what I see, only played a few times. I can put the truss rod cover back on as well as back plate. Ill also remove the "custom" sweetwater sticker from the back. Sold as is no returns. Thank you for looking.',
+  category: 'Guitar',
+  brand: 'Jackson',
+  model: 'King V',
+  shipping: 100,
+  seller_id: 7,
+  available: true
+})
+
+jackson_king.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Jackson_King_V.jpeg'), filename: 'jackson_king_v.webp')
   
     puts "Done!"
   # end
