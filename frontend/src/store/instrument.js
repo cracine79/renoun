@@ -3,6 +3,7 @@ import csrfFetch from "./csrf"
 const RECEIVE_INSTRUMENT = 'instrument/RECEIVE_INSTRUMENT'
 const RECEIVE_INSTRUMENTS = 'instrument/RECEIVE_INSTRUMENTS'
 const REMOVE_INSTRUMENT = 'instrument/REMOVE_INSTRUMENT'
+const UPDATE_INSTRUMENT = 'instrument/UPDATE_INSTRUMENT'
 
 export const receiveInstrument = instrument => ({
     type: RECEIVE_INSTRUMENT,
@@ -18,6 +19,12 @@ export const receiveInstruments = instruments => ({
 export const deleteInstrument = instrumentId => ({
     type: REMOVE_INSTRUMENT,
     instrumentId
+})
+
+export const updateInstrument = instrument => ({
+
+    type: UPDATE_INSTRUMENT,
+    instrument
 })
 
 export const fetchAllInstruments = () => async dispatch => {
@@ -41,7 +48,20 @@ export const removeInstrument = () => async dispatch => {
         } else {
             console.log.res.error
         }
+}
 
+export const updateInstrumentDetails = (instrument) => async dispatch => {
+    const res = await csrfFetch(`/api/instruments/${instrument.id}`,{
+        method: 'PUT',
+        body: JSON.stringify(instrument),
+        headers: {
+            'Content-Type' : 'application/json'
+        }
+    });
+    if (res.ok){
+        let data = await res.json();
+        dispatch(updateInstrument(data))
+    }
 }
 
 const instrumentsReducer = (state = {}, action) => {
@@ -52,11 +72,15 @@ const instrumentsReducer = (state = {}, action) => {
     switch (action.type){
         case RECEIVE_INSTRUMENTS:
             return {...action.instruments};
-        default:
-            return state;
+   
         
         case REMOVE_INSTRUMENT:
             return {...nextState, [action.instrumentId]: undefined}
+        case UPDATE_INSTRUMENT:
+            nextState[action.instrument.id] = action.instrument
+            return nextState
+        default:
+            return state;
     }
 
 

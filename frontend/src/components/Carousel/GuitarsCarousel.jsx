@@ -20,6 +20,7 @@ function GuitarsCarousel(){
 
     const guitarsObj = useSelector(state=>(state.instruments))
     const guitars = Object.values(guitarsObj)
+    const orders = useSelector(state=>state.orders)
     
     const currentUser = useSelector(state=>(state.session.user))
  
@@ -32,10 +33,19 @@ function GuitarsCarousel(){
     const favoriteInstrumentIds = favorites.map((favorite)=>{
         return favorite.instrumentId
     })
-
-
     const availableInstruments = guitars.filter((guitar)=>guitar.available===true)
-    const shortGuitars = availableInstruments.slice(0,6)
+    let shortGuitars = availableInstruments.slice(0,6)
+
+
+    useEffect(()=>{
+        debugger;
+        const availInstruments = guitars.filter((guitar)=>guitar.available===true)
+        shortGuitars = availInstruments.slice(0,6)
+        
+    },[orders.length])
+      
+
+
 
   
 

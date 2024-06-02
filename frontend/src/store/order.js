@@ -5,6 +5,8 @@ const RECEIVE_ORDERS = 'orders/RECEIVE_ORDERS'
 const CREATE_ORDER = 'orders/CREATE_ORDER'
 const CLEAR_ORDERS = 'orders/CLEAR_ORDERS'
 
+import { updateInstrument } from "./instrument";
+
 
 export const receiveOrders = orders => ({
     type: RECEIVE_ORDERS,
@@ -26,8 +28,9 @@ export const createOrder = userId => async dispatch =>{
     debugger;
     if (res.ok){
         let data = await res.json();
-       
-        dispatch(receiveOrders(data))
+       debugger;
+        dispatch(receiveOrders(data.orders))
+        dispatch(updateInstrument(data.instrument))
     } else {
         console.log.res.errors.full_messages
     }

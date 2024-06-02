@@ -1,5 +1,5 @@
 
-
+json.orders do
     @orders.each do |instrument|
         json.set! instrument[:order_item_id] do
             json.id  instrument[:order_item_id]
@@ -14,4 +14,12 @@
             json.instrument_id instrument[:instrument_id]
         end
     end
+end
 
+
+    
+json.instrument do
+  json.extract! @instrument, :id, :item_name, :condition, :price, :description, :brand, :category, :model, :created_at, :updated_at, :available
+  json.photoUrl @instrument.photo.attached? ? @instrument.photo.url : nil
+  json.seller @instrument.seller
+end

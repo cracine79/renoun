@@ -34,10 +34,22 @@ function OrderConfirmation(){
     const capLastName = userLastName.slice(0,1).toUpperCase()+userLastName.slice(1)
     const now = new Date();
     const date = now.toDateString();
+    let sellerCapFirstName
+    let sellerCapLastName
+  
     const sellerFullName = (instrument) => {
-
-        const sellerCapFirstName = instrument.sellerFirstName.slice(0,1).toUpperCase()+instrument.sellerFirstName.slice(1)
-        const sellerCapLastName = instrument.sellerLastName.slice(0,1).toUpperCase()+instrument.sellerLastName.slice(1)
+        if(instrument.sellerFirstName){
+             sellerCapFirstName = instrument.sellerFirstName.slice(0,1).toUpperCase()+instrument.sellerFirstName.slice(1)
+            
+        } else {
+             sellerCapFirstName = 'Seller'
+        }
+        if(instrument.sellerLastName){
+             sellerCapLastName = instrument.sellerLastName.slice(0,1).toUpperCase()+instrument.sellerLastName.slice(1)
+        } else {
+             sellerCapLastName = 'Temporarily Unavailable'
+        }
+        
         return (`${sellerCapFirstName} ${sellerCapLastName}`)
     }
     let extension = 0
