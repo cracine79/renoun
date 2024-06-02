@@ -46,7 +46,7 @@ export const reviewsReducer = (state = {}, action) => {
             nextState[action.review.id] = action.review
             return nextState;
         case RECEIVE_REVIEWS:
-            return {...nextState, ...action.reviews}
+            return {...action.reviews}
         default: 
             return state;
     }

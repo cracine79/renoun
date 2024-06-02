@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 
 function Seller({instrument, sellerStoreName}){
     const dispatch = useDispatch();
+    debugger;
     const id = instrument.sellerId;
    
     const sellerFirstName = instrument.sellerFirstName
@@ -21,9 +22,10 @@ function Seller({instrument, sellerStoreName}){
 
 
     useEffect(()=>{
+        debugger;
         dispatch(fetchAllReviews(id))
-    }, [instrument.sellerId])
-        
+    }, [instrument])
+    
     const abbrevName = (review)=>{
         
         return review.firstName.slice(0,1).toUpperCase()+review.firstName.slice(1)+ ' ' + review.lastInit 
