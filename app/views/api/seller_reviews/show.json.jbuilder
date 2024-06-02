@@ -6,5 +6,9 @@
         json.title review.title
         json.body review.body
         json.stars review.stars
+        json.first_name review.first_name
+        json.last_init review.last_init
+        json.created_at review.created_at
+      
     end
 end

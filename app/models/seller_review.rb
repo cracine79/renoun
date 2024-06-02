@@ -10,6 +10,8 @@
 #  stars       :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  first_name  :string
+#  last_init   :string
 #
 class SellerReview < ApplicationRecord
 

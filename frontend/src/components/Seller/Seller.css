@@ -38,3 +38,7 @@
     border-color: rgb(233, 233, 233);
     border-top: 1px solid #ccc;
 }
+
+.stars{
+    width: 80px;
+}

@@ -22,8 +22,6 @@ export const fetchAllReviews = (sellerId) => async dispatch => {
         dispatch(receiveReviews(data))
     }
 
-        
-
 }
 
 export const createReview = (review) => async dispatch => {
