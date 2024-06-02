@@ -231,10 +231,14 @@ const Instrument = () => {
                 </div>
 
                 <div id='photobox'>
+                    <div>
                     <img id= 'photo' src={instrument.photoUrl} />
           
-                        <img src='../../assets/images/emptyHeart.png' id='bigHollowHeart' onClick={favoriteInstrument} />  
+                         <img src='../../assets/images/emptyHeart.png' id='bigHollowHeart' onClick={favoriteInstrument} />  
                         <img src='../../assets/images/FILLEDHeart.png' id='bigFilledHeart' onClick={unfavoriteInstrument}/>  
+
+                    </div>
+                   
                 </div>
 
                 <h1 className='aboutThisListing'> About This Listing</h1>
@@ -345,8 +349,8 @@ const Instrument = () => {
                     <div id = 'watch-button' onClick={favoriteInstrument}>
                         <LuHeart  /> Watch
                     </div>
-                    <div id='watching-button'>
-                      <LuHeart id='orange-heart' onClick={unfavoriteInstrument}/>  Watching
+                    <div id='watching-button' onClick={unfavoriteInstrument}>
+                      <LuHeart id='orange-heart' />  Watching
                     </div>
 
                     <div id='product-background-info'>

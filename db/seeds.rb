@@ -81,13 +81,13 @@ require "open-uri"
       User.create!({
         email: 'kurdt@love.com', 
         password: 'password',
-        first_name: 'kdog',
+        first_name: 'kurdt',
         last_name: 'cobsie'
     })
       User.create!({
         email: 'lcd@soundsystem.com', 
         password: 'password',
-        first_name: 'northamerican',
+        first_name: 'leo',
         last_name: 'technoguy'
     })
 

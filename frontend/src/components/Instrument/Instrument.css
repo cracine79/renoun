@@ -5,7 +5,6 @@
     height: 850px;
     width: 100%;
     background-color: rgb(234, 233, 233);
-    margin-right: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,10 +43,10 @@
 }
 
 #left {
-    width: 800px;
+    width: 900px;
     height: auto;
     margin-right: 30px;
-    margin-left: 230px;
+    margin-left: 150px;
 }
 
 .noShadow{
@@ -542,8 +541,8 @@ color: gray;
 }
 
 #bigHollowHeart{
-    margin-top: -770px;
-    margin-left: 700px;
+    margin-top: -810px;
+    margin-left: 760px;
     position: absolute;
  
     height: 55px;
@@ -553,8 +552,8 @@ color: gray;
 }
 
 #bigFilledHeart{
-    margin-top: -770px;
-    margin-left: 700px;
+    margin-top: -810px;
+    margin-left: 760px;
     position: absolute;
  
     height: 55px;
