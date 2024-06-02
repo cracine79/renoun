@@ -293,7 +293,7 @@ const Instrument = () => {
                         <img className='blueIcon' src='../../assets/images/padlock-icon.svg' />
                         <div className='subSubBox'>
                             <p className='specKey'>Secure Checkout</p>
-                            <p className='reverb-reassure'>Simple Returns, Secure Transactions, Human Support</p>
+                            <p className='reverb-reassure'>At Renoun, your safety and security is our priority</p>
                         </div>
 
                     </div>
