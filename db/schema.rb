@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_31_140557) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_02_164536) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -87,6 +87,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_31_140557) do
     t.index ["instrument_id"], name: "index_orders_on_instrument_id"
   end
 
+  create_table "seller_reviews", force: :cascade do |t|
+    t.bigint "reviewer_id", null: false
+    t.bigint "seller_id", null: false
+    t.string "title", null: false
+    t.text "body", null: false
+    t.integer "stars", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reviewer_id"], name: "index_seller_reviews_on_reviewer_id"
+    t.index ["seller_id"], name: "index_seller_reviews_on_seller_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "first_name", null: false
@@ -109,4 +121,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_31_140557) do
   add_foreign_key "instruments", "users", column: "seller_id"
   add_foreign_key "orders", "instruments"
   add_foreign_key "orders", "instruments", column: "buyer_id"
+  add_foreign_key "seller_reviews", "users", column: "reviewer_id"
+  add_foreign_key "seller_reviews", "users", column: "seller_id"
 end

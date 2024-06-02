@@ -21,6 +21,8 @@ class User < ApplicationRecord
     has_many :orders, foreign_key: :buyer_id
     has_many :items_ordered, through: :orders, source: :instrument
     has_many :favorites, foreign_key: :favoriter_id
+    has_many :reviews_from_buyers, foreign_key: :seller_id, class_name: :SellerReview
+    has_many :reviews_of_sellers, foreign_key: :reviewer_id, class_name: :SellerReview
    
    
 
