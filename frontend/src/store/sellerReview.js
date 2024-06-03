@@ -34,8 +34,23 @@ export const createReview = (review) => async dispatch => {
             'Accept': 'application/json'
         }
     })
+    debugger;
     const data = await res.json();
     debugger;
+    dispatch(receiveReview(data))
+}
+
+export const updateReview = (review) => async dispatch => {
+    debugger;
+    const res = await csrfFetch(`api/seller_reviews/${review.id}`, {
+        method: 'PUT',
+        body: JSON.stringify(review),
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
+    const data = await res.json();
     dispatch(receiveReview(data))
 }
 

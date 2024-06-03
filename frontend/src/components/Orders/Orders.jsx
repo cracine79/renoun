@@ -2,7 +2,7 @@ import './Orders.css'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { createReview } from '../../store/sellerReview'
+import { createReview, updateReview } from '../../store/sellerReview'
 import { useDispatch } from 'react-redux'
 
 
@@ -19,7 +19,26 @@ function Orders(){
     const [firstNameSubmit, setFirstNameSubmit] = useState(currentUser.firstName.slice(0,1).toUpperCase()+currentUser.firstName.slice(1));
     const [lastNameInitial, setLastNameInitial] = useState(currentUser.lastName.slice(0,1).toUpperCase() + ".");
     const [reviewBody, setReviewBody] = useState("");
-    const [errors, setErrors] = useState("")
+    const createReviewForm = document.getElementById('create-review-form')
+    const updateReviewForm = document.getElementById('update-review-form')
+    const [currentReview, setCurrentReview] = useState("")
+    
+    
+    const getOrderReview = (order) =>{
+        let currentReview = {}
+        debugger;
+        if(order){
+            buyerSellerReviews.forEach(  (review)=>{
+                if (order.itemName.slice(0,15)===review.title.slice(0,15)){
+                    currentReview=review
+                }
+            })
+
+        }
+        
+        
+        return currentReview
+    }
 
 
     const orderButton = (order)=>{
@@ -31,7 +50,10 @@ function Orders(){
         })
             if (reviewed===true){
                 return(
-                    <button className='review-button' id='update-review-button' >Update Seller Review</button>
+                    <button className='review-button' id='update-review-button' onClick={()=>{
+                        setCurrentOrder(order)
+                        openUpdateForm(order)
+                    }}>Update Seller Review</button>
                 )
             } else {
                 return(
@@ -48,7 +70,18 @@ function Orders(){
     const openReviewForm = (order) => {
         debugger;
         reviewWrapperWrapper.style.display='flex'
+        createReviewForm.style.display='flex'
+        updateReviewForm.style.display='none'
         console.log('hi')
+    }
+
+    const openUpdateForm = (order) => {
+        const cr = getOrderReview(order)
+        debugger;
+        setCurrentReview(cr)
+        reviewWrapperWrapper.style.display='flex'
+        createReviewForm.style.display='none'
+        updateReviewForm.style.display='flex'
     }
 
    
@@ -115,8 +148,11 @@ function Orders(){
 
     const clickAway=(e)=>{
         if(e.target.id ==='review-wrapper-wrapper'){
+            e.preventDefault();
             reviewWrapperWrapper = document.getElementById('review-wrapper-wrapper')
             reviewWrapperWrapper.style.display='none';
+            setCurrentReview({})
+            console.log(currentReview)
         }
         }
         
@@ -182,6 +218,28 @@ function Orders(){
         debugger;
 
       dispatch(createReview(seller_review))
+        
+    }
+
+    const updateSellerReview = e => {
+        debugger;
+        e.preventDefault;
+     
+        reviewWrapperWrapper.style.display = 'none'
+        
+        const seller_review={
+            id: currentReview.id,
+            reviewerId: currentUser.id,
+            sellerId: currentOrder.sellerId,
+            title: currentOrder.itemName,
+            body: reviewBody,
+            stars: hover,
+            firstName: firstNameSubmit,
+            lastInit: lastNameInitial
+        }
+        debugger;
+
+      dispatch(updateReview(seller_review))
         
     }
     
@@ -283,6 +341,52 @@ function Orders(){
                     </form>
               </div>
               <div id='update-review-wrapper' className='review-wrapper'>
+              <form id='update-review-form' className='review-form' onSubmit={updateSellerReview}>
+                        <div>
+                            <div className='review-inner-wrapper'>
+                                <h1 className='review-form-header'>Update Your Review For {fullName}</h1>
+                                <div className='review-item-wrapper'>
+                                    <img id='seller-review-photo' src = {`${currentOrder.photoUrl}`}/>
+                                    <div className='review-info-words-wrapper'>
+                                        <p className = 'item-purchased-review'>Item Purchased: {currentOrder.itemName}</p>
+                                        <p>Seller: {orderSellerFullName()}</p>
+                                     </div>
+                              
+                                </div>
+                                
+                               
+                                
+                                <p id='review-instructions'>Please give your review for the seller in the space below.  Include any relevant details about communication, promptness of delivery, accuracy of item description, or anything else that may be of use to other Renoun users.</p>
+                                <textarea id='review-body' type='textarea'  placeholder={currentReview.body} onChange={e=>setReviewBody(e.target.value)}/>
+                                <div id='names-wrapper'>
+                                    <div className='name-wrapper'>
+                                        <input className='name-input' placeholder={currentUser.firstName.slice(0,1).toUpperCase()+currentUser.firstName.slice(1)} type='text'></input>
+                                        <label htmlFor='firstName' className='name-label-for-form' onChange={e=>setFirstNameSubmit(e.target.value)}>First Name</label>
+                                    </div>    
+                                    <div className='name-wrapper'>
+                                        <input className='name-input' placeholder={currentUser.lastName.slice(0,1).toUpperCase()+"."} type='text'></input>
+
+                                        <label htmlFor='lastName' className='name-label-for-form' onChange={e=>setLastNameInitial(e.target.value.slice(0,1))}>Last Name</label>
+                                    </div>
+                                </div>
+
+                                <div id='star-rating-wrapper'>
+                                    <p id='please-rate'>Please rate your transaction on a scale of 1-5</p>
+                                        <div><StarRating /></div>
+                                </div>
+                                <div className='review-submit-button-wrapper'>
+                                  <input className='review-submit-button' type='submit'/>
+                              
+
+                                </div>
+                              
+                       
+                            </div>
+
+                        </div>
+                     
+                           
+                    </form>
 
               </div>
 

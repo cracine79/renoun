@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     end
     resources :favorites, only: [:create, :destroy]
 
-    resources :seller_reviews, only: [:create, :destroy, :show]
+    resources :seller_reviews, only: [:create, :destroy, :show, :update]
 
     resources :users do
       resource :seller_reviews, only: [:index]
