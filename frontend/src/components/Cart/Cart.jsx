@@ -26,10 +26,11 @@ function Cart(){
     const [totalAmount, setTotalAmount] = useState(0);
     const [itemNumbers, setItemNumbers] = useState(0)
     const dispatch = useDispatch();
-      let total = 0
+      let total
    
     useEffect(()=>{
         const music = instrumentsState;
+        total = 0;
         cart.forEach((item)=>{
 
             if(item){

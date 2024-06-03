@@ -154,7 +154,7 @@ function Navigation(){
             
 
             <div id="buttonWrapper">
-                <button id='sell-button'>Sell Your Gear</button>
+                {/* <button id='sell-button'>Sell Your Gear</button> */}
             
                 <div className='iconlink'>
                 <div id='favs-word-nav'>

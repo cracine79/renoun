@@ -4,11 +4,12 @@
     align-items: center;
     justify-content: space-evenly;
     border-bottom: 1px lightgray solid;
+    width: 100%;
     
 }
 
 #searchbar {
-    width: 1000px;
+    width: 80%;
     height: 48px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -135,10 +136,10 @@
 
 #buttonWrapper{
     display: flex;
-    width: 420px;
+    width: 170px;
     align-items: center;
     justify-content: space-between;
-    margin-right: 30px;
+    margin-right: 90px;
 
 }
 
@@ -147,12 +148,14 @@
     transform: rotate(90deg);
     border: black 1px solid;
     width: 51px;
+    height: 49px;;
     margin-left: -41px;
     justify-content: center;
     display: flex;
     align-items: center;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+   
 }
 
 #searchButton:hover{
@@ -163,6 +166,8 @@
 #searchWrapper{
     display: flex;
     margin-top: 5px;
+    width: 80%;
+    height: 51px;
 
 }
 

@@ -22,7 +22,7 @@ class Api::OrdersController < ApplicationController
             @instrument.save
 
 
-            debugger;
+    
         
             @order_extended_info_item[:order_item_id] = @order_item.id
             @order_extended_info_item[:item_name] = @instrument.item_name
@@ -37,7 +37,7 @@ class Api::OrdersController < ApplicationController
             @orders.push(@order_extended_info_item)
             cart_item.destroy()
 
-            debugger;
+      
         end
      
 
