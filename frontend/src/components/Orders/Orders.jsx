@@ -2,21 +2,25 @@ import './Orders.css'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { createReview } from '../../store/sellerReview'
+import { useDispatch } from 'react-redux'
 
 
 
 function Orders(){
-
+    const dispatch=useDispatch();
     const orders = useSelector(state => Object.values(state.orders))
     const buyerSellerReviews = useSelector(state => Object.values(state.buyerSellerReviews)) 
-    const reviewWrapperWrapper = document.getElementById('review-wrapper-wrapper')
+    let reviewWrapperWrapper = document.getElementById('review-wrapper-wrapper')
     const [currentOrder,setCurrentOrder] = useState({});
     const currentUser = useSelector(state => state.session.user)
-    const starOne = document.getElementById('star-one')
-    const starTwo = document.getElementById('star-two')
-    const starThree = document.getElementById('star-three')
-    const starFour=document.getElementById('star-four')
-    const starFive = document.getElementById('star-five')
+    const [rating, setRating] = useState(0);
+    const [hover, setHover] = useState(0);
+    const [firstNameSubmit, setFirstNameSubmit] = useState(currentUser.firstName.slice(0,1).toUpperCase()+currentUser.firstName.slice(1));
+    const [lastNameInitial, setLastNameInitial] = useState(currentUser.lastName.slice(0,1).toUpperCase() + ".");
+    const [reviewBody, setReviewBody] = useState("");
+    const [errors, setErrors] = useState("")
+
 
     const orderButton = (order)=>{
         let reviewed = false
@@ -47,7 +51,7 @@ function Orders(){
         console.log('hi')
     }
 
-  
+   
 
     const wordifyDate = (order) => {
       
@@ -85,10 +89,33 @@ function Orders(){
         }
     }, [orders])
 
-    const clickAway=(e)=>{
+    const StarRating = () => {
+        return (<>
+            <div className='star-rating'>
+                {[...Array(5)].map((star, index)=>{
+                    index +=1
+                    return(
+                        <button type='button' 
+                                key={index}     
+                                className={index <= hover ? 'on' : 'off'} 
+                                onClick={()=>setRating(index)}
+                                onMouseEnter={()=>setHover(index)}
+                        
+                            >
+                        <span className='star'>&#9733;</span>
+                        </button>
+                    )
+                })
+                }
+            </div>
+        
+            
+        </>)
+    }
 
-        console.log(e.target)
+    const clickAway=(e)=>{
         if(e.target.id ==='review-wrapper-wrapper'){
+            reviewWrapperWrapper = document.getElementById('review-wrapper-wrapper')
             reviewWrapperWrapper.style.display='none';
         }
         }
@@ -115,43 +142,12 @@ function Orders(){
     const fullName=()=>{
         if(currentOrder.sellerFirstName){
             return(currentOrder.sellerFirstName.slice(0,1).toUpperCase()+currentOrder.sellerFirstName.slice(1))
-        }
-        
+        }        
     }
-    debugger;
 
 
-    const clickOne=(e)=>{
-        if(e.target.id='star-one'){
-        starOne.style.backgroundImage="url(../../assets/images/fullStar.png)"
-        starTwo.style.backgroundImage="url(../../assets/images/hollowStar.png)"
-        starThree.style.backgroundImage="url(../../assets/images/hollowStar.png)"
-        starFour.style.backgroundImage="url(../../assets/images/hollowStar.png)"
-        starFive.style.backgroundImage="url(../../assets/images/hollowStar.png)"
-        }
-    }
-    const clickTwo=(es)=>{
-        if(e.target.id='star-two'){
-            console.log("two")
-            starOne.style.backgroundImage="url(../../assets/images/fullStar.png)"
-            starTwo.style.backgroundImage="url(../../assets/images/fullStar.png)"
-            starThree.style.backgroundImage="url(../../assets/images/hollowStar.png)"
-            starFour.style.backgroundImage="url(../../assets/images/hollowStar.png)"
-            starFive.style.backgroundImage="url(../../assets/images/hollowStar.png)"
 
-        }
-  
-        
-    }
-    const clickThree=()=>{
-        
-    }
-    const clickFour=()=>{
-        
-    }
-    const clickFive=()=>{
-        
-    }
+   
         
       
     let firstName
@@ -166,6 +162,27 @@ function Orders(){
         }
     
         return firstName + " " + lastName
+    }
+
+    const submitSellerReview = e => {
+        debugger;
+        e.preventDefault;
+     
+        reviewWrapperWrapper.style.display = 'none'
+        
+        const seller_review={
+            reviewerId: currentUser.id,
+            sellerId: currentOrder.sellerId,
+            title: currentOrder.itemName,
+            body: reviewBody,
+            stars: hover,
+            firstName: firstNameSubmit,
+            lastInit: lastNameInitial
+        }
+        debugger;
+
+      dispatch(createReview(seller_review))
+        
     }
     
    
@@ -218,7 +235,7 @@ function Orders(){
        <div id='review-wrapper-wrapper' onClick={clickAway}>
             <div id='second-wrapper'>
             <div id='create-review-wrapper' className='review-wrapper'>
-                    <form id='create-review-form' className='review-form'>
+                    <form id='create-review-form' className='review-form' onSubmit={submitSellerReview}>
                         <div>
                             <div className='review-inner-wrapper'>
                                 <h1 className='review-form-header'>Create a Review For {fullName}</h1>
@@ -234,35 +251,27 @@ function Orders(){
                                
                                 
                                 <p id='review-instructions'>Please give your review for the seller in the space below.  Include any relevant details about communication, promptness of delivery, accuracy of item description, or anything else that may be of use to other Renoun users.</p>
-                                <textarea id='review-body' type='textarea' placeholder='Enter your review here!'/>
+                                <textarea id='review-body' type='textarea' placeholder='Enter your review here!' onChange={e=>setReviewBody(e.target.value)}/>
                                 <div id='names-wrapper'>
                                     <div className='name-wrapper'>
                                         <input className='name-input' type='text'></input>
-                                        <label for='firstName' className='name-label-for-form'>First Name</label>
+                                        <label htmlFor='firstName' className='name-label-for-form' onChange={e=>setFirstNameSubmit(e.target.value)}>First Name</label>
                                     </div>    
                                     <div className='name-wrapper'>
                                         <input className='name-input' type='text'></input>
 
-                                        <label for='lastName' className='name-label-for-form'>Last Name</label>
+                                        <label htmlFor='lastName' className='name-label-for-form' onChange={e=>setLastNameInitial(e.target.value.slice(0,1))}>Last Name</label>
                                     </div>
                                 </div>
 
                                 <div id='star-rating-wrapper'>
                                     <p id='please-rate'>Please rate your transaction on a scale of 1-5</p>
-                                    <div id = 'star-zero'></div>
-                               
-             
-                                    
-                                  
-                                <div id='star-one' className='star-image-rating' onClick={clickOne}>
-                                     <div id='star-two' className='star-image-rating' onClick={clickTwo}>
-                                        <div id='star-three'className='star-image-rating' onClick={clickThree}>
-                                             <div id='star-four' className='star-image-rating' onClick={clickFour}>
-                                             <div id='star-five' className='star-image-rating' onClick={clickFive}></div>
-                                            </div>
-                                        </div>
-                                        </div>
-                                     </div>
+                                        <div><StarRating /></div>
+                                </div>
+                                <div className='review-submit-button-wrapper'>
+                                  <input className='review-submit-button' type='submit'/>
+                              
+
                                 </div>
                               
                        

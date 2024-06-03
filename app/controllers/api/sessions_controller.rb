@@ -10,7 +10,7 @@ class Api::SessionsController < ApplicationController
       @orders = @user.items_ordered
       @favorites = @user.favorites
       @buyer_seller_reviews = @user.reviews_of_sellers
-      debugger;
+
 
       render 'api/users/show'
     else
@@ -23,10 +23,10 @@ class Api::SessionsController < ApplicationController
   def create
     email = params[:email]
     password = params[:password]
-
-    
+  
+    debugger;
     @user = User.find_by_credentials(email, password)
-
+    debugger;
 
     if @user
       @orders = @user.items_ordered

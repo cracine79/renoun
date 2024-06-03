@@ -125,7 +125,7 @@
 
 .review-form{
     width: 600px;
-    height: 800px; 
+    height: auto; 
     background-color: white;
     border-radius: 15px; 
 
@@ -232,70 +232,51 @@
 }
 
 .star-rating{
-    width: 20px;
+
     margin-bottom: 3px;
     margin-left: 1px;
 
 }
 
-.star-rating:hover{
-    cursor:pointer;
-    
-}
-.star-image-rating{
-    background-image:url('../../assets/images/hollowStar.png');
-    height: 25px;
-    width: 25px;
-    background-size: 22px;
-    background-repeat: no-repeat;
+button{
+    background-color: transparent;
+    border: none;
+    outline: none;
     cursor: pointer;
-    
 }
 
-
-
-#star-one:hover{
-    background-image:url('../../assets/images/fullStar.png');
+.on{
+    color: #000;
 }
 
-#star-two:hover{
-    background-image:url('../../assets/images/fullStar.png');
+.off{
+    color: #ccc
 }
 
-#star-one:hover{
-    background-image:url('../../assets/images/fullStar.png');
+.review-submit-button{
+    margin-top: 20px;
+    width: 80%;
+    height: 40px;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    border: 3px solid black;
+    margin-bottom: 30px;
 }
 
-#star-three:hover{
-    background-image:url('../../assets/images/fullStar.png');
+.review-submit-button:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+.review-submit-button-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
-#star-four:hover{
-    background-image:url('../../assets/images/fullStar.png');
-}
-
-#star-five:hover{
-    background-image:url('../../assets/images/fullStar.png');
-}
-
-
-#star-two{
-    position: absolute;
-    margin-left: 25px; 
-}
-#star-three{
-    position: absolute;
-    margin-left: 25px;
-}
-
-#star-four{
-    position:absolute;
-    margin-left: 25px;
-}
-#star-five{
-    position:absolute;
-    margin-left:25px;
-}
 
 
 

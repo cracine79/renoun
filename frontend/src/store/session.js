@@ -18,6 +18,7 @@ export const removeUser = () => ({
 
 
 const storeCSRFToken = response => {
+    debugger;
     const csrfToken = response.headers.get("X-CSRF-Token");
     if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
   };
@@ -80,7 +81,6 @@ export const restoreSession = () => async dispatch => {
     let data = await res.json();
    
     dispatch(receiveUser(data.user));
-  
     dispatch(receiveCartItems(data.cart));
     dispatch(receiveOrders(data.orders))
     dispatch(receiveFavorites(data.favorites))
