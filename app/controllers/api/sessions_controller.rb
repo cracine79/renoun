@@ -10,6 +10,7 @@ class Api::SessionsController < ApplicationController
       @orders = @user.items_ordered
       @favorites = @user.favorites
       @buyer_seller_reviews = @user.reviews_of_sellers
+      debugger;
 
       render 'api/users/show'
     else
@@ -31,7 +32,7 @@ class Api::SessionsController < ApplicationController
       @orders = @user.items_ordered
       @cart = @user.carts
       @favorites = @user.favorites
-      
+      @buyer_seller_reviews = @user.reviews_of_sellers
       id = @user.id
       login!(@user)
       render 'api/users/show'

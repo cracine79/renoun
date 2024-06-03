@@ -11,6 +11,7 @@ class Api::UsersController < ApplicationController
       @orders = {}
       @cart = {}
       @favorites = {}
+    
       login!(@user)
       render :show
     else
