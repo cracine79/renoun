@@ -12,21 +12,21 @@ end
 
 def create
 
-    debugger
+
     @review =SellerReview.new(seller_review_params)
-    debugger
+
     if @review.save!
-        debugger
+   
         render 'api/seller_reviews/show'
     else
-        debugger;
+     
         render json: {errors: @reviews.errors.full_messages}, status: :unprocessable_entity
     end
 end
 
 def update
     @review = SellerReview.find(params[:id])
-    debugger
+
     @review.update(seller_review_params)
     render 'api/seller_reviews/show'
      end

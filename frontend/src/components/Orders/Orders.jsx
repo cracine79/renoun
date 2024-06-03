@@ -26,7 +26,7 @@ function Orders(){
     
     const getOrderReview = (order) =>{
         let currentReview = {}
-        debugger;
+
         if(order){
             buyerSellerReviews.forEach(  (review)=>{
                 if (order.itemName.slice(0,15)===review.title.slice(0,15)){
@@ -68,7 +68,7 @@ function Orders(){
     }
 
     const openReviewForm = (order) => {
-        debugger;
+
         reviewWrapperWrapper.style.display='flex'
         createReviewForm.style.display='flex'
         updateReviewForm.style.display='none'
@@ -77,7 +77,7 @@ function Orders(){
 
     const openUpdateForm = (order) => {
         const cr = getOrderReview(order)
-        debugger;
+    
         setCurrentReview(cr)
         reviewWrapperWrapper.style.display='flex'
         createReviewForm.style.display='none'
@@ -201,7 +201,7 @@ function Orders(){
     }
 
     const submitSellerReview = e => {
-        debugger;
+   
         e.preventDefault;
      
         reviewWrapperWrapper.style.display = 'none'
@@ -215,14 +215,14 @@ function Orders(){
             firstName: firstNameSubmit,
             lastInit: lastNameInitial
         }
-        debugger;
+       
 
       dispatch(createReview(seller_review))
         
     }
 
     const updateSellerReview = e => {
-        debugger;
+     
         e.preventDefault;
      
         reviewWrapperWrapper.style.display = 'none'
@@ -237,7 +237,7 @@ function Orders(){
             firstName: firstNameSubmit,
             lastInit: lastNameInitial
         }
-        debugger;
+  
 
       dispatch(updateReview(seller_review))
         

@@ -24,9 +24,9 @@ class Api::SessionsController < ApplicationController
     email = params[:email]
     password = params[:password]
   
-    debugger;
+  
     @user = User.find_by_credentials(email, password)
-    debugger;
+   
 
     if @user
       @orders = @user.items_ordered

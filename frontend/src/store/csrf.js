@@ -9,7 +9,6 @@ async function csrfFetch (url, options = {}){
       }
       
       const res = await fetch(url, options);
-      debugger;
       if (res.status >= 400) throw res;
 
       return res

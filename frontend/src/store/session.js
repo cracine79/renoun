@@ -18,7 +18,7 @@ export const removeUser = () => ({
 
 
 const storeCSRFToken = response => {
-    debugger;
+
     const csrfToken = response.headers.get("X-CSRF-Token");
     if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
   };

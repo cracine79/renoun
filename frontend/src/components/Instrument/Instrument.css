@@ -482,11 +482,11 @@ color: gray;
 #sell-yours{
     background-image: url('../../assets/images/sellYours.jpeg');
     height: 300px;
-    width: 600px;
+    width: 605px;
     background-color: blue;
     position: absolute;
     margin-top: 2100px;
-    margin-left: 1055px;
+    margin-left: 959px;
     
 }
 
@@ -496,7 +496,7 @@ color: gray;
     width: 600px;
     position: absolute;
     margin-top: 1950px;
-    margin-left: 1055px;
+    margin-left: 950px;
     
 }
 
