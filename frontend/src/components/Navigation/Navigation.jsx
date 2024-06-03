@@ -3,7 +3,6 @@ import * as sessionActions from '../../store/session'
 import './Navigation.css'
 import { LuHeart } from "react-icons/lu"
 import { FiShoppingCart } from "react-icons/fi";
-import { BsSearch } from "react-icons/bs";
 import { PiUserCircleFill } from "react-icons/pi";
 import Renoun from '../../../assets/images/Renoun.png'
 import { Link } from "react-router-dom";
@@ -11,6 +10,7 @@ import { clearCart } from "../../store/cart";
 import { useEffect } from "react";
 import { clearOrders } from "../../store/order";
 import { Navigate } from "react-router-dom";
+import Search from "../Search/Search";
 
 
 
@@ -144,12 +144,13 @@ function Navigation(){
         <>
         <div className="header_main">
             <Link id='logo-link' to='/'><img id='logo' src={Renoun}/></Link>
-            <div id='searchWrapper'>
+            <Search />
+            {/* <div id='searchWrapper'>
                 <input type='text' id='searchbar' value="Shop for used & new music gear" />
                 <div id='searchButton'>
                     <BsSearch />
                 </div>
-            </div>
+            </div> */}
         
             
 
