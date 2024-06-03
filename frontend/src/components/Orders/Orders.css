@@ -124,13 +124,183 @@
 }
 
 .review-form{
-    width: 900px;
+    width: 600px;
     height: 800px; 
     background-color: white;
     border-radius: 15px; 
+
 }
 
 .review-wrapper{
     margin-top: 80px;
+    display: flex;
+
 }
+
+#seller-review-photo{
+    height:60px;
+    width: 60px;
+    object-fit: cover;
+}
+
+.review-inner-wrapper{
+    margin-top: 35px;
+    margin-left: 25px;
+}
+
+.review-form-header{
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.review-item-wrapper{
+    display: flex;
+    margin-top: 30px;
+}
+
+.review-info-words-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px; 
+    color: gray;
+}
+
+#review-instructions{
+    margin-top: 30px;
+}
+
+#review-body{
+    margin-top: 20px;
+
+    width: 500px;
+    padding-bottom: 200px;
+    border-radius: 15px;
+    font-size: 16px;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 15px;
+    padding-left: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+   
+}
+
+#create-review-wrapper{
+    padding: 20px;
+}
+
+#names-wrapper{
+    margin-top: 20px;
+    justify-content: space-between;
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+}
+
+.name-wrapper{
+    display: flex;
+    flex-direction: column;
+    width:300px;
+}
+
+.name-input{
+    height: 30px;
+    width: 220px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+
+.name-label-for-form{
+    color:gray;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#star-rating-wrapper{
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    margin-top: 35px;
+    height: 30px;
+    align-items: center;
+
+}
+
+#please-rate{
+    margin-right: 10px; 
+}
+
+.star-rating{
+    width: 20px;
+    margin-bottom: 3px;
+    margin-left: 1px;
+
+}
+
+.star-rating:hover{
+    cursor:pointer;
+    
+}
+.star-image-rating{
+    background-image:url('../../assets/images/hollowStar.png');
+    height: 25px;
+    width: 25px;
+    background-size: 22px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    
+}
+
+
+
+#star-one:hover{
+    background-image:url('../../assets/images/fullStar.png');
+}
+
+#star-two:hover{
+    background-image:url('../../assets/images/fullStar.png');
+}
+
+#star-one:hover{
+    background-image:url('../../assets/images/fullStar.png');
+}
+
+#star-three:hover{
+    background-image:url('../../assets/images/fullStar.png');
+}
+
+#star-four:hover{
+    background-image:url('../../assets/images/fullStar.png');
+}
+
+#star-five:hover{
+    background-image:url('../../assets/images/fullStar.png');
+}
+
+
+#star-two{
+    position: absolute;
+    margin-left: 25px; 
+}
+#star-three{
+    position: absolute;
+    margin-left: 25px;
+}
+
+#star-four{
+    position:absolute;
+    margin-left: 25px;
+}
+#star-five{
+    position:absolute;
+    margin-left:25px;
+}
+
+
+
+
+
+
+
 
