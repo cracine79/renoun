@@ -153,6 +153,9 @@
     font-weight: 600;
 }
 
+#update-review-wrapper{
+    margin-top: 0px;
+}
 .review-item-wrapper{
     display: flex;
     margin-top: 30px;

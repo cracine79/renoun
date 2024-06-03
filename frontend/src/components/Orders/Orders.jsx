@@ -205,7 +205,7 @@ function Orders(){
         e.preventDefault;
      
         reviewWrapperWrapper.style.display = 'none'
-        
+   
         const seller_review={
             reviewerId: currentUser.id,
             sellerId: currentOrder.sellerId,
@@ -215,6 +215,7 @@ function Orders(){
             firstName: firstNameSubmit,
             lastInit: lastNameInitial
         }
+     
        
 
       dispatch(createReview(seller_review))
