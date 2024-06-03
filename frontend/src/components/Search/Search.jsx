@@ -4,9 +4,11 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 
 function Search(){
-    const [query, setQuery] = useState('');
+
     const instruments = useSelector(state => Object.values(state.instruments))
     let keyWords = []
+   
+  
     instruments.forEach((instrument)=>{
 
         if(!keyWords.includes(instrument.itemName)){
@@ -20,24 +22,55 @@ function Search(){
         }
     }  
 )
-        keyWords.filter((word)=>{
-            word.toLowerCase().includes(query.toLowerCase())
+const handleSearchSubmit = ()=>{
+
+}
+
+let keyWordsHolder = keyWords
+const [searchPrompts, setSearchPrompts] = useState(keyWords)
+
+keyWordsHolder.sort()
+
+const handleChange = (e) => {
+ 
+    const dropDown = document.getElementById('search-results-box')
+    if(e.target.value===''){
+        dropDown.style.display='none'
+    } else {
+        dropDown.style.display='block'
+        keyWordsHolder=[]
+ 
+       keyWords.forEach((word)=>{
+
+            if (word.toLowerCase().slice(0, e.target.value.length) === (e.target.value.toLowerCase())){
+                keyWordsHolder.push(word)
+            }      
         })
-  
-keyWords.sort()
+    debugger;
+    
+    }
+    setSearchPrompts(keyWordsHolder)
+ 
+}
     return(
         <>
-             <div id='searchWrapper'>
-                <input type='text' id='searchbar' value={query} placeholder="Shop for used & new music gear" onChange={(e)=>setQuery(e.target.value)}/>
-                <div id='searchButton'>
+             <form id='searchWrapper' onSubmit={handleSearchSubmit}>
+                <input type='text' id='searchbar' placeholder="Shop for used & new music gear" onChange={handleChange}/>
+                <div id='submit-wrapper'>
+                <input type='submit' id='searchButton' value= ""/>
+                    <div id='bsSearch-wrapper'>
                     <BsSearch />
+                        </div>
+
                 </div>
+            
+               
 
                 <div id='search-results-box'>
-                {keyWords.map((word)=>{
+                {searchPrompts.map((word)=>{
                     return(
                         <>
-                           <p>
+                           <p className='searchOption'>
                            {word}
                             </p> 
                         </>
@@ -49,7 +82,7 @@ keyWords.sort()
 
                 </div>
              
-            </div>
+            </form>
         </>
     )
 }

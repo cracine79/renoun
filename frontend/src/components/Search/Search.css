@@ -8,7 +8,7 @@
 
 #searchbar {
     width: 95%;
-    height: 48px;
+    height: 51px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     font-size: 16px;
@@ -18,6 +18,7 @@
     margin-right: 40px;
     margin-left: 95px;
     -webkit-box-flex: 1;
+    
 }
 
 
@@ -26,19 +27,23 @@
     transform: rotate(90deg);
     border: black 1px solid;
     width: 54px;
-    height: 49px;;
-    margin-left: -41px;
+    height: 42px;;
+    margin-left: -46px;
+    margin-top: 6px;
     justify-content: center;
     display: flex;
     align-items: center;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    
    
 }
 
 #searchButton:hover{
     background-color: lightgray;
     cursor: pointer;
+    opacity: .3;
+    
 }
 
 #search-results-box{
@@ -53,4 +58,24 @@
     padding-left: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
+    display: none;
 }
+
+button, input[type="submit"]{
+	background: none;
+	color: inherit;
+
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+#bsSearch-wrapper{
+    font-size: 24px;
+    position: absolute;
+    margin-left: -30px;
+    margin-top: -32px;
+    z-index: -1;
+}
+
