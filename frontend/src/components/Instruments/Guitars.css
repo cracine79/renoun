@@ -1,0 +1,23 @@
+#guitars-page-wrapper{
+    width: 100%;
+    
+}
+
+#guitars-page-wrapper-wrapper{
+    width: 100%;
+    min-height: 720px;
+    margin-top: 30px; 
+    margin-left: 150px; 
+    font-size: 20px;
+}
+
+#guitars-page-links-wrapper{
+    color: black;
+    text-decoration: none;
+}
+
+#guitars-page-title{
+    margin-top: 40px; 
+    font-size: 70px;
+    font-weight: 800;
+}

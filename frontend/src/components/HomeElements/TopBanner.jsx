@@ -2,6 +2,7 @@ import './TopBanner.css'
 import guitars from '../../../assets/images/electric-guitars.jpeg'
 import keys from '../../../assets/images/keyboards.jpeg'
 import pedals from '../../../assets/images/pedals.jpeg'
+import { Link } from 'react-router-dom'
 
 export default function TopBanner (){
     return(
@@ -12,14 +13,14 @@ export default function TopBanner (){
                 <button id='banner-button'>Shop all</button>
             </div>
             <div id='pics-wrap'>
-                <div id='elec-guitar-wrap' className='banner-wrap'>
+                <Link to='/guitars 'id='elec-guitar-wrap' className='banner-wrap'>
                     <img className='banner-pic' src={guitars}/>
                     <div className='banner-pic-caption'>
                         <p className='banner-text'>
                             Electric Guitars
                         </p>
                     </div>
-                </div>
+                </Link>
 
                 <div id='effects-pedals-wrap' className='banner-wrap'>
                     <img className='banner-pic' src={pedals}/>

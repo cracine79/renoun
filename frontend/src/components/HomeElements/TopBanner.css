@@ -65,6 +65,11 @@
 
 }
 
+#elec-guitar-wrap{
+    text-decoration: none;
+    color: black;
+}
+
 .banner-pic:hover{
     cursor: pointer;
 }

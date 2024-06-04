@@ -398,7 +398,7 @@ useEffect(()=>{
     return<>
     <div className='carousel'>
 
-    <h2 className='carousel-header'>Recently Viewed</h2>
+    <h2 className='carousel-header'>New and Featured</h2>
 
         
 

@@ -18,6 +18,7 @@ import OrderConfirmation from './components/Checkout/OrderConfirmation';
 import Orders from './components/Orders/Orders';
 import Favorite from './components/Favorite/Favorite';
 import Outcomes from './components/Outcomes/Outcomes';
+import Guitars from './components/Instruments/Guitars';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -106,8 +107,10 @@ const router = createBrowserRouter([
       {
         path: '/outcomes',
         element: <Outcomes />
+      }, 
+      {path: '/guitars',
+      element: <Guitars />
       }
-
    
     ]
   }
