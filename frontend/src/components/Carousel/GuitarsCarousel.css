@@ -4,6 +4,7 @@
     width: 270px;
     height: 373px;
     border-radius: 15px;
+    position: relative;
   
 }
 
@@ -23,6 +24,7 @@
     width: 99.99%;
     justify-content: space-between;
     margin-top: 20px;
+    overflow-x: scroll;
   
 }
 
@@ -74,7 +76,7 @@
 
 
 .likeOff{
-	position: absolute;
+
 	height: 40px;
 	width: 40px;
     display: block;
@@ -91,7 +93,7 @@
 }
 
 .likeOn{
-    position: absolute;
+
 	height: 40px;
 	width: 40px;
 	background-color: white;
@@ -136,5 +138,9 @@
 #IoMdHeart{
         display: none;
       
+}
+
+.carousel-fav-button{
+    position: absolute;
 }
 

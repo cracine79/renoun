@@ -8,7 +8,7 @@ function Guitars (){
     const instruments = useSelector(state => Object.values(state.instruments))
     const guitars = [];
     instruments.forEach((instrument)=>{
-        if(instrument.category.toLowerCase()==='guitar'){
+        if(instrument.category.toLowerCase()==='guitar' && instrument.available===true){
                 guitars.push(instrument)
             }
     })
@@ -44,7 +44,7 @@ function Guitars (){
 
             {allRows.map((row)=>{
                     return(
-                        <RealGenericCarousel row={row} rowId={row[0].id}/>
+                        <RealGenericCarousel key={row[0] ? row[0].id : 33} row={row} rowId={row[0] ? row[0].id : 33}/>
                     )
                 })}
 
