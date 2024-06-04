@@ -12,6 +12,9 @@ require "open-uri"
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
 
+
+
+    
     User.destroy_all
     puts "even orders . . ."
     Order.destroy_all

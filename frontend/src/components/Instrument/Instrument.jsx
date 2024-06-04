@@ -7,10 +7,10 @@ import { useEffect } from 'react';
 import Seller from '../Seller/seller';
 import InstrumentReviews from '../InstrumentReviews/InstrumentReviews';
 import { useDispatch } from "react-redux";
-import { createCartItem } from "../../store/cart";
+import { createCartItem } from "/store/cart";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createFavorite, deleteFavorite } from "../../store/favorite";
+import { createFavorite, deleteFavorite } from "/store/favorite";
 
 
 const Instrument = () => {
@@ -307,7 +307,7 @@ const Instrument = () => {
                 
                 <div id='blue-info-box'>
                     <div className='blue-sub-box'>
-                        <img className='blueIcon' src='../../assets/images/trust_shield_icon.svg' />
+                        <img className='blueIcon' src='/assets/images/trust_shield_icon.svg' />
                         <div className='subSubBox'>
                             <p className='specKey'>Reverb Protection</p>
                             <p className='reverb-reassure'>Simple Returns, Secure Transactions, Human Support</p>
@@ -315,7 +315,7 @@ const Instrument = () => {
 
                     </div>
                     <div className='blue-sub-box'>
-                        <img className='blueIcon' src='../../assets/images/padlock-icon.svg' />
+                        <img className='blueIcon' src='/assets/images/padlock-icon.svg' />
                         <div className='subSubBox'>
                             <p className='specKey'>Secure Checkout</p>
                             <p className='reverb-reassure'>At Renoun, your safety and security is our priority</p>
@@ -354,7 +354,7 @@ const Instrument = () => {
 
                     <p>{instrument.created_at}</p>
                     <div id='recent-wrapper'>
-                        <img src='../../assets/images/sparkles.svg'  id='sparkle'/>
+                        <img src='/assets/images/sparkles.svg'  id='sparkle'/>
                         <span id='recently-listed'>  Recently Listed
                         <div id='listed-explanation'>{listedExpl}</div>
                         </span>
@@ -407,7 +407,7 @@ const Instrument = () => {
 
                     <hr id = 'button-bottom' />
                     <div id='instrument-show-store-info'>
-                        <img id = 'right-store-img' src = '../../assets/images/my-shop-orange-892ef04585ac0da6.svg'/>
+                        <img id = 'right-store-img' src = '/assets/images/my-shop-orange-892ef04585ac0da6.svg'/>
                         <div id='right-store-name'>{sellerStoreName}</div>
 
                     </div>
