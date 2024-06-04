@@ -27,7 +27,7 @@ class User < ApplicationRecord
    
 
     validates :email, 
-        length: { in: 3..100 },
+        length: { in: 3..101 },
         format: { with: URI::MailTo::EMAIL_REGEXP },
         uniqueness: true
 
