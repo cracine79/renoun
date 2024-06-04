@@ -2,6 +2,7 @@ import { formatter } from "./GenericCarousel"
 import { Link } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { deleteFavorite, createFavorite } from "../../store/favorite"
+import { useEffect } from "react"
 import './RealGenericCarousel.css'
 
 
@@ -22,6 +23,90 @@ function RealGenericCarousel({row}){
         favoriteInstrumentIds.forEach((id)=>{
             favoriteInstruments.push(row[id-1])
         })
+
+        useEffect(()=>{
+
+            const ioMdHeartOne = document.getElementById('genIoMdHeart1')
+            const ioMdHeartTwo = document.getElementById('genIoMdHeart2')
+            const ioMdHeartThree = document.getElementById('genIoMdHeart3')
+            const ioMdHeartFour = document.getElementById('genIoMdHeart4')
+            const ioMdHeartFive = document.getElementById('genIoMdHeart5')
+            const ioMdHeartSix = document.getElementById('genIoMdHeart6')
+        
+            const luHeartOne = document.getElementById('genLuHeart1')
+            const luHeartTwo = document.getElementById('genLuHeart2')
+            const luHeartThree = document.getElementById('genLuHeart3')
+            const luHeartFour = document.getElementById('genLuHeart4')
+            const luHeartFive = document.getElementById('genLuHeart5')
+            const luHeartSix = document.getElementById('genLuHeart6')
+        
+            if(row[0]){
+                if (favoriteInstrumentIds.includes(row[0].id)){
+                    ioMdHeartOne.style.display='none'
+                    luHeartOne.style.display='flex'
+                } else {
+                    ioMdHeartOne.style.display='flex'
+                    luHeartOne.style.display='none'
+                }
+        
+    
+            }
+         
+            if(row[1]){
+                if (favoriteInstrumentIds.includes(row[1].id)){
+                    ioMdHeartTwo.style.display='none'
+                    luHeartTwo.style.display='flex'
+                } else {
+                    ioMdHeartTwo.style.display='flex'
+                    luHeartTwo.style.display='none'
+                }
+            }
+          
+            if(row[2]){
+                if (favoriteInstrumentIds.includes(row[2].id)){
+                    ioMdHeartThree.style.display='none'
+                    luHeartThree.style.display='flex'
+                } else {
+                    ioMdHeartThree.style.display='flex'
+                    luHeartThree.style.display='none'
+                }
+            }
+        
+            if(row[3]){
+                if (favoriteInstrumentIds.includes(row[3].id)){
+                    ioMdHeartFour.style.display='none'
+                    luHeartFour.style.display='flex'
+                } else {
+                    ioMdHeartFour.style.display='flex'
+                    luHeartFour.style.display='none'
+                }
+            }
+           
+            if(row[4]){
+                if (favoriteInstrumentIds.includes(row[4].id)){
+                    ioMdHeartFive.style.display='none'
+                    luHeartFive.style.display='flex'
+                } else {
+                    ioMdHeartFive.style.display='flex'
+                    luHeartFive.style.display='none'
+                }
+        
+            }
+           
+            if(row[5]){
+                if (favoriteInstrumentIds.includes(row[5].id)){
+                    ioMdHeartSix.style.display='none'
+                    luHeartSix.style.display='flex'
+                } else {
+                    ioMdHeartSix.style.display='flex'
+                    luHeartSix.style.display='none'
+                }
+        
+            }
+           
+           
+        
+        },[favoritesObj])
 
 
         const addFavorite = (instrumentId, buttonId, e) => {
