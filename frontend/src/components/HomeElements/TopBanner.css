@@ -2,9 +2,13 @@
     background-image: url('/assets/images/homepage_background.png');
     height: 400px;
     background-size: cover;
-    width: 100%;
+  
+    max-width: 2000px;
+    height: 500px;
     margin-top: 20px;
-    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+
 
     /* background-color: blue; */
 }
@@ -26,10 +30,7 @@
     line-height: 27px;
     margin-top: 10px;
 }
-#top-banner{
-    display: flex;
-    align-items: center;
-}
+
 
 #banner-left{
     margin-left: 60px;
@@ -54,8 +55,8 @@
 }
 
 .banner-pic{
-    height: 260px;
-    width: 250px;
+    height: 100%;
+    width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
@@ -64,6 +65,12 @@
     color: rgb(255, 98, 0);
 
 }
+
+.banner-wrap{
+    width: 30%;
+}
+
+
 
 #elec-guitar-wrap{
     text-decoration: none;
@@ -78,15 +85,15 @@
     display: flex;
     margin-left: 72px;
     margin-top: -70px;
-    width: 800px;
+    width: 40%;
     /* background: blue; */
     justify-content: space-between;
 }
 
 .banner-pic-caption{
     position: absolute;
-    width: 250px;
-    height: 65px;
+    width: 12%;
+    height: 5%;
     background-color: white;
     margin-top: -15px;
     border-bottom-right-radius: 13px;
@@ -105,5 +112,6 @@
 
 .banner-text{
     margin-left: 10px;
+
 }
 

@@ -13,6 +13,10 @@ export default function TopBanner (){
                 <button id='banner-button'>Shop all</button>
             </div>
             <div id='pics-wrap'>
+                <div>
+
+                    
+                </div>
                 <Link to='/guitars 'id='elec-guitar-wrap' className='banner-wrap'>
                     <img className='banner-pic' src={guitars}/>
                     <div className='banner-pic-caption'>
