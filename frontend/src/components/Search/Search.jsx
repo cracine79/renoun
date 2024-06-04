@@ -23,6 +23,10 @@ function Search(){
         if (!keyWords.includes(instrument.model)){
             keyWords.push(instrument.model)
         }
+
+        if (!keyWords.includes(instrument.category)){
+            keyWords.push(instrument.category)
+        }
     }  
 )
 const handleSearchSubmit = (e)=>{

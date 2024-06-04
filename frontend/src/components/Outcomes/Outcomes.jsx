@@ -13,7 +13,8 @@ function Outcomes(){
         debugger;
         if(instrument.itemName.toLowerCase().includes(searchWord.toLowerCase()) ||
             instrument.model.toLowerCase().includes(searchWord.toLowerCase()) ||
-            instrument.brand.toLowerCase().includes(searchWord.toLowerCase())){
+            instrument.brand.toLowerCase().includes(searchWord.toLowerCase()) ||
+            instrument.category.toLowerCase().includes(searchWord.toLowerCase())){
                 searchResults.push(instrument)
             }
     })
