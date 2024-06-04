@@ -28,8 +28,9 @@ function Seller({instrument, sellerStoreName}){
     
  
         const abbrevName = (review)=>{
+            
             if(review.firstName){
-                return review.firstName.slice(0,1).toUpperCase()+review.firstName.slice(1)+ ' ' + review.lastInit 
+                return review.firstName.slice(0,1).toUpperCase()+review.firstName.slice(1)+ ' ' + review.lastInit.toUpperCase() + '.'
             } else {
                 return ""
             }

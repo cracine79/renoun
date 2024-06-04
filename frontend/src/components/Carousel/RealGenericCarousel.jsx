@@ -13,19 +13,21 @@ function RealGenericCarousel({row, rowId}){
         const userId = currentUser.id
     }
     const dispatch = useDispatch()
-
     const favoritesObj = useSelector(state=>(state.favorites))
-        const favorites = Object.values(favoritesObj)
-        const favoriteInstrumentIds = favorites.map((favorite)=>{
-            return favorite.instrumentId
-        })
-     
-        const favoriteInstruments = []
-        favoriteInstrumentIds.forEach((id)=>{
-            favoriteInstruments.push(row[id-1])
-        })
+    const favorites = Object.values(favoritesObj)
+    const favoriteInstrumentIds = favorites.map((favorite)=>{
+        return favorite.instrumentId
+    })
+ 
+    const favoriteInstruments = []
+    favoriteInstrumentIds.forEach((id)=>{
+        favoriteInstruments.push(row[id-1])
+    })
 
         useEffect(()=>{
+
+          
+           
 
             const ioMdHeartOne = document.getElementById(`realGenIoMdHeart1_${rowId}`)
             const ioMdHeartTwo = document.getElementById(`realGenIoMdHeart2_${rowId}`)
