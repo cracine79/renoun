@@ -132,7 +132,8 @@
 }
 
 .carousel{
-    display: block
+    display: block;
+    width: 1800px;
 }
 
 #IoMdHeart{

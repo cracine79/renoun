@@ -3,3 +3,8 @@
     align-items: center;
     flex-direction: column;
 }
+
+
+#home-guitars-carousel-wrapper{
+    margin-left: 10px; 
+}

@@ -6,7 +6,11 @@ export default function Home(){
     return(
        <div id='home-wrapper'>
             <TopBanner />
-            <GuitarsCarousel />
+            <div id='home-guitars-carousel-wrapper'>
+
+                 <GuitarsCarousel />
+            </div>
+            
        
         </div>
     )
