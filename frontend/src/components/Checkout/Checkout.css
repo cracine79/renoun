@@ -344,7 +344,7 @@ input[type="radio"] {
 
 #number-text{
     height: 40px;
-    width: 770px;
+    width: 90%;
     border-radius: 10px;
     color: gray;
     font-size: 20px;
@@ -355,11 +355,12 @@ input[type="radio"] {
 #validations-wrapper{
     margin-top: 20px;
     display: flex;
+    widtH: 75%
 }
 
 #expiration-text{
     height: 40px;
-    width: 300px;
+    width: 100%;
     border-radius: 10px;
     color: gray;
     font-size: 18px;
@@ -367,10 +368,15 @@ input[type="radio"] {
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
+#expiration-wrapper{
+    width: 65%;
+    margin-right: 15px;
+}
+
 #security-code-text{
    
     height: 40px;
-    width: 150px;
+    width: 70%;
     border-radius: 10px;
     color: gray;
     font-size: 18px;
@@ -380,6 +386,7 @@ input[type="radio"] {
 
 #security-code-wrapper{
     margin-left: 20px;
+    width: 30%;
 }
 
 #checkbox-wrapper{

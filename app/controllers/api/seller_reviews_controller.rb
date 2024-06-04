@@ -5,6 +5,12 @@ def show
 
     @user = User.find(params[:id])
     @reviews = @user.reviews_from_buyers
+    sum = 0
+
+    @reviews.each do |review|
+        sum += review.stars
+    end
+    @average=sum/@reviews.length
 
 
     render 'api/seller_reviews/show'

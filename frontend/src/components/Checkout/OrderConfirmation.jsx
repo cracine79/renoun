@@ -63,7 +63,10 @@ function OrderConfirmation(){
     let subTotal=0;
     let shippingTotal=0;
     let totalTotal=0;
-
+    
+    function isNumber(value) {
+        return typeof value === 'number';
+      }
 
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -75,7 +78,7 @@ function OrderConfirmation(){
     thisOrder.forEach((order)=>{
         subTotal += order.price
    
-        if(order.shipping!=='FREE'){
+        if(isNumber(order.shipping)){
         shippingTotal += order.shipping
         }
         totalTotal = shippingTotal + subTotal
