@@ -566,7 +566,7 @@ color: gray;
     margin-top: -810px;
     margin-left: 720px;
     position: absolute;
-    background-image: url('../../assets/images/emptyHeart.png');
+    background-image: url('/assets/images/emptyHeart.png');
     height: 55px;
     width: 55px;
  
@@ -584,7 +584,7 @@ color: gray;
     margin-top: -810px;
     margin-left: 720px;
     position: absolute;
-    background-image: url('../../assets/images/FILLEDHeart.png');
+    background-image: url('/assets/images/FILLEDHeart.png');
     height: 55px;
     width: 55px;
     background-size: 55px;
