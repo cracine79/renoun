@@ -89,7 +89,8 @@
 	font-size: 20px;
     object-fit: contain;
     display: none;
-    background-size: 80px;
+    background-size: 40px;
+    background-image: url("/assets/images/filledHeart.png")
     
 }
 
@@ -107,7 +108,8 @@
     margin-left: 210px;
     display: flex;
     object-fit: contain;
-    
+    background-image:url('/assets/images/emptyHeart.png');
+    background-size: 40px;
 
 
 }
