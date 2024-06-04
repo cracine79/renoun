@@ -7,10 +7,10 @@ import { useEffect } from 'react';
 import Seller from '../Seller/seller';
 import InstrumentReviews from '../InstrumentReviews/InstrumentReviews';
 import { useDispatch } from "react-redux";
-import { createCartItem } from "/store/cart";
+import { createCartItem } from "../../store/cart";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createFavorite, deleteFavorite } from "/store/favorite";
+import { createFavorite, deleteFavorite } from "../../store/favorite";
 
 
 const Instrument = () => {
@@ -259,8 +259,8 @@ const Instrument = () => {
                     <div>
                     <img id= 'photo' src={instrument.photoUrl} />
           
-                         <img src='/assets/images/emptyHeart.png' id='bigHollowHeart' onClick={favoriteInstrument} />  
-                        <img src='/assets/images/FILLEDHeart.png' id='bigFilledHeart' onClick={unfavoriteInstrument}/>  
+                         <div id='bigHollowHeart' onClick={favoriteInstrument} ></div>  
+                        <div id='bigFilledHeart' onClick={unfavoriteInstrument}></div>  
 
                     </div>
                    

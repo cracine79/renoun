@@ -548,10 +548,12 @@ color: gray;
     margin-top: -810px;
     margin-left: 760px;
     position: absolute;
- 
+    background-image: url('../../assets/images/emptyHeart.png');
     height: 55px;
     width: 55px;
+ 
     display: flex;
+    background-size: 55px;
    
 }
 
@@ -564,9 +566,10 @@ color: gray;
     margin-top: -810px;
     margin-left: 760px;
     position: absolute;
- 
+    background-image: url('../../assets/images/FILLEDHeart.png');
     height: 55px;
     width: 55px;
+    background-size: 55px;
     display: none;
    
 }
@@ -576,12 +579,14 @@ color: gray;
 cursor: pointer;
 height: 60px;
 width: 60px;
+background-size: 60px;
 }
 
 #bigHollowHeart:hover{
     cursor: pointer;
     height: 60px;
     width: 60px;
+    background-size: 60px; 
 }
 
 .review-divider{
