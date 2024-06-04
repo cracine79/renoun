@@ -260,7 +260,7 @@ function Orders(){
 
                 <div id='purchase-history-box'>
                     <div id='no-purchases'>
-                        <img id='empty-basko' src="../../assets/images/empty-basket@2x-c13a691ddec1300ef6b06de9bd02471a99fae3ecaeaa181076b11ef2ceea078d.png" />
+                        <div id='empty-basko' src="../../assets/images/empty-basket@2x-c13a691ddec1300ef6b06de9bd02471a99fae3ecaeaa181076b11ef2ceea078d.png"></div>
                         <p id='no-purchases-text'>You have not made any purchases from Renoun.</p>
                     </div>
                     <div id='some-purchases'>

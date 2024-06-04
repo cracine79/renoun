@@ -34,7 +34,7 @@
 }
 
 #empty-basket{
-    background-image : url('../../assets/images/empty-basket@2x-c13a691ddec1300ef6b06de9bd02471a99fae3ecaeaa181076b11ef2ceea078d.png');
+    background-image : url('/assets/images/empty-basket@2x-c13a691ddec1300ef6b06de9bd02471a99fae3ecaeaa181076b11ef2ceea078d.png');
     height: 200px;
     width: 200px;
     background-size: 200px;

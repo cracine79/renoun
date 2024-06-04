@@ -398,7 +398,15 @@ useEffect(()=>{
     return<>
     <div className='carousel'>
 
+
+
+
+    <div id='outer-outer-wrapper'>
+    <div id='carousel-header-wrapper'>
     <h2 className='carousel-header'>New and Featured</h2>
+
+    </div>
+
 
         
 
@@ -413,6 +421,10 @@ useEffect(()=>{
         <InstrumentFive />
         <InstrumentSix />
 
+
+
+    </div>
+    
 
 
     </div>

@@ -70,30 +70,6 @@ function Cart(){
     )
 
 
-    // useEffect(() => {
-
-        
-
-    //     if(cart.length===0){
-    //         setIsCartEmpty(true)
-    //         setItemNumbers(0)
-    //     } else {
-    //         setIsCartEmpty(false)
-    //         setItemNumbers(cart.length)
-    //     }
-
-    //     const newTotalAmount = cart.reduce((total, cartItem) => {
-    //         if(cartItem){
-    //             const instrument = instrumentsState[cartItem.instrumentId];
-    //             if (instrument) {
-    //                 total += instrument.price + instrument.shipping;
-    //             }
-    //         }
-    //         return total;
-    //     }, 0);
-
-    //     setTotalAmount(newTotalAmount);
-    // }, [cart, instrumentsState, CartItem]);
     let message = '';
     if (itemNumbers === 1) {
         message = '1 Item in Your Cart'

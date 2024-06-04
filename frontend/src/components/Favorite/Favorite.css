@@ -42,6 +42,13 @@
     margin-left: 20px; 
 }
 
+#favs-banner-image{
+    height: 80px;
+    width: 200px;
+    background-image: url('/assets/images/favorites-banner-images.png');
+    background-repeat: no-repeat;
+}
+
 #Favs-description{
     font-size: 16px;
     font-weight: 200;

@@ -46,6 +46,9 @@
 #empty-basko{
     margin-top: 50px;
     width: 240px;
+    height: 250px;
+    background-image: url('/assets/images/empty-basket@2x-c13a691ddec1300ef6b06de9bd02471a99fae3ecaeaa181076b11ef2ceea078d.png');
+    background-size: 240px;
 }
 
 #some-purchases{

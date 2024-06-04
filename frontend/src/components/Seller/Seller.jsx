@@ -113,8 +113,7 @@ function Seller({instrument, sellerStoreName}){
             return(
                 <div className='five-stars'></div>
             )
-        }
-        
+        } 
     }
 
     const wordifyDate = (review) => {
@@ -137,7 +136,7 @@ function Seller({instrument, sellerStoreName}){
                 </div>
                 <hr className='sellerLine' />
                 <div className='reviews-header'>
-                    Seller Reviews {avgStars(average)} ({reviews.length})
+                    Seller Reviews  {avgStars(average)}   ({reviews.length})
                 </div>
                 {reviewsOne.map((review)=>{
                     return(
