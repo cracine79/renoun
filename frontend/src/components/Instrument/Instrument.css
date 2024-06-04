@@ -245,8 +245,9 @@
 }
 
 #buyItNow{
+    margin-left: 5px;
     margin-top: 25px;
-    width: 530px;
+    width: 95%;
     height: 45px;
     border: solid orange 1px;
     color: white;
@@ -265,15 +266,16 @@
 
 #other-button-holder{
     display: flex;
+    flex-direction: row;
    align-items: center;
-    justify-content: space-between;
-    width: 530px;
+    justify-content: space-around;
+    width: 97%;
     margin-top: 12px;
 }
 
 .otherotherButton{
     height: 45px;
-    width: 260px;
+    width: 47%;
     background-color: rgb(215, 215, 215);
     border-radius: 25px;
     display: flex;
@@ -282,6 +284,7 @@
     font-size: 15px;
     font-weight: 600;
     border: none;
+ 
 }
 
 .otherButton:hover{
@@ -295,7 +298,7 @@
 }
 
 #watch-button{
-    width: 530px;
+    width: 47%;
     height: 45px;
     background-color: rgb(215, 215, 215);
     border-radius: 25px;
@@ -304,7 +307,7 @@
     align-items: center;
     font-size: 15px;
     font-weight: 600;
-    margin-top: 12px;
+
 }
 
 #watch-button:hover{
@@ -314,7 +317,7 @@
 
 
 #watching-button{
-    width: 530px;
+    width: 47%;
     height: 45px;
     background-color: rgb(215, 215, 215);
     border-radius: 25px;
@@ -323,7 +326,7 @@
     align-items: center;
     font-size: 15px;
     font-weight: 600;
-    margin-top: 12px;
+
 }
 
 #orange-heart >* {
@@ -344,7 +347,7 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-evenly;
-    width: 530px;
+    width: 95%;
 }
 
 .key{
@@ -352,7 +355,7 @@
 }
 
 #button-bottom{
-    width: 530px;
+    width: 95%;
     margin-top: 25px;
     margin-left: -1px;
     border-color: rgb(233, 233, 233);
@@ -486,7 +489,7 @@ color: gray;
     background-color: blue;
     position: absolute;
     margin-top: 2100px;
-    margin-left: 959px;
+    margin-left: 775px;
     
 }
 
@@ -495,8 +498,8 @@ color: gray;
     height: 20px;
     width: 600px;
     position: absolute;
-    margin-top: 1950px;
-    margin-left: 950px;
+    margin-top: 1930px;
+    margin-left: 775px;
     
 }
 
@@ -505,15 +508,16 @@ color: gray;
     height: 200px;
 
     background-color: rgb(255, 239, 229);
-    position: float;
+    position: absolute;
     margin-top: 1950px;
-    margin-left: -801px;
+    margin-left: 775px;
     
 }
 
 #sell-text-wrapper{
     margin-left: 30px;
     margin-top: 45px;
+    position: float;
 }
 
 #sell-title{
@@ -549,6 +553,11 @@ color: gray;
     width: 55px;
     display: flex;
    
+}
+
+#sell-yours-outer-wrapper{
+    width: 100%;
+    height: auto;
 }
 
 #bigFilledHeart{

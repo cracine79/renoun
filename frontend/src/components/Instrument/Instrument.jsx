@@ -248,11 +248,11 @@ const Instrument = () => {
                 <div id='linkbox'>
                     <Link className='instInfoLink' to='/'>Home</Link>
                     <span>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span> 
-                    <Link className='instInfoLink'>{instrument.category}</Link>
+                    <Link className='instInfoLink'to='/Outcomes' state={{searchWord: instrument.category}}>{instrument.category}</Link>
                      <span>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span> 
-                    <Link className='instInfoLink'>{instrument.brand}</Link>
+                    <Link className='instInfoLink' to='/Outcomes' state={{searchWord: instrument.brand}}>{instrument.brand}</Link>
                     <span>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</span> 
-                    <Link className='instInfoLink'>{instrument.model}</Link>
+                    <Link className='instInfoLink'  to='/Outcomes' state={{searchWord: instrument.model}}>{instrument.model}</Link>
                 </div>
 
                 <div id='photobox'>
@@ -367,16 +367,23 @@ const Instrument = () => {
                         <button className='otherotherButton' id='add-to-cart-instrument' onClick={handleAddToCart}>
                             Add to Cart
                         </button>
-                        <button className='otherotherButton'>
+                        {/* <button className='otherotherButton'>
                             Make an Offer
-                        </button>
+                        </button> */}
+                        <div id = 'watch-button' onClick={favoriteInstrument}>
+                            <LuHeart  /> Watch
+                        </div>
+                        <div id='watching-button' onClick={unfavoriteInstrument}>
+                            <LuHeart id='orange-heart' />  Watching
+                          </div>
+
                     </div>
-                    <div id = 'watch-button' onClick={favoriteInstrument}>
+                    {/* <div id = 'watch-button' onClick={favoriteInstrument}>
                         <LuHeart  /> Watch
                     </div>
                     <div id='watching-button' onClick={unfavoriteInstrument}>
                       <LuHeart id='orange-heart' />  Watching
-                    </div>
+                    </div> */}
 
                     <div id='product-background-info'>
                         <div>
@@ -415,6 +422,8 @@ const Instrument = () => {
 
                
             </div>
+
+       
             <div id='sell-yours-top'></div>
             <div id='sell-yours-text'> 
                 <div id='sell-text-wrapper'>
@@ -423,8 +432,10 @@ const Instrument = () => {
                 </div>
             </div>
             <div id='sell-yours'>
-               
+ 
+
             </div>
+           
       
         </div>
         </>
