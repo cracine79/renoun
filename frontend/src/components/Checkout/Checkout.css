@@ -355,7 +355,7 @@ input[type="radio"] {
 #validations-wrapper{
     margin-top: 20px;
     display: flex;
-    widtH: 75%
+    width: 75%
 }
 
 #expiration-text{
