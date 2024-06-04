@@ -14,11 +14,19 @@ require "open-uri"
 
     User.destroy_all
     Instrument.destroy_all
+    Order.destroy_all
+    Favorite.destroy_all
+    Cart.destroy_all
+    SellerReview.destroy_all
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
     ApplicationRecord.connection.reset_pk_sequence!('instruments')
+    ApplicationRecord.connection.reset_pk_sequence!('orders')
+    ApplicationRecord.connection.reset_pk_sequence!('carts')
+    ApplicationRecord.connection.reset_pk_sequence!('seller_reviews')
+    ApplicationRecord.connection.reset_pk_sequence!('favorites')
   
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
