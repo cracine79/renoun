@@ -13,11 +13,12 @@ require "open-uri"
     # Unnecessary if using `rails db:seed:replant`
 
     User.destroy_all
-    Instrument.destroy_all
+  
     Order.destroy_all
     Favorite.destroy_all
     Cart.destroy_all
     SellerReview.destroy_all
+    Instrument.destroy_all
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
