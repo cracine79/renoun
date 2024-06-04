@@ -13,7 +13,7 @@ require "open-uri"
     # Unnecessary if using `rails db:seed:replant`
 
     User.destroy_all
-  
+    puts "even orders . . ."
     Order.destroy_all
     Favorite.destroy_all
     Cart.destroy_all
