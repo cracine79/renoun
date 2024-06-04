@@ -17,9 +17,9 @@ class User < ApplicationRecord
     
     has_many :instruments_for_sale, foreign_key: :seller_id, class_name: :Instrument, dependent: :destroy
     has_many :carts, foreign_key: :buyer_id, dependent: :destroy
-    has_many :items_in_cart, through: :carts, source: :instrument dependent: :destroy
+    has_many :items_in_cart, through: :carts, source: :instrument, dependent: :destroy
     has_many :orders, foreign_key: :buyer_id, dependent: :destroy
-    has_many :items_ordered, through: :orders, source: :instrument dependent: :destroy
+    has_many :items_ordered, through: :orders, source: :instrument, dependent: :destroy
     has_many :favorites, foreign_key: :favoriter_id, dependent: :destroy
     has_many :reviews_from_buyers, foreign_key: :seller_id, class_name: :SellerReview, dependent: :destroy
     has_many :reviews_of_sellers, foreign_key: :reviewer_id, class_name: :SellerReview, dependent: :destroy
