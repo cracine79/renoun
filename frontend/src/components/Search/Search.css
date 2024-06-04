@@ -79,3 +79,7 @@ button, input[type="submit"]{
     z-index: -1;
 }
 
+.searchOption:hover{
+    background-color: rgb(255, 214, 173);
+    cursor:default;
+}

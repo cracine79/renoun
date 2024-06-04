@@ -10,6 +10,7 @@ function Search(){
     const [searchWord, setSearchWord] = useState('');
     let keyWords = []
     const navigate = useNavigate();
+    const dropDown = document.getElementById('search-results-box')
   
     instruments.forEach((instrument)=>{
 
@@ -27,7 +28,7 @@ function Search(){
 const handleSearchSubmit = (e)=>{
 
     e.preventDefault();
-    const dropDown = document.getElementById('search-results-box')
+   
     dropDown.style.display='none'
 
     navigate('/outcomes', {state: {searchWord: searchWord}})
@@ -38,6 +39,14 @@ let keyWordsHolder = keyWords
 const [searchPrompts, setSearchPrompts] = useState(keyWords)
 
 keyWordsHolder.sort()
+
+const searchThis = (e)=>{
+    setSearchWord(e.target.innerHTML)
+    debugger;
+    
+    dropDown.style.display='none'
+    navigate('/outcomes', {state: {searchWord: e.target.innerHTML}})
+}
 
 const handleChange = (e) => {
  
@@ -78,7 +87,7 @@ const handleChange = (e) => {
                 {searchPrompts.map((word)=>{
                     return(
                         <>
-                           <p className='searchOption'>
+                           <p className='searchOption' onClick={searchThis}>
                            {word}
                             </p> 
                         </>
