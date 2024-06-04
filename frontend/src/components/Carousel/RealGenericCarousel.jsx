@@ -6,7 +6,8 @@ import { useEffect } from "react"
 import './RealGenericCarousel.css'
 
 
-function RealGenericCarousel({row}){
+function RealGenericCarousel({row, rowId}){
+    debugger;
     const currentUser = useSelector(state=>(state.session.user))
     if (currentUser){
         const userId = currentUser.id
@@ -26,19 +27,20 @@ function RealGenericCarousel({row}){
 
         useEffect(()=>{
 
-            const ioMdHeartOne = document.getElementById('realGenIoMdHeart1')
-            const ioMdHeartTwo = document.getElementById('realGenIoMdHeart2')
-            const ioMdHeartThree = document.getElementById('realGenIoMdHeart3')
-            const ioMdHeartFour = document.getElementById('realGenIoMdHeart4')
-            const ioMdHeartFive = document.getElementById('realGenIoMdHeart5')
-            const ioMdHeartSix = document.getElementById('realGenIoMdHeart6')
+            const ioMdHeartOne = document.getElementById(`realGenIoMdHeart1_${rowId}`)
+            const ioMdHeartTwo = document.getElementById(`realGenIoMdHeart2_${rowId}`)
+            const ioMdHeartThree = document.getElementById(`realGenIoMdHeart3_${rowId}`)
+            const ioMdHeartFour = document.getElementById(`realGenIoMdHeart4_${rowId}`)
+            const ioMdHeartFive = document.getElementById(`realGenIoMdHeart5_${rowId}`)
+            const ioMdHeartSix = document.getElementById(`realGenIoMdHeart6_${rowId}`)
         
-            const luHeartOne = document.getElementById('realGenLuHeart1')
-            const luHeartTwo = document.getElementById('realGenLuHeart2')
-            const luHeartThree = document.getElementById('realGenLuHeart3')
-            const luHeartFour = document.getElementById('realGenLuHeart4')
-            const luHeartFive = document.getElementById('realGenLuHeart5')
-            const luHeartSix = document.getElementById('realGenLuHeart6')
+            const luHeartOne = document.getElementById(`realGenLuHeart1_${rowId}`)
+            const luHeartTwo = document.getElementById(`realGenLuHeart2_${rowId}`)
+            const luHeartThree = document.getElementById(`realGenLuHeart3_${rowId}`)
+            const luHeartFour = document.getElementById(`realGenLuHeart4_${rowId}`)
+            const luHeartFive = document.getElementById(`realGenLuHeart5_${rowId}`)
+            const luHeartSix = document.getElementById(`realGenLuHeart6_${rowId}`)
+            debugger;
         
             if(row[0]){
                 if (favoriteInstrumentIds.includes(row[0].id)){
@@ -111,9 +113,10 @@ function RealGenericCarousel({row}){
 
         const addFavorite = (instrumentId, buttonId, e) => {
             
-            const emptyHeart = document.getElementById(`realGenLuHeart${buttonId}`)
+            const emptyHeart = document.getElementById(`realGenLuHeart${buttonId}_${rowId}`)
             debugger;
                 e.target.style.display='none'
+                console.log(emptyHeart)
                 emptyHeart.style.display='flex'
                 const favorite = {
                     instrumentId,
@@ -148,8 +151,8 @@ function RealGenericCarousel({row}){
                     <>
                         <div className='thumb-instrumentWrapper'>
                             <div className='carousel-fav-button'>
-                                    <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='realGenIoMdHeart1' onClick={(e)=> addFavorite(row[0].id, 1, e)} />  
-                                    <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='realGenLuHeart1'onClick={(e)=> unFavorite(row[0].id, 1, e)} /> 
+                                    <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id={`realGenIoMdHeart1_${rowId}`} onClick={(e)=> addFavorite(row[0].id, 1, e)} />  
+                                    <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id={`realGenLuHeart1_${rowId}`} onClick={(e)=> unFavorite(row[0].id, 1, e)} /> 
                             </div>      
                 
                 
@@ -179,8 +182,8 @@ function RealGenericCarousel({row}){
                     <>
                          <div className='thumb-instrumentWrapper'>
                  <div className='carousel-fav-button'>
-                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='realGenIoMdHeart2' onClick={(e)=> addFavorite(row[1].id, 2, e)}/>  
-                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='realGenLuHeart2'onClick={(e)=> unFavorite(row[1].id, 2, e)}/> 
+                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id={`realGenIoMdHeart2_${rowId}`} onClick={(e)=> addFavorite(row[1].id, 2, e)}/>  
+                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id={`realGenLuHeart2_${rowId}`} onClick={(e)=> unFavorite(row[1].id, 2, e)}/> 
                     </div>
                 
                 
@@ -208,8 +211,8 @@ function RealGenericCarousel({row}){
                     <>
                         <div className='thumb-instrumentWrapper'>
                  <div className='carousel-fav-button'>
-                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='realGenIoMdHeart3' onClick={(e)=> addFavorite(row[2].id, 3, e)}/>  
-                        <img src="../../assets/images/filledHeart.png"  className = 'likeOff' id='realGenLuHeart3'onClick={(e)=> unFavorite(row[2].id, 3, e)}/> 
+                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id={`realGenIoMdHeart3_${rowId}`} onClick={(e)=> addFavorite(row[2].id, 3, e)}/>  
+                        <img src="../../assets/images/filledHeart.png"  className = 'likeOff' id={`realGenLuHeart3_${rowId}`} onClick={(e)=> unFavorite(row[2].id, 3, e)}/> 
                     </div>
                 
                 
@@ -243,8 +246,8 @@ function RealGenericCarousel({row}){
                     <>
                          <div className='thumb-instrumentWrapper'>
                  <div className='carousel-fav-button'>
-                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='realGenIoMdHeart4' onClick={(e)=> addFavorite(row[3].id, 4, e)}/>  
-                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='realGenLuHeart4'onClick={(e)=> unFavorite(row[3].id, 4, e)}/> 
+                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id={`realGenIoMdHeart4_${rowId}`} onClick={(e)=> addFavorite(row[3].id, 4, e)}/>  
+                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id={`realGenLuHeart4_${rowId}`} onClick={(e)=> unFavorite(row[3].id, 4, e)}/> 
                 </div>
                 
                 
@@ -275,8 +278,8 @@ function RealGenericCarousel({row}){
                     <>
                          <div className='thumb-instrumentWrapper'>
                  <div className='carousel-fav-button'>
-                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='realGenIoMdHeart5' onClick={(e)=> addFavorite(row[4].id, 5, e)}/>  
-                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='realGenLuHeart5'onClick={(e)=> unFavorite(row[4].id, 5, e)}/> 
+                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id={`realGenIoMdHeart5_${rowId}`} onClick={(e)=> addFavorite(row[4].id, 5, e)}/>  
+                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id={`realGenLuHeart5_${rowId}`} onClick={(e)=> unFavorite(row[4].id, 5, e)}/> 
                 </div>
                 
                 
@@ -307,8 +310,8 @@ function RealGenericCarousel({row}){
                     <>
                          <div className='thumb-instrumentWrapper'>
                  <div className='carousel-fav-button'>
-                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='realGenIoMdHeart6' onClick={(e)=> addFavorite(row[5].id, 6, e)}/>  
-                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='realGenLuHeart6'onClick={(e)=> unFavorite(row[5].id, 6, e)}/> 
+                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id={`realGenIoMdHeart6_${rowId}`} onClick={(e)=> addFavorite(row[5].id, 6, e)}/>  
+                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id={`realGenLuHeart6_${rowId}`} onClick={(e)=> unFavorite(row[5].id, 6, e)}/> 
                 </div>
                 
                 

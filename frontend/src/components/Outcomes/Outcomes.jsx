@@ -46,7 +46,7 @@ function Outcomes(){
                 <h1 id='results-count'>{searchResults.length} Results <span id='searchTermWrap'>for "{`${searchWord}`}"</span></h1>
                 {allRows.map((row)=>{
                     return(
-                        <RealGenericCarousel row={row}/>
+                        <RealGenericCarousel row={row} rowId={row[0].id}/>
                     )
                 })}
             </div>

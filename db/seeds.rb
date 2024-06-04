@@ -334,5 +334,215 @@ jackson_king  = Instrument.create!({
 
 jackson_king.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Jackson_King_V.jpeg'), filename: 'jackson_king_v.webp')
   
+
+    puts 'creating reviews'
+
+    SellerReview.create!({
+      seller_id: 4,
+      reviewer_id: 5,
+      body: 'Billy really knows his stuff when it comes to guitars.  He is a little long winded though, and it can be hard to get him off the phone',
+      title: 'Gibson 335',
+      stars: 4
+    })
+
+
+    SellerReview.create!({
+      seller_id: 4,
+      reviewer_id: 5,
+      body: 'Overall satisfied, but delivery was longer than expected.',
+      title: 'Roland keyboard',
+      stars: 3
+    })
+
+    SellerReview.create!({
+      seller_id: 4,
+      reviewer_id: 6,
+      body: 'Guitar is sweet.  Setup is sweet.  Strings were dirty.  Also it smelled like whiskey.  Im not sure if that is good or bad.',
+      title: 'Fender MIM Stratocaster',
+      stars: 4
+    })
+
+
+    SellerReview.create!({
+      seller_id: 4,
+      reviewer_id: 1,
+      body: 'Thanks Billy!',
+      title: 'Washburn Electric Guitar',
+      stars: 5
+    })
+
+    SellerReview.create!({
+      seller_id: 4,
+      reviewer_id: 1,
+      body: 'Thanks Billy!',
+      title: 'Washburn Electric Guitar',
+      stars: 5
+    })
+
+
+    SellerReview.create!({
+      seller_id: 2,
+      reviewer_id: 1,
+      body: 'Pat is such a warm human being, and he really helped me pick out a guitar that matches my socks',
+      title: 'Peavey Predator',
+      stars: 5
+    })
+
+
+    SellerReview.create!({
+      seller_id: 7,
+      reviewer_id: 1,
+      body: 'Flea sold me a killer bass.  Now I can jam out to RHCP SoCal stylie!',
+      title: 'Fender P-bass Lyte',
+      stars: 5
+    })
+
+
+    SellerReview.create!({
+      seller_id: 7,
+      reviewer_id: 8,
+      body: 'Seller is pretty shady and hard to get a hold of.  But when the instrument arrived, it was unbelievable, and the price couldnt be beat',
+      title: 'PRS SE Mcarty',
+      stars: 5
+    })
+
+
+    SellerReview.create!({
+      seller_id: 7,
+      reviewer_id: 2,
+      body: 'Neck was broken when it arrived.  He did refund me my money, but dude could have packed it better.',
+      title: 'Tom Delong Fender Stratocaster',
+      stars: 2
+    })
+
+
+
+    SellerReview.create!({
+      seller_id: 7,
+      reviewer_id: 2,
+      body: 'Neck was broken when it arrived.  He did refund me my money, but dude could have packed it better.',
+      title: 'Tom Delong Fender Stratocaster',
+      stars: 5
+    })
+
+
+    SellerReview.create!({
+      seller_id: 7,
+      reviewer_id: 4,
+      body: 'Flea!!!! You are the dude!  Thank you my brah!',
+      title: 'Squier P-Bass',
+      stars: 5
+    })
+
+
+
+    SellerReview.create!({
+      seller_id: 3,
+      reviewer_id: 1,
+      body: "I'll miss you always buddy",
+      title: 'Roland Electronic Drum Set',
+      stars: 5
+    })
+
+
+    SellerReview.create!({
+      seller_id: 3,
+      reviewer_id: 4,
+      body: "Best seller ever.  Fast, efficient, and totally down to earth.",
+      title: 'Gibson SG Standard',
+      stars: 5
+    })
+
+    SellerReview.create!({
+      seller_id: 3,
+      reviewer_id: 9,
+      body: "If you need guitars, drums, bass, or anything else related to rock and roll, Taylor is the guy to go to.  Trust me you won't regret it.",
+      title: 'Dave Grohl Ephiphone Semi-Hollow Electric Guitar',
+      stars: 5
+    })
+
+
+
+    SellerReview.create!({
+      seller_id: 8,
+      reviewer_id: 2,
+      body: 'I didnt know what kind of guitar to get and the seller really helped walk me through the process. At the end of the day I am satisfied with my purhcase.',
+      title: 'Ibanez 7 String',
+      stars: 4
+    })
+
+
+    SellerReview.create!({
+      seller_id: 8,
+      reviewer_id: 5,
+      body: 'Guitar was on fire when it arrived.  I dig rock and roll, but this is ridiculous',
+      title: 'Fender Left Handed Stratocaster',
+      stars: 1
+    })
+
+
+    SellerReview.create!({
+      seller_id: 8,
+      reviewer_id: 3,
+      body: 'I love this guitar so much I was crying Mary into the wind all night long',
+      title: 'Fender American Telecaster',
+      stars: 5
+    })
+
+    SellerReview.create!({
+      seller_id: 8,
+      reviewer_id: 4,
+      body: 'Seller is crazy.  Sent me three headbands along with the guitar soaked in what I can only assume is some sort of hallucenogen.',
+      title: 'Taylor Acoustic Guitar',
+      stars: 5
+    })
+
+
+    SellerReview.create!({
+      seller_id: 8,
+      reviewer_id: 2,
+      body: 'Second time buying a guitar from Jimi.  Hes still got it and the guitar is great.',
+      title: 'Fender Jaguar',
+      stars: 5
+    })
+
+
+    SellerReview.create!({
+      seller_id: 8,
+      reviewer_id: 2,
+      body: 'I cant stop buying guitars from this guy.  My wife is going to kill me.  Somebody take my credit card away from me.',
+      title: 'Fender Paranormal Semi-hollow Telecaster',
+      stars: 5
+    })
+
+
+    SellerReview.create!({
+      seller_id: 6,
+      reviewer_id: 2,
+      body: 'Thank you Angus!  This thing is sick!',
+      title: 'Gibson SG Candy Apple Red',
+      stars: 5
+    })
+
+    SellerReview.create!({
+      seller_id: 6,
+      reviewer_id: 4,
+      body: 'Guitar is great.  Seller is polite.  I just dont care for the Satanic references',
+      title: 'Flying V Guitar',
+      stars: 4
+    })
+
+
+    SellerReview.create!({
+      seller_id: 6,
+      reviewer_id: 9,
+      body: 'Worth every penny',
+      title: 'Gibson Slash Les Paul',
+      stars: 5
+    })
+
+
+
+
     puts "Done!"
   # end

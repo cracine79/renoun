@@ -35,8 +35,33 @@ const Instrument = () => {
     const signupSquare = document.getElementById('signup-mnw');
     const loginSquare = document.getElementById('login-mnw');
     const storeNames = ['Outlet', 'Depot', 'Habedashery', 'Gallery', 'Center']
+    let sellerStoreName
+    if(sellerFirstName.length<=4){
+         sellerStoreName = capFirstName+"'s Gear Outlet"
+    }
 
-    const sellerStoreName = capFirstName + "'s Gear " + storeNames[Math.floor(Math.random()*5)]
+    if('abcdef'.includes(sellerFirstName[2].toLowerCase())){
+         sellerStoreName = capFirstName+"'s Gear Gallery"
+    }
+
+    if('ghijk'.includes(sellerFirstName[2].toLowerCase())){
+         sellerStoreName = capFirstName+"'s Gear Habedashery"
+    }
+
+    if('lmnop'.includes(sellerFirstName[2].toLowerCase())){
+         sellerStoreName = capFirstName+"'s Gear Depot"
+    }
+
+    if('qrstu'.includes(sellerFirstName[2].toLowerCase())){
+         sellerStoreName = capFirstName+"'s Gear-o-Rama"
+    }
+
+    if('vwxyz'.includes(sellerFirstName[2].toLowerCase())){
+        sellerStoreName = capFirstName+"'s Gear Center"
+   }
+
+
+
 
     const [errors, setErrors] = useState();
   
