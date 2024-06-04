@@ -6,9 +6,12 @@
  
 }
 
-#shop{
-
+#shop-image-left{
+    background-image: url('/assets/images/my-shop-orange-892ef04585ac0da6.svg');
+    background-size: 60px;
     height: 60px;
+    width: 60px;
+
 }
 
 #shop-wrap{
@@ -28,6 +31,7 @@
     margin-top: 45px;
 }
 
+
 #seller-info{
     margin-left: 20px;
     font-size: 30px;
@@ -43,6 +47,73 @@
     width: 80px;
 }
 
+.five-stars{
+    width: 80px;
+    background-image: url('/assets/images/fiveStars.png');
+    height: 20px;
+    background-size: 80px;
+    background-repeat: no-repeat;
+}
+
+.four-stars{
+    width: 80px;
+    background-image: url('/assets/images/fourStars.png');
+    height: 20px;
+    background-size: 80px;
+    background-repeat: no-repeat;
+}
+
+.three-stars{
+    width: 80px;
+    background-image: url('/assets/images/threeStars.png');
+    height: 20px;
+    background-size: 80px;
+    background-repeat: no-repeat;
+}
+
+.two-stars{
+    width: 80px;
+    background-image: url('/assets/images/twoStars.png');
+    height: 20px;
+    background-size: 80px;
+    background-repeat: no-repeat;
+
+}
+
+.one-star{
+    width: 80px;
+    background-image: url('/assets/images/oneStar.png');
+    height: 20px;
+    background-size: 80px;
+    background-repeat: no-repeat;
+}
+
+#no-stars{
+    width: 80px;
+    background-image: url('/assets/images/noStars.png');
+    height: 20px;
+    background-size: 80px;
+    background-repeat: no-repeat;
+}
+
+#four-star-avg{
+     width: 80px;
+    background-image: url('/assets/images/fourStars.png');
+    height: 20px;
+    background-size: 80px;
+    background-repeat: no-repeat;
+}
+
+
 .review-date-created{
     margin-left: 10px;
+}
+
+
+.reviews-header{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 38%;
+
 }

@@ -25,7 +25,10 @@
 
 #right-store-img{
     height: 25px;
+    width: 25px;
     margin-top: 20px;
+    background-image: url('/assets/images/my-shop-orange-892ef04585ac0da6.svg');
+    background-size: 25px;
 }
 
 #instrument-show-store-info{

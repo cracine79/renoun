@@ -407,7 +407,7 @@ const Instrument = () => {
 
                     <hr id = 'button-bottom' />
                     <div id='instrument-show-store-info'>
-                        <img id = 'right-store-img' src = '/assets/images/my-shop-orange-892ef04585ac0da6.svg'/>
+                        <div id = 'right-store-img' src = '/assets/images/my-shop-orange-892ef04585ac0da6.svg'></div>
                         <div id='right-store-name'>{sellerStoreName}</div>
 
                     </div>

@@ -52,27 +52,33 @@ function Seller({instrument, sellerStoreName}){
 
         if(num<0.5){
             return (
-                <img className='stars' src='/assets/images/noStars.png' />
+                <div id='no-star-avg' className='no-stars'></div>
+                // <img className='stars' id='one-star-avg' src='/assets/images/noStars.png' />
             )
         }else if(0.5<=num && num <1.5){
             return(
-                <img className='stars' src='/assets/images/oneStar.png' />
+                <div id='twoneo-star-avg' className='one-star'></div>
+                // <img className='stars' id='two-star-avg' src='/assets/images/oneStar.png' />
             )
         } else if(1.5<=num && num <2.5){
             return(
-                <img className='stars' src='/assets/images/twoStars.png' />
+                <div id='two-star-avg' className='two-stars'></div>
+                // <img className='stars' src='/assets/images/twoStars.png' />
             )
         }else if(2.5<=num && num<3.5){
             return(
-                <img className='stars' src='/assets/images/threeStars.png' />
+                <div id='three-star-avg' className='three-stars'></div>
+                // <img className='stars' src='/assets/images/threeStars.png' />
             )
         }else if(3.5<=num && num<4.5){
             return(
-                <img className='stars' src='/assets/images/fourStars.png' />
+                <div className='four-stars'></div>
+                // <img className='stars' src='/assets/images/fourStars.png' />
             )
         }else if(num>=4.5){
             return(
-                <img className='stars' src='/assets/images/fiveStars.png' />
+                <div className='five-stars'></div>
+                // <img className='stars' src='/assets/images/fiveStars.png' />
             )
     }
     }
@@ -80,27 +86,32 @@ function Seller({instrument, sellerStoreName}){
     const stars = (num) =>{
         if(num===0){
             return (
-                <img className='stars' src='/assets/images/noStars.png' />
+                <div className='no-stars'></div>
+                // <img className='stars' src='/assets/images/noStars.png' />
             )
         }else if(num===1){
             return(
-                <img className='stars' src='/assets/images/oneStar.png' />
+                <div className='one-star'></div>
+                // <img className='stars' src='/assets/images/oneStar.png' />
             )
         } else if(num===2){
             return(
-                <img className='stars' src='/assets/images/twoStars.png' />
+                <div className='two-stars'></div>
+                // <img className='stars' src='/assets/images/twoStars.png' />
             )
         }else if(num===3){
             return(
-                <img className='stars' src='/assets/images/threeStars.png' />
+                <div className='three-stars'></div>
+                // <img className='stars' src='/assets/images/threeStars.png' />
             )
         }else if(num===4){
             return(
-                <img className='stars' src='/assets/images/fourStars.png' />
+                <div  className='four-stars'></div>
+                // <img className='stars' src='/assets/images/fourStars.png' />
             )
         }else if(num===5){
             return(
-                <img className='stars' src='/assets/images/fiveStars.png' />
+                <div className='five-stars'></div>
             )
         }
         
@@ -117,7 +128,7 @@ function Seller({instrument, sellerStoreName}){
                 <h1 className='aboutThisListing'>About the Seller</h1>
                 <div id='seller-dets'>
                     <div id='shop-wrap'>
-                        <img id='shop' src='/assets/images/my-shop-orange-892ef04585ac0da6.svg' />
+                        <div id='shop-image-left'></div>
                     </div>
                     <h2 id='seller-info'>
                         {sellerStoreName}
@@ -125,9 +136,9 @@ function Seller({instrument, sellerStoreName}){
             
                 </div>
                 <hr className='sellerLine' />
-                <h1 className='reviews-header'>
+                <div className='reviews-header'>
                     Seller Reviews {avgStars(average)} ({reviews.length})
-                </h1>
+                </div>
                 {reviewsOne.map((review)=>{
                     return(
                         <>
