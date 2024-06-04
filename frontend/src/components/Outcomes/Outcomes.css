@@ -1,0 +1,15 @@
+#search-results-wrapper{
+    margin-top: 50px;
+    margin-left: 80px; 
+}
+
+
+
+#results-count{
+    font-size: 28px;
+    font-weight: 600;
+}
+
+#searchTermWrap{
+    font-weight: 300;
+}

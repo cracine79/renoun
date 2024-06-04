@@ -1,5 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import './Outcomes.css'
+import RealGenericCarousel from "../Carousel/RealGenericCarousel";
 
 
 function Outcomes(){
@@ -16,14 +18,38 @@ function Outcomes(){
             }
     })
 
-    console.log(searchResults)
 
+    let rowRequirement
+   if(searchResults.length%6===0){
+    rowRequirement = searchResults.length/6
+   } else {
+    rowRequirement = Math.floor(searchResults.length/6)+1
+   }
+   console.log(rowRequirement)
+
+   let i=0
+   let allRows = []
+   debugger;
+   while(i<rowRequirement){
+    debugger;
+    let row = searchResults.slice((i*6+0),(i*6+6))
+    allRows.push(row)
+    i+=1
+   }
+
+   console.log(allRows)
 
     return(
-        <> <p>
-                DUDE
-            </p>Hello from outcome!</>
-
+        <div id='search-results-wrapper-wrapper'>
+            <div id='search-results-wrapper'>
+                <h1 id='results-count'>{searchResults.length} Results <span id='searchTermWrap'>for "{`${searchWord}`}"</span></h1>
+                {allRows.map((row)=>{
+                    return(
+                        <RealGenericCarousel row={row}/>
+                    )
+                })}
+            </div>
+        </div>
         
     )
 }
