@@ -7,7 +7,7 @@ const Favorite = () => {
                 <div id='behind-wrapper'>
                     <div id='introducing-wrapper'>
                         <div id='fav-inner-wrapper'>
-                            <img id='favs-banner-image' src='../../assets/images/favorites-banner-images.png'/>
+                            <img id='favs-banner-image' src='/assets/images/favorites-banner-images.png'/>
                             <div id='favs-banner-words'>
                                 <p id='introducing-favorites'>Introducing: Favorites</p>
                                 <p id='Favs-description'>Get price drops and special offers on items in your Watch List</p>

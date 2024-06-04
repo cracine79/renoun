@@ -259,8 +259,8 @@ const Instrument = () => {
                     <div>
                     <img id= 'photo' src={instrument.photoUrl} />
           
-                         <img src='../../assets/images/emptyHeart.png' id='bigHollowHeart' onClick={favoriteInstrument} />  
-                        <img src='../../assets/images/FILLEDHeart.png' id='bigFilledHeart' onClick={unfavoriteInstrument}/>  
+                         <img src='/assets/images/emptyHeart.png' id='bigHollowHeart' onClick={favoriteInstrument} />  
+                        <img src='/assets/images/FILLEDHeart.png' id='bigFilledHeart' onClick={unfavoriteInstrument}/>  
 
                     </div>
                    

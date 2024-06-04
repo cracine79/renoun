@@ -174,8 +174,8 @@ function GenericCarousel(){
                     <>
                         <div className='thumb-instrumentWrapper'>
                             <div className='carousel-fav-button'>
-                                    <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart1' onClick={(e)=> addFavorite(shortInstruments[0].id, 1, e)} />  
-                                    <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='genLuHeart1'onClick={(e)=> unFavorite(shortInstruments[0].id, 1, e)} /> 
+                                    <img src='/assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart1' onClick={(e)=> addFavorite(shortInstruments[0].id, 1, e)} />  
+                                    <img src="/assets/images/filledHeart.png"   className = 'likeOff' id='genLuHeart1'onClick={(e)=> unFavorite(shortInstruments[0].id, 1, e)} /> 
                             </div>      
                 
                 
@@ -205,8 +205,8 @@ function GenericCarousel(){
                     <>
                          <div className='thumb-instrumentWrapper'>
                  <div className='carousel-fav-button'>
-                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart2' onClick={(e)=> addFavorite(shortInstruments[1].id, 2, e)}/>  
-                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='genLuHeart2'onClick={(e)=> unFavorite(shortInstruments[1].id, 2, e)}/> 
+                        <img src='/assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart2' onClick={(e)=> addFavorite(shortInstruments[1].id, 2, e)}/>  
+                        <img src="/assets/images/filledHeart.png"   className = 'likeOff' id='genLuHeart2'onClick={(e)=> unFavorite(shortInstruments[1].id, 2, e)}/> 
                     </div>
                 
                 
@@ -235,8 +235,8 @@ function GenericCarousel(){
                     <>
                         <div className='thumb-instrumentWrapper'>
                  <div className='carousel-fav-button'>
-                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart3' onClick={(e)=> addFavorite(shortInstruments[2].id, 3, e)}/>  
-                        <img src="../../assets/images/filledHeart.png"  className = 'likeOff' id='genLuHeart3'onClick={(e)=> unFavorite(shortInstruments[2].id, 3, e)}/> 
+                        <img src='/assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart3' onClick={(e)=> addFavorite(shortInstruments[2].id, 3, e)}/>  
+                        <img src="/assets/images/filledHeart.png"  className = 'likeOff' id='genLuHeart3'onClick={(e)=> unFavorite(shortInstruments[2].id, 3, e)}/> 
                     </div>
                 
                 
@@ -270,8 +270,8 @@ function GenericCarousel(){
                     <>
                          <div className='thumb-instrumentWrapper'>
                  <div className='carousel-fav-button'>
-                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart4' onClick={(e)=> addFavorite(shortInstruments[3].id, 4, e)}/>  
-                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='genLuHeart4'onClick={(e)=> unFavorite(shortInstruments[3].id, 4, e)}/> 
+                        <img src='/assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart4' onClick={(e)=> addFavorite(shortInstruments[3].id, 4, e)}/>  
+                        <img src="/assets/images/filledHeart.png"   className = 'likeOff' id='genLuHeart4'onClick={(e)=> unFavorite(shortInstruments[3].id, 4, e)}/> 
                 </div>
                 
                 
@@ -302,8 +302,8 @@ function GenericCarousel(){
                     <>
                          <div className='thumb-instrumentWrapper'>
                  <div className='carousel-fav-button'>
-                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart5' onClick={(e)=> addFavorite(shortInstruments[4].id, 5, e)}/>  
-                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='genLuHeart5'onClick={(e)=> unFavorite(shortInstruments[4].id, 5, e)}/> 
+                        <img src='/assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart5' onClick={(e)=> addFavorite(shortInstruments[4].id, 5, e)}/>  
+                        <img src="/assets/images/filledHeart.png"   className = 'likeOff' id='genLuHeart5'onClick={(e)=> unFavorite(shortInstruments[4].id, 5, e)}/> 
                 </div>
                 
                 
@@ -334,8 +334,8 @@ function GenericCarousel(){
                     <>
                          <div className='thumb-instrumentWrapper'>
                  <div className='carousel-fav-button'>
-                        <img src='../../assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart6' onClick={(e)=> addFavorite(shortInstruments[5].id, 6, e)}/>  
-                        <img src="../../assets/images/filledHeart.png"   className = 'likeOff' id='genLuHeart6'onClick={(e)=> unFavorite(shortInstruments[5].id, 6, e)}/> 
+                        <img src='/assets/images/emptyHeart.png' className = 'likeOn' id='genIoMdHeart6' onClick={(e)=> addFavorite(shortInstruments[5].id, 6, e)}/>  
+                        <img src="/assets/images/filledHeart.png"   className = 'likeOff' id='genLuHeart6'onClick={(e)=> unFavorite(shortInstruments[5].id, 6, e)}/> 
                 </div>
                 
                 

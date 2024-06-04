@@ -52,27 +52,27 @@ function Seller({instrument, sellerStoreName}){
 
         if(num<0.5){
             return (
-                <img className='stars' src='../../assets/images/noStars.png' />
+                <img className='stars' src='/assets/images/noStars.png' />
             )
         }else if(0.5<=num && num <1.5){
             return(
-                <img className='stars' src='../../assets/images/oneStar.png' />
+                <img className='stars' src='/assets/images/oneStar.png' />
             )
         } else if(1.5<=num && num <2.5){
             return(
-                <img className='stars' src='../../assets/images/twoStars.png' />
+                <img className='stars' src='/assets/images/twoStars.png' />
             )
         }else if(2.5<=num && num<3.5){
             return(
-                <img className='stars' src='../../assets/images/threeStars.png' />
+                <img className='stars' src='/assets/images/threeStars.png' />
             )
         }else if(3.5<=num && num<4.5){
             return(
-                <img className='stars' src='../../assets/images/fourStars.png' />
+                <img className='stars' src='/assets/images/fourStars.png' />
             )
         }else if(num>=4.5){
             return(
-                <img className='stars' src='../../assets/images/fiveStars.png' />
+                <img className='stars' src='/assets/images/fiveStars.png' />
             )
     }
     }
@@ -80,27 +80,27 @@ function Seller({instrument, sellerStoreName}){
     const stars = (num) =>{
         if(num===0){
             return (
-                <img className='stars' src='../../assets/images/noStars.png' />
+                <img className='stars' src='/assets/images/noStars.png' />
             )
         }else if(num===1){
             return(
-                <img className='stars' src='../../assets/images/oneStar.png' />
+                <img className='stars' src='/assets/images/oneStar.png' />
             )
         } else if(num===2){
             return(
-                <img className='stars' src='../../assets/images/twoStars.png' />
+                <img className='stars' src='/assets/images/twoStars.png' />
             )
         }else if(num===3){
             return(
-                <img className='stars' src='../../assets/images/threeStars.png' />
+                <img className='stars' src='/assets/images/threeStars.png' />
             )
         }else if(num===4){
             return(
-                <img className='stars' src='../../assets/images/fourStars.png' />
+                <img className='stars' src='/assets/images/fourStars.png' />
             )
         }else if(num===5){
             return(
-                <img className='stars' src='../../assets/images/fiveStars.png' />
+                <img className='stars' src='/assets/images/fiveStars.png' />
             )
         }
         
@@ -117,7 +117,7 @@ function Seller({instrument, sellerStoreName}){
                 <h1 className='aboutThisListing'>About the Seller</h1>
                 <div id='seller-dets'>
                     <div id='shop-wrap'>
-                        <img id='shop' src='../../assets/images/my-shop-orange-892ef04585ac0da6.svg' />
+                        <img id='shop' src='/assets/images/my-shop-orange-892ef04585ac0da6.svg' />
                     </div>
                     <h2 id='seller-info'>
                         {sellerStoreName}
