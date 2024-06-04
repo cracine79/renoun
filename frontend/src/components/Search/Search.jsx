@@ -2,12 +2,14 @@ import { BsSearch } from "react-icons/bs";
 import './Search.css'
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Search(){
 
     const instruments = useSelector(state => Object.values(state.instruments))
+    const [searchWord, setSearchWord] = useState('');
     let keyWords = []
-   
+    const navigate = useNavigate();
   
     instruments.forEach((instrument)=>{
 
@@ -22,7 +24,13 @@ function Search(){
         }
     }  
 )
-const handleSearchSubmit = ()=>{
+const handleSearchSubmit = (e)=>{
+
+    e.preventDefault();
+    const dropDown = document.getElementById('search-results-box')
+    dropDown.style.display='none'
+
+    navigate('/outcomes', {state: {searchWord: searchWord}})
 
 }
 
@@ -46,8 +54,8 @@ const handleChange = (e) => {
                 keyWordsHolder.push(word)
             }      
         })
-    debugger;
     
+    setSearchWord(e.target.value)
     }
     setSearchPrompts(keyWordsHolder)
  
