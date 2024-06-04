@@ -1,3 +1,4 @@
+import csrfFetch from "./csrf"
 const RECEIVE_FAVORITES = 'favorites/RECEIVE_FAVORITES'
 const RECEIVE_FAVORITE = 'favorites/RECEIVE_FAVORITE'
 const REMOVE_FAVORITE = 'favorites/REMOVE_FAVORITE'
