@@ -439,6 +439,7 @@ color: gray;
 
 .blueIcon{
     height: 30px;
+    
 }
 
 .subSubBox{
@@ -451,6 +452,12 @@ color: gray;
     color: gray;
 }
 
+#rv-protection-icon{
+    background-image: url('/assets/images/trust_shield_icon.svg');
+    background-size: 30px;
+    height: 30px;
+    width: 30px; 
+}
 #buyerProtectionBox{
     margin-top: 50px;
     width: 800px;
@@ -463,10 +470,17 @@ color: gray;
 #blueSkinny{
     width: 10px;
     height: 88px;
-    background-color: blue;
+    background-color: blueviolet;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 
+}
+
+#rv-padlock-image{
+    background-size: 30px;
+    height: 30px;
+    width: 30px; 
+    background-image: url('/assets/images/padlock-icon.svg')
 }
 
 #bpText{
@@ -546,7 +560,7 @@ color: gray;
 
 #bigHollowHeart{
     margin-top: -810px;
-    margin-left: 760px;
+    margin-left: 720px;
     position: absolute;
     background-image: url('../../assets/images/emptyHeart.png');
     height: 55px;
@@ -564,7 +578,7 @@ color: gray;
 
 #bigFilledHeart{
     margin-top: -810px;
-    margin-left: 760px;
+    margin-left: 720px;
     position: absolute;
     background-image: url('../../assets/images/FILLEDHeart.png');
     height: 55px;

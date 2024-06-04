@@ -307,7 +307,7 @@ const Instrument = () => {
                 
                 <div id='blue-info-box'>
                     <div className='blue-sub-box'>
-                        <img className='blueIcon' src='/assets/images/trust_shield_icon.svg' />
+                        <div className='blueIcon' id='rv-protection-icon' src='/assets/images/trust_shield_icon.svg'></div>
                         <div className='subSubBox'>
                             <p className='specKey'>Reverb Protection</p>
                             <p className='reverb-reassure'>Simple Returns, Secure Transactions, Human Support</p>
@@ -315,7 +315,7 @@ const Instrument = () => {
 
                     </div>
                     <div className='blue-sub-box'>
-                        <img className='blueIcon' src='/assets/images/padlock-icon.svg' />
+                        <div className='blueIcon' id='rv-padlock-image' ></div>
                         <div className='subSubBox'>
                             <p className='specKey'>Secure Checkout</p>
                             <p className='reverb-reassure'>At Renoun, your safety and security is our priority</p>
