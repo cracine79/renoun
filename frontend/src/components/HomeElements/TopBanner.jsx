@@ -11,7 +11,7 @@ export default function TopBanner (){
                 <h1 id='banner-top' className='banner-words'>Get the sound you love for less</h1>
                 <h3 id='banner-bottom' className='banner-words'>Save an average of 30% when you buy used music gear</h3>
                 <div id='banner-button'>
-                    <Link to='/shop_all'id='banner-button-text'>Shop all</Link>
+                    <Link to='/shop_all' id='banner-button-text'>Shop all</Link>
                 </div>
               
             </div>

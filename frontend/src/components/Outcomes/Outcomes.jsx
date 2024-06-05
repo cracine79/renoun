@@ -10,13 +10,15 @@ function Outcomes(){
     const instruments = useSelector(state => Object.values(state.instruments))
     const searchResults = [];
     instruments.forEach((instrument)=>{
-      
+      if(instrument.available){
         if(instrument.itemName.toLowerCase().includes(searchWord.toLowerCase()) ||
-            (instrument.model) && instrument.model.toLowerCase().includes(searchWord.toLowerCase()) ||
-            instrument.brand.toLowerCase().includes(searchWord.toLowerCase()) ||
-            instrument.category.toLowerCase().includes(searchWord.toLowerCase())){
-                searchResults.push(instrument)
-            }
+        (instrument.model) && instrument.model.toLowerCase().includes(searchWord.toLowerCase()) ||
+        instrument.brand.toLowerCase().includes(searchWord.toLowerCase()) ||
+        instrument.category.toLowerCase().includes(searchWord.toLowerCase())){
+            searchResults.push(instrument)
+        }
+      }
+       
     })
 
 
