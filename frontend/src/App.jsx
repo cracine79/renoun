@@ -19,6 +19,8 @@ import Orders from './components/Orders/Orders';
 import Favorite from './components/Favorite/Favorite';
 import Outcomes from './components/Outcomes/Outcomes';
 import Guitars from './components/Instruments/Guitars';
+import Pedals from './components/Instruments/Pedals';
+import Keys from './components/Instruments/Keys';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -110,6 +112,13 @@ const router = createBrowserRouter([
       }, 
       {path: '/guitars',
       element: <Guitars />
+      },
+      {path: '/pedals',
+        element: <Pedals />
+      },
+      {
+        path: '/keys',
+          element: <Keys />
       }
    
     ]

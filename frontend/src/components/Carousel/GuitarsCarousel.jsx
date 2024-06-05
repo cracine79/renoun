@@ -34,12 +34,14 @@ function GuitarsCarousel(){
         return favorite.instrumentId
     })
     const availableInstruments = guitars.filter((guitar)=>guitar.available===true)
+    
     let shortGuitars = availableInstruments.slice(0,6)
 
 
     useEffect(()=>{
 
         const availInstruments = guitars.filter((guitar)=>guitar.available===true)
+        
         shortGuitars = availInstruments.slice(0,6)
         
     },[orders.length])

@@ -184,6 +184,14 @@ function Navigation(){
                 {sessionLinks}
             </div>
        </div>
+            <div id='little-link-wrapper'>
+                <Link className='little-link-nav' to='/guitars'>Guitars</Link>
+                <Link className='little-link-nav' to='/pedals'>Pedals and Effects</Link>
+                <Link className='little-link-nav' to='/keys'>Keyboards and Synths</Link>
+            </div>
+               
+                
+       <hr></hr>
        </>
     )
 

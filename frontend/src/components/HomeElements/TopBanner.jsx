@@ -26,23 +26,23 @@ export default function TopBanner (){
                     </div>
                 </Link>
 
-                <div id='effects-pedals-wrap' className='banner-wrap'>
+                <Link to='pedals' id='effects-pedals-wrap' className='banner-wrap'>
                     <img className='banner-pic' src={pedals}/>
                     <div className='banner-pic-caption'>
                         <p className='banner-text'>
                             Effects and Pedals
                         </p>
                     </div>
-                </div>
+                </Link>
 
-                <div id='keys-synths-wrap' className='banner-wrap'>
+                <Link to='keys' id='keys-synths-wrap' className='banner-wrap'>
                     <img className='banner-pic' src={keys}/>
                     <div className='banner-pic-caption'>
                         <p className='banner-text'>
                             Keys and Synths
                         </p>
                     </div>
-                </div>
+                </Link>
             </div>
         </div>
     )

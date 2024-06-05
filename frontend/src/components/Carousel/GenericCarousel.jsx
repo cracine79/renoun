@@ -42,7 +42,7 @@ function GenericCarousel(){
         })
     
       
-
+    
     
     const shortInstruments = favoriteInstruments.slice(0,6)
 

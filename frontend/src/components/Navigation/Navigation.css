@@ -243,3 +243,23 @@
     justify-content: center;
 }
 
+#effects-pedals-wrap{
+    text-decoration: none;
+    color: black;
+}
+
+.little-link-nav{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+#little-link-wrapper{
+    margin-left: 120px;
+    margin-top: 5px; 
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+

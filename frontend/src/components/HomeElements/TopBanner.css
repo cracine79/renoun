@@ -35,7 +35,8 @@
 #banner-left{
     margin-left: 100px;
     width: 42%;
-    min-width: 
+    min-width: 300px;
+
 }
 
 #banner-button{
@@ -73,7 +74,10 @@
 }
 
 
-
+#keys-synths-wrap{
+    text-decoration: none;
+    color: black;
+}
 #elec-guitar-wrap{
     text-decoration: none;
     color: black;
@@ -88,6 +92,7 @@
     margin-left: 35px;
 
     width: 47%;
+    min-width: 320px;
     /* background: blue; */
     justify-content: space-between;
 }

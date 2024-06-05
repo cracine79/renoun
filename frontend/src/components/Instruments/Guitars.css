@@ -4,7 +4,7 @@
 }
 
 #guitars-page-wrapper-wrapper{
-    width: 100%;
+    width: vw100;
     min-height: 720px;
     margin-top: 30px; 
     margin-left: 150px; 
@@ -20,9 +20,10 @@
     margin-top: 40px; 
     font-size: 70px;
     font-weight: 800;
-    margin-bottom: -50px;
+
 }
 
 #realGenWrap{
     overflow-x: scroll;
+    overflow-y:hidden;
 }

@@ -21,8 +21,8 @@
 
 .instrumentWrapperWrapper{
     display: flex;
-    width: 99.99%;
-    max-width: 1600px;
+    width: 100%;
+    max-width: 1670px;
     justify-content: space-between;
     margin-top: 20px;
     overflow-x: scroll;
