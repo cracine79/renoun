@@ -11,6 +11,7 @@ import { createCartItem } from "../../store/cart";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createFavorite, deleteFavorite } from "../../store/favorite";
+import { fetchInstrument } from "../../store/instrument";
 
 
 
@@ -37,6 +38,8 @@ const Instrument = () => {
     const loginSquare = document.getElementById('login-mnw');
     const storeNames = ['Outlet', 'Depot', 'Habedashery', 'Gallery', 'Center']
     let sellerStoreName
+    debugger;
+  
     if(sellerFirstName.length<=4){
          sellerStoreName = capFirstName+"'s Gear Outlet"
     }
@@ -118,6 +121,11 @@ const Instrument = () => {
             watchButton.style.display='flex'
         }
     }, [favoritesObj])
+    let watchers = 0
+    useEffect(()=>{
+        dispatch(fetchInstrument(id))
+       
+    }, [id])
 
     if(instrument.condition==='Brand New'){
         conditionExplanation = 'Brand New items are sold by an authorized dealer or original builder and include all original packaging.',
@@ -138,7 +146,7 @@ const Instrument = () => {
         conditionExplanation = 'Oops!  The condition for this instrument is unavailable!'
     }
 
-
+    watchers = instrument.favoritesCount
 
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -404,7 +412,7 @@ const Instrument = () => {
                                 Watchers: 
                             </span>
                             <span className='value'>
-                                0 
+                                {watchers}
                             </span>
                         </div>
                     </div>

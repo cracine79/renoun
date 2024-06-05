@@ -5,6 +5,11 @@ class Api::InstrumentsController < ApplicationController
     
   
         if @instrument
+        
+            @favorites = Favorite.where('instrument_id=?', @instrument.id)
+            @favorites_count = @favorites.length
+            
+
             render 'api/instruments/show'
         else
             render json: { instrument: nil }

@@ -50,6 +50,19 @@ export const removeInstrument = () => async dispatch => {
         }
 }
 
+export const fetchInstrument = (instrumentId) => async dispatch => {
+    debugger;
+    const res = await csrfFetch(`/api/instruments/${instrumentId}`)
+    const data = await res.json()
+    debugger;
+    if (res.ok){
+        dispatch (updateInstrument(data))
+    } else {
+        console.log.res.error
+    }
+    }
+    
+
 export const updateInstrumentDetails = (instrument) => async dispatch => {
     const res = await csrfFetch(`/api/instruments/${instrument.id}`,{
         method: 'PUT',
@@ -72,11 +85,13 @@ const instrumentsReducer = (state = {}, action) => {
     switch (action.type){
         case RECEIVE_INSTRUMENTS:
             return {...action.instruments};
+    
    
         
         case REMOVE_INSTRUMENT:
             return {...nextState, [action.instrumentId]: undefined}
         case UPDATE_INSTRUMENT:
+            debugger;
             nextState[action.instrument.id] = action.instrument
             return nextState
         default:
