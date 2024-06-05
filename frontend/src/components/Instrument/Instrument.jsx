@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { createFavorite, deleteFavorite } from "../../store/favorite";
 
 
+
 const Instrument = () => {
 
     const navigate = useNavigate();
@@ -235,6 +236,10 @@ const Instrument = () => {
     const unfavoriteInstrument = ()=>{
         dispatch(deleteFavorite(favoriteId))
     }
+
+    const findSimilar = ()=>{
+        navigate('/outcomes', {state: {searchWord: instrument.brand}})
+    }
       
 
 
@@ -256,13 +261,12 @@ const Instrument = () => {
                 </div>
 
                 <div id='photobox'>
-                    <div>
-                    <img id= 'photo' src={instrument.photoUrl} />
-          
-                         <div id='bigHollowHeart' onClick={favoriteInstrument} ></div>  
-                        <div id='bigFilledHeart' onClick={unfavoriteInstrument}></div>  
-
+                    <div id='inner-photobox'>
+                        <img id= 'photo' src={instrument.photoUrl} />
                     </div>
+                    <div id='bigHollowHeart' onClick={favoriteInstrument} ></div>  
+                    <div id='bigFilledHeart' onClick={unfavoriteInstrument}></div>
+        
                    
                 </div>
 
@@ -328,14 +332,14 @@ const Instrument = () => {
                     <Seller instrument = {instrument} sellerStoreName = {sellerStoreName}/>
                 </div>
 
-                <div id='instrument-reviews-box'>
+                {/* <div id='instrument-reviews-box'>
                     <InstrumentReviews />
                  
-                </div>
+                </div> */}
          
             </div>
-
-            <div id='right'>
+            <div id='right-outer-wrap'>
+            <div id='right' className='noShadow'>
                 <div id='instrumentInfoBox'>
                     <h1 id='title'>{instrument.itemName}</h1>
                     
@@ -360,12 +364,12 @@ const Instrument = () => {
                         </span>
                     </div>
 
-                    <button id='buyItNow'>
-                        Buy It Now
+                    <button id='buyItNow' onClick = {handleAddToCart}>
+                       Add to Cart
                     </button>
                     <div id='other-button-holder'>
-                        <button className='otherotherButton' id='add-to-cart-instrument' onClick={handleAddToCart}>
-                            Add to Cart
+                        <button className='otherotherButton' id='add-to-cart-instrument' onClick={findSimilar}>
+                            More Like This
                         </button>
                         {/* <button className='otherotherButton'>
                             Make an Offer
@@ -423,18 +427,23 @@ const Instrument = () => {
                
             </div>
 
-       
-            <div id='sell-yours-top'></div>
-            <div id='sell-yours-text'> 
-                <div id='sell-text-wrapper'>
-                    <h1 id ='sell-title' >Want to Sell Yours?</h1>
-                    <p className = 'sellBody' >Anyone can sell on Reverb. List your Fender Player Telecaster today to get in front of thousands of eyse, quickly and easily.</p>
+            <div id='sell-yours-whole-wrap'>
+                <div id='sell-yours-top'></div>
+                <div id='sell-yours-text'> 
+                    <div id='sell-text-wrapper'>
+                        <h1 id ='sell-title' >Want to Sell Yours?</h1>
+                        <p className = 'sellBody' >Anyone can sell on Reverb. List your Fender Player Telecaster today to get in front of thousands of eyse, quickly and easily.</p>
+                    </div>
+                </div>
+                <div id='sell-yours'>
                 </div>
             </div>
-            <div id='sell-yours'>
- 
+
 
             </div>
+           
+            
+            
            
       
         </div>

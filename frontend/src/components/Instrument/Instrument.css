@@ -8,13 +8,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 #page-wrapper{
     margin-top: 15px;
     display: flex;
     justify-content: center;
+    width: 100vw;
 }
+
 
 #right-store-name{
     margin-bottom: 10px;
@@ -23,6 +26,10 @@
     font-weight: 600
 }
 
+
+#right-outer-wrap{
+    width: 45%;
+}
 #right-store-img{
     height: 25px;
     width: 25px;
@@ -40,13 +47,17 @@
 }
 
 #right{
-    width: 800px;
-    height: 1900px;
-
+    width: 45%;
+    height: 1600px;
+    display: block;
+    min-width: 650px;
+    max-width: 800px;
 }
 
 #left {
-    width: 900px;
+    width: 45%;
+    min-width: 650px;
+    max-width: 900px;
     height: auto;
     margin-right: 30px;
     margin-left: 30px;
@@ -59,16 +70,24 @@
 .withShadow{
     box-shadow: 0px 0px 9px rgb(213, 213, 213)
 }
+#inner-photobox{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: static;
+
+}
 
 #photo{
-    width: 760px;
-    height: 800px;
+    width: 90%;
+    height: 90%;
     object-fit: cover;
+    position: static;
 }
 
-#biglike{
 
-}
 
 #biglike:hover{
     color: black;
@@ -95,7 +114,7 @@
 
 #instrumentInfoBox{
     height: auto;
-    width: 70%;
+    width: 90%;
 
     padding-left: 25px;
     padding-top: 1px;
@@ -423,8 +442,8 @@ color: gray;
 
 #blue-info-box{
     margin-top: 50px;
-    width: 800px;
-    height: 88px;
+    width: 95%;
+    height: auto;
     background-color: rgb(236, 237, 254);
     border-radius: 15px;
     margin-bottom: 40px;
@@ -442,12 +461,12 @@ color: gray;
 
 .blueIcon{
     height: 30px;
+    padding-right: 20px;
+    background-repeat: no-repeat;
     
 }
 
-.subSubBox{
-    padding: 20px;
-}
+
 
 .reverb-reassure{
     font-size: 12px;
@@ -463,17 +482,19 @@ color: gray;
 }
 #buyerProtectionBox{
     margin-top: 50px;
-    width: 800px;
-    height: 88px;
+    width: 90%;
+    height: auto;
     background-color: rgb(236, 237, 254);
     border-radius: 8px;
     display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #blueSkinny{
     width: 10px;
-    height: 88px;
-    background-color: blueviolet;
+    height: auto;
+    background-color: rgb(78, 19, 240);
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 
@@ -490,6 +511,7 @@ color: gray;
 #bpText{
     margin-left: 10px;
     margin-top: 10px;
+   
 }
 
 .gotYourBack{
@@ -505,30 +527,27 @@ color: gray;
     height: 300px;
     width: 605px;
     background-color: blue;
-    position: absolute;
-    margin-top: 2100px;
-    margin-left: 775px;
+   
+ 
+
     
 }
 
 #sell-yours-top{
+    margin-top: 40px;
     background-image: url('/assets/images/sell-yours-top.jpeg');
     height: 20px;
     width: 600px;
-    position: absolute;
-    margin-top: 1930px;
-    margin-left: 775px;
-    
 }
 
 #sell-yours-text{
+    padding-top: 20px;
     width: 603px;
     height: 200px;
 
     background-color: rgb(255, 239, 229);
-    position: absolute;
-    margin-top: 1950px;
-    margin-left: 775px;
+  
+ 
     
 }
 
@@ -543,7 +562,7 @@ color: gray;
     font-weight: 700;
 }
 
-.sellBody{
+.sell-body{
     font-size: 15px;
     line-height: 22px;
     margin-top: 20px;
@@ -563,12 +582,14 @@ color: gray;
 }
 
 #bigHollowHeart{
-    margin-top: -810px;
-    margin-left: 720px;
+
     position: absolute;
     background-image: url('/assets/images/emptyHeart.png');
     height: 55px;
     width: 55px;
+    top: 20px;
+    right: 20px;
+   
  
     display: flex;
     background-size: 55px;
@@ -581,14 +602,19 @@ color: gray;
 }
 
 #bigFilledHeart{
-    margin-top: -810px;
-    margin-left: 720px;
+   
     position: absolute;
     background-image: url('/assets/images/FILLEDHeart.png');
     height: 55px;
     width: 55px;
     background-size: 55px;
-    display: none;
+    display: flex;
+    top: 20px;
+    right: 20px;
+
+
+   
+  
    
 }
 
@@ -637,4 +663,17 @@ background-size: 60px;
 
 .avg-stars-img{
     width: 300px;
+}
+
+#sell-yours-whole-wrap{
+    width: 800px;
+    height: auto;
+    display: block;
+    flex-direction: column;
+  
+    
+}
+
+#seller-box{
+    width: 100%;
 }

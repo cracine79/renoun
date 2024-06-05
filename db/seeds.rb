@@ -12,9 +12,6 @@ require "open-uri"
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
 
-
-
-    
     User.destroy_all
     puts "even orders . . ."
     Order.destroy_all
@@ -598,6 +595,105 @@ jackson_king.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazon
       first_name: 'james',
       last_init: 'h'
     })
+
+
+    SellerReview.create!({
+      seller_id: 1,
+      reviewer_id: 2,
+      body: 'Thanks so much!  My mom says that I look really cool with this guitar.',
+      title: 'Adam Levine Acoustic Guitar',
+      stars: 5,
+      first_name: 'kevin',
+      last_init: 'h'
+    })
+
+
+    SellerReview.create!({
+      seller_id: 1,
+      reviewer_id: 3,
+      body: 'So I was looking for an effects pedal that would make my guitar sound like a crazy Marilyn Manson and homeboy hooked it up!  You know your stuff.  Thanks man, my bandmates were super impressed.',
+      title: 'Fuzzosaurus Drivemaster',
+      stars: 5,
+      first_name: 'volker',
+      last_init: 'j'
+    })
+
+
+    SellerReview.create!({
+      seller_id: 1,
+      reviewer_id: 3,
+      body: 'So I was looking for an effects pedal that would make my guitar sound like a crazy Marilyn Manson and homeboy hooked it up!  You know your stuff.  Thanks man, my bandmates were super impressed.',
+      title: 'Fuzzosaurus Drivemaster',
+      stars: 5,
+      first_name: 'volker',
+      last_init: 'j'
+    })
+
+
+
+    SellerReview.create!({
+      seller_id: 5,
+      reviewer_id: 10,
+      body: 'Purchased a Fender MIM strat and he sent me a bullet with a fender neck.  Didnt even fit in the neck pocket properly. Not cool',
+      title: 'Fuzzosaurus Drivemaster',
+      stars: 1,
+      first_name: 'stephen',
+      last_init: 'h'
+    })
+
+    SellerReview.create!({
+      seller_id: 5,
+      reviewer_id: 3,
+      body: 'Guitar was filthy.  Technically it is an Epiphone, but its more like a health hazard.',
+      title: 'Epiphone Special-2',
+      stars: 1,
+      first_name: 'jake',
+      last_init: 's'
+    })
+
+
+    SellerReview.create!({
+      seller_id: 5,
+      reviewer_id: 2,
+      body: 'There are seventeen reasons that you should not buy from this guy specifically.  The top three are as follows: He demands pictures of your dinner for a discount, which is weird, but you do it, but then he wants pictures of lunch.  Then breakfast.  Then . . . forget about it.  Just buy your fuzz pedal from someone else.',
+      title: 'Boss OD-1',
+      stars: 2,
+      first_name: 'cain',
+      last_init: 'a'
+    })
+
+
+    SellerReview.create!({
+      seller_id: 10,
+      reviewer_id: 2,
+      body: 'Best seller on Reverb in my opinion.  Fast delivery, great product.  Love it.',
+      title: 'Yamaha 42-key Synth',
+      stars: 5,
+      first_name: 'Jon',
+      last_init: 'F'
+    })
+
+
+    SellerReview.create!({
+      seller_id: 9,
+      reviewer_id: 3,
+      body: 'Overall satisified, but the pictures were definitely misleading.  Not nearly as shiny as in the pics',
+      title: 'Jackson Super Strat',
+      stars: 3,
+      first_name: 'Edward',
+      last_init: 'S'
+    })
+
+    SellerReview.create!({
+      seller_id: 9,
+      reviewer_id: 6,
+      body: 'Dude hooked me up with a sweet beat machine.  Love it!',
+      title: 'Ad-Rock Dropabeat Drum Machine',
+      stars: 3,
+      first_name: 'Kanye',
+      last_init: 'W'
+    })
+
 
 
 

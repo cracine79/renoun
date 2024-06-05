@@ -88,3 +88,7 @@
     display: flex;
 }
 
+#real-gen-car-wrap{
+    overflow-x: scroll;
+}
+

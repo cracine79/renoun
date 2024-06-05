@@ -10,7 +10,7 @@ function Outcomes(){
     const instruments = useSelector(state => Object.values(state.instruments))
     const searchResults = [];
     instruments.forEach((instrument)=>{
-        debugger;
+      
         if(instrument.itemName.toLowerCase().includes(searchWord.toLowerCase()) ||
             instrument.model.toLowerCase().includes(searchWord.toLowerCase()) ||
             instrument.brand.toLowerCase().includes(searchWord.toLowerCase()) ||
@@ -30,9 +30,9 @@ function Outcomes(){
 
    let i=0
    let allRows = []
-   debugger;
+
    while(i<rowRequirement){
-    debugger;
+  
     let row = searchResults.slice((i*6+0),(i*6+6))
     allRows.push(row)
     i+=1
@@ -46,7 +46,10 @@ function Outcomes(){
                 <h1 id='results-count'>{searchResults.length} Results <span id='searchTermWrap'>for "{`${searchWord}`}"</span></h1>
                 {allRows.map((row)=>{
                     return(
-                        <RealGenericCarousel row={row} rowId={row[0].id}/>
+                        <div id='favs-row-wrapper'>
+                              <RealGenericCarousel row={row} rowId={row[0].id}/>
+                        </div>
+                      
                     )
                 })}
             </div>

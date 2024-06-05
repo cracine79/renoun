@@ -1,5 +1,4 @@
 import './Favorite.css'
-import GenericCarousel from '../Carousel/GenericCarousel'
 import { useSelector } from 'react-redux'
 import RealGenericCarousel from '../Carousel/RealGenericCarousel'
 const Favorite = () => {
@@ -71,7 +70,10 @@ let rowRequirement
                   <h2 id='watch-list'>Watch List</h2>
                   {allRows.map((row)=>{
                     return(
-                        <RealGenericCarousel row={row} rowId={row[0].id}/>
+                        <div id='real-gen-car-wrap'>
+                             <RealGenericCarousel row={row} rowId={row[0].id}/>
+                         </div>   
+                       
                     )
                 })}
                   

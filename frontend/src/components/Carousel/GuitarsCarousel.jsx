@@ -374,33 +374,23 @@ useEffect(()=>{
 
 
 
-    <div id='outer-outer-wrapper'>
-    <div id='carousel-header-wrapper'>
-    <h2 className='carousel-header'>New and Featured</h2>
-
-    </div>
 
 
-        
 
+
+        <h2 className='carousel-header'>New and Featured</h2>
 
     <div className='instrumentWrapperWrapper'>
-  
-    
         <InstrumentOne />
         <InstrumentTwo />
         <InstrumentThree />
         <InstrumentFour />
         <InstrumentFive />
         <InstrumentSix />
-
-
-
     </div>
     
 
 
-    </div>
     
 
     </div>

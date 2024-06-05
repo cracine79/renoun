@@ -36,6 +36,10 @@
     margin-top: 30px; 
 }
 
+#favs-row-wrapper{
+    overflow-x: scroll;
+}
+
 #no-purchases-text{
     font-size: 24px;
     font-weight: 600;

@@ -134,7 +134,7 @@
     fill: red;
 }
 #carousel-header-wrapper{
-
+    position: absolute;
     width: 100%;
     display: flex;
     align-items: flex-start;
@@ -142,9 +142,8 @@
 }
 
 .carousel-header{
-margin-left: 10px;
-margin-bottom: -15px;
-
+margin-left: -1300px;
+margin-bottom: -20px;
 }
 
 
