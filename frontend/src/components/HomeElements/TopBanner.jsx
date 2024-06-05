@@ -10,7 +10,10 @@ export default function TopBanner (){
             <div id = 'banner-left'>
                 <h1 id='banner-top' className='banner-words'>Get the sound you love for less</h1>
                 <h3 id='banner-bottom' className='banner-words'>Save an average of 30% when you buy used music gear</h3>
-                <button id='banner-button'>Shop all</button>
+                <div id='banner-button'>
+                    <Link to='/shop_all'id='banner-button-text'>Shop all</Link>
+                </div>
+              
             </div>
             <div id='pics-wrap'>
                 <div>

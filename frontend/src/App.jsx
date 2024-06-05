@@ -20,6 +20,7 @@ import Outcomes from './components/Outcomes/Outcomes';
 import Guitars from './components/Instruments/Guitars';
 import Pedals from './components/Instruments/Pedals';
 import Keys from './components/Instruments/Keys';
+import ShopAll from './components/Instruments/ShopAll';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -118,8 +119,11 @@ const router = createBrowserRouter([
       {
         path: '/keys',
           element: <Keys />
-      }
-   
+      }, 
+        { 
+          path:'/shop_all',
+          element: <ShopAll />
+        }
     ]
   }
 ]);
