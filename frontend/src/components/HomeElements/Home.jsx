@@ -11,8 +11,12 @@ export default function Home(){
        <div id='home-wrapper'>
             <TopBanner />
    
+            <div id='explore-wrapper'>
+                    <h1 id='explore-words'>Explore Gear Just For You</h1>
 
-            <GuitarsCarousel />
+            </div>
+      
+            {/* <GuitarsCarousel /> */}
             <InfiniteCarousel instrumentsObj = {instruments} index={1} />
        
             

@@ -8,3 +8,18 @@
 #home-guitars-carousel-wrapper{
     margin-left: 10px; 
 }
+
+#explore-wrapper{
+    height: 100px;
+    width: 100%
+    
+}
+
+#explore-words{
+    font-size: 30px;
+    font-weight: 600;
+    position: absolute;
+    left: 150px;
+    margin-top: 60px;
+        
+}

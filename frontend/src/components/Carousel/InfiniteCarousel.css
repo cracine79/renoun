@@ -4,11 +4,14 @@
         flex-direction: row;
         width: 100%;
         overflow-x: scroll;
+        overflow-y: hide;
       
 }
 
 #if-wrap-wrap{
-    width: 90%;
+   width: 90%;
+   height: auto;
     overflow-x: scroll;
+    overflow-y: hide;
   
 }
