@@ -1,17 +1,22 @@
 #infinite-carousel-wrap{
-        height: auto;
+        height: 100%;
         display: flex;
         flex-direction: row;
         width: 100%;
         overflow-x: scroll;
-        overflow-y: hide;
+        overflow-y: hidden;
       
 }
 
 #if-wrap-wrap{
    width: 90%;
-   height: auto;
+   height: 100%;
     overflow-x: scroll;
-    overflow-y: hide;
+    overflow-y: hidden;
   
+}
+
+#thumb-inst-wrap-inf{
+    height: 100%;
+
 }

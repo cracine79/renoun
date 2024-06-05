@@ -82,7 +82,7 @@ function InfiniteCarousel({instrumentsObj, index}){
             return(
              
 
-                <div className='thumb-instrumentWrapper'>
+                <div className='thumb-instrumentWrapper' id='thumb-inst-wrap-inf'>
                     <div className='carousel-fav-button'>
                         <div src='/assets/images/emptyHeart.png' className = 'likeOn' id={`ioMdHeart${pos}_${index}`} onClick={(e)=> addFavorite(instruments[pos-1].id, pos, e)} ></div>  
                         <div src="/assets/images/filledHeart.png"   className = 'likeOff' id={`luHeart${pos}_${index}`} onClick={(e)=> unFavorite(instruments[pos-1].id, pos, e)} > </div>

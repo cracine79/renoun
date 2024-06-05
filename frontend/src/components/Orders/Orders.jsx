@@ -205,7 +205,7 @@ function Orders(){
         e.preventDefault;
      
         reviewWrapperWrapper.style.display = 'none'
-   
+        
         const seller_review={
             reviewerId: currentUser.id,
             sellerId: currentOrder.sellerId,
@@ -215,7 +215,7 @@ function Orders(){
             firstName: firstNameSubmit,
             lastInit: lastNameInitial
         }
-     
+        debugger;
        
 
       dispatch(createReview(seller_review))
@@ -313,13 +313,13 @@ function Orders(){
                                 <textarea id='review-body' type='textarea' placeholder='Enter your review here!' onChange={e=>setReviewBody(e.target.value)}/>
                                 <div id='names-wrapper'>
                                     <div className='name-wrapper'>
-                                        <input className='name-input' type='text'></input>
-                                        <label htmlFor='firstName' className='name-label-for-form' onChange={e=>setFirstNameSubmit(e.target.value)}>First Name</label>
+                                        <input className='name-input' type='text' onChange={e=>setFirstNameSubmit(e.target.value)}></input>
+                                        <label htmlFor='firstName' className='name-label-for-form' >First Name</label>
                                     </div>    
                                     <div className='name-wrapper'>
-                                        <input className='name-input' type='text'></input>
+                                        <input className='name-input' type='text'  onChange={e=>setLastNameInitial(e.target.value.slice(0,1))}></input>
 
-                                        <label htmlFor='lastName' className='name-label-for-form' onChange={e=>setLastNameInitial(e.target.value.slice(0,1))}>Last Name</label>
+                                        <label htmlFor='lastName' className='name-label-for-form'>Last Name</label>
                                     </div>
                                 </div>
 
@@ -361,13 +361,13 @@ function Orders(){
                                 <textarea id='review-body' type='textarea'  placeholder={currentReview.body} onChange={e=>setReviewBody(e.target.value)}/>
                                 <div id='names-wrapper'>
                                     <div className='name-wrapper'>
-                                        <input className='name-input' placeholder={currentUser.firstName.slice(0,1).toUpperCase()+currentUser.firstName.slice(1)} type='text'></input>
-                                        <label htmlFor='firstName' className='name-label-for-form' onChange={e=>setFirstNameSubmit(e.target.value)}>First Name</label>
+                                        <input className='name-input'  onChange={e=>setFirstNameSubmit(e.target.value)} placeholder={currentUser.firstName.slice(0,1).toUpperCase()+currentUser.firstName.slice(1)} type='text'></input>
+                                        <label htmlFor='firstName' className='name-label-for-form'>First Name</label>
                                     </div>    
                                     <div className='name-wrapper'>
-                                        <input className='name-input' placeholder={currentUser.lastName.slice(0,1).toUpperCase()+"."} type='text'></input>
+                                        <input className='name-input' onChange={e=>setLastNameInitial(e.target.value.slice(0,1))} placeholder={currentUser.lastName.slice(0,1).toUpperCase()+"."} type='text'></input>
 
-                                        <label htmlFor='lastName' className='name-label-for-form' onChange={e=>setLastNameInitial(e.target.value.slice(0,1))}>Last Name</label>
+                                        <label htmlFor='lastName' className='name-label-for-form' >Last Name</label>
                                     </div>
                                 </div>
 
