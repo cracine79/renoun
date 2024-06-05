@@ -53,7 +53,7 @@ const searchThis = (e)=>{
 }
 
 const handleChange = (e) => {
- 
+    debugger;
     const dropDown = document.getElementById('search-results-box')
     if(e.target.value===''){
         dropDown.style.display='none'
@@ -62,13 +62,18 @@ const handleChange = (e) => {
         keyWordsHolder=[]
  
        keyWords.forEach((word)=>{
+            if(word){
+                if (word.toLowerCase().slice(0, e.target.value.length) === (e.target.value.toLowerCase())){
+                    keyWordsHolder.push(word)
+                }   
 
-            if (word.toLowerCase().slice(0, e.target.value.length) === (e.target.value.toLowerCase())){
-                keyWordsHolder.push(word)
-            }      
+
+            }
+               
         })
     
     setSearchWord(e.target.value)
+    debugger;
     }
     setSearchPrompts(keyWordsHolder)
  

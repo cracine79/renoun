@@ -12,7 +12,7 @@ function Outcomes(){
     instruments.forEach((instrument)=>{
       
         if(instrument.itemName.toLowerCase().includes(searchWord.toLowerCase()) ||
-            instrument.model.toLowerCase().includes(searchWord.toLowerCase()) ||
+            (instrument.model) && instrument.model.toLowerCase().includes(searchWord.toLowerCase()) ||
             instrument.brand.toLowerCase().includes(searchWord.toLowerCase()) ||
             instrument.category.toLowerCase().includes(searchWord.toLowerCase())){
                 searchResults.push(instrument)
