@@ -1,0 +1,14 @@
+#infinite-carousel-wrap{
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        overflow-x: scroll;
+      
+}
+
+#if-wrap-wrap{
+    width: 90%;
+    overflow-x: scroll;
+  
+}

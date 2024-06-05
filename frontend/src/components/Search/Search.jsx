@@ -46,14 +46,14 @@ keyWordsHolder.sort()
 
 const searchThis = (e)=>{
     setSearchWord(e.target.innerHTML)
-    debugger;
+   
     
     dropDown.style.display='none'
     navigate('/outcomes', {state: {searchWord: e.target.innerHTML}})
 }
 
 const handleChange = (e) => {
-    debugger;
+   
     const dropDown = document.getElementById('search-results-box')
     if(e.target.value===''){
         dropDown.style.display='none'
@@ -73,7 +73,7 @@ const handleChange = (e) => {
         })
     
     setSearchWord(e.target.value)
-    debugger;
+
     }
     setSearchPrompts(keyWordsHolder)
  

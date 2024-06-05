@@ -121,6 +121,13 @@
     
 }
 
+#nav-bottom-line{
+    margin-top: 10px;
+    
+    width: 100%;
+    border-bottom: lightgray solid 1px;
+}
+
 
 #buttonWrapper{
     display: flex;
@@ -257,8 +264,8 @@
 
 #little-link-wrapper{
     margin-left: 120px;
-    margin-top: 5px; 
-    width: 25%;
+    margin-top: 10px; 
+    width: 400px;
     display: flex;
     justify-content: space-between;
 }

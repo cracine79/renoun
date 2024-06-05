@@ -123,8 +123,11 @@
     fill: red;
 }
 
-.likeOff:hover{
-	background-color: orangered;
+.likeOn:hover{
+	background-image: url('assets/images/heart-hover.png');
+    background-size: 42px;
+    height: 42px;
+    width: 42px;
 	cursor: pointer;
 	font-size: 21px;
 }

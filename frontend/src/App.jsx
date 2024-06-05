@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Navigation from './components/Navigation/Navigation';
 import * as sessionActions from './store/session';
-import * as cartActions from './store/cart';
 import FormWrapper from './components/HomeElements/FormWrapper';
 import Whoops from './components/Whoops/Whoops';
 import WhoopsTwo from './components/Whoops/WhoopsTwo';

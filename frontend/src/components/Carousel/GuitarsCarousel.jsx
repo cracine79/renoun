@@ -24,9 +24,7 @@ function GuitarsCarousel(){
     
     const currentUser = useSelector(state=>(state.session.user))
  
-    if (currentUser){
-        const userId = currentUser.id
-    }
+  
     const dispatch = useDispatch()
     const favoritesObj = useSelector(state=>(state.favorites))
     const favorites = Object.values(favoritesObj)

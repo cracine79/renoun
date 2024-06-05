@@ -8,7 +8,7 @@ export const receiveBuyerReviews = reviews =>({
 
 export const buyerSellerReviewsReducer = (state = {}, action) => {
     Object.freeze(state);
-    const nextState = {...state};
+
 
     switch(action.type){
         case RECEIVE_BUYER_SELLER_REVIEWS:

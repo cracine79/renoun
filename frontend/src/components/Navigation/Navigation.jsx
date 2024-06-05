@@ -187,11 +187,11 @@ function Navigation(){
             <div id='little-link-wrapper'>
                 <Link className='little-link-nav' to='/guitars'>Guitars</Link>
                 <Link className='little-link-nav' to='/pedals'>Pedals and Effects</Link>
-                <Link className='little-link-nav' to='/keys'>Keyboards and Synths</Link>
+                <Link className='little-link-nav' to='/keys'>Keyboards and Amplifiers</Link>
             </div>
                
                 
-       <hr></hr>
+       <div id='nav-bottom-line'></div>
        </>
     )
 

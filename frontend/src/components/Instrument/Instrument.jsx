@@ -38,7 +38,7 @@ const Instrument = () => {
     const loginSquare = document.getElementById('login-mnw');
     const storeNames = ['Outlet', 'Depot', 'Habedashery', 'Gallery', 'Center']
     let sellerStoreName
-    debugger;
+
   
     if(sellerFirstName.length<=4){
          sellerStoreName = capFirstName+"'s Gear Outlet"

@@ -7,7 +7,7 @@ import './RealGenericCarousel.css'
 
 
 function RealGenericCarousel({row, rowId}){
-    debugger;
+
     const currentUser = useSelector(state=>(state.session.user))
     if (currentUser){
         const userId = currentUser.id
@@ -42,7 +42,7 @@ function RealGenericCarousel({row, rowId}){
             const luHeartFour = document.getElementById(`realGenLuHeart4_${rowId}`)
             const luHeartFive = document.getElementById(`realGenLuHeart5_${rowId}`)
             const luHeartSix = document.getElementById(`realGenLuHeart6_${rowId}`)
-            debugger;
+           
         
             if(row[0]){
                 if (favoriteInstrumentIds.includes(row[0].id)){
@@ -116,7 +116,7 @@ function RealGenericCarousel({row, rowId}){
         const addFavorite = (instrumentId, buttonId, e) => {
             
             const emptyHeart = document.getElementById(`realGenLuHeart${buttonId}_${rowId}`)
-            debugger;
+           
                 e.target.style.display='none'
                 console.log(emptyHeart)
                 emptyHeart.style.display='flex'

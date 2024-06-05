@@ -2,7 +2,7 @@ import csrfFetch from "./csrf";
 
 
 const RECEIVE_ORDERS = 'orders/RECEIVE_ORDERS'
-const CREATE_ORDER = 'orders/CREATE_ORDER'
+
 const CLEAR_ORDERS = 'orders/CLEAR_ORDERS'
 
 import { updateInstrument } from "./instrument";
