@@ -1,4 +1,146 @@
 #footer{
-    height: 15px;
+    height: auto;
     background-color: black;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    min-width: 1500px;
+    max-width: 1850px;
 }
+
+.footer-quarter{
+    width: 30%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#location-currency{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 450px;
+    height: 50px;
+    border: solid 3px white;
+    color: white;
+    border-radius: 25px;
+}
+
+.button-quarter{
+    border-right: solid 3px white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    padding-right: 20px;
+}
+
+#usd-quarter{
+    border:none;
+}
+
+#world-quarter{
+    padding-left: 15px;
+    font-size: 30px;
+    color: white;
+}
+
+
+.footer-csr-icon-wrapper{
+    color: black;
+    margin-top: -30px;
+    position: absolute;
+    font-size: 22px;
+    margin-left: 22px;
+    
+ 
+}
+
+.footer-csr-circle{
+    width: 40px;
+    height: 40px;
+    background-color:white;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin-left: 15px;
+
+    
+}
+
+.footer-csr-wrapper{
+    display: flex;
+
+    width: 100%
+
+}
+
+.footer-csr-words-wrap{
+    margin-left: 20px;
+ 
+}
+
+.footer-csr-title{
+    font-weight: 900;
+    color: white;
+}
+
+.footer-csr-expl{
+    margin-top: 7px;
+    color: white;
+    font-weight: 300;
+}
+
+#footer-csr-tree{
+    font-size: 30px;
+    margin-top: -33px;
+    margin-left: 20px;
+}
+
+#github-logo{
+    width: 50px;
+    height: 50px;
+    background-image: url('/assets/images/gitHub.png');
+    background-size: 50px;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+#linkedIn-logo{
+    width: 50px;
+    height: 50px;
+    background-image: url('/assets/images/linkedIn.webp');
+    background-size: 50px;
+    background-repeat: no-repeat;
+}
+
+#right-quarter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+}
+
+#left-quarter{
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#logo-wrap{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#disclaimer{
+    margin-top: 15px;
+}
+

@@ -25,7 +25,7 @@ function SignupForm(){
     const eye = document.getElementById('signEye')
     const eyeOff = document.getElementById('signEyeOff')
     const passwordBox = document.getElementById('sign-signup')
-    const body = document.getElementById('home-wrapper')
+  
    
 
 

@@ -32,7 +32,9 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	font-family: inter system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	background-color: rgb(255, 255, 255)
+	background-color: rgb(255, 255, 255);
+	overflow-x: hidden;
+
 
 
 }
@@ -77,11 +79,11 @@ table {
 #footerWrap{	
 	position: flow;
 	width: 100%;
-	height: 100px;
+	height: auto;
 	background-color: black;
 	bottom: 0;
 	left: 0;
-	margin-top: 150px;
+	margin-top: 100px;
 }
 
 body{
@@ -89,13 +91,13 @@ body{
 }
 
 #main{
-	margin-bottom: 200px;
+	margin-bottom: 100px;
+
 }
 
-#root{
-	display: fle
+.social-link:hover{
+	cursor: pointer;
 }
-
 
 
 
