@@ -38,7 +38,7 @@ const Instrument = () => {
     const loginSquare = document.getElementById('login-mnw');
     const storeNames = ['Outlet', 'Depot', 'Habedashery', 'Gallery', 'Center']
     let sellerStoreName
-
+    window.scrollTo(0, 0);
   
     if(sellerFirstName.length<=4){
          sellerStoreName = capFirstName+"'s Gear Outlet"
@@ -163,7 +163,17 @@ const Instrument = () => {
     }
 
     const low = Math.floor(instrument.price/11);
-    
+    const openLoginForm=()=>{
+        modal.style.display='flex'
+        modal.className='login'
+        loginNav.className='active'
+        signupNav.className='inactive'
+        loginForm.style.display='flex'
+        signupForm.style.display='none'
+     
+        loginSquare.className='active-menu-nav-wrapper'
+        signupSquare.className='passive-menu-nav-wrapper'
+    }
     const handleAddToCart = async (e) => {
         e.preventDefault();
 
@@ -196,15 +206,7 @@ const Instrument = () => {
             }
         
         } else {
-            modal.style.display='flex'
-            modal.className='login'
-            loginNav.className='active'
-            signupNav.className='inactive'
-            loginForm.style.display='flex'
-            signupForm.style.display='none'
-         
-            loginSquare.className='active-menu-nav-wrapper'
-            signupSquare.className='passive-menu-nav-wrapper'
+          openLoginForm();
         }
 
 
@@ -234,11 +236,17 @@ const Instrument = () => {
     }
 
     const favoriteInstrument = ()=>{
-        const favorite = {
-            favoriterId: currentUser.id,
-            instrumentId: instrument.id
+        if(currentUser){
+            const favorite = {
+                favoriterId: currentUser.id,
+                instrumentId: instrument.id
+            }
+            dispatch(createFavorite(favorite))
+        } else {
+            openLoginForm();
         }
-        dispatch(createFavorite(favorite))
+
+    
     }
 
     const unfavoriteInstrument = ()=>{
