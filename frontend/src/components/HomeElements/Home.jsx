@@ -1,5 +1,4 @@
 import TopBanner from "./TopBanner"
-import GuitarsCarousel from "../Carousel/GuitarsCarousel"
 import './Home.css'
 import InfiniteCarousel from "../Carousel/InfinteCarousel"
 import { useSelector } from "react-redux"
@@ -13,6 +12,15 @@ export default function Home(){
     const handleClick =(e)=>{
         navigate('/Outcomes', {state:{searchWord: e.currentTarget.id}})
     }
+    debugger;
+    const array = [13, 21, 50, 11, 33, 39]
+    const deals = []
+    array.forEach((num)=>{
+        deals.push(instruments[num])
+    }
+    )
+    debugger;
+
     return(
        <div id='home-wrapper'>
             <TopBanner />
@@ -96,8 +104,46 @@ export default function Home(){
              
                 </div>
             </div>
+           
+
+            <div id='all-carousel-word-wrap-deals'>
+            <div id='explore-wrapper-deals'>
+                    <h1 id='explore-words-deals'>Blink and-you'll-miss-it deals. This gear won't last long</h1>
+
+            </div>
+      
+            {/* <GuitarsCarousel /> */}
+            <InfiniteCarousel instrumentsObj = {deals} index={2} />
+
+            </div>
+           {/* <div id='deals'>
+           <h1 className id='blink'>Blink and-you'll-miss-it deals. This gear won't last long</h1>
+      
+                <InfiniteCarousel instrumentsObj = {deals} index={2} />
 
        
+
+           </div> */}
+            <div id='rap-wrap-rap'>
+            <div id='sell-your-gear-big'> 
+                <div id='sell-big-left'>
+
+                </div>
+                <div id='sell-big-right'>
+                    <div id='sell-pic-right'></div>
+
+                </div>
+           </div>
+
+        
+            </div>
+  
+
+
+      
+       
+         
+    
             
        
         </div>
