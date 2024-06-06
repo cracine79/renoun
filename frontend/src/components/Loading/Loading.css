@@ -1,0 +1,23 @@
+#loading{
+    background-image: url('/assets/images/Reverbpurple.png');
+    width: 620px;
+    height: 620px;
+    background-size: 1200px;
+    background-repeat: no-repeat;
+    animation: spin 2s linear infinite;
+    background-size: 620px;
+    margin-top: 100px;
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+#loading-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

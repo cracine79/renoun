@@ -21,6 +21,7 @@ import Guitars from './components/Instruments/Guitars';
 import Pedals from './components/Instruments/Pedals';
 import Keys from './components/Instruments/Keys';
 import ShopAll from './components/Instruments/ShopAll';
+import Loading from './components/Loading/Loading';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -49,7 +50,7 @@ function Layout() {
     <div id='app-wrapper'>
      
       <Navigation />
-     
+      {!isLoaded || !instrumentsIsLoaded && <Loading/>}
       {isLoaded && instrumentsIsLoaded && <Outlet />}
        <FormWrapper />
         <div id='footerWrap'>
@@ -123,6 +124,10 @@ const router = createBrowserRouter([
         { 
           path:'/shop_all',
           element: <ShopAll />
+        }, 
+        {
+          path: '/loading',
+          element: <Loading />
         }
     ]
   }
