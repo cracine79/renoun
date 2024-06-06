@@ -102,6 +102,22 @@ require "open-uri"
 
     puts "Creating instruments..."
 
+    schecter_km = Instrument.create!({
+      item_name: 'Schecter Keith Merrow Signature KM-6 Mk-III Standard 2019 - Present - Toxic Smoke Green',
+      condition: 'Used - Excellent',
+      price: 9600,
+      description: 'Guitar shows no visible signs of wear. Plays and sounds great.',
+      category: 'Guitar',
+      brand: 'Schecter',
+      model: 'MK III',
+      shipping: 0,
+      seller_id: 2,
+      available: true
+    })
+
+
+    schecter_km.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/schecter_km.webp'), filename: 'schecter_km.webp')
+
     rickenbacker = Instrument.create!({
         item_name: 'Rickenbacker 1993 Plus 12-String Semi-Hollow Guitar, Fire Glo, 3 Toaster Pickups, Stereo, OHSC 2024',
         condition: 'Brand New',
@@ -118,6 +134,23 @@ require "open-uri"
 
       rickenbacker.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Rickenbacker.webp'), filename: 'Rickenbacker.webp')
 
+
+      tyrannochorus = Instrument.create!({
+        item_name: 'Used Fuzzrocious Tyrannochorus Modulated Fuzz Chorus Pedal',
+        condition: 'Used - Mint',
+        price: 149,
+        description: "A used Fuzzrocious Tyrannochorus in mint condition. It will ship as shown in the photos with the addition of the original box and any any all factory documentation. The pedal is fully tested and is in perfect working condition. Please let us know if you have any questions.  Dipping their toes into the world of modulation for a second time, Fuzzrocious brings guitarists the Tyrannochorus: a gnarly-sounding chorus pedal that's been supercharged with a gated fuzz circuit. Don't be fooled by its charmingly silly t-rex graphic - this pedal means business. From standard chorus effects to alien-like modulation and crushing fuzz tones, the Tyrannochorus lashes out with a unique sound that's fun, exciting, and perfect for players seeking a one-of-a-kind sonic experience.",
+        category: 'pedals_and_effects',
+        brand: 'Fuzzrocious',
+        model: 'Fuzzrocious Tyrannochorus',
+        shipping: 0,
+        seller_id: 8,
+        available: true
+      })
+
+
+      tyrannochorus.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/trex.webp'), filename: 'tyrannochorus.jpeg')
+
       fender_customshop_telecaster = Instrument.create!({
         item_name: 'Fender Custom 60 Telecaster NOS - 7.71 lbs',
         condition: 'Used - Good',
@@ -132,6 +165,39 @@ require "open-uri"
       })
 
         fender_customshop_telecaster.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Fender_custom_telecastser.webp'), filename: 'fender_custom_telecaster.webp')
+
+
+      rolandSaturn = Instrument.create!({
+        item_name: ' Roland SA-09 Saturn 09 44-Key Synthesizer - Black',
+        condition: 'Used - Excellent',
+        price: 300,
+        description: "The product will show few signs of wear, works properly.  Please feel free to contct if you have any questions.",
+        category: 'keyboards_and_synths',
+        brand: 'Roland',
+        model: 'SA-09 Saturn 44 Key Synthesizer',
+        shipping: 100,
+        seller_id: 3,
+        available: true
+      }) 
+
+      rolandSaturn.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/saturn.webp'), filename: 'rolandSaturn.jpeg')
+
+
+      jackson_king  = Instrument.create!({
+        item_name: 'Jackson Custom Shop King V 2023 - Platinum Pink Metallic',
+        condition: 'Used - Mint',
+        price: 3400,
+        description: 'Jackson Custom Shop King V in Platinum Pink Metallic. Obviously I play in an 80s band. This guitar is a custom shop from last year, flamed maple fingerboard, ebony shark fins, schaeller locking tuners, Dimarzio Evo neck pickup, Bill Lawerence L500XL bridge, all the Floyd upgrades, claw, block, springs, tremstop, sounds and plays amazing. Great guitar, just listing to finish one of my cars for summer. Listing this full on custom for the price of a new basic black USA model. Cant find any issues but listing as excellent in the event someone finds a scratch I cant see. Pictures in the direct sun to show you what I see, only played a few times. I can put the truss rod cover back on as well as back plate. Ill also remove the "custom" sweetwater sticker from the back. Sold as is no returns. Thank you for looking.',
+        category: 'Guitar',
+        brand: 'Jackson',
+        model: 'King V',
+        shipping: 100,
+        seller_id: 7,
+        available: true
+      })
+
+      jackson_king.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Jackson_King_V.jpeg'), filename: 'jackson_king_v.webp')
+
 
 
       gibsonSg = Instrument.create!({
@@ -332,20 +398,6 @@ gibson_les_paul  = Instrument.create!({
 gibson_les_paul.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Gibson_les_paul_studio.jpeg'), filename: 'gibson_les_paul.webp')
 
 
-jackson_king  = Instrument.create!({
-  item_name: 'Jackson Custom Shop King V 2023 - Platinum Pink Metallic',
-  condition: 'Used - Mint',
-  price: 3400,
-  description: 'Jackson Custom Shop King V in Platinum Pink Metallic. Obviously I play in an 80s band. This guitar is a custom shop from last year, flamed maple fingerboard, ebony shark fins, schaeller locking tuners, Dimarzio Evo neck pickup, Bill Lawerence L500XL bridge, all the Floyd upgrades, claw, block, springs, tremstop, sounds and plays amazing. Great guitar, just listing to finish one of my cars for summer. Listing this full on custom for the price of a new basic black USA model. Cant find any issues but listing as excellent in the event someone finds a scratch I cant see. Pictures in the direct sun to show you what I see, only played a few times. I can put the truss rod cover back on as well as back plate. Ill also remove the "custom" sweetwater sticker from the back. Sold as is no returns. Thank you for looking.',
-  category: 'Guitar',
-  brand: 'Jackson',
-  model: 'King V',
-  shipping: 100,
-  seller_id: 7,
-  available: true
-})
-
-jackson_king.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Jackson_King_V.jpeg'), filename: 'jackson_king_v.webp')
   
 
 gibson_gold_top = Instrument.create!({
@@ -362,7 +414,7 @@ gibson_gold_top = Instrument.create!({
 })
 
 
-gibson_gold_top.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Gibson_les_paul_studio.jpeg'), filename: 'Gibson_gold_top.jpeg')
+gibson_gold_top.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Gibson_gold_top.jpeg'), filename: 'Gibson_gold_top.jpeg')
 
 
 
@@ -380,7 +432,7 @@ gibson_explorer = Instrument.create!({
 })
 
 
-gibson_explorer.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Gibson_les_paul_studio.jpeg'), filename: 'gibson_explorer.jpeg')
+gibson_explorer.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/gibson_explorer.jpeg'), filename: 'gibson_explorer.jpeg')
 
 
 
@@ -398,7 +450,7 @@ gibson_trini_lopez = Instrument.create!({
 })
 
 
-gibson_trini_lopez.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Gibson_les_paul_studio.jpeg'), filename: 'Gibson_trini_lopez.webp')
+gibson_trini_lopez.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Gibson_Trini_lopez.webp'), filename: 'Gibson_trini_lopez.webp')
 
 
 schecter_apocalypse = Instrument.create!({
@@ -415,25 +467,11 @@ schecter_apocalypse = Instrument.create!({
 })
 
 
-schecter_apocalypse.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Gibson_les_paul_studio.jpeg'), filename: 'schecter_apocalypse.webp')
+schecter_apocalypse.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/schecter_apocalypse.webp'), filename: 'schecter_apocalypse.webp')
 
 
 
-schecter_km = Instrument.create!({
-  item_name: 'Schecter Keith Merrow Signature KM-6 Mk-III Standard 2019 - Present - Toxic Smoke Green',
-  condition: 'Used - Excellent',
-  price: 9600,
-  description: 'Guitar shows no visible signs of wear. Plays and sounds great.',
-  category: 'Guitar',
-  brand: 'Schecter',
-  model: 'MK III',
-  shipping: 0,
-  seller_id: 2,
-  available: true
-})
 
-
-schecter_km.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Gibson_les_paul_studio.jpeg'), filename: 'schecter_km.webp')
 
 
 
@@ -451,7 +489,7 @@ squier_51 = Instrument.create!({
 })
 
 
-squier_51.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Gibson_les_paul_studio.jpeg'), filename: 'squier_tele.webp')
+squier_51.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Squier_51.webp'), filename: 'squier_51.webp')
 
 
 epiphone_blue_les_paul = Instrument.create!({
@@ -468,7 +506,7 @@ epiphone_blue_les_paul = Instrument.create!({
 })
 
 
-epiphone_blue_les_paul.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'squier_tele.webp')
+epiphone_blue_les_paul.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/epiphone_blue_les_paul.webp'), filename: 'squier_tele.webp')
 
 
 
@@ -486,7 +524,7 @@ boss_sd1 = Instrument.create!({
 })
 
 
-boss_sd1.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'boss_od1.webp')
+boss_sd1.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/boss_od1.webp'), filename: 'boss_od1.webp')
 
 tonebender = Instrument.create!({
   item_name: 'Sola Sound Hybrid Tone Bender Fuzz',
@@ -501,24 +539,10 @@ tonebender = Instrument.create!({
 })
 
 
-tonebender.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'tonebender.webp')
+tonebender.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/tonebender.webp'), filename: 'tonebender.webp')
 
 
-tyrannochorus = Instrument.create!({
-  item_name: 'Used Fuzzrocious Tyrannochorus Modulated Fuzz Chorus Pedal',
-  condition: 'Used - Mint',
-  price: 149,
-  description: "A used Fuzzrocious Tyrannochorus in mint condition. It will ship as shown in the photos with the addition of the original box and any any all factory documentation. The pedal is fully tested and is in perfect working condition. Please let us know if you have any questions.  Dipping their toes into the world of modulation for a second time, Fuzzrocious brings guitarists the Tyrannochorus: a gnarly-sounding chorus pedal that's been supercharged with a gated fuzz circuit. Don't be fooled by its charmingly silly t-rex graphic - this pedal means business. From standard chorus effects to alien-like modulation and crushing fuzz tones, the Tyrannochorus lashes out with a unique sound that's fun, exciting, and perfect for players seeking a one-of-a-kind sonic experience.",
-  category: 'pedals_and_effects',
-  brand: 'Fuzzrocious',
-  model: 'Fuzzrocious Tyrannochorus',
-  shipping: 0,
-  seller_id: 8,
-  available: true
-})
 
-
-tyrannochorus.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'tyrannochorus.jpeg')
 
 colorsound = Instrument.create!({
   item_name: 'Colorsound Supa Tone Bender fuzz distortion Sola Sound BC184C guitar pedal not overdriver ZCD',
@@ -534,7 +558,7 @@ colorsound = Instrument.create!({
 })
 
 
-colorsound.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'colorsound.jpeg')
+colorsound.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/colorsound.jpeg'), filename: 'colorsound.jpeg')
 
 
 cooperFx = Instrument.create!({
@@ -551,7 +575,7 @@ cooperFx = Instrument.create!({
 })
 
 
-cooperFx.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'cooper.jpeg')
+cooperFx.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/cooperFx.jpeg'), filename: 'cooper.jpeg')
 
 bossHm2 = Instrument.create!({
   item_name: 'BossHM-2 Heavy Metal',
@@ -567,7 +591,7 @@ bossHm2 = Instrument.create!({
 })
 
 
-bossHm2.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'bossHm2.jpeg')
+bossHm2.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/bosshm2.webp'), filename: 'bossHm2.jpeg')
 
 
 bossDm2 = Instrument.create!({
@@ -584,7 +608,7 @@ bossDm2 = Instrument.create!({
 })
 
 
-bossDm2.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'bossDm2.jpeg')
+bossDm2.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/bossDm2.webp'), filename: 'bossDm2.jpeg')
 
 
 walrus = Instrument.create!({
@@ -601,7 +625,7 @@ walrus = Instrument.create!({
 })
 
 
-walrus.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'walrus.jpeg')
+walrus.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/walrus.jpeg'), filename: 'walrus.jpeg')
 
 
 pinkPanther = Instrument.create!({
@@ -635,7 +659,7 @@ octaveClang = Instrument.create!({
 })
 
 
-octaveClang.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'octaveClang.jpeg')
+octaveClang.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/octaveClang.webp'), filename: 'octaveClang.jpeg')
 
 
 dynamicWah = Instrument.create!({
@@ -652,7 +676,7 @@ dynamicWah = Instrument.create!({
 })
 
 
-dynamicWah.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'colorsound')
+dynamicWah.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/dynamicWah.webp'), filename: 'dynamicWah.webp')
 
 
 dodEnvelope = Instrument.create!({
@@ -669,7 +693,7 @@ dodEnvelope = Instrument.create!({
 })
 
 
-dodEnvelope.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'dodEnvelope')
+dodEnvelope.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/dodEnvelope.webp'), filename: 'dodEnvelope.webp')
 
 
 danArmstrong = Instrument.create!({
@@ -686,7 +710,7 @@ danArmstrong = Instrument.create!({
 })
 
 
-danArmstrong.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'danArmstrong.jpeg')
+danArmstrong.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/danArmstrong.webp'), filename: 'danArmstrong.jpeg')
 
 
 demonKing = Instrument.create!({
@@ -703,7 +727,7 @@ demonKing = Instrument.create!({
 })
 
 
-demonKing.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'demonKing.jpeg')
+demonKing.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Fuzzrocious.webp'), filename: 'demonKing.jpeg')
 
 
 
@@ -721,7 +745,7 @@ fiveState = Instrument.create!({
 })
 
 
-fiveState.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'fiveState.jpeg')
+fiveState.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/fiveState.jpeg'), filename: 'fiveState.jpeg')
 
 
 catlinBread = Instrument.create!({
@@ -738,7 +762,7 @@ catlinBread = Instrument.create!({
 })
 
 
-catlinBread.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'caitlinBread.jpeg')
+catlinBread.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Catalinbread.webp'), filename: 'caitlinBread.jpeg')
 
 
 bigMuff = Instrument.create!({
@@ -755,7 +779,7 @@ bigMuff = Instrument.create!({
 })
 
 
-bigMuff.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'bigMuff.jpeg')
+bigMuff.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/bigMuff.webp'), filename: 'bigMuff.jpeg')
 
 
 tweakFuzz = Instrument.create!({
@@ -772,7 +796,7 @@ tweakFuzz = Instrument.create!({
 })
 
 
-tweakFuzz.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/pinkPanther.jpeg'), filename: 'tweakFuzz.jpeg')
+tweakFuzz.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/tweakFuzz.webp'), filename: 'tweakFuzz.jpeg')
 
 
 yamahaMotif = Instrument.create!({
@@ -808,25 +832,6 @@ akaiProductionCenter.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-
 
 
 
-
-
-rolandSaturn = Instrument.create!({
-  item_name: ' Roland SA-09 Saturn 09 44-Key Synthesizer - Black',
-  condition: 'Used - Excellent',
-  price: 300,
-  description: "The product will show few signs of wear, works properly.  Please feel free to contct if you have any questions.",
-  category: 'keyboards_and_synths',
-  brand: 'Roland',
-  model: 'SA-09 Saturn 44 Key Synthesizer',
-  shipping: 100,
-  seller_id: 3,
-  available: true
-})
-
-
-rolandSaturn.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/yamaha.webp'), filename: 'rolandSaturn.jpeg')
-
-
 bossDr3 = Instrument.create!({
   item_name: 'Boss DR-3 Dr. Rhythm - Silver',
   condition: 'Used - Excellent',
@@ -841,7 +846,7 @@ bossDr3 = Instrument.create!({
 })
 
 
-rolandSaturn.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/yamaha.webp'), filename: 'bossDr3.jpeg')
+bossDr3.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/bossDr3.jpeg'), filename: 'bossDr3.jpeg')
 
 
 korg = Instrument.create!({
@@ -857,7 +862,7 @@ korg = Instrument.create!({
 })
 
 
-korg.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/yamaha.webp'), filename: 'korg.jpeg')
+korg.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/korg.webp'), filename: 'korg.jpeg')
 
 
 makeNoise = Instrument.create!({
@@ -874,7 +879,7 @@ makeNoise = Instrument.create!({
 })
 
 
-makeNoise.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/yamaha.webp'), filename: 'makenoise.jpeg')
+makeNoise.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/makeNoise.webp'), filename: 'makenoise.jpeg')
 
 
 casio = Instrument.create!({
@@ -891,7 +896,7 @@ casio = Instrument.create!({
 })
 
 
-casio.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/yamaha.webp'), filename: 'casio.jpeg')
+casio.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/casio.webp'), filename: 'casio.jpeg')
 
 
 native = Instrument.create!({
@@ -908,7 +913,7 @@ native = Instrument.create!({
 })
 
 
-native.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/yamaha.webp'), filename: 'native.jpeg')
+native.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/native.webp'), filename: 'native.jpeg')
 
 
 novation = Instrument.create!({
@@ -925,7 +930,7 @@ novation = Instrument.create!({
 })
 
 
-novation.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/yamaha.webp'), filename: 'novaiton.jpeg')
+novation.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/novation.webp'), filename: 'novaiton.jpeg')
 
 
 alesis = Instrument.create!({
@@ -942,7 +947,7 @@ alesis = Instrument.create!({
 })
 
 
-alesis.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/yamaha.webp'), filename: 'alesis.jpeg')
+alesis.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/alesis.webp'), filename: 'alesis.jpeg')
 
 polyend = Instrument.create!({
   item_name: 'Polyend Play+ Sample-Based MIDI Groovebox 2024 - Present - Black',
@@ -958,7 +963,7 @@ polyend = Instrument.create!({
 })
 
 
-polyend.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/yamaha.webp'), filename: 'polyend.jpeg')
+polyend.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/polyend.webp'), filename: 'polyend.jpeg')
 
 
 casioRap = Instrument.create!({
@@ -975,7 +980,7 @@ casioRap = Instrument.create!({
 })
 
 
-casioRap.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/yamaha.webp'), filename: 'casioRap.jpeg')
+casioRap.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/casioRap.jpeg'), filename: 'casioRap.jpeg')
 
 
 
