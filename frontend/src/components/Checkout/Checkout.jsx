@@ -107,7 +107,7 @@ function Checkout (){
                     <label id='checkout-card'>Card</label>
 
                    </div>
-                   <img id='cards' src='/assets/images/footer-accolade-payment-cards.avif' />
+                   <div id='cards' src='/assets/images/footer-accolade-payment-cards.avif'></div>
         
                         
                 </div>

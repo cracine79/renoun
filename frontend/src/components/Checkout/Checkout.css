@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 70px;
-    justify-content: space-around;
+    justify-content: space-between;
   
 
 
@@ -14,15 +14,25 @@
 
 
 #checkout-left{
-    width: 900px;
+    width: 43%;
     height: 30px;
 
     margin-left: 100px;
+    min-width: 630px;
 }
+#cards{
+    margin-right: 15px;
 
+    width: 220px;
+    height: 30px;
+    background-image: url('/assets/images/footer-accolade-payment-cards.avif');
+    background-size: 200px;
+    background-repeat: no-repeat;
+}
 #checkout-right{
-    width: 900px;
+    width: 43%;
     height: auto;
+    min-width: 630px;
 
     margin-right: 100px;
     display: flex;
@@ -190,7 +200,7 @@
 }
 
 #place-order{
-    width: 900px;
+    width: 95%;
     height: 50px;
     background-color: black;
     margin-top: 45px;
@@ -295,6 +305,8 @@
     border-top-left-radius: 15px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    
 }
 
 
@@ -329,7 +341,7 @@ input[type="radio"] {
 #cards{
     height: 30px;
     margin-top: 30px;
-    margin-left: 520px;
+    
 }
 
 #credit-card-form{
