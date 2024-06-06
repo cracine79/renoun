@@ -25,10 +25,6 @@ function RealGenericCarousel({row, rowId}){
     })
 
         useEffect(()=>{
-
-          
-           
-
             const ioMdHeartOne = document.getElementById(`realGenIoMdHeart1_${rowId}`)
             const ioMdHeartTwo = document.getElementById(`realGenIoMdHeart2_${rowId}`)
             const ioMdHeartThree = document.getElementById(`realGenIoMdHeart3_${rowId}`)

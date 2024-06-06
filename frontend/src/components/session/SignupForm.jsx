@@ -25,7 +25,7 @@ function SignupForm(){
     const eye = document.getElementById('signEye')
     const eyeOff = document.getElementById('signEyeOff')
     const passwordBox = document.getElementById('sign-signup')
-
+    const body = document.getElementById('home-wrapper')
    
 
 
@@ -117,30 +117,6 @@ function SignupForm(){
     }
 };
 
-    //     return dispatch(signup(user))
-    //     .catch(async (res) => {
-    //         let data;
-    //         try {
-    //           // .clone() essentially allows you to read the response body twice
-    //           data = await res.clone().json();
-    //         } catch {
-    //           data = await res.text(); // Will hit this case if the server is down
-    //         }
-
-       
-         
-    //         if (data?.errors) setErrors(data.errors);
-    //         else if (data) setErrors([data]);
-    //         else setErrors([res.statusText]);
-        
-    //          navigate('/whoopsTwo', {state: {errors: errors}});
-    //       });
-    //     }
-
-    //     setErrors(['Emails must match'])
-    //      navigate('/whoopsTwo', {state: {errors: errors}});
-
-    // }
 
 
     const passwordOn = ()=>{
@@ -159,7 +135,7 @@ function SignupForm(){
             <form className="signup-form" onSubmit={handleSubmit}>
                 <p className='form-header'>Create a Renoun Account</p>
                 <div id='form-body'>
-                    <div className='name-wrapper'>
+                    <div className='name-wrapper-signin'>
                        <div className='halfname-wrapper'>
                             <label htmlFor="firstName" className="form-input-title">First Name</label>
                             <input className='name-input-box' id="firstName" value={firstName} onChange={e => setFirstName(e.target.value)} />

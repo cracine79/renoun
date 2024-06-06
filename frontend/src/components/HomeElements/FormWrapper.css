@@ -1,6 +1,6 @@
 #login-form-wrap{
 
-    margin-top: 120px;
+top: 150px;
     width: 540px;
     height: 50px;
 
@@ -11,8 +11,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    
 
 }
+
+#login-form-wrapper{
+    position: fixed;
+    top: 200px;
+}
+
 
 #wrapper-wrapper{
 
@@ -24,10 +32,11 @@
     left: 0;
     right: 0;
     width: 100vw;
+
     padding: 20px;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.8);
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     position: absolute;
 
@@ -96,4 +105,9 @@
 .passive-menu-nav-wrapper:hover >#log-in-nav{
     cursor: pointer;
     color: orange;
+}
+
+#signup-form-wrapper{
+    position:fixed;
+    top: 200px;
 }

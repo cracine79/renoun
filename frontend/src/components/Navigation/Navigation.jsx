@@ -20,7 +20,7 @@ import { clearFavorites } from "../../store/favorite";
 function Navigation(){
     
     const currentUser = useSelector(state=>state.session.user)
-
+    const body = document.getElementById('home-wrapper')
     const dispatch = useDispatch();
     const modal= document.getElementById('wrapper-wrapper');
     const loginNav = document.getElementById('log-in-nav');
@@ -73,6 +73,9 @@ function Navigation(){
      
         loginSquare.className='active-menu-nav-wrapper'
         signupSquare.className='passive-menu-nav-wrapper'
+    
+        
+
     }
 
     const handleSignup =() =>{
