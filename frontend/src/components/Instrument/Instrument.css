@@ -227,6 +227,9 @@
     width: 17px;
     background-image: url('/assets/images/sparkles.svg');
     background-size: 17px;
+    margin-right: 3px;
+
+  
 }
 
 #recently-listed{
