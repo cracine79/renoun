@@ -12,7 +12,7 @@
     background-color: white;
 
 
-    height: 300px;
+    height: 350px;
     width: 540px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -55,20 +55,24 @@
     padding-left: 5px;
 }
 
-.form-button{
+#form-login-button{
     background-color: black;
     color: white;
     border-radius: 15px; 
     height: 35px;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 700;
     margin-top: 20px;
     
 }
 
-.form-button:hover{
+
+
+#form-login-button:hover{
     background-color: darkgray;
     border: darkgray;
+
+
 }
 
 #emailWarning{
@@ -93,4 +97,15 @@
 
 #eyeOff{
     display: none;
+}
+
+#sample-login-button:hover{
+    background-color: darkgray;
+    border: darkgray;
+    cursor: pointer;
+
+}
+
+#sample-login-button{
+    margin-top: -10px;
 }

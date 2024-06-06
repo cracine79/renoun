@@ -102,6 +102,38 @@ require "open-uri"
 
     puts "Creating instruments..."
 
+    rickenbacker = Instrument.create!({
+        item_name: 'Rickenbacker 1993 Plus 12-String Semi-Hollow Guitar, Fire Glo, 3 Toaster Pickups, Stereo, OHSC 2024',
+        condition: 'Brand New',
+        price: 3799,
+        description: 'Rickenbacker 1993 Plus 12-String Semi-Hollow Electric Guitar, Fire Glo, 3 Vintage-Style Toaster Pickups, Double Binding, Stereo, w/Hardshell Case.  At the request of The Whos Pete Townshend, The 1993 Plus takes Rickenbackers iconic 330 body style and adds an "F"-Hole, Double Body Binding, a Wide Neck, Pearloid Triangle Inlays, 3 Vintage-Style Toaster Pickups, Ric-O-Sound Stereo outs, and a vintage-style trapeze tailpiece. Pete Townshend asked Rickenbacker to upgrade his cherished Model 1993 guitar. The result is the 1993Plus, enhanced with an 1/8-inch wider neck, rosewood fingerboard, and more stable 2-piece neck design with a round heel for increased comfort and upper-fret access. This classic semi-hollowbody 12-string electric guitar is fitted with three vintage reissue Toaster Top single-coil pickups, stereo output, a trapeze tailpiece, vintage knobs, and a proper F-hole. Double body binding and pearlescent inlays add a touch of refinement. X-bracing in the body helps to bring out the rich, full jangle our favorite Rickenbacker 12-strings are famous for.',
+        category: 'Guitar',
+        brand: 'Rickenbaker',
+        model: '1993 Plus',
+        shipping: 0,
+        seller_id: 6,
+        available: true
+
+      })
+
+      rickenbacker.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Rickenbacker.webp'), filename: 'Rickenbacker.webp')
+
+      fender_customshop_telecaster = Instrument.create!({
+        item_name: 'Fender Custom 60 Telecaster NOS - 7.71 lbs',
+        condition: 'Used - Good',
+        price: 2871,
+        description: 'Body:  Small scratch bass side of pickguard at neck. Small finish crack on lower horn - front. A couple of tiny dings and finish blemishes throughout.  Pickup and saddles are non-original. Original saddles are included in case.Disclaimer: You are not buying a setup, you are buying an instrument. This means that the setups we perform on instruments for sale are intended to inspect and ensure proper function of various aspects of the instruments. Customer-based setups are personal and no two players will require the same setups measurements.',
+        category: 'Guitar',
+        brand: 'Fender',
+        model: 'Telecaster',
+        shipping: 129,
+        seller_id: 7,
+        available: true
+      })
+
+        fender_customshop_telecaster.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Fender_custom_telecastser.webp'), filename: 'fender_custom_telecaster.webp')
+
+
       gibsonSg = Instrument.create!({
           item_name: 'Gibson SG Standard',
           condition: 'Used - Good',
@@ -214,21 +246,7 @@ prsCe = Instrument.create!({
 prsCe.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/PRS.jpeg'), filename: 'PRS.jpeg')
 
 
-rickenbacker = Instrument.create!({
-  item_name: 'Rickenbacker 1993 Plus 12-String Semi-Hollow Guitar, Fire Glo, 3 Toaster Pickups, Stereo, OHSC 2024',
-  condition: 'Brand New',
-  price: 3799,
-  description: 'Rickenbacker 1993 Plus 12-String Semi-Hollow Electric Guitar, Fire Glo, 3 Vintage-Style Toaster Pickups, Double Binding, Stereo, w/Hardshell Case.  At the request of The Whos Pete Townshend, The 1993 Plus takes Rickenbackers iconic 330 body style and adds an "F"-Hole, Double Body Binding, a Wide Neck, Pearloid Triangle Inlays, 3 Vintage-Style Toaster Pickups, Ric-O-Sound Stereo outs, and a vintage-style trapeze tailpiece. Pete Townshend asked Rickenbacker to upgrade his cherished Model 1993 guitar. The result is the 1993Plus, enhanced with an 1/8-inch wider neck, rosewood fingerboard, and more stable 2-piece neck design with a round heel for increased comfort and upper-fret access. This classic semi-hollowbody 12-string electric guitar is fitted with three vintage reissue Toaster Top single-coil pickups, stereo output, a trapeze tailpiece, vintage knobs, and a proper F-hole. Double body binding and pearlescent inlays add a touch of refinement. X-bracing in the body helps to bring out the rich, full jangle our favorite Rickenbacker 12-strings are famous for.',
-  category: 'Guitar',
-  brand: 'Rickenbaker',
-  model: '1993 Plus',
-  shipping: 0,
-  seller_id: 6,
-  available: true
 
-})
-
-rickenbacker.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Rickenbacker.webp'), filename: 'Rickenbacker.webp')
 
   
   
@@ -248,20 +266,6 @@ fender_jazzmaster = Instrument.create!({
 fender_jazzmaster.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Fender+American+Pro+Jazzsmaster.webp'), filename: 'fender_jazzmaster.webp')
 
 
-fender_customshop_telecaster = Instrument.create!({
-  item_name: 'Fender Custom 60 Telecaster NOS - 7.71 lbs',
-  condition: 'Used - Good',
-  price: 2871,
-  description: 'Body:  Small scratch bass side of pickguard at neck. Small finish crack on lower horn - front. A couple of tiny dings and finish blemishes throughout.  Pickup and saddles are non-original. Original saddles are included in case.Disclaimer: You are not buying a setup, you are buying an instrument. This means that the setups we perform on instruments for sale are intended to inspect and ensure proper function of various aspects of the instruments. Customer-based setups are personal and no two players will require the same setups measurements.',
-  category: 'Guitar',
-  brand: 'Fender',
-  model: 'Telecaster',
-  shipping: 129,
-  seller_id: 7,
-  available: true
-})
-
-fender_customshop_telecaster.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.com/Fender_custom_telecastser.webp'), filename: 'fender_custom_telecaster.webp')
 
 epiphone_sg  = Instrument.create!({
   item_name: 'Epiphone SG Pro Electric Guitar Plays and Sounds Great!',

@@ -175,7 +175,7 @@ function SignupForm(){
                         </div>
                         </div>
 
-                    <input className='form-button' type="submit" value="Sign Up" />
+                    <input id='signup-button' className='form-button' type="submit" value="Sign Up" />
                 </div>
             </form>
 

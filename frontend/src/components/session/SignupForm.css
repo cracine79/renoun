@@ -43,6 +43,7 @@
     width: 95%;
 }
 
+
 .form-inputs{
     display: flex;
     flex-direction: column;
@@ -66,13 +67,31 @@
     font-size: 12px;
     font-weight: 700;
     margin-top: 20px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    font-size: 15px;
     
 }
 
-.form-button:hover{
+
+#signup-button{
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 25px; 
+    height: 35px;
+
+}
+
+#signup-button:hover{
     background-color: darkgray;
     border: darkgray;
+    cursor: pointer;
+
 }
+
 
 .name-wrapper{
     display: flex;

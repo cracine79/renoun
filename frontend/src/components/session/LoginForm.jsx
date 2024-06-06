@@ -72,6 +72,15 @@ function LoginForm(){
           });        
     }
 
+    const loginDave=()=>{
+        modal.style.display='none';
+        const user = {
+            email: 'dave@foo.com',
+            password: 'password'
+        }
+        dispatch(login(user))
+    }
+
     const passwordOn = ()=>{
         eye.style.display='none'
         eyeOff.style.display='flex'
@@ -121,7 +130,9 @@ function LoginForm(){
                             </div>
                         </div>
                     </div>
-                    <input className='form-button' type="submit" value="Log In" />
+                    <input id='form-login-button' className='form-button' type="submit" value="Log In" />
+
+                    <div id='sample-login-button' className='form-button' onClick={loginDave}>Log in as Sample User</div>
                 </div>
             </form>
 
