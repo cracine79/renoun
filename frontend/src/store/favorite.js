@@ -52,8 +52,9 @@ export const deleteFavorite = favoriteId => async dispatch => {
             'Accept': 'application/json'
         }
     })
-
+    debugger;
     const data = await res.json();
+    debugger;
 
     dispatch(removeFavorite(data))
 }
@@ -72,6 +73,7 @@ export const favoritesReducer = (state = {}, action) => {
             return  {...nextState};
         case REMOVE_FAVORITE:
             delete nextState[action.favoriteId];
+            return nextState;
         case CLEAR_FAVORITES:
             return {}
         default:

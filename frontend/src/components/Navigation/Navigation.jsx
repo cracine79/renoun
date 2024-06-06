@@ -46,7 +46,7 @@ function Navigation(){
         }}}
     },[cart.length])
 
-    const handleClick = ((e) => {
+    const handleLogout = ((e) => {
         dispatch(clearCart())
         dispatch(clearOrders())
         dispatch(clearFavorites())
@@ -125,7 +125,7 @@ function Navigation(){
                         <p className='dropdown-header'>MY ACCOUNT</p>
                         <br></br>
                         <Link to='/Orders' id='link-to-orders' className='dropdown-link'>Orders</Link>
-                        <Link to='/' className='dropdown-link' onClick={handleClick}>Logout</Link>
+                        <Link to='/' className='dropdown-link' onClick={handleLogout}>Logout</Link>
 
                     </div>
                 </div>
