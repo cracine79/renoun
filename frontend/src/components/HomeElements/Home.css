@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+  
 }
 
 
@@ -34,6 +35,7 @@
     position: absolute;
     left: 150px;
     margin-top: 60px;
+    min-width: 850px;
         
 }
 
@@ -62,12 +64,32 @@
     height: auto;
     display: flex;
     direction: row;
+    max-width: 1650px;
  
-    margin-top: 100px;
-    margin-left: 100px;
+    margin-top: 70px;
+    margin-left: 130px;
     justify-content: space-between;
     position: relative;
+    margin-bottom: 20px;
 
+}
+
+#sell-big-word-wrapper{
+    width: 500px;
+    height: 100%;
+    padding-top:110px; 
+    padding-left: 40px;
+}
+
+.sell-big-words{
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 25px;
+}
+
+#sell-big-header{
+    font-size: 38px;
+    font-weight: 600;
 }
 
 .sell-box{
@@ -120,7 +142,8 @@
 }
 
 #anyone-can-sell{
-    margin-top: 50px;
+    margin-left: -130px;
+    margin-top: -40px;
 }
 
 #trend-search-box-outer-wrap{
@@ -137,10 +160,12 @@
 
 #trending-searches-wrap{
     
-margin-left: 180px;
+    margin-left: 135px;
     height: auto;
     margin-bottom: 100px;
     width: 95%;
+    max-width: 1725px;  
+    position: relative;
 
 }
 
@@ -148,8 +173,8 @@ margin-left: 180px;
     width: 90%;
 
     height: 400px;
-    margin-top: 100px;
-    border: black solid 1px;
+    margin-top: 70px;
+
     border-radius: 25px;
     display: flex;
     max-width: 1650px;
@@ -245,7 +270,7 @@ margin-left: 180px;
 
 
 #sell-big-left{
-    width: 750px;
+    width: 800px;
     height: 100%;
     background-color: rgb(245, 245, 245);
     border-top-left-radius: 25px;
@@ -260,7 +285,7 @@ margin-left: 180px;
     width: 100%;
 
     background-repeat: no-repeat;
-    background-color: blue;    
+ 
   
     object-fit: fill;
 }
@@ -269,9 +294,26 @@ margin-left: 180px;
     background-image: url('/assets/images/Reverb-Sell-Callout_um07t0.jpg');
     width: 100%;
     height: 400px;
+    background-position-y:-160px;
+    background-size: 1150px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }   
 
 
 #rap-wrap-rap{
     width: 100%;
+}
+
+#ts-wrap-wrap{
+    width: 100%;
+}
+
+#sb-wrap-wrap{
+    width: 100%;
+}
+
+#ts-words{
+    margin-top: -40px;
+    margin-left: -130px;
 }
