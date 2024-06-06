@@ -139,14 +139,17 @@ useEffect(()=>{
         //     e.target.style.display='none'
         //     emptyHeart.style.display='flex'
 
-           
- 
+           if(currentUser){
             const favorite = {
                 instrumentId: guitarId,
                 favoriterId: currentUser.id
             }
         
             dispatch(createFavorite(favorite))
+           }
+
+ 
+          
     
         }
 

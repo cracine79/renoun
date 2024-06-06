@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { clearOrders } from "../../store/order";
 import { Navigate } from "react-router-dom";
 import Search from "../Search/Search";
+import { clearFavorites } from "../../store/favorite";
 
 
 
@@ -48,6 +49,7 @@ function Navigation(){
     const handleClick = ((e) => {
         dispatch(clearCart())
         dispatch(clearOrders())
+        dispatch(clearFavorites())
         countSquare.style.display='none'
         dispatch(sessionActions.logout())
 

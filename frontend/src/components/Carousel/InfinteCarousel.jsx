@@ -16,17 +16,17 @@ function InfiniteCarousel({instrumentsObj, index}){
     const favoriteInstrumentIds = favorites.map((favorite)=>{
         return favorite.instrumentId
     })
+    const modal= document.getElementById('wrapper-wrapper');
+    const loginNav = document.getElementById('log-in-nav');
+    const signupNav = document.getElementById('sign-up-nav')
+    const loginForm = document.getElementById('login-form-wrapper')
+    const signupForm = document.getElementById('signup-form-wrapper')
+    const signupSquare = document.getElementById('signup-mnw')
+    const loginSquare = document.getElementById('login-mnw')
    
    
     const availableInstruments = instruments.filter((instrument)=>instrument.available===true)
-    // function shuffle(array) {
-    //     for (let i = array.length - 1; i > 0; i--) {
-    //       const j = Math.floor(Math.random() * (i + 1));
-    //       [array[i], array[j]] = [array[j], array[i]];
-    //     }
-    //     return array;
-    //   }
-    // const availableInstruments = shuffle(availableInstrumentsUnshuff)
+  
 
     useEffect(()=>{
         const availableInstruments = instruments.filter((instrument)=>instrument.available===true)
@@ -56,27 +56,55 @@ function InfiniteCarousel({instrumentsObj, index}){
     }, [favoritesObj])
 
     const addFavorite = (instrumentId, buttonId, e) =>{
-        const favorite = {
-            instrumentId,
-            favoriterId: currentUser.id
+        if(currentUser){
+            const favorite = {
+                instrumentId,
+                favoriterId: currentUser.id
+            }
+            dispatch(createFavorite(favorite))
+        } else {
+            modal.style.display='flex'
+            modal.className='login'
+            loginNav.className='active'
+            signupNav.className='inactive'
+            loginForm.style.display='flex'
+            signupForm.style.display='none'
+         
+            loginSquare.className='active-menu-nav-wrapper'
+            signupSquare.className='passive-menu-nav-wrapper'
+          
         }
-    
-        dispatch(createFavorite(favorite))
+   
     }
 
     const unFavorite = (instrumentId, buttonId, e) =>{
         let favoriteId
         debugger;
+         if(currentUser){
+            favorites.forEach((favorite)=>{
+
+                if(favorite.instrumentId === instrumentId){
+                    favoriteId = favorite.id
+                }
+    
          
-        favorites.forEach((favorite)=>{
+            })
+            dispatch (deleteFavorite(favoriteId))
 
-            if(favorite.instrumentId === instrumentId){
-                favoriteId = favorite.id
-            }
 
-     
-        })
-        dispatch (deleteFavorite(favoriteId))
+         }
+         else {
+            modal.style.display='flex'
+            modal.className='login'
+            loginNav.className='active'
+            signupNav.className='inactive'
+            loginForm.style.display='flex'
+            signupForm.style.display='none'
+         
+            loginSquare.className='active-menu-nav-wrapper'
+            signupSquare.className='passive-menu-nav-wrapper'
+          
+        }
 
     }
 
