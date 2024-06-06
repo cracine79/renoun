@@ -124,10 +124,11 @@
 }
 
 .likeOn:hover{
-	background-image: url('assets/images/heart-hover.png');
-    background-size: 42px;
-    height: 42px;
-    width: 42px;
+    /* background-color: orange; */
+	/* background-image: url('assets/images/heart-hover.png'); */
+    background-size: 43px;
+    height: 43px;
+    width: 43px;
 	cursor: pointer;
 	font-size: 21px;
 }
