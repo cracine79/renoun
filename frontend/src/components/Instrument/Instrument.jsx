@@ -374,7 +374,7 @@ const Instrument = () => {
 
                     <p>{instrument.created_at}</p>
                     <div id='recent-wrapper'>
-                        <div  id='sparkle'></div>
+                        <div  id='sparkle-sparkle'></div>
                         <span id='recently-listed'>  Recently Listed
                         <div id='listed-explanation'>{listedExpl}</div>
                         </span>
