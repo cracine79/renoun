@@ -374,7 +374,7 @@ const Instrument = () => {
 
                     <p>{instrument.created_at}</p>
                     <div id='recent-wrapper'>
-                        <img src='/assets/images/sparkles.svg'  id='sparkle'/>
+                        <div src='/assets/images/sparkles.svg'  id='sparkle'></div>
                         <span id='recently-listed'>  Recently Listed
                         <div id='listed-explanation'>{listedExpl}</div>
                         </span>

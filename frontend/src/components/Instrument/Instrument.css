@@ -225,6 +225,8 @@
 #sparkle{
     height: 17px;
     width: 17px;
+    background-image: url('/assets/images/sparkles.svg');
+    background-size: 17px;
 }
 
 #recently-listed{
@@ -261,6 +263,8 @@
 #recent-wrapper:hover{
     cursor:default;
 }
+
+
 
 #recent-wrapper:hover #listed-explanation{
     display: flex;
