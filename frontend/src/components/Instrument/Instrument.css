@@ -223,11 +223,12 @@
 }
 
 #sparkle{
-    height: 17px;
-    width: 17px;
-    background-image: url('/assets/images/sparkles.svg');
-    background-size: 17px;
+    height: 20px;
+    width: 20px;
+    background-image: url('/assets/images/sparkle_1.png');
+    background-size: 20px;
     margin-right: 3px;
+    background-repeat: no-repeat;
 
   
 }
