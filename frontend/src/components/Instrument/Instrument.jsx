@@ -295,8 +295,8 @@ const Instrument = () => {
                         
                     </div>
                     <div id= 'bpText'>
-                        <p className='specKey'>Reverb Buyer Protection</p>
-                        <p className='gotYourBack'>Reverb has your back if your item is lost, damaged, or does not match its description. Simply report any issues within 7 days and we will help you get a full refund.</p>
+                        <p className='specKey'>Renoun Buyer Protection</p>
+                        <p className='gotYourBack'>Renoun has your back if your item is lost, damaged, or does not match its description. Simply report any issues within 7 days and we will help you get a full refund.</p>
                     </div>
                 </div>
 
@@ -329,7 +329,7 @@ const Instrument = () => {
                     <div className='blue-sub-box'>
                         <div className='blueIcon' id='rv-protection-icon' src='/assets/images/trust_shield_icon.svg'></div>
                         <div className='subSubBox'>
-                            <p className='specKey'>Reverb Protection</p>
+                            <p className='specKey'>Renoun Protection</p>
                             <p className='reverb-reassure'>Simple Returns, Secure Transactions, Human Support</p>
                         </div>
 
@@ -448,7 +448,7 @@ const Instrument = () => {
                 <div id='sell-yours-text'> 
                     <div id='sell-text-wrapper'>
                         <h1 id ='sell-title' >Want to Sell Yours?</h1>
-                        <p className = 'sellBody' >Anyone can sell on Reverb. List your Fender Player Telecaster today to get in front of thousands of eyse, quickly and easily.</p>
+                        <p className = 'sellBody' >Anyone can sell on Renoun. List your Fender Player Telecaster today to get in front of thousands of eyse, quickly and easily.</p>
                     </div>
                 </div>
                 <div id='sell-yours'>

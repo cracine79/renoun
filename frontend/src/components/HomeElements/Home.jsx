@@ -41,7 +41,7 @@ export default function Home(){
                 <div id='sell-box-wrap'>
 
            
-                    <h1 className='home-page-title' id='anyone-can-sell'>Anyone Can Sell On Reverb</h1>
+                    <h1 className='home-page-title' id='anyone-can-sell'>Anyone Can Sell On Renoun</h1>
             
                     <div className='sell-box'>
                         <div className = 'sell-box-inner-wrap'>
@@ -63,7 +63,7 @@ export default function Home(){
                             </div>
                             <div className='sell-box-right-wrap'>
                                 <div className='step-title'>Sell It</div>
-                                <div className='step-words'>Millions of high-quality buyers from all over the world search for gear on Reverb.</div>
+                                <div className='step-words'>Millions of high-quality buyers from all over the world search for gear on Renoun.</div>
                             </div>
                         </div>        
                     </div>

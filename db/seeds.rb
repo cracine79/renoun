@@ -479,7 +479,7 @@ squier_51 = Instrument.create!({
   item_name: 'Squire 51 2005 - Skyblue & silver paisley',
   condition: 'Used - Good',
   price: 275,
-  description: 'This is a Squire 51 , 2005 model the earlier years its been fun have had it painted 3 times ,changed the neck to a Somnium custom shop neck its a better neck a little thicker nicer frets if you get a chance google there guitars pretty amazing i instruments , 1 St have the original 4 wire humbucker and the single pickup white cover it comes with the guitar strap thats on it it works it works in the 1st 2 nd and 3 rd selector switch positions the humbucker in it is a Kramer Beretta Special sounds pretty nice with the original pickup paint job isnt perfect Id give it a 9.6 has kluson split tunners new strings and they are a great little ax was going to keep it have the neck up for sale here on reverb , so the neck thats on it is the one Im selling with it thanks for the look have a good one',
+  description: 'This is a Squire 51 , 2005 model the earlier years its been fun have had it painted 3 times ,changed the neck to a Somnium custom shop neck its a better neck a little thicker nicer frets if you get a chance google there guitars pretty amazing i instruments , 1 St have the original 4 wire humbucker and the single pickup white cover it comes with the guitar strap thats on it it works it works in the 1st 2 nd and 3 rd selector switch positions the humbucker in it is a Kramer Beretta Special sounds pretty nice with the original pickup paint job isnt perfect Id give it a 9.6 has kluson split tunners new strings and they are a great little ax was going to keep it have the neck up for sale here on renoun , so the neck thats on it is the one Im selling with it thanks for the look have a good one',
   category: 'Guitar',
   brand: 'Squier',
   model: 'Squier Fifty-One',
@@ -1314,7 +1314,7 @@ casioRap.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.
     SellerReview.create!({
       seller_id: 10,
       reviewer_id: 2,
-      body: 'Best seller on Reverb in my opinion.  Fast delivery, great product.  Love it.',
+      body: 'Best seller on Renoun in my opinion.  Fast delivery, great product.  Love it.',
       title: 'Yamaha 42-key Synth',
       stars: 5,
       first_name: 'Jon',

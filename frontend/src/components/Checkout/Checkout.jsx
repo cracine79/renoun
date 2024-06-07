@@ -213,7 +213,7 @@ function Checkout (){
                         </div>
                     </div>
                     <div className='csr-words-wrap'>
-                        <p className='csr-title'>Reverb Gives</p>
+                        <p className='csr-title'>Renoun Gives</p>
                         <p className='csr-expl'>Your purchases help youth music programs get the gear they need to make music.</p>
                     </div>
                      
