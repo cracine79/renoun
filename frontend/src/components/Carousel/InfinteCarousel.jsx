@@ -35,9 +35,9 @@ function InfiniteCarousel({instrumentsObj, index}){
     const luHearts = []
     useEffect(()=>{
         let i = 1
-        debugger;
+   
         while (i <= availableInstruments.length){
-            debugger;
+
             ioHearts[i]= document.getElementById(`ioMdHeart${i}_${index}`)
             luHearts[i] = document.getElementById(`luHeart${i}_${index}`)
             if(instruments[i] && ioHearts[i]){
@@ -79,7 +79,7 @@ function InfiniteCarousel({instrumentsObj, index}){
 
     const unFavorite = (instrumentId, buttonId, e) =>{
         let favoriteId
-        debugger;
+    
          if(currentUser){
             favorites.forEach((favorite)=>{
 

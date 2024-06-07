@@ -52,9 +52,9 @@ export const deleteFavorite = favoriteId => async dispatch => {
             'Accept': 'application/json'
         }
     })
-    debugger;
+
     const data = await res.json();
-    debugger;
+
 
     dispatch(removeFavorite(data))
 }

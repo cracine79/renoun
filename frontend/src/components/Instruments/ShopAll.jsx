@@ -17,7 +17,7 @@ function ShopAll(){
                 keys.push(instrument)
             }
         })
-        debugger;
+    
         
     return(
         <div id='shop-all-wrap'>

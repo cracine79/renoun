@@ -12,14 +12,14 @@ export default function Home(){
     const handleClick =(e)=>{
         navigate('/Outcomes', {state:{searchWord: e.currentTarget.id}})
     }
-    debugger;
+
     const array = [13, 21, 50, 11, 33, 39]
     const deals = []
     array.forEach((num)=>{
         deals.push(instruments[num])
     }
     )
-    debugger;
+
 
     return(
        <div id='home-wrapper'>

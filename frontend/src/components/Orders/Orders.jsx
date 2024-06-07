@@ -215,7 +215,7 @@ function Orders(){
             firstName: firstNameSubmit,
             lastInit: lastNameInitial
         }
-        debugger;
+  
        
 
       dispatch(createReview(seller_review))
