@@ -26,7 +26,7 @@ class Api::SessionsController < ApplicationController
   
   
     @user = User.find_by_credentials(email, password)
-   
+    debugger;
 
     if @user
       @orders = @user.items_ordered
@@ -34,7 +34,9 @@ class Api::SessionsController < ApplicationController
       @favorites = @user.favorites
       @buyer_seller_reviews = @user.reviews_of_sellers
       id = @user.id
+      debugger;
       login!(@user)
+      debugger;
       render 'api/users/show'
     else
       render json: { errors: ['The provided credentials were invalid.'] }, status: :unauthorized

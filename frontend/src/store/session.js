@@ -80,7 +80,7 @@ export const restoreSession = () => async dispatch => {
 
 
     let data = await res.json();
-   
+    debugger;
     dispatch(receiveUser(data.user));
     dispatch(receiveCartItems(data.cart));
     dispatch(receiveOrders(data.orders))
