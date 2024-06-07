@@ -32,12 +32,7 @@ A Renoun user is able to create a new profile, which persists on both the front 
 
 Users are required to be logged in in order to favorite an instrument, add an item to their cart, or visit past orders.  Failed sign in/sign up attempts are redirected to the appropriate page with the relevant messages displayed.
 
-<img src='rm_assets/login.png' width='45%'> 
-<img src='rm_assets/signup.png' width='43%'>
-
-<img src='rm_assets/whoops1.png' width='45%'>
-<img src='rm_assets/whoops 2.png' width='45%'>
-
+![Login](rm_assets/Login.png)
 
 ## Instrument Categories
 
