@@ -300,7 +300,7 @@ function Orders(){
                             <div className='review-inner-wrapper'>
                                 <h1 className='review-form-header'>Create a Review For {fullName}</h1>
                                 <div className='review-item-wrapper'>
-                                    <img id='seller-review-photo' src = {`${currentOrder.photoUrl}`}/>
+                                    {/* <img id='seller-review-photo' src = {`${currentOrder.photoUrl}`}/> */}
                                     <div className='review-info-words-wrapper'>
                                         <p className = 'item-purchased-review'>Item Purchased: {currentOrder.itemName}</p>
                                         <p>Seller: {orderSellerFullName()}</p>

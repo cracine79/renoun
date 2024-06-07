@@ -21,7 +21,7 @@
 }
 
 #login-error-login-wrapper{
-    margin-top: 50px;
+    margin-top: 70px;
     border-radius: 20px;
    
 }
@@ -43,7 +43,7 @@
 #login-error-orange-box{
     width: 370px;
     height: 40px;
-    margin-top: 25px; 
+    margin-top: 15px; 
     border-radius: 8px;
 
     background-color: rgb(255, 237, 222);

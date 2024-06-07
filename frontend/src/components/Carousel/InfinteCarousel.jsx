@@ -86,12 +86,8 @@ function InfiniteCarousel({instrumentsObj, index}){
                 if(favorite.instrumentId === instrumentId){
                     favoriteId = favorite.id
                 }
-    
-         
             })
             dispatch (deleteFavorite(favoriteId))
-
-
          }
          else {
             modal.style.display='flex'
@@ -100,58 +96,44 @@ function InfiniteCarousel({instrumentsObj, index}){
             signupNav.className='inactive'
             loginForm.style.display='flex'
             signupForm.style.display='none'
-         
             loginSquare.className='active-menu-nav-wrapper'
-            signupSquare.className='passive-menu-nav-wrapper'
-          
+            signupSquare.className='passive-menu-nav-wrapper'   
         }
-
     }
 
 
     return(
         <>
         <div id='if-wrap-wrap'>
-        <div id='infinite-carousel-wrap'>
-        {availableInstruments.map((instrument)=>{
-            const pos = instruments.indexOf(instrument)+1
-            return(
-             
-
-                <div className='thumb-instrumentWrapper' id='thumb-inst-wrap-inf'>
-                    <div className='carousel-fav-button'>
-                        <div src='/assets/images/emptyHeart.png' className = 'likeOn' id={`ioMdHeart${pos}_${index}`} onClick={(e)=> addFavorite(instruments[pos-1].id, pos, e)} ></div>  
-                        <div src="/assets/images/filledHeart.png"   className = 'likeOff' id={`luHeart${pos}_${index}`} onClick={(e)=> unFavorite(instruments[pos-1].id, pos, e)} > </div>
-                    </div>
-            
-            
-            <Link className='thumb-link' to={`/instruments/${instruments[pos-1].id}`}>
-               
-               
-                <ul id='thumb-dets'>
-                    <img key ={`img${instruments[pos-1].id}`}className='thumb-instrumentImage' src={instruments[pos-1].photoUrl} />
-                    <div key ={`wrap${instruments[pos-1].id}`}className='words-wrap'>
-                        <div key ={`instName${instruments[pos-1].id}`}className='thumb-instrumentName'>{instruments[pos-1].itemName}</div>
-                        <li key ={`condition${instruments[pos-1].id}`} className='thumb-condition'>{instruments[pos-1].condition}</li>
-                        <li key ={`price${instruments[pos-1].id}`}className='thumb-price'>{formatter.format(instruments[pos-1].price)}</li>
-                    </div>
-                </ul>
+            <div id='infinite-carousel-wrap'>
+            {availableInstruments.map((instrument)=>{
+                const pos = instruments.indexOf(instrument)+1
+                return(           
+                    <div className='thumb-instrumentWrapper' id='thumb-inst-wrap-inf'>
+                        <div className='carousel-fav-button'>
+                            <div src='/assets/images/emptyHeart.png' className = 'likeOn' id={`ioMdHeart${pos}_${index}`} onClick={(e)=> addFavorite(instruments[pos-1].id, pos, e)} ></div>  
+                            <div src="/assets/images/filledHeart.png"   className = 'likeOff' id={`luHeart${pos}_${index}`} onClick={(e)=> unFavorite(instruments[pos-1].id, pos, e)} > </div>
+                        </div>
                 
-            </Link>
-        </div>
                 
-              
-            )
-        })}
-
+                        <Link className='thumb-link' to={`/instruments/${instruments[pos-1].id}`}>
+                        
+                        
+                            <ul id='thumb-dets'>
+                                <img key ={`img${instruments[pos-1].id}`}className='thumb-instrumentImage' src={instruments[pos-1].photoUrl} />
+                                <div key ={`wrap${instruments[pos-1].id}`}className='words-wrap'>
+                                    <div key ={`instName${instruments[pos-1].id}`}className='thumb-instrumentName'>{instruments[pos-1].itemName}</div>
+                                    <li key ={`condition${instruments[pos-1].id}`} className='thumb-condition'>{instruments[pos-1].condition}</li>
+                                    <li key ={`price${instruments[pos-1].id}`}className='thumb-price'>{formatter.format(instruments[pos-1].price)}</li>
+                                </div>
+                            </ul>
+                            
+                        </Link>
+                    </div>      
+                )
+            })}
+            </div> 
         </div>
-       
-
-            
-        </div>
-        
-            
-        
         </>
     )
 }
