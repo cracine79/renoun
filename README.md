@@ -34,15 +34,16 @@ Users are required to be logged in in order to favorite an instrument, add an it
 
 ![Login](rm_assets/Login.png)
 
+![ErrorPage](rm_assets/Whoops1.png)
+
 ## Instrument Categories
 
 The homepage features a carousel of instruments with pictures and instrument details.  Users can navigate from the homepage to specific instrument category pages which feature similar carts of instruments and information. 
 
 ![homepage](/rm_assets/homepage.png)
 
-<img src='rm_assets/guitars.png' width='49%'>
-<img src='rm_assets/keys.png' width='49%'>
-
+![Keys](rm_assets/Keys.png)
+![Guitars](rm_assets/Guitars.png)
 
 ### Infinite instrument carousel
 
