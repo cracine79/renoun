@@ -116,7 +116,7 @@ Users can add instruments to their favorites list both from the individual instr
 
 The total number of users that have 'favorited' the instrument is displayed on the instrument's show page.  This number updates live on the front and backend as users favorite/unfavorite an instrument. 
 
-![Favorites](rm_assets/favs.gif)
+![favorites](rm_assets/faves.gif)
 
 ### JSX Code to keep hearts with favorite/unfavorite
 ```
