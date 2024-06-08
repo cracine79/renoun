@@ -18,9 +18,7 @@ function Outcomes(){
             searchResults.push(instrument)
         }
       }
-       
     })
-
 
     let rowRequirement
    if(searchResults.length%6===0){

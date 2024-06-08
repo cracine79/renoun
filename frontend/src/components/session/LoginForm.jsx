@@ -131,8 +131,7 @@ function LoginForm(){
                         </div>
                     </div>
                     <input id='form-login-button' className='form-button' type="submit" value="Log In" />
-
-                    <div id='sample-login-button' className='form-button' onClick={loginDave}>Log in as Sample User</div>
+                    <div id='sample-login-button' className='form-button' onClick={loginDave}>Log in as Demo User</div>
                 </div>
             </form>
 
