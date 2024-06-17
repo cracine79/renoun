@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom'
 const WhoopsTwo = () =>{
     const location=useLocation();
     const  {errors} = location.state || {errors:[]}
-    console.log(errors)
+
     let message = ""
     // const errors = location.state
     // let m = 'oops';

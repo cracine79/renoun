@@ -75,7 +75,6 @@ function Orders(){
         reviewWrapperWrapper.style.display='flex'
         createReviewForm.style.display='flex'
         updateReviewForm.style.display='none'
-        console.log('hi')
     }
 
     const openUpdateForm = (order) => {
@@ -158,7 +157,6 @@ function Orders(){
             reviewWrapperWrapper = document.getElementById('review-wrapper-wrapper')
             reviewWrapperWrapper.style.display='none';
             setCurrentReview({})
-            console.log(currentReview)
         }
         }
         

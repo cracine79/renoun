@@ -78,9 +78,6 @@ function Checkout (){
     } else {
         grandTotal = tax + subTotal 
     }
-    // const thing = useSelector(state=>(state.instruments[1]))
-    // console.log(thing)
-    // console.log(cart[].id)
 
 
     return (

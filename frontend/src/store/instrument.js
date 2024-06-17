@@ -46,7 +46,7 @@ export const removeInstrument = () => async dispatch => {
         if (data.ok){
             dispatch(deleteInstrument)
         } else {
-            console.log.res.error
+            return res.error
         }
 }
 
@@ -58,7 +58,7 @@ export const fetchInstrument = (instrumentId) => async dispatch => {
     if (res.ok){
         dispatch (updateInstrument(data))
     } else {
-        console.log.res.error
+        return res.error
     }
     }
     

@@ -16,7 +16,7 @@ function OrderConfirmation(){
     })
 
 
-    console.log(orderState);
+
     const userFirstName = useSelector(state => (state.session.user.firstName))
     const userLastName = useSelector(state=> (state.session.user.lastName))
     const email = useSelector(state=>(state.session.user.email))

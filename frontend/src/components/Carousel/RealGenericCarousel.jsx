@@ -114,7 +114,7 @@ function RealGenericCarousel({row, rowId}){
             const emptyHeart = document.getElementById(`realGenLuHeart${buttonId}_${rowId}`)
            
                 e.target.style.display='none'
-                console.log(emptyHeart)
+       
                 emptyHeart.style.display='flex'
                 const favorite = {
                     instrumentId,

@@ -32,7 +32,7 @@ export const createOrder = userId => async dispatch =>{
         dispatch(receiveOrders(data.orders))
         dispatch(updateInstrument(data.instrument))
     } else {
-        console.log.res.errors.full_messages
+       return res.errors.full_messages
     }
 
     

@@ -26,7 +26,7 @@ function Outcomes(){
    } else {
     rowRequirement = Math.floor(searchResults.length/6)+1
    }
-   console.log(rowRequirement)
+
 
    let i=0
    let allRows = []
@@ -38,7 +38,7 @@ function Outcomes(){
     i+=1
    }
 
-   console.log(allRows)
+
 
     return(
         <div id='search-results-wrapper-wrapper'>
