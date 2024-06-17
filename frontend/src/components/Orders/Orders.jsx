@@ -20,8 +20,8 @@ function Orders(){
     const [firstNameSubmit, setFirstNameSubmit] = useState(currentUser.firstName.slice(0,1).toUpperCase()+currentUser.firstName.slice(1));
     const [lastNameInitial, setLastNameInitial] = useState(currentUser.lastName.slice(0,1).toUpperCase() + ".");
     const [reviewBody, setReviewBody] = useState("");
-    const createReviewForm = document.getElementById('create-review-form')
-    const updateReviewForm = document.getElementById('update-review-form')
+    let createReviewForm = document.getElementById('create-review-form')
+    let updateReviewForm = document.getElementById('update-review-form')
     const [currentReview, setCurrentReview] = useState("")
     
     
@@ -69,7 +69,9 @@ function Orders(){
     }
 
     const openReviewForm = (order) => {
-
+        reviewWrapperWrapper =document.getElementById('review-wrapper-wrapper')
+        createReviewForm = document.getElementById('create-review-form')
+        updateReviewForm = document.getElementById('update-review-form')
         reviewWrapperWrapper.style.display='flex'
         createReviewForm.style.display='flex'
         updateReviewForm.style.display='none'
@@ -80,6 +82,9 @@ function Orders(){
         const cr = getOrderReview(order)
     
         setCurrentReview(cr)
+        reviewWrapperWrapper =document.getElementById('review-wrapper-wrapper')
+        createReviewForm = document.getElementById('create-review-form')
+        updateReviewForm = document.getElementById('update-review-form')
         reviewWrapperWrapper.style.display='flex'
         createReviewForm.style.display='none'
         updateReviewForm.style.display='flex'

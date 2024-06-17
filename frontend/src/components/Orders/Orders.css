@@ -22,7 +22,7 @@
 
 #purchase-history-box{
     height: 500px;
-    width: 1800px;
+    width: 90%;
 
     margin-top: 40px;
     border: solid gray 1px;
@@ -167,6 +167,9 @@
     display: flex;
     margin-top: 30px;
 }
+.item-purchased-review{
+    width: 90%;
+}
 
 .review-info-words-wrapper{
     display: flex;
@@ -178,6 +181,7 @@
 
 #review-instructions{
     margin-top: 30px;
+    width: 90%;
 }
 
 #review-body{

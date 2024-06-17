@@ -61,7 +61,7 @@ function Checkout (){
         if (instrument.shipping === 0){
             return "FREE Shipping"
         } else {
-            return `${instrument.shipping} Shipping`
+            return `${formatter.format(instrument.shipping)} Shipping`
         }
     }
 
@@ -188,7 +188,7 @@ function Checkout (){
                             <p id='damage-subtotal' className='damage-sub-box'><span className='damage-words'>Product Subtotal</span><span className='damage-numbers'>{formatter.format(subTotal)}</span></p>
                    
                
-                            <p id='damage-shipping' className='damage-sub-box'><span className='damage-words'>Shipping</span><span className='damage-numbers'>{shipping}</span> </p>
+                            <p id='damage-shipping' className='damage-sub-box'><span className='damage-words'>Shipping</span><span className='damage-numbers'>{formatter.format(shipping)}</span> </p>
               
                  
                             <p id='damage-tax' className='damage-sub-box'><span className='damage-words'>Estimated Tax</span><span className='damage-numbers'>{formatter.format(tax)}</span> </p>
