@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_06_04_184249) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_02_185540) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -69,12 +69,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_04_184249) do
     t.text "description", null: false
     t.string "brand", null: false
     t.string "category", null: false
+    t.float "shipping"
+    t.bigint "seller_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "model"
-    t.float "shipping"
-    t.bigint "seller_id"
     t.boolean "available", default: true
+    t.index ["seller_id"], name: "index_instruments_on_seller_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -122,7 +123,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_04_184249) do
   add_foreign_key "favorites", "users", column: "favoriter_id"
   add_foreign_key "instruments", "users", column: "seller_id"
   add_foreign_key "orders", "instruments"
-  add_foreign_key "orders", "instruments", column: "buyer_id"
+  add_foreign_key "orders", "users", column: "buyer_id"
   add_foreign_key "seller_reviews", "users", column: "reviewer_id"
   add_foreign_key "seller_reviews", "users", column: "seller_id"
 end
