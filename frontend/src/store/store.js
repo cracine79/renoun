@@ -19,8 +19,6 @@ const rootReducer = combineReducers({
   favorites: favoritesReducer,
   reviews: reviewsReducer,
   buyerSellerReviews: buyerSellerReviewsReducer
-  
-
 });
 
 let enhancer;

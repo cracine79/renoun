@@ -28,17 +28,19 @@ function Layout() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [instrumentsIsLoaded, setInstrumentsIsLoaded] = useState(false);
 
+  useEffect(() => {
+    dispatch(sessionActions.restoreSession()).then(() => {
+      setIsLoaded(true)
+    });
+  }, [dispatch]);
+
   useEffect(()=>{
     dispatch(fetchAllInstruments()).then (()=>{
       setInstrumentsIsLoaded(true)
     })
   }, [dispatch])
 
-  useEffect(() => {
-    dispatch(sessionActions.restoreSession()).then(() => {
-      setIsLoaded(true)
-    });
-  }, [dispatch]);
+
 
 
 
