@@ -1,9 +1,6 @@
 class Api::SessionsController < ApplicationController
   def show
-
     @user = current_user;
-
-
 
     if @user
       @cart = @user.carts
@@ -11,21 +8,21 @@ class Api::SessionsController < ApplicationController
       @favorites = @user.favorites
       @buyer_seller_reviews = @user.reviews_of_sellers
 
-
       render 'api/users/show'
     else
-
+      
       render json: { user: nil }
       
     end
   end
 
   def create
+
     email = params[:email]
     password = params[:password]
 
 
-  
+    
   
     @user = User.find_by_credentials(email, password)
 

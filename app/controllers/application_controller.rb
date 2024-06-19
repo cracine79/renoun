@@ -74,6 +74,9 @@ class ApplicationController < ActionController::API
         logger.error "\n#{@message}:\n\t#{@stack.join("\n\t")}\n"
       end
     end
+
+   
+
     
 
 end

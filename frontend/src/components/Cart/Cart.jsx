@@ -15,8 +15,9 @@ import { useDispatch } from 'react-redux';
 
 function Cart(){
    
-    const cart = useSelector(state => Object.values(state.carts));
-    const currentUser = useSelector(state=>state.session.user)
+    const cartObj = useSelector(state => state.carts);
+    const cart = Object.values(cartObj);
+    const currentUser = useSelector(state=>state.session.user);
     if (currentUser){
         const currentUserId = currentUser.id
     }
@@ -24,7 +25,7 @@ function Cart(){
     const instrumentsState = useSelector(state => state.instruments);
 
     const [totalAmount, setTotalAmount] = useState(0);
-    const [itemNumbers, setItemNumbers] = useState(0)
+    const [itemNumbers, setItemNumbers] = useState(0);
     const dispatch = useDispatch();
       let total
    

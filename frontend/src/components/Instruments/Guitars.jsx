@@ -44,7 +44,7 @@ function Guitars (){
 
             {allRows.map((row)=>{
                     return(
-                        <div id='realGenWrap'>
+                        <div id='realGenWrap' key={row[0] ? row[0].id : 33}>
                              <RealGenericCarousel key={row[0] ? row[0].id : 33} row={row} rowId={row[0] ? row[0].id : 33}/>
                          </div>   
                        

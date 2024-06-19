@@ -86,6 +86,9 @@ export const restoreSession = () => async dispatch => {
     dispatch(receiveOrders(data.orders))
     dispatch(receiveFavorites(data.favorites))
     dispatch(receiveBuyerReviews(data.buyerSellerReviews))
+
+    let res2 = await csrfFetch('/api/session');
+    storeCSRFToken(res2);
     return res;
 }
 

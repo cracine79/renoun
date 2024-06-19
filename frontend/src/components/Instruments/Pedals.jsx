@@ -5,7 +5,8 @@ import RealGenericCarousel from '../Carousel/RealGenericCarousel'
 
 function Pedals (){
     
-    const instruments = useSelector(state => Object.values(state.instruments))
+    const instrumentsObj = useSelector(state => state.instruments)
+    const instruments = Object.values(instrumentsObj)
     const pedals = [];
     instruments.forEach((instrument)=>{
         if(instrument.category.toLowerCase()==='pedals_and_effects' && instrument.available===true){
@@ -44,7 +45,7 @@ function Pedals (){
 
             {allRows.map((row)=>{
                     return(
-                        <div id='realGenWrap'>
+                        <div id='realGenWrap' key = {row[0] ? row[0].id : 33}>
                              <RealGenericCarousel key={row[0] ? row[0].id : 33} row={row} rowId={row[0] ? row[0].id : 33}/>
                          </div>   
                        
