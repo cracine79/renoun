@@ -43,7 +43,7 @@ function LoginForm(){
         emailWarning.style.display='none'
         }
         },[email])
-    if (currentUser) return <Navigate to="/" replace={true} />;
+    // if (currentUser) return <Navigate to="/" replace={true} />;
     const handleSubmit = e => {
         e.preventDefault();
         setErrors([]);

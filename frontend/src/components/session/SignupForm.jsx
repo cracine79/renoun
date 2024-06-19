@@ -64,7 +64,7 @@ function SignupForm(){
     )
 
 
-    if (currentUser) return <Navigate to="/" replace={true} />;
+    // if (currentUser) return <Navigate to="/" replace={true} />;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
