@@ -1,5 +1,6 @@
 
 import csrfFetch from "./csrf"
+import { storeCSRFToken } from "./csrf"
 const RECEIVE_INSTRUMENT = 'instrument/RECEIVE_INSTRUMENT'
 const RECEIVE_INSTRUMENTS = 'instrument/RECEIVE_INSTRUMENTS'
 const REMOVE_INSTRUMENT = 'instrument/REMOVE_INSTRUMENT'
@@ -30,6 +31,7 @@ export const updateInstrument = instrument => ({
 export const fetchAllInstruments = () => async dispatch => {
 
     const res = await csrfFetch('/api/instruments');
+    storeCSRFToken(res)
   
     const data = await res.json();
 
