@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import './Guitars.css'
 import RealGenericCarousel from '../Carousel/RealGenericCarousel'
+import InfiniteCarousel from '../Carousel/InfinteCarousel'
 
 function Pedals (){
     
@@ -46,7 +47,7 @@ function Pedals (){
             {allRows.map((row)=>{
                     return(
                         <div id='realGenWrap' key = {row[0] ? row[0].id : 33}>
-                             <RealGenericCarousel key={row[0] ? row[0].id : 33} row={row} rowId={row[0] ? row[0].id : 33}/>
+                             <InfiniteCarousel key={row[0] ? row[0].id : 33} instrumentsObj={row} rowId={row[0] ? row[0].id : 33}/>
                          </div>   
                        
                     )
