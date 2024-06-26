@@ -44,10 +44,10 @@ function Pedals (){
 
             <h1 id='guitars-page-title'>Pedals and Effects </h1>
 
-            {allRows.map((row, index)=>{
+            {allRows.map((row, indexPedals)=>{
                     return(
-                        <div id='realGenWrap' key = {index}>
-                             <InfiniteCarousel  instrumentsObj={row} index={index}/>
+                        <div id='realGenWrap' key = {indexPedals}>
+                             <InfiniteCarousel  instrumentsObj={row} key={indexPedals} index={indexPedals}/>
                          </div>   
                        
                     )
