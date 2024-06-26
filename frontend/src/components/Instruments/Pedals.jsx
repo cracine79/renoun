@@ -47,7 +47,7 @@ function Pedals (){
             {allRows.map((row)=>{
                     return(
                         <div id='realGenWrap' key = {row[0] ? row[0].id : 33}>
-                             <InfiniteCarousel key={row[0] ? row[0].id : 33} instrumentsObj={row} rowId={row[0] ? row[0].id : 33}/>
+                             <InfiniteCarousel key={row[0] ? row[0].id : 33} instrumentsObj={row} index={row[0] ? row[0].id : 33}/>
                          </div>   
                        
                     )
