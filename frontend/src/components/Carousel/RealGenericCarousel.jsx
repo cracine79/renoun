@@ -24,6 +24,14 @@ function RealGenericCarousel({row, rowId}){
         favoriteInstruments.push(row[id-1])
     })
 
+    const modal= document.getElementById('wrapper-wrapper');
+    const loginNav = document.getElementById('log-in-nav');
+    const signupNav = document.getElementById('sign-up-nav')
+    const loginForm = document.getElementById('login-form-wrapper')
+    const signupForm = document.getElementById('signup-form-wrapper')
+    const signupSquare = document.getElementById('signup-mnw')
+    const loginSquare = document.getElementById('login-mnw')
+
         useEffect(()=>{
             const ioMdHeartOne = document.getElementById(`realGenIoMdHeart1_${rowId}`)
             const ioMdHeartTwo = document.getElementById(`realGenIoMdHeart2_${rowId}`)
@@ -110,8 +118,8 @@ function RealGenericCarousel({row, rowId}){
 
 
         const addFavorite = (instrumentId, buttonId, e) => {
-            
-            const emptyHeart = document.getElementById(`realGenLuHeart${buttonId}_${rowId}`)
+            if(currentUser){
+                const emptyHeart = document.getElementById(`realGenLuHeart${buttonId}_${rowId}`)
            
                 e.target.style.display='none'
        
@@ -122,6 +130,18 @@ function RealGenericCarousel({row, rowId}){
                 }
             
                 dispatch(createFavorite(favorite))
+            } else {
+                modal.style.display='flex'
+                modal.className='login'
+                loginNav.className='active'
+                signupNav.className='inactive'
+                loginForm.style.display='flex'
+                signupForm.style.display='none'
+             
+                loginSquare.className='active-menu-nav-wrapper'
+                signupSquare.className='passive-menu-nav-wrapper'
+            }
+            
         
             }
 

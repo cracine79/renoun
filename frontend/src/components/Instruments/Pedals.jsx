@@ -47,7 +47,7 @@ function Pedals (){
             {allRows.map((row, indexPedals)=>{
                     return(
                         <div id='realGenWrap' key = {indexPedals}>
-                             <InfiniteCarousel  instrumentsObj={row} key={indexPedals} index={indexPedals}/>
+                             <RealGenericCarousel  row={row} key={indexPedals} rowId={indexPedals}/>
                          </div>   
                        
                     )
