@@ -106,10 +106,10 @@ function InfiniteCarousel({instrumentsObj, index}){
         <>
         <div id='if-wrap-wrap'>
             <div id='infinite-carousel-wrap'>
-            {availableInstruments.map((instrument)=>{
+            {availableInstruments.map((instrument, idx)=>{
                 const pos = instruments.indexOf(instrument)+1
                 return(           
-                    <div className='thumb-instrumentWrapper' id='thumb-inst-wrap-inf'>
+                    <div key = {idx} className='thumb-instrumentWrapper' id='thumb-inst-wrap-inf'>
                         <div className='carousel-fav-button'>
                             <div src='/assets/images/emptyHeart.png' className = 'likeOn' id={`ioMdHeart${pos}_${index}`} onClick={(e)=> addFavorite(instruments[pos-1].id, pos, e)} ></div>  
                             <div src="/assets/images/filledHeart.png"   className = 'likeOff' id={`luHeart${pos}_${index}`} onClick={(e)=> unFavorite(instruments[pos-1].id, pos, e)} > </div>

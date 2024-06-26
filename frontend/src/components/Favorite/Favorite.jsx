@@ -68,10 +68,10 @@ let rowRequirement
                
                    
                   <h2 id='watch-list'>Watch List</h2>
-                  {allRows.map((row)=>{
+                  {allRows.map((row, index)=>{
                     return(
-                        <div id='real-gen-car-wrap'>
-                             <RealGenericCarousel row={row} rowId={row[0].id}/>
+                        <div id='real-gen-car-wrap' key={index}>
+                             <RealGenericCarousel row={row} rowId={index}/>
                          </div>   
                        
                     )

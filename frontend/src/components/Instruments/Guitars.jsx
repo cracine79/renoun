@@ -43,10 +43,10 @@ function Guitars (){
 
             <h1 id='guitars-page-title'>Electric Guitars </h1>
 
-            {allRows.map((row)=>{
+            {allRows.map((row, index)=>{
                     return(
-                        <div id='realGenWrap' key={row[0] ? row[0].id : 33}>
-                             <InfiniteCarousel key={row[0] ? row[0].id : 33} instrumentsObj={row} index={row[0] ? row[0].id : 33}/>
+                        <div id='realGenWrap' key={index}>
+                             <InfiniteCarousel key={index} instrumentsObj={row} index={index}/>
                          </div>   
                        
                     )
