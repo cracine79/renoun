@@ -35,7 +35,7 @@ def update
 
     @review.update(seller_review_params)
     render 'api/seller_reviews/show'
-     end
+  
 
 end
 
@@ -46,3 +46,4 @@ def seller_review_params
     params.require(:seller_review).permit(:reviewer_id, :seller_id, :title, :body, :stars, :first_name, :last_init)
 end
 
+end

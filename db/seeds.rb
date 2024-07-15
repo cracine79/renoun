@@ -19,6 +19,7 @@ require "open-uri"
     Cart.destroy_all
     SellerReview.destroy_all
     Instrument.destroy_all
+    InstrumentReview.destroy_all
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -28,6 +29,7 @@ require "open-uri"
     ApplicationRecord.connection.reset_pk_sequence!('carts')
     ApplicationRecord.connection.reset_pk_sequence!('seller_reviews')
     ApplicationRecord.connection.reset_pk_sequence!('favorites')
+    ApplicationRecord.connection.reset_pk_sequence!('instrument_reviews')
   
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
@@ -1341,6 +1343,34 @@ casioRap.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.
       first_name: 'Kanye',
       last_init: 'W'
     })
+
+
+    InstrumentReview.create!({
+      instrument_name: 'Rickenbacker 1993 Plus',
+      reviewer_name: 'James B.',
+      title: 'My Dream Rick',
+      body: 'OK- Some stay away from these for various reasons-they tick almost all the boxes-but not quite. This one ticks ALL the boxes for me. Ive owned a 330, 360/12, 660, and 360 in the past. Either the neck is too slim for 12 strings, the body is sharp and cuts into you, the neck only has 21 frets, etc. This 360 has 22 frets-an outstanding Vibrola bar (so hard to find)-Toaster top pickups (the only ones to have) and a super clean unmolested neck and body AND to top it off -THE SILVER HARDSHELL CASE IN PRISTINE CONDITION. Super great playing guitar-it has EVERYTHING. I love it.',
+      stars: 5,
+      purchased_on_renoun: true
+    })
+
+    InstrumentReview.create!({
+      instrument_name: 'Rickenbacker 1993 Plus',
+      reviewer_name: 'Scott H.',
+      title: 'woulda, shoulda, coulda',
+      body: 'Before my brother passed away in 1976 he had an early 1970s Jet Glo Black Ricky 360 and a Peavy Vintage amp that he had sold to a friend. I worked all summer to earn enough to by them back and keep them in the family. I quickly learned that I didnt have the patience to learn guitar and took up the blues harp instead. Besides It had a broken neck and even though repaired it wouldnt stay in tune. In 1996 I got a wild hair that I wanted to get serious about the guitar but wanted to play heavy metal and so I traded my Ricky straight across for a new Epi Les Paul Gold Top. I have regretted that decision ever since. The Epi lost value over time while the Rickys gained value. So recently I decided I wanted the Ricky back. I searched and tried to track down what happened to it with no success. So I bought this 1975 Maple Glo one instead. Chicago music gave me an excellent deal on it. It plays exactly like I remembered my old one. This one has the pick ups replaced with humbuckers which in my mind is the best of both worlds. I know I will never regret this purchase and know it will only go up in value over time',
+      stars: 5,
+      purchased_on_renoun: true
+    })
+
+    InstrumentReview.create!({
+      instrument_name: 'Rickenbacker 1993 Plus',
+      reviewer_name: 'Joe B.',
+      title: '2008 Rickenbacker 360',
+      body: 'Well made, weight is comparable to a strat. Guitar sounds an plays great. Purchased in excellent condition, but I must say closer to mint. Thanks guys!',
+      stars: 5,
+      purchased_on_renoun: true  
+  })
 
 
 
