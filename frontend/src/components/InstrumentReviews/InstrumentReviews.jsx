@@ -1,11 +1,12 @@
 
 import './instrumentReviews.css'
 
-const InstrumentReviews = () => {
+const InstrumentReviews = ({instrumentId}) => {
+    
     return(
     <>
         <h1 className='aboutThisListing'> Product Reviews</h1>
-        <h1 className = 'specs'> Product Reviews: COMING SOON! </h1>
+        <h1 className = 'specs'> Product Reviews: For instrument ID {instrumentId} </h1>
     </>
     )
 }
