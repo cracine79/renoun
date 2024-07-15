@@ -126,7 +126,7 @@ require "open-uri"
         price: 3799,
         description: 'Rickenbacker 1993 Plus 12-String Semi-Hollow Electric Guitar, Fire Glo, 3 Vintage-Style Toaster Pickups, Double Binding, Stereo, w/Hardshell Case.  At the request of The Whos Pete Townshend, The 1993 Plus takes Rickenbackers iconic 330 body style and adds an "F"-Hole, Double Body Binding, a Wide Neck, Pearloid Triangle Inlays, 3 Vintage-Style Toaster Pickups, Ric-O-Sound Stereo outs, and a vintage-style trapeze tailpiece. Pete Townshend asked Rickenbacker to upgrade his cherished Model 1993 guitar. The result is the 1993Plus, enhanced with an 1/8-inch wider neck, rosewood fingerboard, and more stable 2-piece neck design with a round heel for increased comfort and upper-fret access. This classic semi-hollowbody 12-string electric guitar is fitted with three vintage reissue Toaster Top single-coil pickups, stereo output, a trapeze tailpiece, vintage knobs, and a proper F-hole. Double body binding and pearlescent inlays add a touch of refinement. X-bracing in the body helps to bring out the rich, full jangle our favorite Rickenbacker 12-strings are famous for.',
         category: 'Guitar',
-        brand: 'Rickenbaker',
+        brand: 'Rickenbacker',
         model: '1993 Plus',
         shipping: 0,
         seller_id: 6,
@@ -1371,6 +1371,15 @@ casioRap.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.
       stars: 5,
       purchased_on_renoun: true  
   })
+
+  InstrumentReview.create!({
+    instrument_name: 'Fender Telecaster',
+    reviewer_name: 'Gerald E.',
+    title: 'Buy One',
+    body: 'This tele got so many American appointments you would swear its a American elite telecaster guitar is awesome anyone not sure on American telecaster try this Nashville telecaster Mexican you wont regret it......',
+    stars: 5,
+    purchased_on_renoun: true  
+})
 
 
 
