@@ -24,7 +24,12 @@ Rails.application.routes.draw do
     resources :users do
       resource :seller_reviews, only: [:index]
     end
+
+
+
+    resources :instrument_reviews, only: [:create, :update, :destroy]
     
+    get 'instruments/:instrument_id/instrument_reviews', to: 'instrument_reviews#show'
   end
 
   get '*path', to: "static_pages#frontend_index"
