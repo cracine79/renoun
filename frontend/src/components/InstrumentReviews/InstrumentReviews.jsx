@@ -11,6 +11,10 @@ const InstrumentReviews = ({instrumentId}) => {
     const instrumentReviews = Object.values(instrumentReviewsObj)
     instrumentReviews.reverse()
     const [reviewPage, setReviewPage] = useState(0)
+    const [rating, setRating] = useState(0);
+    const [hover, setHover] = useState(0);
+    const [instrumentReviewBody, setInstrumentReviewBody] = useState("")
+    const [instrumentReviewTitle, setInstrumentReviewTitle] = useState("")
     let sum = 0
     let stars_count = {}
 
@@ -170,18 +174,70 @@ const InstrumentReviews = ({instrumentId}) => {
         }
     }
 
+    const StarRating = () => {
+        return (<>
+            <div className='star-rating'>
+                {[...Array(5)].map((star, index)=>{
+                    index +=1
+                    return(
+                        <button type='button' 
+                                key={index}     
+                                className={index <= hover ? 'on' : 'off'} 
+                                onClick={()=>setRating(index)}
+                                onMouseEnter={()=>setHover(index)}
+                        
+                            >
+                        <span className='star'>&#9733;</span>
+                        </button>
+                    )
+                })
+                }
+            </div>
+        
+            
+        </>)
+    }
 
+    const postReview = () => {
+
+    }
+
+    const modal = document.getElementById('product-review-modal')
+
+    const openModal = () =>{
+        modal.style.display = 'flex'
+    }
+
+    const closeModal = () =>{
+        modal.style.display = 'none'
+    }
 
 
     return(
     <>
+        <div id='product-review-modal'>
+            <div id='product-review-box'>
+                <h1 id='write-product-review'>Write a Product Review</h1>
+                <div id='close-review-x' onClick = {closeModal}>X</div>
+                <hr id='product-review-line'></hr>
+                <p className='product-form-title'>Your Rating</p>
+                <div id='instrument-stars'>
+                    <StarRating />
+                </div>
+                <p className='product-form-title'>Review Title</p>
+                <input id='product-review-title-text' type='text' onChange={e=>setInstrumentReviewTitle(e.target.value)}/>
+                <p className='product-form-title'>Your Product Review</p>
+                <textarea id='product-review-body-text' wrap="soft" onChange={e=>setInstrumentReviewBody(e.target.value)}></textarea>
+                <div id='post-product-review' onClick = {postReview()}>Post Review</div>
+            </div>
+        </div>
         <div id='product-reviews-wrapper'>
             <div className = 'product-reviews-header'>Product Reviews</div>
             <div id='score-data-header'>
                 <div id='instrument-score'>
                     <div id = 'score-header' className = 'product-reviews-header'>{average.toFixed(1)}   {averageStars(5)} </div>
                     <div id= 'average-summary'> {average.toFixed(1)} out of 5 based on {numReviews} reviews </div>
-                    <div id='write-product-review-button'>Write a Product Review</div>
+                    <div id='write-product-review-button' onClick = {openModal}>Write a Product Review</div>
                 </div>
                 <div id='star-breakdown'>
                     <div className='star-line'> 5 stars {getBars(stars_count[5]/numReviews)}   {getStars(5)} reviews</div>

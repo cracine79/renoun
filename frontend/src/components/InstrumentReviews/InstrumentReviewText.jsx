@@ -29,7 +29,7 @@ function InstrumentReviewText({text, id}){
             return "  collapse"
         }
     }
-
+    
     return(
         <>
             <div>
