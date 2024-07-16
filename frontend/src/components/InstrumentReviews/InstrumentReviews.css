@@ -1,0 +1,67 @@
+.product-reviews-header {
+    font-weight: 600;
+    color: black;
+    font-size: 36px;
+    margin-top: 30px;
+}
+
+
+.stars-instrument{
+    width: 120px;
+    height: 22px;
+    background-size: 120px;
+    margin-bottom: 7px;
+    margin-left: 10px;
+}
+#five-stars-inst{
+    background-image: url('/assets/images/fiveStars.png')
+}
+
+#average-summary{
+    color: rgb(75, 75, 75);
+    margin-top: 10px;
+}
+
+#score-header{
+    display: flex;
+    align-items: center;
+    }
+
+#score-data-header{
+    display: flex;
+}
+
+#star-breakdown{
+    padding-top: 10px;
+    margin-left: 20px;
+
+    width: 60%;
+}
+
+.star-line{
+    display: flex;
+    margin-top: 15px;
+}
+
+#hundred-percent{
+    background-image: url('/assets/images/100Percent.png')
+}
+
+#ninety-percent{
+    background-image: url('/assets/images/90percent.png')
+}
+
+#zero-percent{
+    background-image: url('/assets/images/0percent.png')
+}
+
+.bar-rating{
+    margin-top: 4px;
+    width: 60%;
+    height: 10px;
+    background-size: 98%;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+ 

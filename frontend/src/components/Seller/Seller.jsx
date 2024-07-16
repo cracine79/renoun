@@ -57,7 +57,7 @@ function Seller({instrument, sellerStoreName}){
             )
         }else if(0.5<=num && num <1.5){
             return(
-                <div id='twoneo-star-avg' className='one-star'></div>
+                <div id='one-star-avg' className='one-star'></div>
                 // <img className='stars' id='two-star-avg' src='/assets/images/oneStar.png' />
             )
         } else if(1.5<=num && num <2.5){
