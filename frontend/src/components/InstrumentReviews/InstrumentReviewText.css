@@ -1,0 +1,9 @@
+.see-more-text{
+    color: blue;
+    font-size: 12px;
+}
+
+.see-more-text:hover{
+    color: orangered;
+    cursor: pointer;
+}

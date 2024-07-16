@@ -198,7 +198,7 @@ const InstrumentReviews = ({instrumentId}) => {
                             <div className='small-stars'>{instrumentStarRating(average.toFixed(1))}</div>
                             <div className='instrument-review-title'>  {review.title}</div>
                             <div className='instrument-review-author'> {review.reviewer_name} </div>
-                            <div className='instrument-review-body'> <InstrumentReviewText text = {review.body}/> </div>
+                            <div className='instrument-review-body'> <InstrumentReviewText text = {review.body} id={review.id}/> </div>
                         </>
                     )
                 }
