@@ -9,7 +9,7 @@ export const receiveReviews = reviews => ({
     reviews
 })
 
-export const receiveReveiw = review => ({
+export const receiveReview = review => ({
     type: RECEIVE_INST_REVIEW,
     review
 })
@@ -22,6 +22,21 @@ export const fetchAllInstrumentReviews = (instrumentId) => async dispatch => {
     }
 }
 
+export const createInstrumentReview = (review) => async dispatch => {
+    
+    const res = await csrfFetch("/api/instrument_reviews", {
+        method: 'POST',
+        body: JSON.stringify(review),
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
+
+    const data = await res.json();
+    dispatch(receiveReview(data))
+}
+
 export const instrumentReviewsReducer = (state = {}, action) => {
     Object.freeze(state);
     const nextState = {...state};
@@ -29,6 +44,9 @@ export const instrumentReviewsReducer = (state = {}, action) => {
     switch(action.type){
         case RECEIVE_INST_REVIEWS:
             return {...action.reviews} 
+        case RECEIVE_INST_REVIEW:
+            nextState[action.review.id] = action.review
+            return nextState
         default: 
             return nextState;
     }

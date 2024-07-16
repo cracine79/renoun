@@ -4,6 +4,7 @@ import { fetchAllInstrumentReviews } from '../../store/instrumentReview';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import InstrumentReviewText from './InstrumentReviewText';
+import { createInstrumentReview } from '../../store/instrumentReview';
 
 const InstrumentReviews = ({instrumentId}) => {
     const dispatch = useDispatch();
@@ -17,6 +18,24 @@ const InstrumentReviews = ({instrumentId}) => {
     const [instrumentReviewTitle, setInstrumentReviewTitle] = useState("")
     let sum = 0
     let stars_count = {}
+    const currentUser = useSelector(state=>state.session.user)
+    const current_instrument = useSelector(state=>state.instruments[instrumentId])
+    const orders = useSelector(state=>state.orders)
+    const ordersObj = Object.values(orders)
+    let reviewer_name = "anonymous"
+    let purchased = false
+    ordersObj.forEach((order)=>{
+        if(order){
+            if(order.itemName.includes(current_instrument.brand) && order.itemName.includes(current_instrument.model)){
+                purchased=true
+            }
+        }
+   
+    })
+
+    if (currentUser){
+        reviewer_name = (currentUser.firstName) + " " + (currentUser.lastName[0])
+    }
 
     useEffect(()=>{
         dispatch(fetchAllInstrumentReviews(instrumentId))
@@ -198,11 +217,24 @@ const InstrumentReviews = ({instrumentId}) => {
         </>)
     }
 
-    const postReview = () => {
-
-    }
+    
 
     const modal = document.getElementById('product-review-modal')
+
+
+    const postReview = () => {
+        modal.style.display='none'
+        const instrument_review={
+            reviewer_name,
+            title: instrumentReviewTitle,
+            body: instrumentReviewBody,
+            instrument_name: current_instrument.brand + " " + current_instrument.model,
+            stars: rating, 
+            purchased_on_renoun: purchased
+        }
+        dispatch(createInstrumentReview(instrument_review))
+
+    }
 
     const openModal = () =>{
         modal.style.display = 'flex'
@@ -228,7 +260,7 @@ const InstrumentReviews = ({instrumentId}) => {
                 <input id='product-review-title-text' type='text' onChange={e=>setInstrumentReviewTitle(e.target.value)}/>
                 <p className='product-form-title'>Your Product Review</p>
                 <textarea id='product-review-body-text' wrap="soft" onChange={e=>setInstrumentReviewBody(e.target.value)}></textarea>
-                <div id='post-product-review' onClick = {postReview()}>Post Review</div>
+                <div id='post-product-review' onClick = {postReview}>Post Review</div>
             </div>
         </div>
         <div id='product-reviews-wrapper'>

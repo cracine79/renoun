@@ -19,5 +19,5 @@ class InstrumentReview < ApplicationRecord
     validates :stars, presence: true
     validates :stars, numericality: {in: 1..5}
     validates :instrument_name, presence: true
-    validates :purchased_on_renoun, presence: true
+
 end
