@@ -352,7 +352,6 @@ const Instrument = () => {
 
                 <div id='instrument-reviews-box'>
                     <InstrumentReviews instrumentId = {instrument.id} />
-                 
                 </div>
          
             </div>

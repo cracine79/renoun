@@ -19,7 +19,7 @@
 
 #average-summary{
     color: rgb(75, 75, 75);
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 #score-header{
@@ -64,4 +64,59 @@
     margin-left: 10px;
     margin-right: 10px;
 }
+
+#write-product-review-button{
+    margin-top: 20px;
+    width: 200px;
+    height: 50px;
+    background-color: black;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#write-product-review-button:hover{
+    background-color: rgb(72, 72, 72);
+    cursor: pointer;
+}
+
+#actual-review-wrapper{
+    margin-top: 80px;
+    width: 80%;
+}
+
  
+.stars-instrument-indiv{
+    width: 80px;
+    height: 14px;
+    background-size: 80px;
+}
+
+.instrument-review-title{
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.instrument-review-author{
+    margin-top: 8px;
+    font-family:Arial, Helvetica, sans-serif
+
+}
+
+.instrument-review-body{
+    margin-top: 8px;
+    font-family: inter system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(86, 86, 86);
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+
+

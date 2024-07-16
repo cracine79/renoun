@@ -3,6 +3,7 @@ import './instrumentReviews.css'
 import { fetchAllInstrumentReviews } from '../../store/instrumentReview';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import InstrumentReviewText from './InstrumentReviewText';
 
 const InstrumentReviews = ({instrumentId}) => {
     const dispatch = useDispatch();
@@ -48,29 +49,23 @@ const InstrumentReviews = ({instrumentId}) => {
         }else if(0.25<=num && num <1.25){
             return(
                 <div id='one-star-inst' className='stars-instrument'></div>
-                // <img className='stars' id='two-star-avg' src='/assets/images/oneStar.png' />
             )
         } else if(1.25<=num && num <1.75){
             return(
                 <div id='one-half-star-inst' className='stars-instrument'></div>
-                // <img className='stars' src='/assets/images/twoStars.png' />
             )
         }else if(1.75<=num && num<2.25){
             return(
                 <div id='two-star-inst' className='stars-instrument'></div>
-                // <img className='stars' src='/assets/images/threeStars.png' />
             )
         }else if(2.25<=num && num<2.75){
             return(
                 <div id='two-half-stars-inst' className='stars-instrument'></div>
-                // <img className='stars' src='/assets/images/fourStars.png' />
             )
         }else if(2.75 <= num && num < 3.25){
             return(
                 <div id = 'three-stars-inst' className='stars-instrument'></div>
-                // <img className='stars' src='/assets/images/fiveStars.png' />
             )
-            
         }else if (3.25<=num && num < 3.75){
             return(
                 <div id='three-half-stars-inst' className='stars-instrument'></div>
@@ -86,6 +81,36 @@ const InstrumentReviews = ({instrumentId}) => {
         } else {
             return(
                 <div id='five-stars-inst' className='stars-instrument'></div>
+            )
+        }
+    }
+
+
+
+    const instrumentStarRating = (num)=>{
+        if(num<0.25){
+            return (
+                <div id='no-star-inst' className='stars-instrument-indiv'></div>
+            )
+        }else if(0.25<=num && num <1.5){
+            return(
+                <div id='one-star-inst' className='stars-instrument-indiv'></div>
+            )
+        }else if(1.5<=num && num<2.5){
+            return(
+                <div id='two-star-inst' className='stars-instrument-indiv'></div>
+            )
+       }else if(2.5 <= num && num < 3.5){
+            return(
+                <div id = 'three-stars-inst' className='stars-instrument-indiv'></div>
+            )
+        } else if (3.5 <= num && num < 4.5){
+            return(
+                <div id='four-stars-inst' className='stars-instrument-indiv'></div>
+            )
+        } else {
+            return(
+                <div id='five-stars-inst' className='stars-instrument-indiv'></div>
             )
         }
     }
@@ -148,7 +173,6 @@ const InstrumentReviews = ({instrumentId}) => {
 
 
 
-
     return(
     <>
         <div id='product-reviews-wrapper'>
@@ -157,14 +181,28 @@ const InstrumentReviews = ({instrumentId}) => {
                 <div id='instrument-score'>
                     <div id = 'score-header' className = 'product-reviews-header'>{average.toFixed(1)}   {averageStars(5)} </div>
                     <div id= 'average-summary'> {average.toFixed(1)} out of 5 based on {numReviews} reviews </div>
+                    <div id='write-product-review-button'>Write a Product Review</div>
                 </div>
                 <div id='star-breakdown'>
                     <div className='star-line'> 5 stars {getBars(stars_count[5]/numReviews)}   {getStars(5)} reviews</div>
                     <div className='star-line'> 4 stars {getBars(stars_count[4]/numReviews)}   {getStars(4)} reviews</div>
-                    <div className='star-line'> 3 stars {getBars(stars_count[3]/numReviews)} {getStars(3)} reviews</div>
-                    <div className='star-line'> 2 stars {getBars(stars_count[2]/numReviews)} {getStars(2)} reviews</div>
-                    <div className='star-line'> 1 stars {getBars(stars_count[1]/numReviews)} {getStars(1)} reviews</div>
+                    <div className='star-line'> 3 stars {getBars(stars_count[3]/numReviews)}  {getStars(3)} reviews</div>
+                    <div className='star-line'> 2 stars {getBars(stars_count[2]/numReviews)}  {getStars(2)} reviews</div>
+                    <div className='star-line'> 1 stars {getBars(stars_count[1]/numReviews)}  {getStars(1)} reviews</div>
                 </div>
+            </div>
+            <div id = 'actual-review-wrapper'>
+                {currentSegment.map((review)=>{
+                    return(
+                        <>
+                            <div className='small-stars'>{instrumentStarRating(average.toFixed(1))}</div>
+                            <div className='instrument-review-title'>  {review.title}</div>
+                            <div className='instrument-review-author'> {review.reviewer_name} </div>
+                            <div className='instrument-review-body'> <InstrumentReviewText text = {review.body}/> </div>
+                        </>
+                    )
+                }
+                )}
             </div>
            
         </div>
