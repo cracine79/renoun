@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_06_02_185540) do
+ActiveRecord::Schema[7.0].define(version: 2024_07_15_195732) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +60,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_02_185540) do
     t.index ["favoriter_id"], name: "index_favorites_on_favoriter_id"
     t.index ["instrument_id", "favoriter_id"], name: "index_favorites_on_instrument_id_and_favoriter_id", unique: true
     t.index ["instrument_id"], name: "index_favorites_on_instrument_id"
+  end
+
+  create_table "instrument_reviews", force: :cascade do |t|
+    t.string "reviewer_name", default: "anonymous"
+    t.string "title", null: false
+    t.string "body", null: false
+    t.string "instrument_name", null: false
+    t.integer "stars", null: false
+    t.integer "helpful_count", default: 0
+    t.boolean "purchased_on_renoun", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "instruments", force: :cascade do |t|

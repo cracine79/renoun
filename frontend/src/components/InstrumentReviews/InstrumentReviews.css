@@ -1,0 +1,388 @@
+.product-reviews-header {
+    font-weight: 600;
+    color: black;
+    font-size: 36px;
+    margin-top: 30px;
+}
+
+
+.stars-instrument{
+    width: 120px;
+    height: 22px;
+    background-size: 120px;
+    margin-bottom: 7px;
+    margin-left: 10px;
+}
+#five-stars-inst{
+    background-image: url('/assets/images/fiveStars.png')
+}
+#four-half-stars-inst{
+    background-image: url('/assets/images/fourHalfStars.png')
+}
+#four-stars-inst{
+    background-image: url('/assets/images/fourStars.png')
+}
+
+#three-half-stars-inst{
+    background-image: url('/assets/images/threeHalfStars.png')
+}
+#three-stars-inst{
+    background-image: url('/assets/images/threeStars.png')
+}
+
+#two-half-stars-inst{
+    background-image: url('/assets/images/twoHalfStars.png')
+}
+#two-stars-inst{
+    background-image: url('/assets/images/twoStars.png')
+}
+
+#one-half-stars-inst{
+    background-image: url('/assets/images/oneHalfStars.png')
+}
+#one-star-inst{
+    background-image: url('/assets/images/oneStar.png')
+}
+
+#half-star-inst{
+    background-image: url('/assets/images/halfStars.png')
+}
+
+#average-summary{
+    color: rgb(75, 75, 75);
+    margin-top: 15px;
+}
+
+#score-header{
+    display: flex;
+    align-items: center;
+    }
+
+#no-score{
+    display: flex;
+    align-items: center;
+    height: auto;
+    margin-top: 30px;
+    width: 80%;
+    line-height: 20px;
+}
+
+#score-data-header{
+    display: flex;
+}
+
+#star-breakdown{
+    padding-top: 10px;
+    margin-left: 20px;
+
+    width: 60%;
+    min-width: 360px;
+}
+
+.star-line{
+    display: flex;
+    margin-top: 15px;
+}
+
+#hundred-percent{
+    background-image: url('/assets/images/100Percent.png')
+}
+
+#ninety-percent{
+    background-image: url('/assets/images/90percent.png')
+}
+
+#eighty-percent{
+    background-image: url('/assets/images/80percent.png')
+}
+
+#seventy-percent{
+    background-image: url('/assets/images/70percent.png')
+}
+
+#sixty-percent{
+    background-image: url('/assets/images/60percent.png')
+}
+
+#fifty-percent{
+    background-image: url('/assets/images/50percent.png')
+}
+
+#forty-percent{
+    background-image: url('/assets/images/40percent.png')
+}
+
+#thirty-percent{
+    background-image: url('/assets/images/30percent.png')
+}
+
+#twenty-percent{
+    background-image: url('/assets/images/20percent.png')
+}
+
+#ten-percent{
+    background-image: url('/assets/images/10percent.png')
+}
+
+#zero-percent{
+    background-image: url('/assets/images/0percent.png')
+}
+
+.bar-rating{
+    margin-top: 4px;
+    width: 60%;
+    height: 12px;
+    background-size: 98%;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#write-product-review-button{
+    margin-top: 20px;
+    width: 200px;
+    height: 50px;
+    background-color: black;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#write-product-review-button:hover{
+    background-color: rgb(72, 72, 72);
+    cursor: pointer;
+}
+
+#actual-review-wrapper{
+    margin-top: 60px;
+    width: 90%;
+}
+
+ 
+.stars-instrument-indiv{
+    width: 80px;
+    height: 14px;
+    background-size: 80px;
+}
+
+.instrument-review-title{
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.instrument-review-author{
+    margin-top: 8px;
+    font-family:Arial, Helvetica, sans-serif
+
+}
+
+.instrument-review-body{
+    margin-top: 8px;
+    font-family: inter system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(86, 86, 86);
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+
+#product-review-modal{
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.9);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    display: none;
+}
+
+#product-review-box{
+    width: 500px;
+    height: 600px;
+    border-radius: 25px;
+    margin-top: 100px;
+    background-color: white;
+    position: fixed;
+    z-index: 2;
+    padding: 20px;
+}
+
+#write-product-review{
+    margin-left: 100px;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#product-review-line {
+    display:block; 
+    height: 1px; 
+    border:0; 
+    border-top: 1px solid #ccc; 
+    margin: 1em 0; 
+    padding: 0; 
+}
+
+.product-form-title{
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#product-review-title-text{
+    width: 96%;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 5px;
+    font-weight: 300;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+#product-review-body-text{
+    width: 96%;
+    height: 100px;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 5px;
+    font-weight: 300;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+
+}
+
+#close-review-x{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}   
+
+#close-review-x:hover{
+    background-color: rgb(199, 199, 199);
+    cursor: pointer;
+}
+
+#instrument-stars{
+    margin-top: 5px;
+}
+
+#post-product-review{
+    width: 150px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    margin-top: 20px;
+}
+
+#post-product-review:hover{
+    background-color: rgb(87, 87, 87);
+    cursor:pointer;
+}
+
+#yes-purchased{
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 4px;
+    margin-left: 15px;
+}
+
+.small-stars{
+    display: flex;
+    align-items: center;
+}
+
+.page-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(200, 200, 200);
+}
+
+.current-page-button{
+    width: 38px;
+    height: 38px;
+    border-radius: 25px;
+    border: 3px solid black;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.page-button:hover{
+    background-color: rgb(102, 102, 102);
+    cursor: pointer;
+}
+
+.current-page-button:hover{
+    background-color: rgb(102, 102, 102);
+    cursor: pointer;
+}
+
+#page-buttons{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+#previous-button{
+    width: 120px;
+    height: 40px;
+    background-color: rgb(200, 200, 200);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+#previous-button:hover{
+    background-color: rgb(102, 102, 102);
+    cursor: pointer;
+}
+
+#next-button{
+    width: 120px;
+    height: 40px;
+    background-color: rgb(200, 200, 200);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+#next-button:hover{
+    background-color: rgb(102, 102, 102);
+    cursor: pointer;
+}

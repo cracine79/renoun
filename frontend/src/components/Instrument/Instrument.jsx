@@ -348,10 +348,11 @@ const Instrument = () => {
                     <Seller instrument = {instrument} sellerStoreName = {sellerStoreName}/>
                 </div>
 
-                {/* <div id='instrument-reviews-box'>
-                    <InstrumentReviews />
-                 
-                </div> */}
+               
+
+                <div id='instrument-reviews-box'>
+                    <InstrumentReviews instrumentId = {instrument.id} />
+                </div>
          
             </div>
             <div id='right-outer-wrap'>

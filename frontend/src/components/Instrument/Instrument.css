@@ -582,7 +582,7 @@ color: gray;
 
 #instrument-reviews-box{
     margin-top: 100px;
-    height: 500px;
+    height: auto;
 }
 
 #add-to-cart{
