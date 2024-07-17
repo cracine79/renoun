@@ -76,6 +76,7 @@
     margin-left: 20px;
 
     width: 60%;
+    min-width: 360px;
 }
 
 .star-line{
