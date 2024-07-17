@@ -12,7 +12,6 @@ class Api::InstrumentReviewsController < ApplicationController
     end
 
     def create 
-        debugger
         @review = InstrumentReview.new(instrument_review_params)
         if @review.save!
             render json: @review

@@ -16,6 +16,37 @@
 #five-stars-inst{
     background-image: url('/assets/images/fiveStars.png')
 }
+#four-half-stars-inst{
+    background-image: url('/assets/images/fourHalfStars.png')
+}
+#four-stars-inst{
+    background-image: url('/assets/images/fourStars.png')
+}
+
+#three-half-stars-inst{
+    background-image: url('/assets/images/threeHalfStars.png')
+}
+#three-stars-inst{
+    background-image: url('/assets/images/threeStars.png')
+}
+
+#two-half-stars-inst{
+    background-image: url('/assets/images/twoHalfStars.png')
+}
+#two-stars-inst{
+    background-image: url('/assets/images/twoStars.png')
+}
+
+#one-half-stars-inst{
+    background-image: url('/assets/images/oneHalfStars.png')
+}
+#one-star-inst{
+    background-image: url('/assets/images/oneStar.png')
+}
+
+#half-star-inst{
+    background-image: url('/assets/images/halfStars.png')
+}
 
 #average-summary{
     color: rgb(75, 75, 75);
@@ -26,6 +57,15 @@
     display: flex;
     align-items: center;
     }
+
+#no-score{
+    display: flex;
+    align-items: center;
+    height: auto;
+    margin-top: 30px;
+    width: 80%;
+    line-height: 20px;
+}
 
 #score-data-header{
     display: flex;
@@ -51,6 +91,38 @@
     background-image: url('/assets/images/90percent.png')
 }
 
+#eighty-percent{
+    background-image: url('/assets/images/80percent.png')
+}
+
+#seventy-percent{
+    background-image: url('/assets/images/70percent.png')
+}
+
+#sixty-percent{
+    background-image: url('/assets/images/60percent.png')
+}
+
+#fifty-percent{
+    background-image: url('/assets/images/50percent.png')
+}
+
+#forty-percent{
+    background-image: url('/assets/images/40percent.png')
+}
+
+#thirty-percent{
+    background-image: url('/assets/images/30percent.png')
+}
+
+#twenty-percent{
+    background-image: url('/assets/images/20percent.png')
+}
+
+#ten-percent{
+    background-image: url('/assets/images/10percent.png')
+}
+
 #zero-percent{
     background-image: url('/assets/images/0percent.png')
 }
@@ -58,7 +130,7 @@
 .bar-rating{
     margin-top: 4px;
     width: 60%;
-    height: 10px;
+    height: 12px;
     background-size: 98%;
     background-repeat: no-repeat;
     margin-left: 10px;
@@ -85,8 +157,8 @@
 }
 
 #actual-review-wrapper{
-    margin-top: 80px;
-    width: 80%;
+    margin-top: 60px;
+    width: 90%;
 }
 
  
@@ -114,7 +186,7 @@
     color: rgb(86, 86, 86);
     font-size: 16px;
     line-height: 26px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     font-weight: 400;
 }
 
@@ -229,4 +301,14 @@
     cursor:pointer;
 }
 
+#yes-purchased{
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 4px;
+    margin-left: 15px;
+}
 
+.small-stars{
+    display: flex;
+    align-items: center;
+}

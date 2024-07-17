@@ -1,9 +1,10 @@
 import { useState } from "react"
+import { useEffect } from "react";
 import './InstrumentReviewText.css'
 
 function InstrumentReviewText({text, id}){
     const [seeMore, setSeeMore] = useState(false);
-
+  
     const shortenReviewBody = (text) => {
        
         // if (text.length < 270){
@@ -19,9 +20,16 @@ function InstrumentReviewText({text, id}){
         // }
         
     }
+    useEffect(()=>{
+        if(text.length < 225){
+            setSeeMore(true)
+        }
+    }, [text]
 
+    )
+  
     const appropriateText = () =>{
-        if(text.length < 220){
+        if(text.length < 225){
             return ""
         } else if (seeMore == false){
             return "  read more"
@@ -34,8 +42,7 @@ function InstrumentReviewText({text, id}){
         <>
             <div>
             <div className = 'text-body' key={id}>
-    
-                {seeMore ? text : `${text.substring(0,220)}....`}
+                {seeMore  ? text : `${text.substring(0,225)}...`}
                 <span className='see-more-text' onClick={()=>setSeeMore(!seeMore)}>
                         {appropriateText()}
                 </span>

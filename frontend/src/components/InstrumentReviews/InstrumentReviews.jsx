@@ -30,11 +30,10 @@ const InstrumentReviews = ({instrumentId}) => {
                 purchased=true
             }
         }
-   
     })
 
     if (currentUser){
-        reviewer_name = (currentUser.firstName) + " " + (currentUser.lastName[0])
+        reviewer_name = (currentUser.firstName[0].toUpperCase()) + (currentUser.firstName.slice(1)) + " " + (currentUser.lastName[0].toUpperCase()) + "."
     }
 
     useEffect(()=>{
@@ -49,6 +48,8 @@ const InstrumentReviews = ({instrumentId}) => {
             stars_count[review.stars] = 1
         }
     })
+
+    
     const numReviews = instrumentReviews.length
     let average = +sum/numReviews
 
@@ -150,39 +151,39 @@ const InstrumentReviews = ({instrumentId}) => {
             return (
                 <div id='hundred-percent' className='bar-rating'></div>
             )
-        }else if(num >= 0.9){
+        }else if(num >= 0.85){
             return(
                 <div id='ninety-percent' className='bar-rating'></div>
             )
-        } else if (num >= 0.8){
+        } else if (num >= 0.75){
             return(
                 <div id='eighty-percent' className='bar-rating'></div>
             )
-        } else if (num >= 0.7){
+        } else if (num >= 0.65){
             return(
                 <div id='seventy-percent' className='bar-rating'></div>
             )
-        } else if (num >= 0.6){
+        } else if (num >= 0.55){
             return(
                 <div id='sixty-percent' className='bar-rating'></div>
             )
-        } else if (num >= 0.5){
+        } else if (num >= 0.45){
             return(
                 <div id='fifty-percent' className='bar-rating'></div>
             )
-        } else if (num >= 0.4){
+        } else if (num >= 0.35){
             return(
                 <div id='forty-percent' className='bar-rating'></div>
             )
-        }else if (num >= 0.3){
+        }else if (num >= 0.25){
             return(
                 <div id='thirty-percent' className='bar-rating'></div>
             )
-        }else if (num >= 0.2){
+        }else if (num >= 0.15){
             return(
                 <div id='twenty-percent' className='bar-rating'></div>
             )
-        }else if (num >= 0.1){
+        }else if (num >= 0.05){
             return(
                 <div id='ten-percent' className='bar-rating'></div>
             )
@@ -244,6 +245,45 @@ const InstrumentReviews = ({instrumentId}) => {
         modal.style.display = 'none'
     }
 
+    const handleReviewCount = () =>{
+        if(numReviews > 0){
+            return(
+                <>
+                 <div id = 'score-header' className = 'product-reviews-header'>{average.toFixed(1)}   {averageStars(average)} </div>
+                 <div id= 'average-summary'> {average.toFixed(1)} out of 5 based on {numReviews} {numReviews == 1 ? 'review' : 'reviews'} </div></>
+            )
+        } else {
+            return (
+                <>
+                       <div id='no-score'>This product has not yet received any reviews. Already have it?  Be the first to let others know what you think of it!</div>
+                      
+                </>
+             
+            )
+        }
+      
+    }
+
+    const purchasedOnRenoun = (purchased) =>{
+        if (purchased == true){
+            return(
+                <span id='yes-purchased'>
+                    Purchased on Renoun
+                </span>
+            )
+        }
+    }
+
+    // const pageButtons = () => {
+    //     if (req_pages > 1){
+    //         return(
+    //             <>
+        
+    //             </>
+    //         )
+    //     }
+    // }
+
 
     return(
     <>
@@ -267,23 +307,23 @@ const InstrumentReviews = ({instrumentId}) => {
             <div className = 'product-reviews-header'>Product Reviews</div>
             <div id='score-data-header'>
                 <div id='instrument-score'>
-                    <div id = 'score-header' className = 'product-reviews-header'>{average.toFixed(1)}   {averageStars(5)} </div>
-                    <div id= 'average-summary'> {average.toFixed(1)} out of 5 based on {numReviews} reviews </div>
+                    {handleReviewCount()}            
+                   
                     <div id='write-product-review-button' onClick = {openModal}>Write a Product Review</div>
                 </div>
                 <div id='star-breakdown'>
-                    <div className='star-line'> 5 stars {getBars(stars_count[5]/numReviews)}   {getStars(5)} reviews</div>
-                    <div className='star-line'> 4 stars {getBars(stars_count[4]/numReviews)}   {getStars(4)} reviews</div>
-                    <div className='star-line'> 3 stars {getBars(stars_count[3]/numReviews)}  {getStars(3)} reviews</div>
-                    <div className='star-line'> 2 stars {getBars(stars_count[2]/numReviews)}  {getStars(2)} reviews</div>
-                    <div className='star-line'> 1 stars {getBars(stars_count[1]/numReviews)}  {getStars(1)} reviews</div>
+                    <div className='star-line'> 5 stars {getBars(stars_count[5]/numReviews)}   {getStars(5)} {stars_count[5] == 1 ? "review" : "reviews"}</div>
+                    <div className='star-line'> 4 stars {getBars(stars_count[4]/numReviews)}   {getStars(4)} {stars_count[4] == 1 ? "review" : "reviews"}</div>
+                    <div className='star-line'> 3 stars {getBars(stars_count[3]/numReviews)}  {getStars(3)} {stars_count[3] == 1 ? "review" : "reviews"}</div>
+                    <div className='star-line'> 2 stars {getBars(stars_count[2]/numReviews)}  {getStars(2)} {stars_count[2] == 1 ? "review" : "reviews"}</div>
+                     <div className='star-line'> 1 star {'\u00A0'}{getBars(stars_count[1]/numReviews)}  {getStars(1)} {stars_count[1] == 1 ? "review" : "reviews"}</div>
                 </div>
             </div>
             <div id = 'actual-review-wrapper'>
                 {currentSegment.map((review)=>{
                     return(
                         <>
-                            <div className='small-stars'>{instrumentStarRating(average.toFixed(1))}</div>
+                            <div className='small-stars'>{instrumentStarRating(review.stars)}{purchasedOnRenoun(review.purchased_on_renoun)} </div>
                             <div className='instrument-review-title'>  {review.title}</div>
                             <div className='instrument-review-author'> {review.reviewer_name} </div>
                             <div className='instrument-review-body'> <InstrumentReviewText text = {review.body} id={review.id}/> </div>
@@ -291,6 +331,9 @@ const InstrumentReviews = ({instrumentId}) => {
                     )
                 }
                 )}
+            </div>
+            <div id='page-buttons'>
+                {/* {pageButtons()} */}
             </div>
            
         </div>
