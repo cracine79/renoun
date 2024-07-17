@@ -281,9 +281,22 @@ const InstrumentReviews = ({instrumentId}) => {
             for (let i = 0; i < reqPages; i++){
                 countArray.push(i)
             }
+            let currentCountArray = countArray
+            if (countArray.length > 5){
+                if (reviewPage < 3){
+                    currentCountArray = [0, 1, 2, 3, 4]
+                } else if (reviewPage >= countArray.length - 2){
+                    currentCountArray = countArray.slice(-5)
+                } else {
+                    currentCountArray = countArray.slice(reviewPage-2, reviewPage+3)
+                }
+                    
+            }
+
+
             return(
                 <>
-                    {countArray.map((pageNum)=>{
+                    {currentCountArray.map((pageNum)=>{
                         return(
                             <span className = {pageNum==reviewPage ? 'current-page-button' : 'page-button'} 
                                                     id={`button-number-${pageNum.toString()}`}
