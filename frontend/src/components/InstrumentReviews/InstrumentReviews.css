@@ -368,3 +368,20 @@
     background-color: rgb(102, 102, 102);
     cursor: pointer;
 }
+
+#next-button{
+    width: 120px;
+    height: 40px;
+    background-color: rgb(200, 200, 200);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+#next-button:hover{
+    background-color: rgb(102, 102, 102);
+    cursor: pointer;
+}

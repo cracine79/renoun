@@ -306,6 +306,14 @@ const InstrumentReviews = ({instrumentId}) => {
         }
     }
 
+    const nextButton = () => {
+        if (reviewPage+1 < reqPages){
+            return(
+                <span id='next-button' onClick = {()=>{setReviewPage(reviewPage+1)}}> Next &nbsp; &gt; </span>
+            )
+        }
+    }
+
 
     return(
     <>
@@ -357,6 +365,7 @@ const InstrumentReviews = ({instrumentId}) => {
             <div id='page-buttons'>
                 {previousButton()}
                 {pageButtons()}
+                {nextButton()}
             </div>
            
         </div>
