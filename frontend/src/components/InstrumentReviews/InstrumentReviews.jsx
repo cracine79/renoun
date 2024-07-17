@@ -5,12 +5,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import InstrumentReviewText from './InstrumentReviewText';
 import { createInstrumentReview } from '../../store/instrumentReview';
+import CurrentSegment from './CurrentSegment';
 
 const InstrumentReviews = ({instrumentId}) => {
     const dispatch = useDispatch();
     const instrumentReviewsObj = useSelector(state => state.instrumentReviews)
     const instrumentReviews = Object.values(instrumentReviewsObj)
     instrumentReviews.reverse()
+    debugger;
     const [reviewPage, setReviewPage] = useState(0)
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
@@ -64,6 +66,7 @@ const InstrumentReviews = ({instrumentId}) => {
     }
     console.log(pageSegments)
     const currentSegment = pageSegments[reviewPage]
+
 
 
     const averageStars = (num)=>{
@@ -326,6 +329,17 @@ const InstrumentReviews = ({instrumentId}) => {
             )
         }
     }
+    
+
+    const dealWithCurrentSegment = () => {
+        if (currentSegment){
+            return (
+                <CurrentSegment currentSegment = {currentSegment}/>
+            )
+        } else {
+            return (<></>)
+        }
+    }
 
 
     return(
@@ -363,7 +377,8 @@ const InstrumentReviews = ({instrumentId}) => {
                 </div>
             </div>
             <div id = 'actual-review-wrapper'>
-                {currentSegment.map((review)=>{
+                {dealWithCurrentSegment()}
+                {/* {currentSegment.map((review)=>{
                     return(
                         <>
                             <div className='small-stars'>{instrumentStarRating(review.stars)}{purchasedOnRenoun(review.purchased_on_renoun)} </div>
@@ -373,7 +388,7 @@ const InstrumentReviews = ({instrumentId}) => {
                         </>
                     )
                 }
-                )}
+                )} */}
             </div>
             <div id='page-buttons'>
                 {previousButton()}
