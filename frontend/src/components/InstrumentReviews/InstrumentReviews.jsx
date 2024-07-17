@@ -53,15 +53,16 @@ const InstrumentReviews = ({instrumentId}) => {
     const numReviews = instrumentReviews.length
     let average = +sum/numReviews
 
-    let req_pages = 0
+    let reqPages = 0
     let reviewsPerPage = 5
 
-    req_pages = Math.trunc(instrumentReviews.length/reviewsPerPage) + 1  //Determine total number of review pages needed based upon total avail
+    reqPages = Math.trunc(instrumentReviews.length/reviewsPerPage) + 1  //Determine total number of review pages needed based upon total avail
     const pageSegments = []
-    for(let i = 0; i<req_pages; i++){
+    for(let i = 0; i<reqPages; i++){
         const start = reviewsPerPage * i
         pageSegments.push(instrumentReviews.slice(start, start+reviewsPerPage))
     }
+    console.log(pageSegments)
     const currentSegment = pageSegments[reviewPage]
 
 
@@ -274,15 +275,28 @@ const InstrumentReviews = ({instrumentId}) => {
         }
     }
 
-    // const pageButtons = () => {
-    //     if (req_pages > 1){
-    //         return(
-    //             <>
-        
-    //             </>
-    //         )
-    //     }
-    // }
+    const pageButtons = () => {
+        if (reqPages > 1){
+            let countArray = []
+            for (let i = 0; i < reqPages; i++){
+                countArray.push(i)
+            }
+            return(
+                <>
+                    {countArray.map((pageNum)=>{
+                        return(
+                            <span className = {pageNum==reviewPage ? 'current-page-button' : 'page-button'} 
+                                                    id={`button-number-${pageNum.toString()}`}
+                                                    onClick = {()=>{
+                                                        setReviewPage(pageNum)
+                                                        debugger;
+                                                    }}>{pageNum + 1}</span>
+                        )
+                    })}
+                </>
+            )
+        }
+    }
 
 
     return(
@@ -333,7 +347,7 @@ const InstrumentReviews = ({instrumentId}) => {
                 )}
             </div>
             <div id='page-buttons'>
-                {/* {pageButtons()} */}
+                {pageButtons()}
             </div>
            
         </div>
