@@ -41,7 +41,6 @@ const CurrentSegment = ({currentSegment}) => {
     
     return(
         <>
-            HELLO
               {currentSegment.map((review)=>{
             return(
                 <>

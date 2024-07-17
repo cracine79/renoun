@@ -3,7 +3,6 @@ import './instrumentReviews.css'
 import { fetchAllInstrumentReviews } from '../../store/instrumentReview';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import InstrumentReviewText from './InstrumentReviewText';
 import { createInstrumentReview } from '../../store/instrumentReview';
 import CurrentSegment from './CurrentSegment';
 
@@ -12,7 +11,6 @@ const InstrumentReviews = ({instrumentId}) => {
     const instrumentReviewsObj = useSelector(state => state.instrumentReviews)
     const instrumentReviews = Object.values(instrumentReviewsObj)
     instrumentReviews.reverse()
-    debugger;
     const [reviewPage, setReviewPage] = useState(0)
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
@@ -40,7 +38,7 @@ const InstrumentReviews = ({instrumentId}) => {
 
     useEffect(()=>{
         dispatch(fetchAllInstrumentReviews(instrumentId))
-    }, [instrumentId])
+    }, [instrumentId, dispatch])
     
     instrumentReviews.forEach((review)=> {
         sum += review.stars
@@ -64,7 +62,6 @@ const InstrumentReviews = ({instrumentId}) => {
         const start = reviewsPerPage * i
         pageSegments.push(instrumentReviews.slice(start, start+reviewsPerPage))
     }
-    console.log(pageSegments)
     const currentSegment = pageSegments[reviewPage]
 
 
@@ -113,35 +110,6 @@ const InstrumentReviews = ({instrumentId}) => {
         }
     }
 
-
-
-    const instrumentStarRating = (num)=>{
-        if(num<0.25){
-            return (
-                <div id='no-star-inst' className='stars-instrument-indiv'></div>
-            )
-        }else if(0.25<=num && num <1.5){
-            return(
-                <div id='one-star-inst' className='stars-instrument-indiv'></div>
-            )
-        }else if(1.5<=num && num<2.5){
-            return(
-                <div id='two-star-inst' className='stars-instrument-indiv'></div>
-            )
-       }else if(2.5 <= num && num < 3.5){
-            return(
-                <div id = 'three-stars-inst' className='stars-instrument-indiv'></div>
-            )
-        } else if (3.5 <= num && num < 4.5){
-            return(
-                <div id='four-stars-inst' className='stars-instrument-indiv'></div>
-            )
-        } else {
-            return(
-                <div id='five-stars-inst' className='stars-instrument-indiv'></div>
-            )
-        }
-    }
 
     const getStars = num => {
        if(stars_count[num]){
@@ -268,15 +236,6 @@ const InstrumentReviews = ({instrumentId}) => {
       
     }
 
-    const purchasedOnRenoun = (purchased) =>{
-        if (purchased == true){
-            return(
-                <span id='yes-purchased'>
-                    Purchased on Renoun
-                </span>
-            )
-        }
-    }
 
     const pageButtons = () => {
         if (reqPages > 1){
@@ -298,14 +257,14 @@ const InstrumentReviews = ({instrumentId}) => {
 
 
             return(
-                <>
+                <> 
                     {currentCountArray.map((pageNum)=>{
                         return(
-                            <span className = {pageNum==reviewPage ? 'current-page-button' : 'page-button'} 
+                            <span key = {pageNum} className = {pageNum==reviewPage ? 'current-page-button' : 'page-button'} 
                                                     id={`button-number-${pageNum.toString()}`}
                                                     onClick = {()=>{
                                                         setReviewPage(pageNum)
-                                                        debugger;
+                        
                                                     }}>{pageNum + 1}</span>
                         )
                     })}
@@ -391,7 +350,8 @@ const InstrumentReviews = ({instrumentId}) => {
                 )} */}
             </div>
             <div id='page-buttons'>
-                {previousButton()}
+       
+                {previousButton()}              
                 {pageButtons()}
                 {nextButton()}
             </div>

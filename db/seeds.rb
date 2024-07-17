@@ -1347,6 +1347,38 @@ casioRap.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.
 
     InstrumentReview.create!({
       instrument_name: 'Rickenbacker 1993 Plus',
+      reviewer_name: 'Charles C.',
+      title: 'Ric 1993 Plus',
+      body: "Much easier to play then my 360 64V, because of the wider neck. It has low action, and sounds wonderful ! Flawless workmanship.",
+      stars: 5,
+      purchased_on_renoun: true
+    })
+
+    InstrumentReview.create!({
+      instrument_name: 'Rickenbacker 1993 Plus',
+      reviewer_name: 'Steve W.',
+      title: 'Sweet Axe',
+      body: "Really impressed with the playability and build quality of this guitar. Excellent seller good communication and delivery.",
+      stars: 5,
+      purchased_on_renoun: true
+    })
+
+
+    InstrumentReview.create!({
+      instrument_name: 'Rickenbacker 1993 Plus',
+      reviewer_name: 'Timothy C.',
+      title: '1993 PLUS',
+      body: "Immediately recognizable classic jangle when clean, and it plays distorted with super sharp tone. Unbelievable action all the way up the neck. I like the idea of the stronger construction and and the slightly wider neck (Pete Townsend modifications). The wee bit more room on the fingerboard keeps fretting fingers from inadvertently muting neighbor strings. There is actually a chance to get chime from ALL the strings no matter the chord. Amazing craftsmanship. I am floored.",
+      stars: 5,
+      purchased_on_renoun: true
+    })
+
+    
+
+
+
+    InstrumentReview.create!({
+      instrument_name: 'Rickenbacker 1993 Plus',
       reviewer_name: 'James B.',
       title: 'My Dream Rick',
       body: 'OK- Some stay away from these for various reasons-they tick almost all the boxes-but not quite. This one ticks ALL the boxes for me. Ive owned a 330, 360/12, 660, and 360 in the past. Either the neck is too slim for 12 strings, the body is sharp and cuts into you, the neck only has 21 frets, etc. This 360 has 22 frets-an outstanding Vibrola bar (so hard to find)-Toaster top pickups (the only ones to have) and a super clean unmolested neck and body AND to top it off -THE SILVER HARDSHELL CASE IN PRISTINE CONDITION. Super great playing guitar-it has EVERYTHING. I love it.',
@@ -1381,6 +1413,78 @@ casioRap.photo.attach(io: URI.open('https://renoun-seeds.s3.us-east-2.amazonaws.
     purchased_on_renoun: true  
 })
 
+InstrumentReview.create!({
+  instrument_name: 'Fender Telecaster',
+  reviewer_name: 'Christopher K',
+  title: "I'm in LOVE!",
+  body: "All I can say is that I'm in love. I've waited my life for this! fender, Set neck , organic archtop, binding and SD pickups push/ pull hum/sing and for what? I cant remember but I think $500. Get one! I'm getting another one in nat . It's a screamer though not as Fender-ish as you would think. This thing howells! And everything comes through. Had to really clean up my act.",
+  stars: 5,
+  purchased_on_renoun: true  
+})
+
+InstrumentReview.create!({
+  instrument_name: 'Fender Telecaster',
+  reviewer_name: 'Colin J.',
+  title: "Great Guitar at this price",
+  body: "Very well built. Surprisingly high quality at this price and being built in Indonesia. A very comfortable feel and fast neck. The nut needed a touch of filing (it was binding up and hard to tune), and some small adjustments to the intonation, and that was it all it needed from the factory. Action was perfect, neck was straight. The pickups are beautiful played clean, and respond well to compression. There’s a nice even response across low-high frequencies. This would be an awesome sound for rhythm playing. I bought it for the humbuckers. I’m not much for pull pots that split the coil. These sound pretty good and I will use the setting sometimes, but in my opinion it doesn’t replace dedicated single coils. Also, at high gain these pickups are kind of fizzy and don’t have a very pleasant resonance. Backing off the tone knob got me a better high gain tone, but it’s kind of small. I may replace them. I would also note that the guitar is made of nato, not mahogany as listed on the Fender website. Nato is a cousin of mahogany. It isn’t the same density, so the guitar is lighter. It has great sustain anyway, but maybe that’s also why it sounds a bit small and doesn’t resonate like I expected at high gain. ",
+  stars: 4,
+  purchased_on_renoun: true  
+})
+
+InstrumentReview.create!({
+  instrument_name: 'Fender Telecaster',
+  reviewer_name: 'Michael L.',
+  title: "Like it",
+  body: "Very nice axe. Love the Pearly gates bridge pickup. Stays in turn. 11-49. Feel right",
+  stars: 5,
+  purchased_on_renoun: true  
+})
+
+
+InstrumentReview.create!({
+  instrument_name: 'Fender Telecaster',
+  reviewer_name: 'Chuck C.',
+  title: "Fantastic Guitar",
+  body: "I've had them all, LP's, Rickenbacker, Fender, ES 335 & 339's, PRS, Gretch, SG , G&L, and there is nothing that sounds as good right out of the box as this guitar. (IMO). I can't put it down, sweet and hot just a great sound and good workmanship. I could complain a little about the shape of the neck but the playability and sound are just awesome",
+  stars: 5,
+  purchased_on_renoun: false  
+})
+
+InstrumentReview.create!({
+  instrument_name: 'Gibson SG',
+  reviewer_name: 'Tom T.',
+  title: "SG",
+  body: "The sg was one of the only guitars I haven’t tried ... when u finally get the beast in tune it is a monster through my orange practice amp...I was totally put off by numerous les Paul’s.. too fucking heavy and weight issues ... the studio t and the Studio lite is a mucky tone... the standard is the way to go but I’m constantly amazed at how jimmy page threw his around and rocked it for all it had...Tom ",
+  stars: 4,
+  purchased_on_renoun: false  
+})
+
+InstrumentReview.create!({
+  instrument_name: 'Gibson SG',
+  reviewer_name: 'Terry P.',
+  title: "100% Made to Play",
+  body: "Wowwwww..a very mean machine whether it's dirty or clean!! And I don't understand how Gibson can pour this much guitar into a single instrument, at this price range. I am blown away at the quality. Not to mention, it sounds killer. This was my first SG, and I am not disappointed in any way. The playability is outstanding, and my model arrived perfectly intonated with sweet low action. Fret access is great and the 490's kick some butt. Nuthin' but love here. ",
+  stars: 5,
+  purchased_on_renoun: true  
+})
+
+InstrumentReview.create!({
+  instrument_name: 'Fender Stratocaster',
+  reviewer_name: 'Chris F.',
+  title: "A Winner For Sure",
+  body: "I have several strat type guitars but had, up to now, shied away from investing in the big F, unwilling to pay a premium for the name. Having been aware of the release of this significant upgrade to the Player series I compared the original Player, Player Plus and US made Performer. Whilst the Player was pretty good, the Plus won out on the superbly comfortable neck (rolled edges really do make a difference). Add in locking tuners, 7 possibilities of pickup selection (thanks to the push / pull tone knob) and flat saddles ( no more scrapes on my picking hand + possibility of using pressure to obtain some vibrato without needing to use the whammy bar) .... oh, and noiseless pickups .... this was getting seriously good. Surely though, the Performer will offer something over & above this for the additional cost? Well, no, not for me at least. The clincher was that the Performer comes with Jumbo frets as opposed to the Medium Jumbo frets of the Player Plus. For me Jumbo Frets are akin to the feeling you get when you drive over a rumble strip when approaching a roundabout. Just can't get on with them. How does it sound? It has a 'transparent' quality allowing pedals & amp in the chain to easily shape the tones I am looking for. Remember, if you put rubbish in you'll get rubbish out! Fender have pulled one out of the hat here and it deserves your attention if looking for a versatile strat at a sensible price.",
+  stars: 5,
+  purchased_on_renoun: true  
+})
+
+InstrumentReview.create!({
+  instrument_name: 'Fender Stratocaster',
+  reviewer_name: 'Vincent R.',
+  title: "Great Guitar",
+  body: "This Strat looks and sounds super! The Tequila Sunrise finish is awesome. The cool Fender gig bag is a nice bonus. Still can't find any blemish in/on the back. Good price too (didn't pay full retail). A fantastic guitar at any price!",
+  stars: 5,
+  purchased_on_renoun: true  
+})
 
 
 
