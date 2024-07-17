@@ -56,7 +56,7 @@ const InstrumentReviews = ({instrumentId}) => {
     let reqPages = 0
     let reviewsPerPage = 5
 
-    reqPages = Math.trunc(instrumentReviews.length/reviewsPerPage) + 1  //Determine total number of review pages needed based upon total avail
+    reqPages = Math.ceil(instrumentReviews.length/reviewsPerPage)   //Determine total number of review pages needed based upon total avail
     const pageSegments = []
     for(let i = 0; i<reqPages; i++){
         const start = reviewsPerPage * i
@@ -298,6 +298,14 @@ const InstrumentReviews = ({instrumentId}) => {
         }
     }
 
+    const previousButton = () => {
+        if (reviewPage > 0){
+            return(
+                <span id='previous-button' onClick = {()=>{setReviewPage(reviewPage-1)}}> &lt; &nbsp;   Previous </span>
+            )
+        }
+    }
+
 
     return(
     <>
@@ -347,6 +355,7 @@ const InstrumentReviews = ({instrumentId}) => {
                 )}
             </div>
             <div id='page-buttons'>
+                {previousButton()}
                 {pageButtons()}
             </div>
            
