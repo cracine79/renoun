@@ -317,6 +317,9 @@ const InstrumentReviews = ({instrumentId}) => {
                 <p className='product-form-title'>Your Product Review</p>
                 <textarea id='product-review-body-text' wrap="soft" onChange={e=>setInstrumentReviewBody(e.target.value)}></textarea>
                 <div id='post-product-review' onClick = {postReview}>Post Review</div>
+                <p id='review-tips'>Review Tips</p>
+                <p className ='tip-sentence'>	&#10003; Do: talk about how it sounds, mention pros and cons, and compare it to other products</p>
+                <p className ='tip-sentence'> &#x2717; Don't: review a seller, your shipping experienc,e or include offensive content</p>
             </div>
         </div>
         <div id='product-reviews-wrapper'>

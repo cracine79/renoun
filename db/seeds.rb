@@ -1454,7 +1454,7 @@ InstrumentReview.create!({
   instrument_name: 'Gibson SG',
   reviewer_name: 'Tom T.',
   title: "SG",
-  body: "The sg was one of the only guitars I haven’t tried ... when u finally get the beast in tune it is a monster through my orange practice amp...I was totally put off by numerous les Paul’s.. too fucking heavy and weight issues ... the studio t and the Studio lite is a mucky tone... the standard is the way to go but I’m constantly amazed at how jimmy page threw his around and rocked it for all it had...Tom ",
+  body: "The sg was one of the only guitars I haven’t tried ... when u finally get the beast in tune it is a monster through my orange practice amp...I was totally put off by numerous les Paul’s.. too heavy and weight issues ... the studio t and the Studio lite is a mucky tone... the standard is the way to go but I’m constantly amazed at how jimmy page threw his around and rocked it for all it had...Tom ",
   stars: 4,
   purchased_on_renoun: false  
 })
