@@ -187,8 +187,14 @@
     color: rgb(86, 86, 86);
     font-size: 16px;
     line-height: 26px;
-    margin-bottom: 30px;
     font-weight: 400;
+}
+
+.instrument-review-publish-date{
+    margin-bottom: 23px;
+    font-weight: 200;
+    font-size: 14px;
+    margin-top: 5px;
 }
 
 

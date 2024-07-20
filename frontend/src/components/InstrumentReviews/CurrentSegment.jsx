@@ -48,6 +48,7 @@ const CurrentSegment = ({currentSegment}) => {
                     <div className='instrument-review-title'>  {review.title}</div>
                     <div className='instrument-review-author'> {review.reviewer_name} </div>
                     <div className='instrument-review-body'> <InstrumentReviewText text = {review.body} id={review.id}/> </div>
+                    <div className='instrument-review-publish-date'>{review.created_at.slice(5,7)}/{review.created_at.slice(8,10)}/{review.created_at.slice(0,4)}</div>
                 </>
             )
         }
