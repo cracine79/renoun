@@ -16,6 +16,7 @@ const InstrumentReviews = ({instrumentId}) => {
     const [hover, setHover] = useState(0);
     const [instrumentReviewBody, setInstrumentReviewBody] = useState("")
     const [instrumentReviewTitle, setInstrumentReviewTitle] = useState("")
+    let hasPurchases = false
     let sum = 0
     let stars_count = {}
     const currentUser = useSelector(state=>state.session.user)
@@ -42,6 +43,9 @@ const InstrumentReviews = ({instrumentId}) => {
     
     instrumentReviews.forEach((review)=> {
         sum += review.stars
+        if(review.purchased_on_renoun == true){
+            hasPurchases = true
+        }
         if(stars_count[review.stars]){
             stars_count[review.stars] +=1
         } else {
@@ -328,6 +332,14 @@ const InstrumentReviews = ({instrumentId}) => {
         }
     }
 
+    const purchasesOption = () =>{
+        return(
+            <>
+                 <div className='star-filter'><input type= 'checkbox'/>Purchased on Renoun</div>
+            </>
+        )
+    }
+
     const handle_filter_options = () => {
         const includedStars = []
         for(let i = 5; i > 0; i--){
@@ -337,9 +349,10 @@ const InstrumentReviews = ({instrumentId}) => {
         }
         console.log(includedStars)
         return (
-           <>
+           <>   
+                {hasPurchases ? purchasesOption() : <></>}
                 {includedStars.map((i)=>{
-                    return <div className='star-filter'>{i} Stars <span>{instrumentStarRating(i)}</span>({stars_count[i]})</div>
+                    return <div className='star-filter'><input type= 'checkbox'/>{i} Stars <span>{instrumentStarRating(i)}</span>({stars_count[i]})</div>
                 })}
            </>
            
