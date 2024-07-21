@@ -110,6 +110,34 @@ const InstrumentReviews = ({instrumentId}) => {
         }
     }
 
+    const instrumentStarRating = (num)=>{
+        if(num<0.25){
+            return (
+                <div id='no-star-inst' className='stars-instrument-indiv'></div>
+            )
+        }else if(0.25<=num && num <1.5){
+            return(
+                <div id='one-star-inst' className='stars-instrument-indiv'></div>
+            )
+        }else if(1.5<=num && num<2.5){
+            return(
+                <div id='two-star-inst' className='stars-instrument-indiv'></div>
+            )
+       }else if(2.5 <= num && num < 3.5){
+            return(
+                <div id = 'three-stars-inst' className='stars-instrument-indiv'></div>
+            )
+        } else if (3.5 <= num && num < 4.5){
+            return(
+                <div id='four-stars-inst' className='stars-instrument-indiv'></div>
+            )
+        } else {
+            return(
+                <div id='five-stars-inst' className='stars-instrument-indiv'></div>
+            )
+        }
+    }  
+
 
     const getStars = num => {
        if(stars_count[num]){
@@ -300,6 +328,25 @@ const InstrumentReviews = ({instrumentId}) => {
         }
     }
 
+    const handle_filter_options = () => {
+        const includedStars = []
+        for(let i = 5; i > 0; i--){
+            if(stars_count[i]){
+                includedStars.push(i)
+            }
+        }
+        console.log(includedStars)
+        return (
+           <>
+                {includedStars.map((i)=>{
+                    return <div className='star-filter'>{i} Stars <span>{instrumentStarRating(i)}</span>({stars_count[i]})</div>
+                })}
+           </>
+           
+        )
+       
+    }
+
 
     return(
     <>
@@ -337,23 +384,23 @@ const InstrumentReviews = ({instrumentId}) => {
                     <div className='star-line'> 2 stars {getBars(stars_count[2]/numReviews)}  {getStars(2)} {stars_count[2] == 1 ? "review" : "reviews"}</div>
                      <div className='star-line'> 1 star {'\u00A0'}{getBars(stars_count[1]/numReviews)}  {getStars(1)} {stars_count[1] == 1 ? "review" : "reviews"}</div>
                 </div>
+
+            </div>
+            <div id='product-mid-ribbon'>
+                <div id='filter-outer-wrapper'>     
+                    <div id='filter-by'>Filter By&nbsp;&nbsp;&nbsp;&nbsp;<span id='arrow'>⌄</span></div>
+                    <div id='filter-drop-down'>
+                        <div id='filter-inner-wrapper'>
+                            <p id='filter-head'>Filter by</p>
+                            {handle_filter_options()}
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id = 'actual-review-wrapper'>
                 {dealWithCurrentSegment()}
-                {/* {currentSegment.map((review)=>{
-                    return(
-                        <>
-                            <div className='small-stars'>{instrumentStarRating(review.stars)}{purchasedOnRenoun(review.purchased_on_renoun)} </div>
-                            <div className='instrument-review-title'>  {review.title}</div>
-                            <div className='instrument-review-author'> {review.reviewer_name} </div>
-                            <div className='instrument-review-body'> <InstrumentReviewText text = {review.body} id={review.id}/> </div>
-                        </>
-                    )
-                }
-                )} */}
             </div>
             <div id='page-buttons'>
-       
                 {previousButton()}              
                 {pageButtons()}
                 {nextButton()}
