@@ -25,6 +25,9 @@ const InstrumentReviews = ({instrumentId}) => {
     const ordersObj = Object.values(orders)
     let reviewer_name = "anonymous"
     let purchased = false
+    const openFilterButton = document.getElementById('filter-by-closed')
+    const closeFilterButton = document.getElementById('filter-by-open')
+    const filterMenu = document.getElementById('filter-drop-down')
     ordersObj.forEach((order)=>{
         if(order){
             if(order.itemName.includes(current_instrument.brand) && order.itemName.includes(current_instrument.model)){
@@ -360,6 +363,18 @@ const InstrumentReviews = ({instrumentId}) => {
        
     }
 
+    const openFilters = () =>{
+        openFilterButton.style.display = 'none'
+        closeFilterButton.style.display = 'flex'
+        filterMenu.style.display = 'block'
+    }
+
+    const closeFilters = () =>{
+        openFilterButton.style.display = 'flex'
+        closeFilterButton.style.display = 'none'
+        filterMenu.style.display = 'none'
+    }
+
 
     return(
     <>
@@ -401,7 +416,8 @@ const InstrumentReviews = ({instrumentId}) => {
             </div>
             <div id='product-mid-ribbon'>
                 <div id='filter-outer-wrapper'>     
-                    <div id='filter-by'>Filter By&nbsp;&nbsp;&nbsp;&nbsp;<span id='arrow'>⌄</span></div>
+                    <div id='filter-by-closed' onClick = {openFilters}>Filter By&nbsp;&nbsp;&nbsp;&nbsp;<span id='arrow'>⌄</span></div>
+                    <div id='filter-by-open' onClick = {closeFilters}>Filter By&nbsp;&nbsp;&nbsp;&nbsp;<span id='up-arrow'>^</span></div>
                     <div id='filter-drop-down'>
                         <div id='filter-inner-wrapper'>
                             <p id='filter-head'>Filter by</p>
