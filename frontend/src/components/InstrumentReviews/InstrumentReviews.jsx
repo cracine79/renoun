@@ -9,13 +9,15 @@ import CurrentSegment from './CurrentSegment';
 const InstrumentReviews = ({instrumentId}) => {
     const dispatch = useDispatch();
     const instrumentReviewsObj = useSelector(state => state.instrumentReviews)
-    const instrumentReviews = Object.values(instrumentReviewsObj)
-    instrumentReviews.reverse()
+    const instrumentReviews1 = Object.values(instrumentReviewsObj)
+    instrumentReviews1.reverse()
+    let instrumentReviews = instrumentReviews1
     const [reviewPage, setReviewPage] = useState(0)
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
     const [instrumentReviewBody, setInstrumentReviewBody] = useState("")
     const [instrumentReviewTitle, setInstrumentReviewTitle] = useState("")
+    const [filters, setFilters] = useState({'renoun': false, 1: false, 2: false, 3: false, 4: false, 5: false})
     let hasPurchases = false
     let sum = 0
     let stars_count = {}
@@ -55,8 +57,18 @@ const InstrumentReviews = ({instrumentId}) => {
             stars_count[review.stars] = 1
         }
     })
-
-    
+    const review_filter = filters['renoun']
+    useEffect(()=>{
+        debugger;
+        if(filters['renoun']==true){
+            instrumentReviews = instrumentReviews1.filter((review)=>{
+                return review.purchased_on_renoun == true
+            })
+        }else{
+            instrumentReviews = instrumentReviews1
+        }
+        debugger;
+    },[filters])
     const numReviews = instrumentReviews.length
     let average = +sum/numReviews
 
@@ -335,10 +347,21 @@ const InstrumentReviews = ({instrumentId}) => {
         }
     }
 
+    const tickPurchased = () => {
+        setFilters((filters)=>{
+            return ({
+                ...filters,
+                'renoun' : !filters['renoun']
+            }
+                
+            )
+        })
+    }
+    console.log(filters)
     const purchasesOption = () =>{
         return(
             <>
-                 <div className='star-filter'><input type= 'checkbox'/>Purchased on Renoun</div>
+                 <div className='star-filter'><input type= 'checkbox' onChange={tickPurchased}/>Purchased on Renoun</div>
             </>
         )
     }
@@ -350,7 +373,7 @@ const InstrumentReviews = ({instrumentId}) => {
                 includedStars.push(i)
             }
         }
-        console.log(includedStars)
+
         return (
            <>   
                 {hasPurchases ? purchasesOption() : <></>}
