@@ -38,4 +38,12 @@ class Instrument < ApplicationRecord
     has_many :prospective_buyers, through: :carts, source: :buyer, dependent: :destroy
     has_one :order, dependent: :destroy
     has_many :favorites, dependent: :destroy
+
+    def self.search(search)
+        if search
+            @instruments = Instrument.where('name LIKE ?', "%#{search}%")
+        else
+            @instruments = Instrument.all
+        end
+    end
 end

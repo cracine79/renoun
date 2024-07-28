@@ -25,6 +25,8 @@ Rails.application.routes.draw do
       resource :seller_reviews, only: [:index]
     end
 
+ 
+
 
 
     resources :instrument_reviews, only: [:create, :update, :destroy]

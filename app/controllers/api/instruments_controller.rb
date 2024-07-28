@@ -17,8 +17,7 @@ class Api::InstrumentsController < ApplicationController
     end
 
     def index
-
-        @instruments = Instrument.all
+        @instruments = Instrument.search(params[:search])
         render  'api/instruments/index'
     end
 
@@ -28,8 +27,12 @@ class Api::InstrumentsController < ApplicationController
         @instrument.destroy
         render json: { instrumentId: id}
     end
-
    
+    private
+
+    def instrument_params
+        params.require(:instrument).permit(:search)
+    end
 
 
 

@@ -32,11 +32,13 @@ export const fetchAllInstruments = () => async dispatch => {
 
     const res = await csrfFetch('/api/instruments');
     storeCSRFToken(res)
-  
     const data = await res.json();
+    dispatch(receiveInstruments(data))
+}
 
-
-
+export const fetchInstruments = search => async dispatch => {
+    const res = await csrfFetch(`api/instruments/search=${search}`)
+    const data = await res.json();
     dispatch(receiveInstruments(data))
 }
 
